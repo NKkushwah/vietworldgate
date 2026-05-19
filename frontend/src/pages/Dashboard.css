@@ -1,0 +1,411 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+  width:100%;
+  min-height:100vh;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+  position:relative;
+
+  z-index:5;
+
+  width:100%;
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:60px;
+
+  padding:80px;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.hero-slider{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  z-index:1;
+}
+
+/* =========================
+   SLIDE IMAGE
+========================= */
+
+.slide{
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0;
+
+  animation:slider 15s infinite;
+}
+
+/* DIFFERENT DELAYS */
+
+.slide:nth-child(1){
+  animation-delay:0s;
+}
+
+.slide:nth-child(2){
+  animation-delay:5s;
+}
+
+.slide:nth-child(3){
+  animation-delay:10s;
+}
+
+/* =========================
+   SLIDER ANIMATION
+========================= */
+
+@keyframes slider{
+
+  0%{
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  30%{
+    opacity:1;
+  }
+
+  40%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.hero-overlay{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.55);
+
+  z-index:2;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-left{
+  width:58%;
+
+  color:white;
+}
+
+/* TAG */
+
+.tag{
+  background:#a21caf;
+
+  padding:12px 24px;
+
+  border-radius:10px;
+
+  display:inline-block;
+
+  margin-bottom:25px;
+
+  font-size:14px;
+
+  font-weight:600;
+}
+
+/* TITLE */
+
+.hero-left h1{
+  font-size:70px;
+
+  line-height:1.15;
+
+  margin-bottom:25px;
+
+  font-weight:700;
+}
+
+/* DESCRIPTION */
+
+.hero-left p{
+  font-size:20px;
+
+  line-height:1.8;
+
+  color:#f3f4f6;
+
+  max-width:700px;
+}
+
+/* =========================
+   APPOINTMENT BOX
+========================= */
+
+.appointment-box{
+  width:380px;
+
+  background:white;
+
+  padding:40px;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.25);
+}
+
+/* HEADING */
+
+.appointment-box h3{
+  color:#111827;
+
+  margin-bottom:30px;
+
+  font-size:25px;
+
+  font-weight:500;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.appointment-box form{
+  display:flex;
+
+  flex-direction:column;
+
+  
+}
+
+/* INPUT */
+
+.appointment-box form input,
+.appointment-box form textarea{
+  width:100%;
+
+  padding:15px 10px;
+
+  border:none;
+
+  border-bottom:2px solid #ddd;
+
+  outline:none;
+
+  font-size:14px;
+
+  transition:0.3s;
+
+  background:transparent;
+}
+
+/* FOCUS */
+
+.appointment-box form input:focus,
+.appointment-box form textarea:focus{
+  border-color:#a1007e;
+}
+
+/* TEXTAREA */
+
+.appointment-box form textarea{
+  resize:none;
+
+  height:100px;
+}
+
+/* BUTTON */
+
+.appointment-box form button{
+  margin-top:15px;
+
+  padding:16px;
+
+  background:#a1007e;
+
+  color:white;
+
+  border:none;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+/* HOVER */
+
+.appointment-box form button:hover{
+  background:#7b0061;
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+
+.stats-section{
+  width:100%;
+
+  padding:80px;
+
+  background:#f9fafb;
+}
+
+.stats-container{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:25px;
+}
+
+/* STAT CARD */
+
+.stat-card{
+  background:white;
+
+  padding:35px 25px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+  transition:0.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-5px);
+}
+
+.stat-card h2{
+  font-size:42px;
+
+  color:#a1007e;
+
+  margin-bottom:10px;
+}
+
+.stat-card p{
+  font-size:17px;
+
+  color:#4b5563;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .hero-content{
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:60px 30px;
+  }
+
+  .hero-left{
+    width:100%;
+  }
+
+  .hero-left h1{
+    font-size:48px;
+  }
+
+  .appointment-box{
+    width:100%;
+
+    max-width:500px;
+  }
+
+  .stats-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:700px){
+
+  .hero-left h1{
+    font-size:34px;
+  }
+
+  .hero-left p{
+    font-size:16px;
+  }
+
+  .tag{
+    font-size:12px;
+  }
+
+  .appointment-box{
+    padding:25px;
+  }
+
+  .appointment-box h2{
+    font-size:28px;
+  }
+
+  .stats-container{
+    grid-template-columns:1fr;
+  }
+
+  .stats-section{
+    padding:60px 25px;
+  }
+
+}
