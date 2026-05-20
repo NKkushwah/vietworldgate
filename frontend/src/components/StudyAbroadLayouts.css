@@ -1,8 +1,8 @@
 :root {
   --purple-primary: #7D0068;
   --purple-dark: #3a0030;
-  --purple-bg: #2d1127; /* Dark background section color */
-  --purple-border-light: #EAD6E6; /* Soft purple border tone */
+  --purple-bg: #2d1127; 
+  --purple-border-light: #EAD6E6; 
   --text-main: #2D3748;
   --text-body: #616E7C;
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
@@ -27,7 +27,7 @@
 }
 
 .section-title-dark span {
-  color: #c9f270; /* Crisp lime highlight color */
+  color: #c9f270; 
   font-style: italic;
   font-weight: 600;
 }
@@ -44,291 +44,6 @@
   color: var(--purple-primary);
   font-style: italic;
   font-weight: 700;
-}
-
-/* ===================================================
-   SECTION: COURSE FINDER & CONTEXT LAYOUT
-   =================================================== */
-.hero-finder-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-
-.finder-flex-row {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 60px;
-}
-
-.finder-left-card {
-  background-color: var(--purple-primary);
-  border-radius: 40px 120px 40px 40px; /* Precise curve framing */
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  color: #ffffff;
-  padding: 40px 40px 0 40px;
-  flex: 1;
-}
-
-.finder-img-wrap {
-  width: 45%;
-}
-
-.finder-img-wrap img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.finder-text-wrap {
-  width: 55%;
-  padding-bottom: 40px;
-  padding-left: 25px;
-}
-
-.finder-text-wrap h2 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 15px 0;
-}
-
-.finder-text-wrap p {
-  font-size: 1.05rem;
-  margin: 0 0 25px 0;
-  opacity: 0.95;
-}
-
-.btn-shortlist {
-  background-color: #ffffff;
-  color: var(--purple-primary);
-  border: none;
-  padding: 14px 30px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.btn-shortlist:hover {
-  transform: scale(1.02);
-}
-
-.finder-right-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.finder-right-content .sub-title {
-  color: var(--purple-primary);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 12px;
-}
-
-.finder-right-content h1 {
-  font-size: 2.5rem;
-  color: #1a202c;
-  margin: 0 0 25px 0;
-  font-weight: 400;
-}
-
-.finder-right-content h1 span {
-  color: var(--purple-primary);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.course-finder-box {
-  background-color: #edf5f6;
-  border-radius: 16px;
-  padding: 30px 90px 30px 30px;
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.course-finder-box p {
-  margin: 0;
-  color: #4a5568;
-  font-size: 1.05rem;
-}
-
-.course-finder-box .bg-number {
-  position: absolute;
-  right: 25px;
-  bottom: 15px;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--purple-primary);
-}
-
-.btn-click-here {
-  background-color: var(--purple-primary);
-  color: #ffffff;
-  border: none;
-  padding: 14px 35px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  cursor: pointer;
-  width: max-content;
-  transition: background-color 0.2s ease;
-}
-
-.btn-click-here:hover {
-  background-color: var(--purple-dark);
-}
-
-/* ===================================================
-   SECTION: WHO WE ARE
-   =================================================== */
-.who-we-are-section {
-  background-color: var(--purple-bg);
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.who-we-are-section h2 {
-  font-size: 2.4rem;
-  color: #ffffff;
-  font-weight: 400;
-  margin: 0 0 25px 0;
-}
-
-.who-we-are-section h2 span {
-  color: #c9f270;
-  font-style: italic;
-}
-
-.who-we-are-section p {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #ffffff;
-  opacity: 0.9;
-}
-
-/* ===================================================
-   SECTION: STUDY DESTINATIONS
-   =================================================== */
-.destinations-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.destinations-section h2 {
-  font-size: 2.4rem;
-  color: var(--text-main);
-  font-weight: 400;
-  margin: 0 0 15px 0;
-}
-
-.destinations-section h2 span {
-  color: var(--purple-primary);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.destinations-section .sub-description {
-  max-width: 1100px;
-  margin: 0 auto 50px auto;
-  color: var(--text-body);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.destination-card {
-  background: #ffffff;
-  border: 2px solid var(--purple-border-light);
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: var(--card-shadow);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.destination-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(125, 0, 104, 0.1);
-}
-
-.dest-img-container {
-  width: 100%;
-  height: 200px;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.dest-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.dest-info-body {
-  padding: 20px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dest-info-body h3 {
-  font-size: 1.3rem;
-  color: #1a202c;
-  margin: 0 0 15px 0;
-  font-weight: 600;
-}
-
-.dest-read-more {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--purple-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-.dest-read-more .arrow-circle {
-  width: 22px;
-  height: 22px;
-  border: 1.5px solid var(--purple-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  transition: all 0.3s ease;
-}
-
-.destination-card:hover .dest-read-more .arrow-circle {
-  transform: translateX(4px);
-  background-color: var(--purple-primary);
-  color: #ffffff;
 }
 
 /* ===================================================
@@ -361,7 +76,6 @@
   position: relative;
   overflow: hidden;
   background-color: #501d43;
-  /* Checkerboard branding background matching the grid layout exactly */
   background-image: linear-gradient(45deg, #441638 25%, transparent 25%), 
                     linear-gradient(-45deg, #441638 25%, transparent 25%), 
                     linear-gradient(45deg, transparent 75%, #441638 75%), 
@@ -378,7 +92,7 @@
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 4px solid #c9f270; /* Matched to signature highlight green */
+  border: 4px solid #c9f270; 
   position: relative;
   overflow: hidden;
   display: flex;
@@ -420,32 +134,51 @@
 }
 
 .student-name {
-  color: #1b1a1a;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 500;
   margin: 18px 0 0 0;
   transition: color 0.3s;
 }
 
-.testimonial-card:hover .student-name {
-  color: #7079f2;
-}
-
 /* ===================================================
-   SECTION 2: UPCOMING UNIVERSITY VISITS
+   SECTION 2: UPCOMING UNIVERSITY VISITS (SLIDER MODE)
    =================================================== */
 .university-visits-section {
   background-color: var(--purple-dark);
   padding: 70px 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
 }
 
-.visits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+/* Row wrapper containing arrow actions and the slider center */
+.slider-outer-wrapper {
+  max-width: 1250px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 45px;
+}
+
+/* Viewport structure masking overflow outside dimensions */
+.visits-slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Active slider tracking strip animating translations smoothly */
+.visits-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Uniform card wrap assigning fractional inline widths and separation gutters */
+.visit-card-wrapper {
+  padding: 0 15px;
+  flex: 0 0 33.333%; /* Default Desktop View: 3 columns visible */
+  box-sizing: border-box;
 }
 
 .visit-card {
@@ -456,6 +189,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
+  height: 100%; /* Keeps all layout component heights matching */
 }
 
 .visit-card:hover {
@@ -505,8 +239,43 @@
   margin-top: 1px;
 }
 
+/* Arrow Navigation Button Overlays */
+.slider-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  color: var(--purple-primary);
+  border: 2px solid var(--purple-primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.slider-arrow-btn:hover {
+  background-color: var(--purple-primary);
+  color: #ffffff;
+}
+
+.left-arrow {
+  left: 0px;
+}
+
+.right-arrow {
+  right: 0px;
+}
+
+/* Action Read-More layout structures inside visits block */
 .btn-read-more-visit {
-  margin-top: 20px;
+  margin-top: auto; /* Drops actions clean to the bottom of the bounding flex frame */
   background-color: #f1f5f9;
   color: #334155;
   border: none;
@@ -521,6 +290,7 @@
   gap: 8px;
   transition: all 0.2s ease;
   width: max-content;
+  align-self: center;
 }
 
 .btn-read-more-visit span.arrow-circle-visit {
@@ -565,7 +335,6 @@
   gap: 40px;
 }
 
-/* Wave connector tracking lines for desktop variants */
 @media screen and (min-width: 992px) {
   .timeline-container {
     flex-direction: row;
@@ -616,7 +385,6 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Active solid highlight tracking context (Step 3) */
 .timeline-step.active .icon-circle-wrapper {
   background: var(--purple-primary);
   color: #ffffff;
@@ -682,8 +450,33 @@
   margin: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .finder-flex-row {
-    flex-direction: row;
+/* ===================================================
+   DYNAMIC SLIDER RESPONSIVE BREAKPOINTS
+   =================================================== */
+@media screen and (max-width: 1024px) {
+  .visit-card-wrapper {
+    flex: 0 0 50%; /* Tablet view: 2 columns visible per active track step */
+  }
+}
+/* ===================================================
+   DYNAMIC SLIDER RESPONSIVE BREAKPOINTS
+   =================================================== */
+@media screen and (max-width: 1024px) {
+  .visit-card-wrapper {
+    flex: 0 0 50%; /* Tablet view: 2 columns visible per active track step */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .visit-card-wrapper {
+    flex: 0 0 100%; /* Mobile view: 1 column visible per track shift */
+  }
+  .slider-outer-wrapper {
+    padding: 0 35px;
+  }
+  .slider-arrow-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }

@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="footer-newsletter">
           <div className="newsletter-info">
             <FaRegEnvelopeOpen className="newsletter-icon" />
-            <p>Get the latest creative news from VIEC about courses, offers, events and many more.</p>
+            <p>Get the latest creative news from VIET WORLDGATE about courses, offers, events and many more.</p>
           </div>
           <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
             <input type="email" placeholder="Your email address" required />
@@ -46,10 +46,10 @@ const Footer = () => {
           <div className="footer-col">
             <img 
               src="/src/assets/vietworldgate.png" 
-              alt="VIEC Logo" 
+              alt="VIET WORLDGATE Logo" 
               className="footer-logo" 
             />
-            <p>VIEC is one of the largest international student recruitment companies in South Asia. In the last 28 years, through our vast network of over 400+ Institutions worldwide & 39 Branches, we have placed 44600 + students all over the world.</p>
+            <p>VIET WORLDGATE is one of the largest international student recruitment companies in South Asia. In the last 28 years, through our vast network of over 400+ Institutions worldwide & 39 Branches, we have placed 44600 + students all over the world.</p>
             <div className="social-icons">
               <a href="#facebook" aria-label="Facebook"><FaFacebookF /></a>
               <a href="#instagram" aria-label="Instagram"><FaInstagram /></a>
@@ -61,22 +61,22 @@ const Footer = () => {
 
           {/* Column 2: Network */}
           <div className="footer-col">
-            <h4>VIEC NETWORK</h4>
+            <h4>VIET WORLDGATE</h4>
             <ul>
-              <li><a href="#india">VIEC India</a></li>
-              <li><a href="#bhutan">VIEC Bhutan</a></li>
-              <li><a href="#australia">VIEC Australia (Registered Office)</a></li>
-              <li><a href="#nepal-ktm">VIEC Nepal - Kathmandu</a></li>
-              <li><a href="#nepal-chitwan">VIEC Nepal - Chitwan</a></li>
-              <li><a href="#srilanka-cmb">VIEC Sri Lanka - Colombo</a></li>
-              <li><a href="#srilanka-kandy">VIEC Sri Lanka - Kandy</a></li>
-              <li><a href="#bangladesh">VIEC Bangladesh - Dhaka</a></li>
+              <li><a href="#india">VIET WORLDGATE India</a></li>
+              <li><a href="#bhutan">VIET WORLDGATE Bhutan</a></li>
+              <li><a href="#australia">VIET WORLDGATE Australia (Registered Office)</a></li>
+              <li><a href="#nepal-ktm">VIET WORLDGATE Nepal - Kathmandu</a></li>
+              <li><a href="#nepal-chitwan">VIET WORLDGATE Nepal - Chitwan</a></li>
+              <li><a href="#srilanka-cmb">VIET WORLDGATE Sri Lanka - Colombo</a></li>
+              <li><a href="#srilanka-kandy">VIET WORLDGATE Sri Lanka - Kandy</a></li>
+              <li><a href="#bangladesh">VIET WORLDGATE Bangladesh - Dhaka</a></li>
             </ul>
           </div>
 
           {/* Column 3: Study Abroad */}
           <div className="footer-col">
-            <h4>VIEC STUDY ABROAD</h4>
+            <h4>VIET WORLDGATE STUDY ABROAD</h4>
             <ul>
               <li><a href="#service-student">Service to Students</a></li>
               <li><a href="#service-institution">Service to institutions</a></li>
@@ -95,21 +95,21 @@ const Footer = () => {
               <FaLocationDot className="contact-icon" />
               <div className="contact-info">
                 <strong>Address</strong>
-                <span>Block-F, American Plaza,<br />International Trade Tower, New<br />Delhi, Delhi</span>
+                <span>36, Block H, Sector 5, <br />Uttar Pradesh 201301 , Noida<br />Delhi, Delhi</span>
               </div>
             </div>
             <div className="contact-item">
               <FaMobileScreenButton className="contact-icon" />
               <div className="contact-info">
                 <strong>Phone</strong>
-                <span>+91-11 40515555</span>
+                <span>+91 79822 95530</span>
               </div>
             </div>
             <div className="contact-item">
               <FaRegEnvelope className="contact-icon" />
               <div className="contact-info">
                 <strong>Email Address</strong>
-                <a href="mailto:info@vieceducation.com">info@vieceducation.com</a>
+                <a href="mailto:info@vietworldgate.com">admissions@vietworldgate.com</a>
               </div>
             </div>
           </div>
