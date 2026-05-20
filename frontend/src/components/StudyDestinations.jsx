@@ -7,33 +7,64 @@ const destinations = [
   { id: 3, name: 'Canada', image: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop' },
   { id: 4, name: 'UK', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?q=80&w=600&auto=format&fit=crop' },
   { id: 5, name: 'Germany', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600&auto=format&fit=crop' },
-
-  // 🔥 NEW ADDITIONS
   { id: 6, name: 'New Zealand', image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=600&auto=format&fit=crop' },
   { id: 7, name: 'Ireland', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=600&auto=format&fit=crop' },
   { id: 8, name: 'Singapore', image: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=600&auto=format&fit=crop' },
   { id: 9, name: 'Dubai', image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&auto=format&fit=crop' },
   { id: 10, name: 'France', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600&auto=format&fit=crop' }
 ];
+
 export default function StudyDestinations() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
 
-  // Calculates the max slide point (Total items minus 3 visible items)
-  const maxIndex = destinations.length - 3; 
+  // Screen size ke hisab se decide hoga ki ek baar me kitne card dikhenge
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 650) {
+        setVisibleCards(1);
+      } else if (width <= 992) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
+    };
 
-  // Auto-sliding side-effect loop
+    handleResize(); // Initial setup load par
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Dynamic max sliding index calculations 
+  const maxIndex = destinations.length - visibleCards;
+
+  // Responsive dynamic transition width math percent
+  const getTranslatePercentage = () => {
+    if (visibleCards === 1) return currentIndex * 100; // Mobile Layout (No gap issue)
+    if (visibleCards === 2) return currentIndex * (49 + 2); // Tablet Layout (Card width + gap)
+    return currentIndex * (31.833 + 1.5); // Desktop Layout
+  };
+
+  // Safe Index Reset if window resize breaks track bounds
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex >= 0 ? maxIndex : 0);
+    }
+  }, [visibleCards, currentIndex, maxIndex]);
+
+  // Auto-sliding interval loop
   useEffect(() => {
     const autoSlideTimer = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         if (prevIndex < maxIndex) {
           return prevIndex + 1;
         } else {
-          return 0; // Return to the beginning smoothly
+          return 0; // Back to first card smoothly
         }
       });
-    }, 3000); // Slides every 3000ms (3 seconds)
+    }, 3000);
 
-    // Clear interval when the component unmounts to prevent memory leaks
     return () => clearInterval(autoSlideTimer);
   }, [maxIndex]);
 
@@ -43,11 +74,11 @@ export default function StudyDestinations() {
       <section className="who-we-are">
         <h2>Who <span>We Are</span></h2>
         <p>
-         We’re more than just a consultancy — we’re your mentors, advisors, and 
-         guide throughout the entire process. Every student is unique, so our 
-         counselling is personalized, thoughtful, and tailored to match your dreams, 
-         budget, and academic profile. Whether you’re exploring options for undergraduate, postgraduate, 
-         or diploma programs, our team makes sure you feel confident and informed at each step.
+          We’re more than just a consultancy — we’re your mentors, advisors, and 
+          guide throughout the entire process. Every student is unique, so our 
+          counselling is personalized, thoughtful, and tailored to match your dreams, 
+          budget, and academic profile. Whether you’re exploring options for undergraduate, postgraduate, 
+          or diploma programs, our team makes sure you feel confident and informed at each step.
         </p>
       </section>
 
@@ -61,7 +92,7 @@ export default function StudyDestinations() {
         <div className="slider-view-window">
           <div 
             className="card-track" 
-            style={{ transform: `translateX(-${currentIndex * (33.333 + 1.5)}%)` }} 
+            style={{ transform: `translateX(-${getTranslatePercentage()}%)` }} 
           >
             {destinations.map((dest) => (
               <div className="destination-card" key={dest.id}>
