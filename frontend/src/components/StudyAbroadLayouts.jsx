@@ -4,8 +4,8 @@ import "./StudyAbroadLayouts.css";
 export default function StudyAbroadLayouts() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto Slider Ref
+  
+  // Ref to hold the auto-play timer instance
   const autoPlayRef = useRef(null);
 
   // =========================
@@ -85,61 +85,74 @@ export default function StudyAbroadLayouts() {
       speaker: "Dr. Alan Mercer",
       branch: "VIEC-Delhi (Office)",
       type: "Global Meet",
-      img: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&q=80&w=1200",
+      img: "https://images.unsplash.com/photo-1574097656146-0b43b7660cb6?auto=format&fit=crop&q=80&w=400"
     },
+    {
+      id: 7,
+      title: "Deakin University",
+      date: "01st June 2026, 11:00 AM",
+      speaker: "Mr. Ryan Reynolds",
+      branch: "VIEC-Bangalore (Office)",
+      type: "Admissions Day",
+      img: "https://images.unsplash.com/photo-1548449112-96a38a643324?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      id: 8,
+      title: "University of Leeds",
+      date: "03rd June 2026, 01:00 PM to 03:00 PM",
+      speaker: "Ms. Sarah Jenkins",
+      branch: "VIEC-Chandigarh (Office)",
+      type: "University Visits",
+      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      id: 9,
+      title: "Auckland Tech University",
+      date: "05th June 2026, 10:30 AM",
+      speaker: "Mr. David Boon",
+      branch: "VIEC-Pune (Office)",
+      type: "Scholarship Seminar",
+      img: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      id: 10,
+      title: "Dublin City University",
+      date: "10th June 2026, 04:00 PM",
+      speaker: "Ms. Emma Walsh",
+      branch: "VIEC-Hyderabad (Office)",
+      type: "University Visits",
+      img: "https://images.unsplash.com/photo-1564982743470-47edd0c2c507?auto=format&fit=crop&q=80&w=400"
+    }
   ];
 
-  // =========================
-  // RESPONSIVE CARDS COUNT
-  // =========================
+  // Helper logic to find maximum sliding threshold depending on screen width
   const getVisibleCardsCount = () => {
-
-    if (window.innerWidth < 768) {
-      return 1;
-    }
-
-    if (window.innerWidth < 1024) {
-      return 2;
-    }
-
-    return 3;
+    if (window.innerWidth < 768) return 1; 
+    if (window.innerWidth < 1024) return 2;
+    return 3; 
   };
 
   // =========================
   // NEXT SLIDE
   // =========================
   const nextSlide = () => {
-
     const visibleCards = getVisibleCardsCount();
-
     const maxIndex = universityVisits.length - visibleCards;
-
-    setCurrentIndex((prev) =>
-      prev >= maxIndex ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   // =========================
   // PREVIOUS SLIDE
   // =========================
   const prevSlide = () => {
-
     const visibleCards = getVisibleCardsCount();
-
     const maxIndex = universityVisits.length - visibleCards;
-
-    setCurrentIndex((prev) =>
-      prev === 0 ? maxIndex : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
   };
 
-  // =========================
-  // START AUTOPLAY
-  // =========================
+  // Start the auto-sliding timer (Interval runs every 3000ms / 3s)
   const startAutoPlay = () => {
-
-    stopAutoPlay();
-
+    stopAutoPlay(); // Prevent stacking duplicate intervals
     autoPlayRef.current = setInterval(() => {
       nextSlide();
     }, 3000);
@@ -155,23 +168,15 @@ export default function StudyAbroadLayouts() {
     }
   };
 
-  // =========================
-  // USE EFFECT
-  // =========================
+  // Initialize auto-play when the component mounts, and clean up when it unmounts
   useEffect(() => {
 
     startAutoPlay();
-
-    return () => {
-      stopAutoPlay();
-    };
-
-  }, []);
+    return () => stopAutoPlay();
+  }, [currentIndex]); // Depend on currentIndex to ensure calculation uses active boundaries
 
   const visibleCardsCount = getVisibleCardsCount();
-
-  const slideTranslateX =
-    currentIndex * (100 / visibleCardsCount);
+  const slideTranslateX = currentIndex * (100 / visibleCardsCount);
 
   return (
     <div className="layouts-container">
@@ -215,25 +220,24 @@ export default function StudyAbroadLayouts() {
 
       </section>
 
-      {/* UNIVERSITY VISITS */}
+
+      {/* SECTION 2: UPCOMING UNIVERSITY VISITS (AUTO-SLIDER) */}
       <section className="university-visits-section">
 
         <h2 className="section-title-dark">
           Upcoming <span>University Visits</span>
         </h2>
 
-        <div
+        {/* Added onMouseEnter to pause sliding when viewing a card 
+          Added onMouseLeave to resume sliding when mouse exits the section
+        */}
+        <div 
           className="slider-outer-wrapper"
           onMouseEnter={stopAutoPlay}
           onMouseLeave={startAutoPlay}
         >
-
-          <button
-            className="slider-arrow-btn left-arrow"
-            onClick={prevSlide}
-          >
-            &#10094;
-          </button>
+          
+          <button className="slider-arrow-btn left-arrow" onClick={prevSlide}>&#10094;</button>
 
           <div className="visits-slider-container">
 
@@ -316,7 +320,8 @@ export default function StudyAbroadLayouts() {
 
       </section>
 
-      {/* HOW IT WORKS */}
+
+      {/* SECTION 3: HOW IT WORKS TIMELINE */}
       <section className="how-it-works-section">
 
         <h2 className="section-title-light">

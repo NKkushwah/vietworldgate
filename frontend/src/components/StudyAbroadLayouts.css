@@ -8,11 +8,20 @@
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
+/* Base Global Box-Sizing Fix */
+.layouts-container,
+.layouts-container *,
+.layouts-container *::before,
+.layouts-container *::after {
+  box-sizing: border-box;
+}
+
 .layouts-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   color: var(--text-main);
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===================================================
@@ -24,6 +33,7 @@
   color: #ffffff;
   font-weight: 400;
   margin-bottom: 45px;
+  padding: 0 10px;
 }
 
 .section-title-dark span {
@@ -38,6 +48,7 @@
   color: var(--text-main);
   font-weight: 400;
   margin-bottom: 60px;
+  padding: 0 10px;
 }
 
 .section-title-light span {
@@ -56,10 +67,11 @@
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .testimonial-card {
@@ -75,7 +87,7 @@
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  background-color:#012819;;
+  background-color:#012819;
   background-image: linear-gradient(45deg, #012819 25%, transparent 25%), 
                     linear-gradient(-45deg, #012819 25%, transparent 25%), 
                     linear-gradient(45deg, transparent 75%, #441638 75%), 
@@ -149,36 +161,35 @@
   padding: 70px 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
   position: relative;
+  width: 100%;
 }
 
-/* Row wrapper containing arrow actions and the slider center */
 .slider-outer-wrapper {
   max-width: 1250px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 45px;
+  padding: 0 50px;
 }
 
-/* Viewport structure masking overflow outside dimensions */
 .visits-slider-container {
   width: 100%;
   overflow: hidden;
 }
 
-/* Active slider tracking strip animating translations smoothly */
 .visits-slider-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
   width: 100%;
 }
 
-/* Uniform card wrap assigning fractional inline widths and separation gutters */
+/* Precise Horizontal Fluid Blocks matched with layout counts */
 .visit-card-wrapper {
   padding: 0 15px;
-  flex: 0 0 33.333%; /* Default Desktop View: 3 columns visible */
-  box-sizing: border-box;
+  flex: 0 0 33.333%;
+  width: 33.333%;
 }
 
 .visit-card {
@@ -189,7 +200,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  height: 100%; /* Keeps all layout component heights matching */
+  height: 100%;
 }
 
 .visit-card:hover {
@@ -265,17 +276,11 @@
   color: #ffffff;
 }
 
-.left-arrow {
-  left: 0px;
-}
+.left-arrow { left: 0px; }
+.right-arrow { right: 0px; }
 
-.right-arrow {
-  right: 0px;
-}
-
-/* Action Read-More layout structures inside visits block */
 .btn-read-more-visit {
-  margin-top: auto; /* Drops actions clean to the bottom of the bounding flex frame */
+  margin-top: auto;
   background-color: #f1f5f9;
   color: #334155;
   border: none;
@@ -324,6 +329,7 @@
   padding: 80px 20px;
   background: #fafbfc;
   position: relative;
+  width: 100%;
 }
 
 .timeline-container {
@@ -451,32 +457,39 @@
 }
 
 /* ===================================================
-   DYNAMIC SLIDER RESPONSIVE BREAKPOINTS
+   RESPONSIVE LAYOUT BREAKPOINTS FOR ALL DEVICES
    =================================================== */
-@media screen and (max-width: 1024px) {
+
+/* Laptops & Tablets Landscape (iPad Pro Specific Fix) */
+@media screen and (max-width: 1025px) {
+  .section-title-dark, .section-title-light { font-size: 1.8rem; }
+  
   .visit-card-wrapper {
-    flex: 0 0 50%; /* Tablet view: 2 columns visible per active track step */
-  }
-}
-/* ===================================================
-   DYNAMIC SLIDER RESPONSIVE BREAKPOINTS
-   =================================================== */
-@media screen and (max-width: 1024px) {
-  .visit-card-wrapper {
-    flex: 0 0 50%; /* Tablet view: 2 columns visible per active track step */
+    flex: 0 0 50% !important;
+    width: 50% !important;
   }
 }
 
+/* Mobile Devices & Small Tablets (1 Card View) */
 @media screen and (max-width: 768px) {
-  .visit-card-wrapper {
-    flex: 0 0 100%; /* Mobile view: 1 column visible per track shift */
-  }
+  .section-title-dark, .section-title-light { font-size: 1.5rem; margin-bottom: 30px; }
+  
   .slider-outer-wrapper {
-    padding: 0 35px;
+    padding: 0 40px; /* Safe space layout for arrows */
   }
+
+  .visit-card-wrapper {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
+
   .slider-arrow-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  
+  .visit-img-banner {
+    height: 180px;
   }
 }

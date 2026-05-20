@@ -2,21 +2,19 @@ import { useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
-  // Mobile main menu toggle state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  // Mobile dropdown toggles ke liye state (konsa index open hai)
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (isMenuOpen) setActiveDropdown(null); // Menu close hote hi sub-dropdowns bhi close ho jayein
+    if (!isMenuOpen) setActiveDropdown(null); 
   };
 
   const handleDropdownClick = (e, index) => {
-    // Mobile par default link check ya hover behavior rokne ke liye
-    if (window.innerWidth <= 992) {
+    // Increased breakpoint check to 1024px to match the new CSS
+    if (window.innerWidth <= 1024) {
       e.preventDefault();
+      e.stopPropagation(); // Prevents bubbling issues on touch devices
       setActiveDropdown(activeDropdown === index ? null : index);
     }
   };
@@ -60,12 +58,11 @@ function Navbar() {
           </div>
         </div>
 
-        {/* MOBILE MENU BUTTON (BURGER ICON) */}
+        {/* MOBILE MENU BUTTON */}
         <div 
           className={`mobile-menu ${isMenuOpen ? "open" : ""}`} 
           onClick={toggleMenu}
         >
-          {/* Menu status toggle hote hi content CSS se change hoga */}
         </div>
 
         {/* MENU */}
@@ -77,7 +74,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 1 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 1)}
           >
-            About Us 
+            About Us <span className="arrow">▼</span>
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Company Profile</li>
               <li onClick={closeMenu}>Our Team</li>
@@ -91,7 +88,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 2 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 2)}
           >
-            Services 
+            Services <span className="arrow">▼</span>
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Study Abroad</li>
               <li onClick={closeMenu}>Visa Assistance</li>
@@ -105,7 +102,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 3 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 3)}
           >
-            Destinations 
+            Destinations <span className="arrow">▼</span>
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Canada</li>
               <li onClick={closeMenu}>Australia</li>
@@ -122,7 +119,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 4 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 4)}
           >
-            Branches 
+            Branches <span className="arrow">▼</span>
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Delhi</li>
               <li onClick={closeMenu}>Noida</li>
@@ -138,7 +135,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 5 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 5)}
           >
-            Events 
+            Events <span className="arrow">▼</span>
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Upcoming Events</li>
               <li onClick={closeMenu}>Seminars</li>
