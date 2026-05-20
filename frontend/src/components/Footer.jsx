@@ -128,10 +128,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Scroll to Top Button */}
-      <a href="#top" className="scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
-        <FaChevronUp />
-      </a>
+     
     </footer>
   );
 };

@@ -2,63 +2,53 @@
   --primary-purple: #012819;
   --text-dark: #222222;
   --text-muted: #666666;
-  --card-gap: 24px;
 }
 
 .study-container {
   font-family: 'Poppins', system-ui, sans-serif;
   background-color: #ffffff;
   padding-bottom: 80px;
+  width: 100%;
+  overflow-hidden: hidden; /* Prevent track leak */
 }
 
+/* Who We Are Block Styles Cleanup */
 .who-we-are {
-  background-color: #f8f9fa;   /* 👈 poora background */
-  padding: 60px 20px;   
-    font-family: 'Poppins', system-ui, sans-serif;
-         /* upar niche spacing */
+  background-color: #012819;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px; 
 }
 
 .who-we-are h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 32px;
- 
-  font-weight: 200;   /* 👈 default 700 hota hai, isse halka ho jayega */
-    
-    font-style: italic;
+  font-weight: 300; 
+}
+
+.who-we-are h2 span { 
+  color: #b1df36; 
+  font-weight: 700;
 }
 
 .who-we-are p {
-font-weight: 10;
-
-    font-style: italic;
-  max-width: 700px;            /* 👈 text beech me lane ke liye */
-  margin: 0 auto;              /* 👈 center align */
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 4;       /* 👈 sirf 4 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  line-height: 1.6;
-  color:rgba(255, 255, 255, 0.7);
-}
-.who-we-are {
-  background-color: #012819;;
-  color: #ffffff;
-  text-align: center;
-  padding: 50px 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  /* Removed line clamp so complete paragraph renders gracefully on mobile screens */
 }
 
-.who-we-are h2 span { color: #b1df36; }
-
+/* Slider Section Structure */
 .destination-slider-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 20px;
   position: relative;
+  width: 100%;
 }
 
 .section-title {
@@ -83,19 +73,22 @@ font-weight: 10;
   position: relative;
   overflow: hidden;
   padding: 15px 5px;
+  width: 100%;
 }
 
 /* Fluid Horizontal Track */
 .card-track {
   display: flex;
   gap: 1.5%; 
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Made transform smooth for auto loop */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
+  width: 100%;
 }
 
 /* Individual Destination Cards */
 .destination-card {
-  min-width: 31.833%; /* Displays 3 cards evenly on modern viewport spans */
+  min-width: 32.333%; /* Displays 3 cards evenly minus gaps on desktop */
+  flex-shrink: 0; /* Prevents compression of cards */
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -145,7 +138,7 @@ font-weight: 10;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color:#012819;
+  color: #012819;
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
@@ -167,18 +160,48 @@ font-weight: 10;
   height: 14px;
 }
 
-/* Hover Animations matching your recording */
 .destination-card:hover .arrow-circle {
   background-color: #012819;
   color: #ffffff;
   transform: translateX(4px);
 }
 
-/* Basic Responsiveness Structure Overrides */
+/* =========================================
+   RESPONSIVE MEDIA BREAKPOINTS (FIXED!)
+========================================= */
+
 @media (max-width: 992px) {
-  .destination-card { min-width: 49%; }
+  .section-title { font-size: 1.8rem; }
+  
+  .card-track {
+    gap: 2%; /* Tablet gap logic adjustment */
+  }
+  
+  .destination-card { 
+    min-width: 49%; /* Displays 2 cards precisely */
+  }
 }
 
 @media (max-width: 650px) {
-  .destination-card { min-width: 100%; }
+  .section-title { font-size: 1.5rem; }
+  
+  .card-track {
+    gap: 0%; /* No gaps needed for single layout scrolling */
+  }
+
+  .destination-card { 
+    min-width: 100%; /* Full screen layout width standard on mobile phones */
+  }
+  
+  .card-image-wrapper {
+    height: 180px; /* Slight height reduction for mobile look aspect ratio */
+  }
+  
+  .who-we-are {
+    padding: 40px 15px;
+  }
+  
+  .who-we-are h2 {
+    font-size: 26px;
+  }
 }
