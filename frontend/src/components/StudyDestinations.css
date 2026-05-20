@@ -1,0 +1,150 @@
+:root {
+  --primary-purple: #7a1b64;
+  --text-dark: #222222;
+  --text-muted: #666666;
+  --card-gap: 24px;
+}
+
+.study-container {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #ffffff;
+  padding-bottom: 80px;
+}
+
+.who-we-are {
+  background-color: #261625;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.who-we-are h2 span { color: #b1df36; }
+
+.destination-slider-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--text-dark);
+}
+
+.section-title span {
+  color: var(--primary-purple);
+  font-style: italic;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+/* Slider Masking Container Window */
+.slider-view-window {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 5px;
+}
+
+/* Fluid Horizontal Track */
+.card-track {
+  display: flex;
+  gap: 1.5%; 
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Made transform smooth for auto loop */
+  will-change: transform;
+}
+
+/* Individual Destination Cards */
+.destination-card {
+  min-width: 31.833%; /* Displays 3 cards evenly on modern viewport spans */
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f2edf4;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .card-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.card-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.35rem;
+  margin: 0 0 14px 0;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* "Read More" Interactive State Elements */
+.read-more-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-purple);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.arrow-circle {
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid var(--primary-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow-circle svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hover Animations matching your recording */
+.destination-card:hover .arrow-circle {
+  background-color: var(--primary-purple);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Basic Responsiveness Structure Overrides */
+@media (max-width: 992px) {
+  .destination-card { min-width: 49%; }
+}
+
+@media (max-width: 650px) {
+  .destination-card { min-width: 100%; }
+}
