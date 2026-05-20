@@ -16,51 +16,35 @@ const destinations = [
 
 export default function StudyDestinations() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3);
+  const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
-  // Screen size ke hisab se decide hoga ki ek baar me kitne card dikhenge
+  // Dynamic screen sizing check for perfect mathematical translation
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      if (width <= 650) {
-        setVisibleCards(1);
-      } else if (width <= 992) {
-        setVisibleCards(2);
+      if (window.innerWidth <= 650) {
+        setItemsPerSlide(1);
+      } else if (window.innerWidth <= 1024) {
+        setItemsPerSlide(2);
       } else {
-        setVisibleCards(3);
+        setItemsPerSlide(3);
       }
     };
 
-    handleResize(); // Initial setup load par
+    handleResize(); // Initial check
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Dynamic max sliding index calculations 
-  const maxIndex = destinations.length - visibleCards;
+  const maxIndex = destinations.length - itemsPerSlide;
 
-  // Responsive dynamic transition width math percent
-  const getTranslatePercentage = () => {
-    if (visibleCards === 1) return currentIndex * 100; // Mobile Layout (No gap issue)
-    if (visibleCards === 2) return currentIndex * (49 + 2); // Tablet Layout (Card width + gap)
-    return currentIndex * (31.833 + 1.5); // Desktop Layout
-  };
-
-  // Safe Index Reset if window resize breaks track bounds
-  useEffect(() => {
-    if (currentIndex > maxIndex) {
-      setCurrentIndex(maxIndex >= 0 ? maxIndex : 0);
-    }
-  }, [visibleCards, currentIndex, maxIndex]);
-
-  // Auto-sliding interval loop
+  // Smooth auto-sliding effect loop
   useEffect(() => {
     const autoSlideTimer = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         if (prevIndex < maxIndex) {
           return prevIndex + 1;
         } else {
-          return 0; // Back to first card smoothly
+          return 0; // Seamless loop back to card one
         }
       });
     }, 3000);
@@ -68,17 +52,27 @@ export default function StudyDestinations() {
     return () => clearInterval(autoSlideTimer);
   }, [maxIndex]);
 
+  // Pure mathematical response handler for desktop, tablet and mobile transitions
+  const getTranslateX = () => {
+    if (window.innerWidth <= 650) {
+      return currentIndex * 100; // Mobile view 100% steps
+    } else if (window.innerWidth <= 1024) {
+      return currentIndex * 50; // Tablet view 50% steps
+    }
+    return currentIndex * (33.333 + 1.5); // Desktop layout math
+  };
+
   return (
     <div className="study-container">
       {/* Header Info Banner Section */}
       <section className="who-we-are">
         <h2>Who <span>We Are</span></h2>
         <p>
-          We’re more than just a consultancy — we’re your mentors, advisors, and 
-          guide throughout the entire process. Every student is unique, so our 
-          counselling is personalized, thoughtful, and tailored to match your dreams, 
-          budget, and academic profile. Whether you’re exploring options for undergraduate, postgraduate, 
-          or diploma programs, our team makes sure you feel confident and informed at each step.
+         We’re more than just a consultancy — we’re your mentors, advisors, and 
+         guide throughout the entire process. Every student is unique, so our 
+         counselling is personalized, thoughtful, and tailored to match your dreams, 
+         budget, and academic profile. Whether you’re exploring options for undergraduate, postgraduate, 
+         or diploma programs, our team makes sure you feel confident and informed at each step.
         </p>
       </section>
 
@@ -92,7 +86,7 @@ export default function StudyDestinations() {
         <div className="slider-view-window">
           <div 
             className="card-track" 
-            style={{ transform: `translateX(-${getTranslatePercentage()}%)` }} 
+            style={{ transform: `translateX(-${getTranslateX()}%)` }} 
           >
             {destinations.map((dest) => (
               <div className="destination-card" key={dest.id}>

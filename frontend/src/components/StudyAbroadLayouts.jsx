@@ -3,6 +3,7 @@ import './StudyAbroadLayouts.css';
 
 export default function StudyAbroadLayouts() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
   
   // Ref to hold the auto-play timer instance
   const autoPlayRef = useRef(null);
@@ -118,30 +119,38 @@ export default function StudyAbroadLayouts() {
     }
   ];
 
-  // Helper logic to find maximum sliding threshold depending on screen width
-  const getVisibleCardsCount = () => {
-    if (window.innerWidth < 768) return 1; 
-    if (window.innerWidth < 1024) return 2;
-    return 3; 
-  };
+  // Dynamically update card count based on screen sizes (Fixed iPad Pro boundaries)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleCards(1);
+      } else if (window.innerWidth <= 1025) { // Fixed to capture iPad Pro exactly
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxIndex = universityVisits.length - visibleCards;
 
   // Slide Forward
   const nextSlide = () => {
-    const visibleCards = getVisibleCardsCount();
-    const maxIndex = universityVisits.length - visibleCards;
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   // Slide Backward
   const prevSlide = () => {
-    const visibleCards = getVisibleCardsCount();
-    const maxIndex = universityVisits.length - visibleCards;
     setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
   };
 
-  // Start the auto-sliding timer (Interval runs every 3000ms / 3s)
+  // Start the auto-sliding timer
   const startAutoPlay = () => {
-    stopAutoPlay(); // Prevent stacking duplicate intervals
+    stopAutoPlay();
     autoPlayRef.current = setInterval(() => {
       nextSlide();
     }, 3000);
@@ -154,14 +163,13 @@ export default function StudyAbroadLayouts() {
     }
   };
 
-  // Initialize auto-play when the component mounts, and clean up when it unmounts
   useEffect(() => {
     startAutoPlay();
     return () => stopAutoPlay();
-  }, [currentIndex]); // Depend on currentIndex to ensure calculation uses active boundaries
+  }, [currentIndex, visibleCards]);
 
-  const visibleCardsCount = getVisibleCardsCount();
-  const slideTranslateX = currentIndex * (100 / visibleCardsCount);
+  // Adjusting track translate index fluidly
+  const slideTranslateX = currentIndex * (100 / visibleCards);
 
   return (
     <div className="layouts-container">
@@ -184,20 +192,15 @@ export default function StudyAbroadLayouts() {
         </div>
       </section>
 
-
       {/* SECTION 2: UPCOMING UNIVERSITY VISITS (AUTO-SLIDER) */}
       <section className="university-visits-section">
         <h2 className="section-title-dark">Upcoming <span>University Visits</span></h2>
 
-        {/* Added onMouseEnter to pause sliding when viewing a card 
-          Added onMouseLeave to resume sliding when mouse exits the section
-        */}
         <div 
           className="slider-outer-wrapper"
           onMouseEnter={stopAutoPlay}
           onMouseLeave={startAutoPlay}
         >
-          
           <button className="slider-arrow-btn left-arrow" onClick={prevSlide}>&#10094;</button>
 
           <div className="visits-slider-container">
@@ -245,7 +248,6 @@ export default function StudyAbroadLayouts() {
           <button className="slider-arrow-btn right-arrow" onClick={nextSlide}>&#10095;</button>
         </div>
       </section>
-
 
       {/* SECTION 3: HOW IT WORKS TIMELINE */}
       <section className="how-it-works-section">
