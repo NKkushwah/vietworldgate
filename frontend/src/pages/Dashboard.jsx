@@ -2,6 +2,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import "./Dashboard.css";
+import Testimonials from "../components/Testimonials";
+import FaqSection from "../components/FaqSection";
+import StudyAbroad from "../components/StudyAbroad";
+import OurServices from "../components/OurServices";
+import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
+import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
+
 
 function Dashboard() {
   return (
@@ -131,6 +138,13 @@ function Dashboard() {
         </div>
 
       </section>
+      
+      <StudyAbroadLayouts />
+      <StudyAbroadFeatures />
+      <OurServices />
+      <StudyAbroad />
+      <Testimonials />
+      <FaqSection />
 
       <Footer />
     </>
