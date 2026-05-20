@@ -8,6 +8,7 @@ import StudyAbroad from "../components/StudyAbroad";
 import OurServices from "../components/OurServices";
 import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
 import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
+import StudyDestinations from "../components/StudyDestinations";
 
 
 function Dashboard() {
@@ -138,7 +139,7 @@ function Dashboard() {
         </div>
 
       </section>
-      
+      <StudyDestinations />
       <StudyAbroadLayouts />
       <StudyAbroadFeatures />
       <OurServices />
