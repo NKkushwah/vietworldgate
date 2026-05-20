@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+.testimonials-section {
+  /* Half dark purple background and half white pattern background exactly like screenshot */
+  background: linear-gradient(to bottom, #2b253b 65%, #ffffff 35%);
+  padding: 60px 0 40px 0;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* Subtle background dots for bottom light section */
+.testimonials-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
+  background-size: 25px 25px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.testimonials-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.testimonials-header h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.italic-lime {
+  color: #b8d935; /* Exact lime green tone */
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Grid Layout */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Review Cards Styling */
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 30px 30px 45px; /* Left side extra space for floating avatar */
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Pink Left Accent Line */
+.card-accent-line {
+  position: absolute;
+  left: 35px;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  background-color: #df9bc5; /* Soft pinkish boundary line */
+}
+
+/* Overlapping Avatar Circle */
+.user-icon-circle {
+  position: absolute;
+  left: 36px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background-color: #8a0a6f; /* Purple icon bg */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 6px rgba(223, 155, 197, 0.3); /* Perfect outer glow effect */
+  z-index: 3;
+}
+
+.user-avatar {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.user-name {
+  color: #8a0a6f; /* Purple Name */
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+}
+
+.stars-container {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 15px;
+}
+
+.star-icon {
+  color: #ffb606; /* Star Gold Color */
+  font-size: 14px;
+}
+
+.review-text {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Button Layout */
+.view-all-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-all-btn {
+  background-color: #8a0a6f;
+  color: #ffffff;
+  border: none;
+  padding: 12px 35px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #6d0758;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .testimonial-card {
+    max-width: 550px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .testimonials-section {
+    background: linear-gradient(to bottom, #2b253b 40%, #ffffff 40%);
+  }
+}
