@@ -193,10 +193,7 @@ export default function StudyAbroad() {
         </div>
       </section>
 
-      {/* Action Button to Scroll Up */}
-      <button className="floating-scroll-btn">
-        <ArrowUp size={22} />
-      </button>
+    
 
     </div>
   );

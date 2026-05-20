@@ -1,5 +1,5 @@
 :root {
-  --primary-purple: #7a1b64;
+  --primary-purple: #012819;
   --text-dark: #222222;
   --text-muted: #666666;
   --card-gap: 24px;
@@ -46,7 +46,7 @@ font-weight: 10;
   color:rgba(255, 255, 255, 0.7);
 }
 .who-we-are {
-  background-color: #261625;
+  background-color: #012819;;
   color: #ffffff;
   text-align: center;
   padding: 50px 20px;
@@ -145,7 +145,7 @@ font-weight: 10;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--primary-purple);
+  color:#012819;
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
@@ -154,7 +154,7 @@ font-weight: 10;
 .arrow-circle {
   width: 26px;
   height: 26px;
-  border: 1.5px solid var(--primary-purple);
+  border: 1.5px solid #012819;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -169,7 +169,7 @@ font-weight: 10;
 
 /* Hover Animations matching your recording */
 .destination-card:hover .arrow-circle {
-  background-color: var(--primary-purple);
+  background-color: #012819;
   color: #ffffff;
   transform: translateX(4px);
 }

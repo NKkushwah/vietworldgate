@@ -53,7 +53,7 @@
   color: #333;
 }
 .newsletter-form button {
-  background-color: #8a0a6f;
+  background-color: #012819;;
   color: #ffffff;
   border: none;
   padding: 10px 24px;
@@ -67,7 +67,7 @@
   transition: background-color 0.3s ease;
 }
 .newsletter-form button:hover {
-  background-color: #6d0758;
+  background-color: #012819;
 }
 
 /* Horizontal Divider */
@@ -119,6 +119,8 @@
 
 /* About Column Details */
 .footer-logo {
+    
+  mix-blend-mode: multiply;
   max-width: 80px;
   margin-bottom: 20px;
   display: block;

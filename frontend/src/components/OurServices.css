@@ -1,6 +1,6 @@
 /* Color Variables */
 :root {
-  --purple-brand: #7D0068;
+  --purple-brand: #012819;;
   --text-dark: #333333;
   --text-muted: #666666;
   --bg-light: #ffffff;
@@ -61,7 +61,7 @@
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(125, 0, 104, 0.08);
+  box-shadow: 0 15px 35px #012819;;
 }
 
 /* Image Wrappers & Asymmetric Border Cutout */
@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px #012819;;
   z-index: 2;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .btn-read-more:hover {
-  background-color: #5d004d;
+  background-color: #012819;;
 }
 
 /* ==========================================

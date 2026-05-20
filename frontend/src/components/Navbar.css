@@ -27,8 +27,8 @@ body{
 
   background:linear-gradient(
     90deg,
-    #2f2fd6,
-    #4f46e5
+    #012819,
+    #012819
   );
 
   display:flex;
@@ -102,7 +102,7 @@ body{
 
   border:none;
 
-  background:#a0007d;
+  background:#012819;
   color:white;
 
   font-size:17px;
@@ -115,7 +115,7 @@ body{
 }
 
 .search-box button:hover{
-  background:#850066;
+  background:#012819;
 }
 
 /* =========================
@@ -154,13 +154,15 @@ body{
   display:flex;
   align-items:center;
   gap:12px;
+  mix-blend-mode: multiply;
 }
 
 .logo-img{
   width:60px;
   height:60px;
-  object-fit:contain;
+
 }
+
 
 .logo-text{
   display:flex;
@@ -218,7 +220,7 @@ body{
 /* HOVER */
 
 .nav-links li:hover{
-  color:#a1007e;
+  color:#012819;
 }
 
 /* UNDERLINE EFFECT */
@@ -233,7 +235,7 @@ body{
   width:0%;
   height:2px;
 
-  background:#a1007e;
+  background:#012819;
 
   border-radius:20px;
 
@@ -311,7 +313,7 @@ body{
 .dropdown-menu li:hover{
   background:#f3e8ff;
 
-  color:#a1007e;
+  color:#012819;
 
   padding-left:28px;
 }
@@ -335,7 +337,7 @@ body{
   background:linear-gradient(
     135deg,
     #7c3aed,
-    #a21caf
+    #012819
   );
 
   color:white;

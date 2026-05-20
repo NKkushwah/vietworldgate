@@ -141,7 +141,7 @@
 /* TAG */
 
 .tag{
-  background:#a21caf;
+  background:#012819;
 
   padding:12px 24px;
 
@@ -246,7 +246,7 @@
 
 .appointment-box form input:focus,
 .appointment-box form textarea:focus{
-  border-color:#a1007e;
+  border-color:#012819;
 }
 
 /* TEXTAREA */
@@ -264,7 +264,7 @@
 
   padding:16px;
 
-  background:#a1007e;
+  background:#012819;
 
   color:white;
 
@@ -284,7 +284,7 @@
 /* HOVER */
 
 .appointment-box form button:hover{
-  background:#7b0061;
+  background:#012819;
 
   transform:translateY(-2px);
 }
@@ -333,7 +333,7 @@
 .stat-card h2{
   font-size:42px;
 
-  color:#a1007e;
+  color:#012819;
 
   margin-bottom:10px;
 }

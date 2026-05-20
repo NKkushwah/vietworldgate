@@ -1,7 +1,7 @@
 :root {
-  --purple-primary: #7D0068;
-  --purple-dark: #3a0030;
-  --purple-bg: #2d1127; 
+  --purple-primary:#012819;
+  --purple-dark:#012819;
+  --purple-bg: #012819;
   --purple-border-light: #EAD6E6; 
   --text-main: #2D3748;
   --text-body: #616E7C;
@@ -41,7 +41,7 @@
 }
 
 .section-title-light span {
-  color: var(--purple-primary);
+  color: #012819;
   font-style: italic;
   font-weight: 700;
 }
@@ -50,7 +50,7 @@
    SECTION 1: SUCCESS STORIES (TESTIMONIALS)
    =================================================== */
 .success-stories-section {
-  background-color: var(--purple-bg);
+  background-color:#012819;
   padding: 70px 20px;
 }
 
@@ -75,9 +75,9 @@
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  background-color: #501d43;
-  background-image: linear-gradient(45deg, #441638 25%, transparent 25%), 
-                    linear-gradient(-45deg, #441638 25%, transparent 25%), 
+  background-color:#012819;;
+  background-image: linear-gradient(45deg, #012819 25%, transparent 25%), 
+                    linear-gradient(-45deg, #012819 25%, transparent 25%), 
                     linear-gradient(45deg, transparent 75%, #441638 75%), 
                     linear-gradient(-45deg, transparent 75%, #441638 75%);
   background-size: 40px 40px;
@@ -130,7 +130,7 @@
 
 .testimonial-card:hover .play-btn-overlay {
   transform: scale(1.1);
-  background-color: #a20087;
+  background-color:#012819;
 }
 
 .student-name {
@@ -234,7 +234,7 @@
 }
 
 .meta-info-row .icon {
-  color: var(--purple-primary);
+  color: #012819;
   font-size: 1.1rem;
   margin-top: 1px;
 }
@@ -245,8 +245,8 @@
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffffff;
-  color: var(--purple-primary);
-  border: 2px solid var(--purple-primary);
+  color: #012819;
+  border: 2px solid #012819;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -261,7 +261,7 @@
 }
 
 .slider-arrow-btn:hover {
-  background-color: var(--purple-primary);
+  background-color: #012819;
   color: #ffffff;
 }
 
@@ -294,7 +294,7 @@
 }
 
 .btn-read-more-visit span.arrow-circle-visit {
-  background-color: var(--purple-primary);
+  background-color: #012819;
   color: #ffffff;
   width: 20px;
   height: 20px;
@@ -307,13 +307,13 @@
 }
 
 .visit-card:hover .btn-read-more-visit {
-  background-color: var(--purple-primary);
+  background-color: #012819;
   color: #ffffff;
 }
 
 .visit-card:hover .btn-read-more-visit span.arrow-circle-visit {
   background-color: #ffffff;
-  color: var(--purple-primary);
+  color: #012819;
   transform: translateX(2px);
 }
 
@@ -386,7 +386,7 @@
 }
 
 .timeline-step.active .icon-circle-wrapper {
-  background: var(--purple-primary);
+  background: #012819;
   color: #ffffff;
 }
 
@@ -418,13 +418,13 @@
 }
 
 .timeline-step.active .step-number-badge {
-  background-color: var(--purple-dark);
+  background-color:#012819;
 }
 
 .timeline-step:hover .icon-circle-wrapper {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(125,0,104,0.15);
-  border-color: var(--purple-dark);
+  border-color:#012819;
 }
 
 .timeline-step:hover .icon-circle-wrapper .step-icon {

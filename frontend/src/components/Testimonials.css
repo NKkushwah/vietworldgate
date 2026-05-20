@@ -76,7 +76,7 @@
   top: 10%;
   bottom: 10%;
   width: 2px;
-  background-color: #df9bc5; /* Soft pinkish boundary line */
+  background-color: #012819;; /* Soft pinkish boundary line */
 }
 
 /* Overlapping Avatar Circle */
@@ -87,7 +87,7 @@
   transform: translate(-50%, -50%);
   width: 42px;
   height: 42px;
-  background-color: #8a0a6f; /* Purple icon bg */
+  background-color: #012819;; /* Purple icon bg */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@
 }
 
 .user-name {
-  color: #8a0a6f; /* Purple Name */
+  color: #012819;; /* Purple Name */
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 5px 0;
@@ -137,7 +137,7 @@
 }
 
 .view-all-btn {
-  background-color: #8a0a6f;
+  background-color: #012819;;
   color: #ffffff;
   border: none;
   padding: 12px 35px;
@@ -150,7 +150,7 @@
 }
 
 .view-all-btn:hover {
-  background-color: #6d0758;
+  background-color: #012819;;
 }
 
 /* Responsive Grid */

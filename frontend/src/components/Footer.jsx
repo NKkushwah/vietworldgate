@@ -63,14 +63,11 @@ const Footer = () => {
           <div className="footer-col">
             <h4>VIET WORLDGATE</h4>
             <ul>
-              <li><a href="#india">VIET WORLDGATE India</a></li>
-              <li><a href="#bhutan">VIET WORLDGATE Bhutan</a></li>
-              <li><a href="#australia">VIET WORLDGATE Australia (Registered Office)</a></li>
-              <li><a href="#nepal-ktm">VIET WORLDGATE Nepal - Kathmandu</a></li>
-              <li><a href="#nepal-chitwan">VIET WORLDGATE Nepal - Chitwan</a></li>
-              <li><a href="#srilanka-cmb">VIET WORLDGATE Sri Lanka - Colombo</a></li>
-              <li><a href="#srilanka-kandy">VIET WORLDGATE Sri Lanka - Kandy</a></li>
-              <li><a href="#bangladesh">VIET WORLDGATE Bangladesh - Dhaka</a></li>
+              <li><a href="#india">VIET WORLDGATE Delhi</a></li>
+              <li><a href="#bhutan">VIET WORLDGATE Ghaziabad</a></li>
+              <li><a href="#australia">VIET WORLDGATE Noida(Registered Office)</a></li>
+              <li><a href="#nepal-ktm">VIET WORLDGATE International branch  Lodon</a></li>
+              
             </ul>
           </div>
 
@@ -95,7 +92,7 @@ const Footer = () => {
               <FaLocationDot className="contact-icon" />
               <div className="contact-info">
                 <strong>Address</strong>
-                <span>36, Block H, Sector 5, <br />Uttar Pradesh 201301 , Noida<br />Delhi, Delhi</span>
+                <span>36, Block H, Sector 63, <br />Uttar Pradesh 201301 , Noida<br />Delhi, Delhi</span>
               </div>
             </div>
             <div className="contact-item">
@@ -109,7 +106,7 @@ const Footer = () => {
               <FaRegEnvelope className="contact-icon" />
               <div className="contact-info">
                 <strong>Email Address</strong>
-                <a href="mailto:info@vietworldgate.com">admissions@vietworldgate.com</a>
+                <a href="mailto:info@vietworldgate.com">info@vietworldgate.com</a>
               </div>
             </div>
           </div>

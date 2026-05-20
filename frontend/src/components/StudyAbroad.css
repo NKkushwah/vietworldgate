@@ -1,6 +1,6 @@
 /* Color Variables for easy theme management */
 :root {
-  --brand-purple: #7D0068;
+  --brand-purple: #012819;;
   --brand-dark: #2C1B2A;
   --text-gray-dark: #333333;
   --text-gray-light: #666666;
@@ -95,7 +95,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #59004a;
+  background-color: #012819;;
   transform: translateY(-1px);
 }
 
@@ -114,8 +114,8 @@
 }
 
 .btn-secondary:hover {
-  background-color: #59004a;
-  box-shadow: 0 4px 6px rgba(125, 0, 104, 0.2);
+  background-color: #012819;;
+  box-shadow: 0 4px 6px #012819;;
 }
 
 .center-btn-wrapper {
@@ -312,7 +312,7 @@
 
 .floating-scroll-btn:hover {
   transform: scale(1.1);
-  background-color: #59004a;
+  background-color: #012819;;
 }
 
 

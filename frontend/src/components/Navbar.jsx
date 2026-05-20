@@ -10,13 +10,11 @@ function Navbar() {
 
           <span>Our New Branches In Kerala –</span>
 
-          <a href="#">Muvattupuzha</a>
-          <a href="#">Pala</a>
-          <a href="#">Thiruvalla</a>
-          <a href="#">Thodupuzha</a>
-          <a href="#">Thrissur</a>
-          <a href="#">Kochi</a>
-          <a href="#">Trivandrum</a>
+          <a href="#">Noida</a>
+          <a href="#">Ghaziabad</a>
+          <a href="#">Delhi</a>
+          <a href="#">International branch London</a>
+       
 
         </div>
 

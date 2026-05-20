@@ -19,7 +19,7 @@
 }
 
 .purple-italic {
-  color: #8a0a6f;
+  color:#012819;;
   font-style: italic;
   font-weight: 500;
 }
@@ -122,19 +122,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8a0a6f;
+  color: #012819;;
   font-size: 11px;
   transition: all 0.3s ease;
 }
 
 /* Active State Styles (Khulne par purple background) */
 .faq-item.active {
-  border-color: #8a0a6f;
+  border-color: #012819;;
   box-shadow: 0 4px 15px rgba(138, 10, 111, 0.1);
 }
 
 .faq-item.active .faq-header {
-  background: #8a0a6f; /* Solid Purple Background */
+  background: #012819;; /* Solid Purple Background */
 }
 
 .faq-item.active .faq-question {
@@ -144,7 +144,7 @@
 .faq-item.active .faq-toggle-icon {
   background-color: #ffffff;
   border-color: #ffffff;
-  color: #8a0a6f; /* Inner minus sign colored purple */
+  color: #012819;; /* Inner minus sign colored purple */
 }
 
 /* Body content configuration */
