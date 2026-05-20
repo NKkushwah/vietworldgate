@@ -126,8 +126,8 @@ function Navbar() {
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Delhi</li>
               <li onClick={closeMenu}>Noida</li>
-              <li onClick={closeMenu}>Lucknow</li>
-              <li onClick={closeMenu}>Mumbai</li>
+              <li onClick={closeMenu}>Ghaziabad</li>
+              <li onClick={closeMenu}>International branch london</li>
             </ul>
           </li>
 
