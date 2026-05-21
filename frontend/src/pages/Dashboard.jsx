@@ -80,7 +80,11 @@ function Dashboard() {
       // =========================
       const response = await fetch(
 
+<<<<<<< HEAD
         "https://vietworldgate-4-g8ns.onrender.com/api/appointments/book",
+=======
+        "https://vietworldgate-8.onrender.com/api/appointments/book",
+>>>>>>> 88210ed645c8e73eeaa5e7ffc82bf0c4b8fb3352
 
         {
 
