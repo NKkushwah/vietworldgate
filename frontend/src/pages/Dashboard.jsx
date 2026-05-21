@@ -23,7 +23,7 @@ function Dashboard() {
         <div className="hero-slider">
 
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070"
+            src="https://images.pexels.com/photos/7018490/pexels-photo-7018490.jpeg"
             alt="Study Abroad"
             className="slide"
           />
