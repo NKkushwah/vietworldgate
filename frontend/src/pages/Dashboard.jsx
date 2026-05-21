@@ -14,6 +14,157 @@ import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
 
 function Dashboard() {
+
+  // =========================
+  // FORM STATE
+  // =========================
+  const [formData, setFormData] = useState({
+
+    name: "",
+    email: "",
+    mobile: "",
+    city: "",
+    message: ""
+
+  });
+
+  // =========================
+  // LOADING STATE
+  // =========================
+  const [loading, setLoading] =
+    useState(false);
+
+  // =========================
+  // HANDLE INPUT CHANGE
+  // =========================
+  const handleChange = (e) => {
+
+    setFormData({
+
+      ...formData,
+
+      [e.target.name]:
+        e.target.value
+
+    });
+
+  };
+
+  // =========================
+  // HANDLE SUBMIT
+  // =========================
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    // MOBILE VALIDATION
+    if (formData.mobile.length < 10) {
+
+      alert(
+        "❌ Please Enter Valid Mobile Number"
+      );
+
+      return;
+
+    }
+
+    try {
+
+      // START LOADING
+      setLoading(true);
+
+      const response = await fetch(
+
+        "http://localhost:5000/api/appointments/book",
+
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "application/json"
+
+          },
+
+          body: JSON.stringify(
+            formData
+          )
+
+        }
+
+      );
+
+      // RESPONSE DATA
+      const data =
+        await response.json();
+
+      // =========================
+      // SUCCESS
+      // =========================
+      if (response.ok) {
+
+        alert(
+          "✅ Appointment Submitted Successfully"
+        );
+
+        // RESET FORM
+        setFormData({
+
+          name: "",
+          email: "",
+          mobile: "",
+          city: "",
+          message: ""
+
+        });
+
+      }
+
+      // =========================
+      // BACKEND ERROR
+      // =========================
+      else {
+
+        alert(
+
+          "❌ " +
+
+          (data.message ||
+
+          "Data Not Saved")
+
+        );
+
+      }
+
+    }
+
+    // =========================
+    // SERVER ERROR
+    // =========================
+    catch (error) {
+
+      console.log(error);
+
+      alert(
+
+        "❌ Server Error! Please Try Again"
+
+      );
+
+    }
+
+    finally {
+
+      // STOP LOADING
+      setLoading(false);
+
+    }
+
+  };
+
   return (
 
     <>
