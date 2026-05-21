@@ -2,64 +2,127 @@ const nodemailer = require("nodemailer");
 
 const sendMail = async (data) => {
 
-  const transporter =
-    nodemailer.createTransport({
+  try {
 
-      service: "gmail",
+    // =========================
+    // CREATE TRANSPORTER
+    // =========================
+    const transporter =
+      nodemailer.createTransport({
 
-      auth: {
+        host: "smtp.gmail.com",
 
-        user: process.env.EMAIL_USER,
+        port: 587,
 
-        pass: process.env.EMAIL_PASS
+        secure: false,
 
-      }
+        auth: {
 
-    });
+          user:
+            process.env.EMAIL_USER,
 
-  const mailOptions = {
+          pass:
+            process.env.EMAIL_PASS
 
-    from: process.env.EMAIL_USER,
+        }
 
-    to: process.env.RECEIVER_EMAIL,
+      });
 
-    subject: "New Appointment Form",
+    // =========================
+    // MAIL OPTIONS
+    // =========================
+    const mailOptions = {
 
-    html: `
+      from: process.env.EMAIL_USER,
 
-      <h2>New Appointment Received</h2>
+      to: process.env.RECEIVER_EMAIL,
 
-      <p>
-        <strong>Name:</strong>
-        ${data.name}
-      </p>
+      subject:
+        "New Appointment Form",
 
-      <p>
-        <strong>Email:</strong>
-        ${data.email}
-      </p>
+      html: `
 
-      <p>
-        <strong>Mobile:</strong>
-        ${data.mobile}
-      </p>
+        <div style="
+          font-family: Arial;
+          padding:20px;
+          background:#f4f4f4;
+        ">
 
-      <p>
-        <strong>City:</strong>
-        ${data.city}
-      </p>
+          <div style="
+            max-width:600px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+          ">
 
-      <p>
-        <strong>Message:</strong>
-        ${data.message}
-      </p>
+            <h2 style="
+              color:#1e3a8a;
+              margin-bottom:20px;
+            ">
+              New Appointment Received
+            </h2>
 
-    `
-  };
+            <p>
+              <strong>Name:</strong>
+              ${data.name}
+            </p>
 
-  await transporter.sendMail(
-    mailOptions
-  );
+            <p>
+              <strong>Email:</strong>
+              ${data.email}
+            </p>
+
+            <p>
+              <strong>Mobile:</strong>
+              ${data.mobile}
+            </p>
+
+            <p>
+              <strong>City:</strong>
+              ${data.city}
+            </p>
+
+            <p>
+              <strong>Message:</strong>
+              ${data.message}
+            </p>
+
+          </div>
+
+        </div>
+
+      `
+
+    };
+
+    // =========================
+    // SEND MAIL
+    // =========================
+    const info =
+      await transporter.sendMail(
+        mailOptions
+      );
+
+    console.log(
+      "Email Sent:",
+      info.response
+    );
+
+    return true;
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Mail Error:",
+      error.message
+    );
+
+    return false;
+
+  }
 
 };
 
