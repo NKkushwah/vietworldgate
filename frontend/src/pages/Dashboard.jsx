@@ -1,7 +1,10 @@
+import React, { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import "./Dashboard.css";
+
 import Testimonials from "../components/Testimonials";
 import FaqSection from "../components/FaqSection";
 import StudyAbroad from "../components/StudyAbroad";
@@ -10,21 +13,16 @@ import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
 import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
 
-
 function Dashboard() {
-
-
-
-
-  
   return (
+
     <>
       <Navbar />
 
       {/* HERO SECTION */}
       <section className="hero-section">
 
-        {/* SLIDER BACKGROUND */}
+        {/* SLIDER */}
         <div className="hero-slider">
 
           <img
@@ -50,25 +48,35 @@ function Dashboard() {
         {/* OVERLAY */}
         <div className="hero-overlay"></div>
 
-        {/* HERO CONTENT WRAPPER */}
+        {/* HERO CONTENT */}
         <div className="hero-content">
 
           {/* LEFT CONTENT */}
           <div className="hero-left">
 
             <span className="tag">
-              POST STUDY WORK RIGHT – AUSTRALIA, UK, CANADA
+
+              POST STUDY WORK RIGHT
+              – AUSTRALIA, UK, CANADA
+
             </span>
 
             <h1>
+
               Extend your stay and work
+
               <br />
+
               after Graduation
+
             </h1>
 
             <p>
-              Explore world-class universities and build your future
-              with global education opportunities.
+
+              Explore world-class universities
+              and build your future with
+              global education opportunities.
+
             </p>
 
           </div>
@@ -76,36 +84,84 @@ function Dashboard() {
           {/* RIGHT FORM */}
           <div className="appointment-box">
 
-            <h3>Book your Appointment</h3>
+            <h3>
 
-            <form>
+              Book your Appointment
 
+            </h3>
+
+            <form onSubmit={handleSubmit}>
+
+              {/* NAME */}
               <input
                 type="text"
-                placeholder="Name"
+                name="name"
+                placeholder="Enter Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
 
+              {/* EMAIL */}
               <input
                 type="email"
-                placeholder="Email"
+                name="email"
+                placeholder="Enter Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
 
+              {/* MOBILE */}
+              <input
+                type="tel"
+                name="mobile"
+                placeholder="Enter Mobile Number"
+                value={formData.mobile}
+                onChange={handleChange}
+                required
+                maxLength="10"
+              />
+
+              {/* CITY */}
               <input
                 type="text"
-                placeholder="Mobile"
+                name="city"
+                placeholder="Enter Your City"
+                value={formData.city}
+                onChange={handleChange}
+                required
               />
 
-              <input
-                type="text"
-                placeholder="City"
-              />
-
+              {/* MESSAGE */}
               <textarea
-                placeholder="Message"
+                name="message"
+                placeholder="Write Your Message..."
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
               ></textarea>
 
-              <button type="submit">
-                BOOK NOW
+              {/* BUTTON */}
+              <button
+                type="submit"
+                disabled={loading}
+              >
+
+                {
+
+                  loading
+
+                  ?
+
+                  "Submitting..."
+
+                  :
+
+                  "BOOK NOW"
+
+                }
+
               </button>
 
             </form>
@@ -122,39 +178,76 @@ function Dashboard() {
         <div className="stats-container">
 
           <div className="stat-card">
+
             <h2>400+</h2>
-            <p>Institutions Worldwide</p>
+
+            <p>
+
+              Institutions Worldwide
+
+            </p>
+
           </div>
 
           <div className="stat-card">
+
             <h2>39+</h2>
-            <p>Branches</p>
+
+            <p>
+
+              Branches
+
+            </p>
+
           </div>
 
           <div className="stat-card">
+
             <h2>44600+</h2>
-            <p>Students Placed</p>
+
+            <p>
+
+              Students Placed
+
+            </p>
+
           </div>
 
           <div className="stat-card">
+
             <h2>28+</h2>
-            <p>Years Experience</p>
+
+            <p>
+
+              Years Experience
+
+            </p>
+
           </div>
-         
+
         </div>
 
       </section>
+
       <StudyDestinations />
+
       <StudyAbroadLayouts />
+
       <StudyAbroadFeatures />
+
       <OurServices />
+
       <StudyAbroad />
+
       <Testimonials />
+
       <FaqSection />
 
       <Footer />
     </>
+
   );
+
 }
 
 export default Dashboard;
