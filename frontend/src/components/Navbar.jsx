@@ -74,7 +74,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 1 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 1)}
           >
-            About Us <span className="arrow">▼</span>
+            About Us 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Company Profile</li>
               <li onClick={closeMenu}>Our Team</li>
@@ -88,7 +88,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 2 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 2)}
           >
-            Services <span className="arrow">▼</span>
+            Services 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Study Abroad</li>
               <li onClick={closeMenu}>Visa Assistance</li>
@@ -102,7 +102,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 3 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 3)}
           >
-            Destinations <span className="arrow">▼</span>
+            Destinations 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Canada</li>
               <li onClick={closeMenu}>Australia</li>
@@ -119,7 +119,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 4 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 4)}
           >
-            Branches <span className="arrow">▼</span>
+            Branches 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Delhi</li>
               <li onClick={closeMenu}>Noida</li>
@@ -135,7 +135,7 @@ function Navbar() {
             className={`dropdown ${activeDropdown === 5 ? "drop-active" : ""}`} 
             onClick={(e) => handleDropdownClick(e, 5)}
           >
-            Events <span className="arrow">▼</span>
+            Events
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Upcoming Events</li>
               <li onClick={closeMenu}>Seminars</li>

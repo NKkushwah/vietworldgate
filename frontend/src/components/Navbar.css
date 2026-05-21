@@ -4,6 +4,10 @@
    GLOBAL & FIXES
 ========================= */
 * {
+  
+ 
+  
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,6 +20,7 @@ html, body {
   overflow-x: hidden;
   background: #f8fafc;
   position: relative;
+
 }
 
 /* Indicators for dropdowns */
@@ -113,7 +118,8 @@ html, body {
   align-items: center;
   padding: 0 5%;
   border-bottom: 1px solid #e5e7eb;
-  position: sticky;
+  position:fixed;
+  
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
