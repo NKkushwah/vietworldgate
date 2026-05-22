@@ -29,7 +29,7 @@ function Navbar() {
       {/* TOP HEADER */}
       <div className="top-header">
         <div className="top-left">
-          <span>Our New Branches In Kerala –</span>
+          <span>Our New Branches In India –</span>
           <a href="#">Noida</a>
           <a href="#">Ghaziabad</a>
           <a href="#">Delhi</a>
