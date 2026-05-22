@@ -57,7 +57,9 @@ function Dashboard() {
 
     e.preventDefault();
 
+    // =========================
     // MOBILE VALIDATION
+    // =========================
     if (formData.mobile.length < 10) {
 
       alert(
@@ -73,9 +75,12 @@ function Dashboard() {
       // START LOADING
       setLoading(true);
 
+      // =========================
+      // API CALL
+      // =========================
       const response = await fetch(
 
-        "https://vietworldgate-8.onrender.com/api/appointments/book",
+        "https://vietworldgate-4-g8ns.onrender.com/api/appointments/book",
 
         {
 
@@ -84,6 +89,9 @@ function Dashboard() {
           headers: {
 
             "Content-Type":
+              "application/json",
+
+            Accept:
               "application/json"
 
           },
@@ -96,61 +104,67 @@ function Dashboard() {
 
       );
 
+      // =========================
+      // HANDLE INVALID RESPONSE
+      // =========================
+      if (!response.ok) {
+
+        const errorText =
+          await response.text();
+
+        throw new Error(
+          errorText ||
+          "Failed To Submit Form"
+        );
+
+      }
+
+      // =========================
       // RESPONSE DATA
+      // =========================
       const data =
         await response.json();
 
-      // =========================
-      // SUCCESS
-      // =========================
-      if (response.ok) {
-
-        alert(
-          "✅ Appointment Submitted Successfully"
-        );
-
-        // RESET FORM
-        setFormData({
-
-          name: "",
-          email: "",
-          mobile: "",
-          city: "",
-          message: ""
-
-        });
-
-      }
+      console.log(
+        "Success:",
+        data
+      );
 
       // =========================
-      // BACKEND ERROR
+      // SUCCESS ALERT
       // =========================
-      else {
+      alert(
+        "✅ Appointment Submitted Successfully"
+      );
 
-        alert(
+      // =========================
+      // RESET FORM
+      // =========================
+      setFormData({
 
-          "❌ " +
+        name: "",
+        email: "",
+        mobile: "",
+        city: "",
+        message: ""
 
-          (data.message ||
-
-          "Data Not Saved")
-
-        );
-
-      }
+      });
 
     }
 
     // =========================
-    // SERVER ERROR
+    // ERROR HANDLING
     // =========================
     catch (error) {
 
-      console.log(error);
+      console.error(
+        "Fetch Error:",
+        error
+      );
 
       alert(
 
-        "❌ Server Error! Please Try Again"
+        "❌ Unable To Connect Server. Please Try Again."
 
       );
 
@@ -303,13 +317,13 @@ function Dashboard() {
 
                   loading
 
-                  ?
+                    ?
 
-                  "Submitting..."
+                    "Submitting..."
 
-                  :
+                    :
 
-                  "BOOK NOW"
+                    "BOOK NOW"
 
                 }
 
