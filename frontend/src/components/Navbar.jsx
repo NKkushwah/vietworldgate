@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -216,8 +217,8 @@ function Navbar() {
         >
 
           {/* HOME */}
-          <li onClick={closeMenu}>
-            Home
+          <li>
+            <Link to="/">Home</Link>
           </li>
 
           {/* ABOUT */}
@@ -484,9 +485,9 @@ function Navbar() {
             Careers
           </li>
 
-          <li onClick={closeMenu}>
-            Contact Us
-          </li>
+         <li>
+  <Link to="/contact-us">Contact Us</Link>
+</li>
 
         </ul>
 

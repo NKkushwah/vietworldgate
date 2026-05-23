@@ -123,12 +123,12 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: var(--purple-primary);
+  background-color: var(#012819);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #201f1f;
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
@@ -146,7 +146,7 @@
 }
 
 .student-name {
-  color: #ffffff;
+  color: #012819;
   font-size: 1.1rem;
   font-weight: 500;
   margin: 18px 0 0 0;
@@ -157,7 +157,7 @@
    SECTION 2: UPCOMING UNIVERSITY VISITS (SLIDER MODE)
    =================================================== */
 .university-visits-section {
-  background-color: var(--purple-dark);
+  background-color: var(--dark-green);
   padding: 70px 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
   position: relative;

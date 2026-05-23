@@ -17,24 +17,14 @@ export default function StudyAbroadLayouts() {
   // TESTIMONIALS
   // =========================
   const testimonials = [
+   
     {
       id: 1,
-      name: "Amakanch Prashant Dhanek",
-      img: logo1,
-      isVideo: false
-    },
-    {
-      id: 2,
-      name: "Jagriti Prakash",
+      name: "Vibhu Patel",
       img: logo3, 
       isVideo: true 
     },
-    {
-      id: 3,
-      name: "Celebrating the visa grant",
-      img: logo2,
-      isVideo: false
-    },
+  
   ];
 
   // =========================
