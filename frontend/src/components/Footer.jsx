@@ -121,7 +121,7 @@ const Footer = () => {
               <FaMobileScreenButton className="contact-icon" />
               <div className="contact-info">
                 <strong>Phone</strong>
-                <span>+91 79822 95530</span>
+                <span>+447500494401</span>
               </div>
             </div>
 
