@@ -42,14 +42,8 @@ function Navbar() {
         setActiveDropdown(
 
           activeDropdown === index
-
-            ?
-
-            null
-
-            :
-
-            index
+            ? null
+            : index
 
         );
 
@@ -76,11 +70,48 @@ function Navbar() {
       <div className="top-header">
 
         <div className="top-left">
-          <span>Our New Branches In India –</span>
-          <a href="#">Noida</a>
-          <a href="#">Ghaziabad</a>
-          <a href="#">Delhi</a>
-          <a href="#">International branch London</a>
+
+          <span className="branch-heading">
+
+            Our New Branches In India –
+
+          </span>
+
+          <a href="#">
+
+            Noida
+
+          </a>
+
+          <a href="#">
+
+            Ghaziabad
+
+          </a>
+
+          <a href="#">
+
+            Delhi
+
+          </a>
+
+          {/* INTERNATIONAL BRANCH */}
+          <div className="international-branch">
+
+            <span className="branch-heading">
+
+              International Branch  –
+
+            </span>
+
+            <span className="london-text">
+
+              OXFORD STREET, LONDON
+
+            </span>
+
+          </div>
+
         </div>
 
         {/* SEARCH */}
@@ -130,32 +161,18 @@ function Navbar() {
         {/* MOBILE MENU BUTTON */}
         <div
 
-          className={
-
-            `mobile-menu ${
-
-              isMenuOpen
-
-                ?
-
-                "open"
-
-                :
-
-                ""
-
-            }`
-
-          }
+          className={`mobile-menu ${
+            isMenuOpen
+              ? "open"
+              : ""
+          }`}
 
           onClick={toggleMenu}
 
         >
 
           <span></span>
-
           <span></span>
-
           <span></span>
 
         </div>
@@ -163,27 +180,14 @@ function Navbar() {
         {/* NAV LINKS */}
         <ul
 
-          className={
-
-            `nav-links ${
-
-              isMenuOpen
-
-                ?
-
-                "nav-active"
-
-                :
-
-                ""
-
-            }`
-
-          }
+          className={`nav-links ${
+            isMenuOpen
+              ? "nav-active"
+              : ""
+          }`}
 
         >
 
-          {/* HOME */}
           <li onClick={closeMenu}>
             Home
           </li>
@@ -191,28 +195,14 @@ function Navbar() {
           {/* ABOUT */}
           <li
 
-            className={
-
-              `dropdown ${
-
-                activeDropdown === 1
-
-                  ?
-
-                  "drop-active"
-
-                  :
-
-                  ""
-
-              }`
-
-            }
+            className={`dropdown ${
+              activeDropdown === 1
+                ? "drop-active"
+                : ""
+            }`}
 
             onClick={(e) =>
-
               handleDropdownClick(e, 1)
-
             }
 
           >
@@ -244,28 +234,14 @@ function Navbar() {
           {/* SERVICES */}
           <li
 
-            className={
-
-              `dropdown ${
-
-                activeDropdown === 2
-
-                  ?
-
-                  "drop-active"
-
-                  :
-
-                  ""
-
-              }`
-
-            }
+            className={`dropdown ${
+              activeDropdown === 2
+                ? "drop-active"
+                : ""
+            }`}
 
             onClick={(e) =>
-
               handleDropdownClick(e, 2)
-
             }
 
           >
@@ -297,28 +273,14 @@ function Navbar() {
           {/* DESTINATIONS */}
           <li
 
-            className={
-
-              `dropdown ${
-
-                activeDropdown === 3
-
-                  ?
-
-                  "drop-active"
-
-                  :
-
-                  ""
-
-              }`
-
-            }
+            className={`dropdown ${
+              activeDropdown === 3
+                ? "drop-active"
+                : ""
+            }`}
 
             onClick={(e) =>
-
               handleDropdownClick(e, 3)
-
             }
 
           >
@@ -351,7 +313,6 @@ function Navbar() {
 
           </li>
 
-          {/* SCHOLARSHIPS */}
           <li onClick={closeMenu}>
             Scholarships
           </li>
@@ -359,28 +320,14 @@ function Navbar() {
           {/* BRANCHES */}
           <li
 
-            className={
-
-              `dropdown ${
-
-                activeDropdown === 4
-
-                  ?
-
-                  "drop-active"
-
-                  :
-
-                  ""
-
-              }`
-
-            }
+            className={`dropdown ${
+              activeDropdown === 4
+                ? "drop-active"
+                : ""
+            }`}
 
             onClick={(e) =>
-
               handleDropdownClick(e, 4)
-
             }
 
           >
@@ -409,7 +356,6 @@ function Navbar() {
 
           </li>
 
-          {/* GALLERY */}
           <li onClick={closeMenu}>
             Gallery
           </li>
@@ -417,28 +363,14 @@ function Navbar() {
           {/* EVENTS */}
           <li
 
-            className={
-
-              `dropdown ${
-
-                activeDropdown === 5
-
-                  ?
-
-                  "drop-active"
-
-                  :
-
-                  ""
-
-              }`
-
-            }
+            className={`dropdown ${
+              activeDropdown === 5
+                ? "drop-active"
+                : ""
+            }`}
 
             onClick={(e) =>
-
               handleDropdownClick(e, 5)
-
             }
 
           >
@@ -463,7 +395,6 @@ function Navbar() {
 
           </li>
 
-          {/* OTHER LINKS */}
           <li onClick={closeMenu}>
             Find a Course
           </li>

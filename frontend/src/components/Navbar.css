@@ -35,36 +35,119 @@ body {
 /* =========================
    TOP HEADER
 ========================= */
-.top-header {
-  width: 100%;
-  height: 50px;
-  background: #012819;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  color: white;
+.top-header{
 
-  position: fixed;   /* 🔥 FIX */
-  top: 0;
-  left: 0;
-  z-index: 1001;
+  width:100%;
+  height:50px;
+
+  background:#012819;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 5%;
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  z-index:1001;
 }
 
-.top-left {
-  display: flex;
-  gap: 25px;
-  font-size: 14px;
-  flex-wrap: wrap;
+.top-left{
+
+  display:flex;
+  align-items:center;
+  gap:25px;
+
+  flex-wrap:wrap;
 }
 
-.top-left span {
-  font-weight: 700;
+.branch-heading{
+
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
 }
 
-.top-left a {
-  text-decoration: none;
-  color: white;
+.top-left a{
+
+  text-decoration:none;
+  color:#fff;
+
+  font-size:14px;
+  font-weight:500;
+
+  transition:0.3s;
+}
+
+.top-left a:hover{
+
+  color:#25D366;
+}
+
+/* INTERNATIONAL BRANCH */
+.international-branch{
+
+  display:flex;
+  align-items:center;
+
+  gap:6px;
+
+  margin-left:60px;
+}
+
+/* LONDON */
+.london-text{
+
+  font-size:14px;
+
+  font-weight:500;
+
+  color:white;
+}
+
+/* SEARCH BOX */
+.search-box{
+
+  display:flex;
+
+  align-items:center;
+
+  background:#fff;
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+.search-box input{
+
+  border:none;
+
+  outline:none;
+
+  padding:10px 15px;
+
+  font-size:14px;
+
+  width:200px;
+}
+
+.search-box button{
+
+  border:none;
+
+  background:#25D366;
+
+  color:#fff;
+
+  padding:10px 16px;
+
+  cursor:pointer;
+
+  font-size:16px;
 }
 
 /* =========================

@@ -131,52 +131,45 @@ body{
 }
 
 /* =========================
-   FORM
+   WHATSAPP CONTACT BOX
 ========================= */
 
-.appointment-box{
-  width:380px;
-  max-width:100%;
-  background:white;
-  padding:40px;
-  border-radius:20px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.25);
+.whatsapp-contact{
+  text-align:center;
+  padding:20px;
 }
 
-.appointment-box h3{
+.whatsapp-contact h3{
+  font-size:32px;
+  margin-bottom:20px;
+  color:#fff;
+  font-weight:700;
+}
+
+.whatsapp-contact p{
+  color:#e2e8f0;
   margin-bottom:30px;
-  font-size:25px;
+  line-height:1.7;
+  font-size:16px;
 }
 
-.appointment-box form{
-  display:flex;
-  flex-direction:column;
-}
-
-.appointment-box input,
-.appointment-box textarea{
-  width:100%;
-  padding:15px 10px;
-  border:none;
-  border-bottom:2px solid #ddd;
-  outline:none;
-  background:transparent;
-}
-
-.appointment-box textarea{
-  height:100px;
-}
-
-.appointment-box button{
-  margin-top:15px;
-  padding:16px;
+.whatsapp-btn{
+  display:inline-block;
   background:#012819;
-  color:white;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
+  color:#fff;
+  padding:16px 40px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:700;
+  transition:0.3s ease;
+  box-shadow:0 10px 25px rgba(37,211,102,0.4);
 }
 
+.whatsapp-btn:hover{
+  transform:translateY(-5px);
+  background:#1ebe5d;
+}
 /* =========================
    STATS
 ========================= */

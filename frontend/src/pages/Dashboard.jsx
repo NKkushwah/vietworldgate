@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -14,170 +14,6 @@ import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
 
 function Dashboard() {
-
-  // =========================
-  // FORM STATE
-  // =========================
-  const [formData, setFormData] = useState({
-
-    name: "",
-    email: "",
-    mobile: "",
-    city: "",
-    message: ""
-
-  });
-
-  // =========================
-  // LOADING STATE
-  // =========================
-  const [loading, setLoading] =
-    useState(false);
-
-  // =========================
-  // HANDLE INPUT CHANGE
-  // =========================
-  const handleChange = (e) => {
-
-    setFormData({
-
-      ...formData,
-
-      [e.target.name]:
-        e.target.value
-
-    });
-
-  };
-
-  // =========================
-  // HANDLE SUBMIT
-  // =========================
-  const handleSubmit = async (e) => {
-
-    e.preventDefault();
-
-    // =========================
-    // MOBILE VALIDATION
-    // =========================
-    if (formData.mobile.length < 10) {
-
-      alert(
-        "❌ Please Enter Valid Mobile Number"
-      );
-
-      return;
-
-    }
-
-    try {
-
-      // START LOADING
-      setLoading(true);
-
-      // =========================
-      // API CALL
-      // =========================
-      const response = await fetch(
-
-        "https://vietworldgate-4-g8ns.onrender.com/api/appointments/book",
-
-        {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type":
-              "application/json",
-
-            Accept:
-              "application/json"
-
-          },
-
-          body: JSON.stringify(
-            formData
-          )
-
-        }
-
-      );
-
-      // =========================
-      // HANDLE INVALID RESPONSE
-      // =========================
-      if (!response.ok) {
-
-        const errorText =
-          await response.text();
-
-        throw new Error(
-          errorText ||
-          "Failed To Submit Form"
-        );
-
-      }
-
-      // =========================
-      // RESPONSE DATA
-      // =========================
-      const data =
-        await response.json();
-
-      console.log(
-        "Success:",
-        data
-      );
-
-      // =========================
-      // SUCCESS ALERT
-      // =========================
-      alert(
-        "✅ Appointment Submitted Successfully"
-      );
-
-      // =========================
-      // RESET FORM
-      // =========================
-      setFormData({
-
-        name: "",
-        email: "",
-        mobile: "",
-        city: "",
-        message: ""
-
-      });
-
-    }
-
-    // =========================
-    // ERROR HANDLING
-    // =========================
-    catch (error) {
-
-      console.error(
-        "Fetch Error:",
-        error
-      );
-
-      alert(
-
-        "❌ Unable To Connect Server. Please Try Again."
-
-      );
-
-    }
-
-    finally {
-
-      // STOP LOADING
-      setLoading(false);
-
-    }
-
-  };
 
   return (
 
@@ -222,7 +58,7 @@ function Dashboard() {
             <span className="tag">
 
               POST STUDY WORK RIGHT
-              – AUTSTRALIA, UK, NEWZELAND, JAPAN, RUSSIA
+              – AUSTRALIA, UK, NEW ZEALAND, JAPAN, RUSSIA
 
             </span>
 
@@ -246,90 +82,42 @@ function Dashboard() {
 
           </div>
 
-          {/* RIGHT FORM */}
+          {/* RIGHT WHATSAPP BOX */}
           <div className="appointment-box">
 
-            <h3>
+            <div className="whatsapp-contact">
 
-              Book your Appointment
+              <h3>
 
-            </h3>
+                Talk With Our Expert
 
-            <form onSubmit={handleSubmit}>
+              </h3>
 
-              {/* NAME */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+              <p>
 
-              {/* EMAIL */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+                Get free counselling for study abroad,
+                visa guidance, admission process,
+                and career opportunities abroad.
 
-              {/* MOBILE */}
-              <input
-                type="tel"
-                name="mobile"
-                placeholder="Enter Mobile Number"
-                value={formData.mobile}
-                onChange={handleChange}
-                required
-                maxLength="10"
-              />
+              </p>
 
-              {/* CITY */}
-              <input
-                type="text"
-                name="city"
-                placeholder="Enter Your City"
-                value={formData.city}
-                onChange={handleChange}
-                required
-              />
+              <a
 
-              {/* MESSAGE */}
-              <textarea
-                name="message"
-                placeholder="Write Your Message..."
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-              ></textarea>
+                href="https://wa.me/7982295530?text=Hello%20I%20want%20to%20know%20about%20study%20abroad"
 
-              {/* BUTTON */}
-              <button
-                type="submit"
-                disabled={loading}
+                target="_blank"
+
+                rel="noreferrer"
+
+                className="whatsapp-btn"
+
               >
 
-                {
+                CONTACT NOW
 
-                  loading
+              </a>
 
-                    ?
-
-                    "Submitting..."
-
-                    :
-
-                    "BOOK NOW"
-
-                }
-
-              </button>
-
-            </form>
+            </div>
 
           </div>
 
