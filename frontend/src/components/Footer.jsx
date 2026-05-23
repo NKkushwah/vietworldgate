@@ -50,7 +50,7 @@ const Footer = () => {
               alt="VIET WORLDGATE Logo" 
               className="footer-logo" 
             />
-            <p>VIET WORLDGATE is one of the largest international student recruitment companies in South Asia. In the last 28 years, through our vast network of over 400+ Institutions worldwide & 39 Branches, we have placed 44600 + students all over the world.</p>
+            <p>VIET WORLDGATE is one of the largest international student recruitment companies in South Asia. In the last 6+ years, through our vast network of over 200+ Institutions worldwide & 7+ Branches, we have placed 2600+ students all over the world.</p>
             <div className="social-icons">
               <a href="#facebook" aria-label="Facebook"><FaFacebookF /></a>
               <a href="#instagram" aria-label="Instagram"><FaInstagram /></a>
@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="footer-bottom-divider"></div>
         <div className="footer-bottom">
           <div className="copyright">
-            Copyright © 2020 All Rights Reserved. VXL India Edu Centre Pvt. Ltd .
+            Copyright © 2020 All Rights Reserved. VIET WORLDGATE Pvt. Ltd . compony
           </div>
           <div className="footer-bottom-links">
             <a href="#about">About Us</a>

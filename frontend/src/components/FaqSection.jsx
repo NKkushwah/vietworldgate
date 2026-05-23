@@ -13,11 +13,11 @@ const FaqSection = () => {
     },
     {
       question: "How long has VIET WORLDGATE been in operation?",
-      answer: "VIET WORLDGATE has been successfully guiding students for over 28 years with a massive network of global institution partners."
+      answer: "VIET WORLDGATE has been successfully guiding students for over 6+ years with a massive network of global institution partners."
     },
     {
       question: "Which countries does VIET WORLDGATE assist with for overseas education?",
-      answer: "We offer comprehensive guidance for top study destinations including Australia, UK, Canada, New Zealand, USA, Ireland, and more."
+      answer: "We offer comprehensive guidance for top study destinations including Australia, UK, Canada, New Zealand, Germany, Italy, Japan, USA, Ireland, and more."
     },
     {
       question: "How can VIET WORLDGATE help me choose the right university?",

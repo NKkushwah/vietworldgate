@@ -107,7 +107,7 @@ export default function StudyAbroadFeatures() {
             If you're searching for a "study abroad consultant near me", just locate your city branch 
             on our website and book an appointment. Our local presence ensures you get in-person 
             counselling, local support and a trusted partner in your neighbourhood. Whether you're 
-            in Delhi, Mumbai, Pune, Hyderabad or any other city, we're right there to help.
+            in Delhi,  Ghaziabad, Noida or any other city, we're right there to help.
           </p>
         </div>
       </section>
