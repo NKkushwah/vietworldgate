@@ -118,7 +118,7 @@ export default function StudyAbroadFeatures() {
          ========================================== */}
       <section className="steps-section">
         <div className="section-header-center">
-          <span className="sub-tag">VIEC EXPERTISE</span>
+          <span className="sub-tag">VIET WORLDGATE EXPERTISE</span>
           <h2>Easy Steps to <span className="purple-highlight italic-bold">Study Abroad</span></h2>
         </div>
 

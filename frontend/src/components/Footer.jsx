@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css'; 
+import logo from '../assets/vietworldgate1.png';
 import { 
   FaRegEnvelopeOpen, 
   FaArrowRight, 
@@ -45,7 +46,7 @@ const Footer = () => {
           {/* Column 1: About */}
           <div className="footer-col">
             <img 
-              src="/src/assets/vietworldgate.png" 
+              src={logo} 
               alt="VIET WORLDGATE Logo" 
               className="footer-logo" 
             />
@@ -64,10 +65,9 @@ const Footer = () => {
             <h4>VIET WORLDGATE</h4>
             <ul>
               <li><a href="#india">VIET WORLDGATE Delhi</a></li>
-              <li><a href="#bhutan">VIET WORLDGATE Ghaziabad</a></li>
-              <li><a href="#australia">VIET WORLDGATE Noida(Registered Office)</a></li>
-              <li><a href="#nepal-ktm">VIET WORLDGATE International branch  Lodon</a></li>
-              
+              <li><a href="#bhutan">VIET WORLDGATE Ghaziabad(Registered Office)</a></li>
+              <li><a href="#australia">VIET WORLDGATE Noida</a></li>
+              <li><a href="#nepal-ktm">VIET WORLDGATE International branch London</a></li>
             </ul>
           </div>
 
@@ -88,13 +88,17 @@ const Footer = () => {
           {/* Column 4: Contact */}
           <div className="footer-col">
             <h4>GET IN TOUCH</h4>
+            
+            {/* Domestic Address */}
             <div className="contact-item">
               <FaLocationDot className="contact-icon" />
               <div className="contact-info">
-                <strong>Address</strong>
+                <strong>Domestic Address</strong>
                 <span>36, Block H, Sector 63, <br />Uttar Pradesh 201301 , Noida<br />Delhi, Delhi</span>
               </div>
             </div>
+
+            {/* Domestic Phone */}
             <div className="contact-item">
               <FaMobileScreenButton className="contact-icon" />
               <div className="contact-info">
@@ -102,6 +106,26 @@ const Footer = () => {
                 <span>+91 79822 95530</span>
               </div>
             </div>
+
+            {/* International Address */}
+            <div className="contact-item">
+              <FaLocationDot className="contact-icon" />
+              <div className="contact-info">
+                <strong>International Address</strong>
+                <span>401, A Oxford <br />Street London<br />United Kingdom</span>
+              </div>
+            </div>
+
+            {/* International Phone */}
+            <div className="contact-item">
+              <FaMobileScreenButton className="contact-icon" />
+              <div className="contact-info">
+                <strong>Phone</strong>
+                <span>+91 79822 95530</span>
+              </div>
+            </div>
+
+            {/* Email Address */}
             <div className="contact-item">
               <FaRegEnvelope className="contact-icon" />
               <div className="contact-info">
@@ -110,13 +134,14 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Bottom Copyright Section */}
         <div className="footer-bottom-divider"></div>
         <div className="footer-bottom">
           <div className="copyright">
-            Copyright © 2025 All Rights Reserved. VXL India Edu Centre Pvt. Ltd .
+            Copyright © 2020 All Rights Reserved. VXL India Edu Centre Pvt. Ltd .
           </div>
           <div className="footer-bottom-links">
             <a href="#about">About Us</a>
@@ -124,11 +149,14 @@ const Footer = () => {
             <a href="#privacy">Privacy Policy</a>
             <a href="#branches">Branches</a>
           </div>
+          
+          {/* Scroll to Top Trigger */}
+          <a href="#top" className="scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
+            <FaChevronUp />
+          </a>
         </div>
 
       </div>
-
-     
     </footer>
   );
 };

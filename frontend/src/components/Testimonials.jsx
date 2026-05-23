@@ -14,13 +14,13 @@ const Testimonials = () => {
       id: 2,
       name: "Sandeep Punia",
       rating: 5,
-      text: "I am so happy for getting Australia Visa.....Thank you VIEC and all team members....services and guidance of VIEC is very good....Thank you..."
+      text: "I am so happy for getting Australia Visa.....Thank you VIET WORLDGATE and all team members....services and guidance of VIET WORLDGATE is very good....Thank you..."
     },
     {
       id: 3,
       name: "Inderjeet Kaur",
       rating: 5,
-      text: "VIEC team is very supportive. I got my student visa within one week and i got scholarship from UTS. They guide me in every step while processing of my..."
+      text: "VIET WORLDGATE team is very supportive. I got my student visa within one week and i got scholarship from UTS. They guide me in every step while processing of my..."
     }
   ];
 

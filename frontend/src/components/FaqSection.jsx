@@ -8,27 +8,27 @@ const FaqSection = () => {
 
   const faqData = [
     {
-      question: "What is VIEC?",
-      answer: "VIEC is a leading overseas education consultancy in India that guides students through every step of the study abroad process—from selecting universities to securing visas."
+      question: "What is VIET WORLDGATE?",
+      answer: "VIET WORLDGATE is a leading overseas education consultancy in India that guides students through every step of the study abroad process—from selecting universities to securing visas."
     },
     {
-      question: "How long has VIEC been in operation?",
-      answer: "VIEC has been successfully guiding students for over 28 years with a massive network of global institution partners."
+      question: "How long has VIET WORLDGATE been in operation?",
+      answer: "VIET WORLDGATE has been successfully guiding students for over 28 years with a massive network of global institution partners."
     },
     {
-      question: "Which countries does VIEC assist with for overseas education?",
+      question: "Which countries does VIET WORLDGATE assist with for overseas education?",
       answer: "We offer comprehensive guidance for top study destinations including Australia, UK, Canada, New Zealand, USA, Ireland, and more."
     },
     {
-      question: "How can VIEC help me choose the right university?",
+      question: "How can VIET WORLDGATE help me choose the right university?",
       answer: "Our expert counsellors evaluate your academic profile, budget, and career goals to suggest the most appropriate courses and highly reputed global universities."
     },
     {
-      question: "Does VIEC assist with visa applications?",
+      question: "Does VIET WORLDGATE assist with visa applications?",
       answer: "Yes, we provide end-to-end support for documentation, visa file preparation, and mock interview sessions to maximize your success rate."
     },
     {
-      question: "Will VIEC support me after I reach my study destination?",
+      question: "Will VIET WORLDGATE support me after I reach my study destination?",
       answer: "Absolutely! We provide pre-departure briefings and assist with accommodation connections and post-arrival networks."
     }
   ];
