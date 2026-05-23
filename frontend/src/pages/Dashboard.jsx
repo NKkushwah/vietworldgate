@@ -222,7 +222,7 @@ function Dashboard() {
             <span className="tag">
 
               POST STUDY WORK RIGHT
-              – AUSTRALIA, UK, CANADA
+              – AUTSTRALIA, UK, NEWZELAND, JAPAN, RUSSIA
 
             </span>
 
@@ -344,7 +344,7 @@ function Dashboard() {
 
           <div className="stat-card">
 
-            <h2>400+</h2>
+            <h2>200+</h2>
 
             <p>
 
@@ -356,7 +356,7 @@ function Dashboard() {
 
           <div className="stat-card">
 
-            <h2>39+</h2>
+            <h2>7+</h2>
 
             <p>
 
@@ -368,7 +368,7 @@ function Dashboard() {
 
           <div className="stat-card">
 
-            <h2>44600+</h2>
+            <h2>2600+</h2>
 
             <p>
 
@@ -380,7 +380,7 @@ function Dashboard() {
 
           <div className="stat-card">
 
-            <h2>28+</h2>
+            <h2>6+</h2>
 
             <p>
 
