@@ -213,3 +213,8 @@
     font-size: 26px;
   }
 }
+/* Work Slider Section Extra Spacing */
+.work-slider-section {
+  padding-top: 10px;
+  border-top: 1px solid #f2edf4; /* Dono sliders ke beech ek light partition ke liye */
+}
