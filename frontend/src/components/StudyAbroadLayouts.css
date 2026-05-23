@@ -60,15 +60,19 @@
 /* ===================================================
    SECTION 1: SUCCESS STORIES (TESTIMONIALS)
    =================================================== */
+/* ===================================================
+   SECTION 1: SUCCESS STORIES (TESTIMONIALS)
+   =================================================== */
 .success-stories-section {
-  background-color:#012819;
-  padding: 70px 20px;
+  background-color: #012819;
+  padding: 60px 20px;
 }
 
+/* Isse agar ek hi card hai toh wo perfect look ke saath screen ke center mein rahegi */
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -79,40 +83,48 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: rgba(255, 255, 255, 0.04); 
+  border: 1px solid #eceaf0e5;
+  padding: 30px 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 320px; /* Card size ab limit ho chuka hai */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 242, 112, 0.4);
 }
 
 .video-thumbnail-box {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 200px; 
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  background-color:#012819;
-  background-image: linear-gradient(45deg, #012819 25%, transparent 25%), 
-                    linear-gradient(-45deg, #012819 25%, transparent 25%), 
-                    linear-gradient(45deg, transparent 75%, #441638 75%), 
-                    linear-gradient(-45deg, transparent 75%, #441638 75%);
-  background-size: 40px 40px;
-  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  background-color: #00180f; 
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 .circular-video-frame {
-  width: 180px;
-  height: 180px;
+  width: 140px; 
+  height: 140px;
   border-radius: 50%;
-  border: 4px solid #c9f270; 
+  border: 3px solid #c9f270; 
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.4s ease;
+  z-index: 2;
 }
 
+.circular-video-frame video,
 .circular-video-frame img {
   width: 100%;
   height: 100%;
@@ -121,17 +133,17 @@
 
 .play-btn-overlay {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: var(#012819);
+  width: 44px;
+  height: 44px;
+  background-color: #c9f270; 
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #201f1f;
-  font-size: 1.1rem;
+  color: #012819; 
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 5;
 }
@@ -142,17 +154,16 @@
 
 .testimonial-card:hover .play-btn-overlay {
   transform: scale(1.1);
-  background-color:#012819;
+  background-color: #ffffff;
 }
 
 .student-name {
-  color: #012819;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 18px 0 0 0;
-  transition: color 0.3s;
+  color: #ffffff; 
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 16px 0 0 0;
+  letter-spacing: 0.02em;
 }
-
 /* ===================================================
    SECTION 2: UPCOMING UNIVERSITY VISITS (SLIDER MODE)
    =================================================== */
