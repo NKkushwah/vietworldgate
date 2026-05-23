@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="footer-bottom-divider"></div>
         <div className="footer-bottom">
           <div className="copyright">
-            Copyright © 2020 All Rights Reserved. VIET WORLDGATE Pvt. Ltd . compony
+            Copyright © 2020 All Rights Reserved. VIET WORLDGATE Pvt. Ltd . company
           </div>
           <div className="footer-bottom-links">
             <a href="#about">About Us</a>
