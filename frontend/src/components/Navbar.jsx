@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FiChevronDown } from "react-icons/fi";
+
 import "./Navbar.css";
 
 // IMPORT LOGO
@@ -13,13 +15,42 @@ function Navbar() {
     useState(null);
 
   // =========================
+  // BODY SCROLL LOCK
+  // =========================
+  useEffect(() => {
+
+    if (isMenuOpen) {
+
+      document.body.classList.add(
+        "menu-open"
+      );
+
+    } else {
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    }
+
+    return () => {
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    };
+
+  }, [isMenuOpen]);
+
+  // =========================
   // TOGGLE MOBILE MENU
   // =========================
   const toggleMenu = () => {
 
     setIsMenuOpen(!isMenuOpen);
 
-    if (!isMenuOpen) {
+    if (isMenuOpen) {
 
       setActiveDropdown(null);
 
@@ -100,7 +131,7 @@ function Navbar() {
 
             <span className="branch-heading">
 
-              International Branch  –
+              International Branch –
 
             </span>
 
@@ -171,10 +202,6 @@ function Navbar() {
 
         >
 
-          <span></span>
-          <span></span>
-          <span></span>
-
         </div>
 
         {/* NAV LINKS */}
@@ -188,6 +215,7 @@ function Navbar() {
 
         >
 
+          {/* HOME */}
           <li onClick={closeMenu}>
             Home
           </li>
@@ -207,7 +235,17 @@ function Navbar() {
 
           >
 
-            About Us
+            <span className="nav-item">
+
+              About Us
+
+              <span className="arrow">
+
+                <FiChevronDown />
+
+              </span>
+
+            </span>
 
             <ul className="dropdown-menu">
 
@@ -246,7 +284,17 @@ function Navbar() {
 
           >
 
-            Services
+            <span className="nav-item">
+
+              Services
+
+              <span className="arrow">
+
+                <FiChevronDown />
+
+              </span>
+
+            </span>
 
             <ul className="dropdown-menu">
 
@@ -285,7 +333,17 @@ function Navbar() {
 
           >
 
-            Destinations
+            <span className="nav-item">
+
+              Destinations
+
+              <span className="arrow">
+
+                <FiChevronDown />
+
+              </span>
+
+            </span>
 
             <ul className="dropdown-menu">
 
@@ -313,6 +371,7 @@ function Navbar() {
 
           </li>
 
+          {/* SCHOLARSHIPS */}
           <li onClick={closeMenu}>
             Scholarships
           </li>
@@ -332,7 +391,17 @@ function Navbar() {
 
           >
 
-            Branches
+            <span className="nav-item">
+
+              Branches
+
+              <span className="arrow">
+
+                <FiChevronDown />
+
+              </span>
+
+            </span>
 
             <ul className="dropdown-menu">
 
@@ -356,6 +425,7 @@ function Navbar() {
 
           </li>
 
+          {/* GALLERY */}
           <li onClick={closeMenu}>
             Gallery
           </li>
@@ -375,7 +445,17 @@ function Navbar() {
 
           >
 
-            Events
+            <span className="nav-item">
+
+              Events
+
+              <span className="arrow">
+
+                <FiChevronDown />
+
+              </span>
+
+            </span>
 
             <ul className="dropdown-menu">
 
@@ -395,6 +475,7 @@ function Navbar() {
 
           </li>
 
+          {/* OTHER LINKS */}
           <li onClick={closeMenu}>
             Find a Course
           </li>
