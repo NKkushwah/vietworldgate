@@ -1,0 +1,31 @@
+/* --- Yeh pure website ka scrollbar wapas laane ke liye hai --- */
+html, body {
+  overflow-y: auto !important;  /* Forcefully vertical scrollbar on karega */
+  overflow-x: hidden !important; /* Faltu ka horizontal scroll rokega */
+  height: auto !important;       /* Height ko lock hone se bachayega */
+  min-height: 100vh;
+}
+
+/* Aapka puraana code jaisa hai waisa hi rahega */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: #07330ae3;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  z-index: 9999;        
+  pointer-events: auto; 
+}
+
+.scroll-top:hover {
+  background-color: #6d0758;
+}
