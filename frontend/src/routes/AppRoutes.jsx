@@ -5,12 +5,14 @@ import ContactUs from "../pages/ContactUs";
 import CompanyProfile from "../pages/CompanyProfile";
 import MissionVision from "../pages/MissionVision";
 import ValuesGrid from "../pages/ValuesGrid";
+import OurTeam from "../pages/OurTeam";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+        <Route path = "ourteam" element = {<OurTeam />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/MissionVision" element={<MissionVision />} />
         <Route path="/contact-us" element={<ContactUs />} />
