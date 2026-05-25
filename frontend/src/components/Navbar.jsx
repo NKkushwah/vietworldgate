@@ -259,7 +259,9 @@ function Navbar() {
               </li>
 
               <li onClick={closeMenu}>
+                <Link to="/feedback">
                 Success Stories
+                </Link>
               </li>
 
             </ul>
