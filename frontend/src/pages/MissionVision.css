@@ -4,7 +4,7 @@
   min-height: 100vh;
   background-color: #f9fafb;
   font-family: system-ui, -apple-system, sans-serif;
-  color: #1f2937;
+  color: #065a11;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@
 /* Yellow Top Header Section */
 .mv-banner {
   background-color: #F2C010;
-  color: #111827;
+color: green;
   padding: 60px 20px 140px 20px;
 }
 
@@ -56,7 +56,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #171717 0%, #1c1a19 50%, #282625 100%);
+  background: linear-gradient(135deg, green 0%, green 50%, green 100%);
   transform: skewY(-2.5deg);
   transform-origin: top left;
   z-index: 1;

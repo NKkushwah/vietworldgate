@@ -6,23 +6,21 @@ import Footer from '../components/Footer';
 
 export default function CompanyProfile() {
   const [activeTab, setActiveTab] = useState('Overview');
-  // State to track "Know More" toggle
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  const sidebarItems = [
-    { name: 'Overview', icon: '📋' },
-    { name: 'Our History', icon: '🕒' },
-    { name: 'Vision & Mission', icon: '👁️' },
-    { name: 'Our Values', icon: '💎' },
-    { name: 'Why Choose Us', icon: '👍' },
-    { name: 'Our Achievements', icon: '🏆' },
-    { name: 'Our Team', icon: '👥' },
-    { name: 'Our Infrastructure', icon: '🏢' },
-    { name: 'Accreditations', icon: '🏅' },
-    { name: 'Our Presence', icon: '🌐' },
-    { name: 'Social Responsibility', icon: '❤️' },
-    { name: 'Gallery', icon: '🖼️' }
-  ];
+const sidebarItems = [
+  { name: 'Overview', icon: '📋', link: '/about/overview' },
+  { name: 'Our History', icon: '🕒', link: '/about/history' },
+  { name: 'Vision & Mission', icon: '👁️', link: '/MissionVision' },
+  { name: 'Our Values', icon: '💎', link: '/ValuesGrid' },
+  { name: 'Why Choose Us', icon: '👍', link: '/about/why-choose-us' },
+  { name: 'Our Achievements', icon: '🏆', link: '/about/achievements' },
+  { name: 'Our Team', icon: '👥', link: '/about/team' },
+  { name: 'Our Infrastructure', icon: '🏢', link: '/about/infrastructure' },
+  { name: 'Accreditations', icon: '🏅', link: '/about/accreditations' },
+  { name: 'Our Presence', icon: '🌐', link: '/about/presence' },
+  { name: 'Social Responsibility', icon: '❤️', link: '/about/social-responsibility' },
+  { name: 'Gallery', icon: '🖼️', link: '/about/gallery' }
+];
 
   const stats = [
     { number: '15+', label: 'Years of Excellence', icon: '🎓' },
@@ -59,32 +57,38 @@ export default function CompanyProfile() {
         {/* Main Layout Workspace */}
         <div className="main-layout">
 
-          {/* 2. Left Side Menu Navigation */}
-          <aside className="sidebar-nav">
-            <ul>
-              {sidebarItems.map((item) => (
-                <li
-                  key={item.name}
-                  className={activeTab === item.name ? 'active' : ''}
-                  onClick={() => setActiveTab(item.name)}
-                >
-                  <span className="menu-icon">
-                    {item.icon}
-                  </span>
+       {/* 2. Left Side Menu Navigation */}
+<aside className="sidebar-nav">
+  <ul>
+    {sidebarItems.map((item) => (
+      <a 
+        href={item.link} 
+        key={item.name} 
+        className="sidebar-link-anchor"
+        style={{ textDecoration: 'none', color: 'inherit' }} // CSS रीसेट के लिए inline-style
+      >
+        <li
+          className={activeTab === item.name ? 'active' : ''}
+          onClick={() => setActiveTab(item.name)}
+        >
+          <span className="menu-icon">
+            {item.icon}
+          </span>
 
-                  <span className="menu-text">
-                    {item.name}
-                  </span>
+          <span className="menu-text">
+            {item.name}
+          </span>
 
-                  {activeTab === item.name && (
-                    <span className="arrow-indicator">
-                      &gt;
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </aside>
+          {activeTab === item.name && (
+            <span className="arrow-indicator">
+              &gt;
+            </span>
+          )}
+        </li>
+      </a>
+    ))}
+  </ul>
+</aside>
 
           {/* Right Side Content Grid Area */}
           <main className="content-area">
@@ -99,24 +103,17 @@ export default function CompanyProfile() {
 
                 <h2>Overview</h2>
 
-                {/* Conditionally rendered text based on isExpanded state */}
                 <p>
-                  Innovative Institute is a leading educational organization committed to providing quality education and career guidance to students.
-                  {isExpanded ? (
-                    <span>
-                      {" "}Since our inception, we have empowered thousands of students to achieve their dreams and build successful careers through rigorous academic programs, modern teaching methodologies, and deep industry partnerships that connect candidates directly with global opportunities.
-                    </span>
-                  ) : (
-                    "..."
-                  )}
+                  Innovative Institute is a leading educational
+                  organization committed to providing quality
+                  education and career guidance to students.
+                  Since our inception, we have empowered
+                  thousands of students to achieve their dreams
+                  and build successful careers.
                 </p>
 
-                {/* Toggles the state and updates button text dynamically */}
-                <button 
-                  className="know-more-btn" 
-                  onClick={() => setIsExpanded(!isExpanded)}
-                >
-                  {isExpanded ? 'Show Less ↑' : 'Know More →'}
+                <button className="know-more-btn">
+                  Know More &rarr;
                 </button>
               </section>
 

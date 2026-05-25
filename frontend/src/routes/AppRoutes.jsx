@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import ContactUs from "../pages/ContactUs";
 import CompanyProfile from "../pages/CompanyProfile";
 import MissionVision from "../pages/MissionVision";
+import ValuesGrid from "../pages/ValuesGrid";
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path="/MissionVision" element={<MissionVision />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/companyprofile" element={<CompanyProfile/>} />
+        <Route path="/ValuesGrid" element={<ValuesGrid/>} />
 
       </Routes>
 
