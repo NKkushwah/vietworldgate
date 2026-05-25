@@ -6,6 +6,7 @@ import CompanyProfile from "../pages/CompanyProfile";
 import MissionVision from "../pages/MissionVision";
 import ValuesGrid from "../pages/ValuesGrid";
 import OurTeam from "../pages/OurTeam";
+import Feedback from "../pages/Feedback"
 
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/companyprofile" element={<CompanyProfile/>} />
         <Route path="/ValuesGrid" element={<ValuesGrid/>} />
+        <Route path="/feedback" element={<Feedback/>} />
 
       </Routes>
 
