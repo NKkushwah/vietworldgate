@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 
 export default function CompanyProfile() {
   const [activeTab, setActiveTab] = useState('Overview');
+  // State to track "Know More" toggle
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const sidebarItems = [
     { name: 'Overview', icon: '📋' },
@@ -97,17 +99,24 @@ export default function CompanyProfile() {
 
                 <h2>Overview</h2>
 
+                {/* Conditionally rendered text based on isExpanded state */}
                 <p>
-                  Innovative Institute is a leading educational
-                  organization committed to providing quality
-                  education and career guidance to students.
-                  Since our inception, we have empowered
-                  thousands of students to achieve their dreams
-                  and build successful careers.
+                  Innovative Institute is a leading educational organization committed to providing quality education and career guidance to students.
+                  {isExpanded ? (
+                    <span>
+                      {" "}Since our inception, we have empowered thousands of students to achieve their dreams and build successful careers through rigorous academic programs, modern teaching methodologies, and deep industry partnerships that connect candidates directly with global opportunities.
+                    </span>
+                  ) : (
+                    "..."
+                  )}
                 </p>
 
-                <button className="know-more-btn">
-                  Know More &rarr;
+                {/* Toggles the state and updates button text dynamically */}
+                <button 
+                  className="know-more-btn" 
+                  onClick={() => setIsExpanded(!isExpanded)}
+                >
+                  {isExpanded ? 'Show Less ↑' : 'Know More →'}
                 </button>
               </section>
 

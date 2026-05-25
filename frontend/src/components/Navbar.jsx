@@ -245,10 +245,11 @@ function Navbar() {
 
             <ul className="dropdown-menu">
 
-              <li onClick={closeMenu}>
-                Company Profile
-              </li>
-
+             <li onClick={closeMenu}>
+            <Link to="/companyprofile">
+              Company Profile
+            </Link>
+          </li>
               <li onClick={closeMenu}>
                 Our Team
               </li>
