@@ -98,49 +98,44 @@ function Navbar() {
 
     <>
 
-      {/* TOP HEADER */}
+      {/* =========================
+          TOP HEADER
+      ========================= */}
       <div className="top-header">
 
-        <div className="top-left">
+        {/* LEFT SCROLL LINKS */}
+        <div className="top-scroll">
 
-          <span className="branch-heading">
-
-            Our New Branches In India –
-
-          </span>
-
-          <a href="#">
-
-            Noida
-
-          </a>
-
-          <a href="#">
-
-            Ghaziabad
-
-          </a>
-
-          <a href="#">
-
-            Delhi
-
-          </a>
-
-          {/* INTERNATIONAL BRANCH */}
-          <div className="international-branch">
+          <div className="top-left">
 
             <span className="branch-heading">
-
-              International Branch –
-
+              Our New Branches In India –
             </span>
 
-            <span className="london-text">
+            <a href="#">
+              Noida
+            </a>
 
-              OXFORD STREET, LONDON
+            <a href="#">
+              Ghaziabad
+            </a>
 
-            </span>
+            <a href="#">
+              Delhi
+            </a>
+
+            {/* INTERNATIONAL BRANCH */}
+            <div className="international-branch">
+
+              <span className="branch-heading">
+                International Branch –
+              </span>
+
+              <span className="london-text">
+                OXFORD STREET, LONDON
+              </span>
+
+            </div>
 
           </div>
 
@@ -155,16 +150,16 @@ function Navbar() {
           />
 
           <button>
-
             🔍
-
           </button>
 
         </div>
 
       </div>
 
-      {/* MAIN NAVBAR */}
+      {/* =========================
+          MAIN NAVBAR
+      ========================= */}
       <nav className="navbar">
 
         {/* LOGO SECTION */}
@@ -217,7 +212,7 @@ function Navbar() {
         >
 
           {/* HOME */}
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/">Home</Link>
           </li>
 
@@ -485,9 +480,11 @@ function Navbar() {
             Careers
           </li>
 
-         <li>
-  <Link to="/contact-us">Contact Us</Link>
-</li>
+          <li onClick={closeMenu}>
+            <Link to="/contact-us">
+              Contact Us
+            </Link>
+          </li>
 
         </ul>
 
