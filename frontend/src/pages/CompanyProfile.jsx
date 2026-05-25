@@ -23,10 +23,10 @@ const sidebarItems = [
 ];
 
   const stats = [
-    { number: '15+', label: 'Years of Excellence', icon: '🎓' },
-    { number: '12,000+', label: 'Students Guided', icon: '👥' },
-    { number: '50+', label: 'Professional Courses', icon: '📄' },
-    { number: '8+', label: 'Countries Tie-ups', icon: '🌐' }
+    { number: '6+', label: 'Years of Excellence', icon: '🎓' },
+    { number: '2600+', label: 'Students Guided', icon: '👥' },
+    { number: '200+', label: 'Professional Courses', icon: '📄' },
+    { number: '2', label: 'Countries Tie-ups', icon: '🌐' }
   ];
 
   return (

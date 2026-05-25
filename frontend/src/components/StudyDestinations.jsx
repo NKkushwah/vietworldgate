@@ -106,11 +106,11 @@ export default function StudyDestinations() {
       <section className="who-we-are">
         <h2>Who <span>We Are</span></h2>
         <p>
-          We’re more than just a consultancy — we’re your mentors, advisors, and 
-          guide throughout the entire process. Every student is unique, so our 
-          counselling is personalized, thoughtful, and tailored to match your dreams, 
-          budget, and academic profile. Whether you’re exploring options for undergraduate, postgraduate, 
-          or diploma programs, our team makes sure you feel confident and informed at each step.
+        We are a passionate team of education consultants, career advisors, visa experts, and support professionals who believe in transforming ambitions into achievements. Our company was founded with the vision of simplifying the overseas education process and making international opportunities accessible to students from all backgrounds.
+
+      Over the years, we have built a strong reputation for providing honest advice, professional services, and end-to-end support to students who want to pursue higher education abroad. We help students identify the right career pathways based on their academic profile, interests, budget, and future goals.
+
+      Our team remains updated with the latest university requirements, scholarship programs, visa regulations, and global education trends to ensure students receive accurate and up-to-date guidance.
         </p>
       </section>
 
