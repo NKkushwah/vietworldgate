@@ -27,24 +27,88 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function CompanyProfile() {
-  const [activeTab, setActiveTab] = useState("Overview");
 
-const sidebarItems = [
-  { name: 'Overview', icon: '📋', link: '/about/overview' },
-  { name: 'Our History', icon: '🕒', link: '/about/history' },
-  { name: 'Vision & Mission', icon: '👁️', link: '/MissionVision' },
-  { name: 'Our Values', icon: '💎', link: '/ValuesGrid' },
-  { name: 'Why Choose Us', icon: '👍', link: '/about/why-choose-us' },
-  { name: 'Our Achievements', icon: '🏆', link: '/about/achievements' },
-  { name: 'Our Team', icon: '👥', link: '/about/ourteam' },
-  { name: 'Our Infrastructure', icon: '🏢', link: '/about/infrastructure' },
-  { name: 'Accreditations', icon: '🏅', link: '/about/accreditations' },
-  { name: 'Our Presence', icon: '🌐', link: '/about/presence' },
-  { name: 'Social Responsibility', icon: '❤️', link: '/about/social-responsibility' },
-  { name: 'Gallery', icon: '🖼️', link: '/about/gallery' }
-];
+  const [activeTab, setActiveTab] =
+    useState("Overview");
+
+  const sidebarItems = [
+
+    {
+      name: "Overview",
+      icon: <FaClipboardList />,
+      link: "/about/overview",
+    },
+
+    {
+      name: "Our History",
+      icon: <FaHistory />,
+      link: "/about/history",
+    },
+
+    {
+      name: "Vision & Mission",
+      icon: <FaEye />,
+      link: "/about/mission-vision",
+    },
+
+    {
+      name: "Our Values",
+      icon: <FaGem />,
+      link: "/about/values",
+    },
+
+    {
+      name: "Why Choose Us",
+      icon: <FaThumbsUp />,
+      link: "/about/why-choose-us",
+    },
+
+    {
+      name: "Our Achievements",
+      icon: <FaTrophy />,
+      link: "/about/achievements",
+    },
+
+    {
+      name: "Our Team",
+      icon: <FaUsers />,
+      link: "/about/our-team",
+    },
+
+    {
+      name: "Our Infrastructure",
+      icon: <FaBuilding />,
+      link: "/about/infrastructure",
+    },
+
+    {
+      name: "Accreditations",
+      icon: <FaAward />,
+      link: "/about/accreditations",
+    },
+
+    {
+      name: "Our Presence",
+      icon: <FaGlobe />,
+      link: "/about/presence",
+    },
+
+    {
+      name: "Social Responsibility",
+      icon: <FaHeart />,
+      link: "/about/social-responsibility",
+    },
+
+    {
+      name: "Gallery",
+      icon: <FaImages />,
+      link: "/about/gallery",
+    },
+
+  ];
 
   const stats = [
+
     {
       number: "6+",
       label: "Years of Excellence",
@@ -68,6 +132,7 @@ const sidebarItems = [
       label: "Countries Tie-ups",
       icon: <FaGlobe />,
     },
+
   ];
 
   return (
@@ -80,19 +145,25 @@ const sidebarItems = [
         <header className="hero-banner">
 
           <div className="hero-content">
-            <h1>Company Profile</h1>
+
+            <h1>
+              Company Profile
+            </h1>
 
             <p className="breadcrumbs">
               Home &gt; Company Profile
             </p>
+
           </div>
 
           <div className="hero-image-container">
+
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
               alt="Institute"
               className="hero-building-img"
             />
+
           </div>
 
         </header>
@@ -107,25 +178,29 @@ const sidebarItems = [
 
               {sidebarItems.map((item) => (
 
-                <Link
-                  to={item.link}
+                <li
                   key={item.name}
-                  className="sidebar-link-anchor"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                  }}
+                  className={
+                    activeTab === item.name
+                      ? "active"
+                      : ""
+                  }
+                  onClick={() =>
+                    setActiveTab(item.name)
+                  }
                 >
 
-                  <li
-                    className={
-                      activeTab === item.name
-                        ? "active"
-                        : ""
-                    }
-                    onClick={() =>
-                      setActiveTab(item.name)
-                    }
+                  <Link
+                    to={item.link}
+                    className="sidebar-link-anchor"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      width: "100%",
+                    }}
                   >
 
                     <span className="menu-icon">
@@ -137,14 +212,16 @@ const sidebarItems = [
                     </span>
 
                     {activeTab === item.name && (
+
                       <span className="arrow-indicator">
                         &gt;
                       </span>
+
                     )}
 
-                  </li>
+                  </Link>
 
-                </Link>
+                </li>
 
               ))}
 
@@ -164,7 +241,9 @@ const sidebarItems = [
                   <FaClipboardList />
                 </div>
 
-                <h2>Overview</h2>
+                <h2>
+                  Overview
+                </h2>
 
                 <p>
                   Innovative Institute is a leading
@@ -192,9 +271,13 @@ const sidebarItems = [
                       {stat.icon}
                     </div>
 
-                    <h3>{stat.number}</h3>
+                    <h3>
+                      {stat.number}
+                    </h3>
 
-                    <p>{stat.label}</p>
+                    <p>
+                      {stat.label}
+                    </p>
 
                   </div>
 
@@ -217,7 +300,9 @@ const sidebarItems = [
 
                   <div>
 
-                    <h4>Our Mission</h4>
+                    <h4>
+                      Our Mission
+                    </h4>
 
                     <p>
                       To deliver world-class education
@@ -237,7 +322,9 @@ const sidebarItems = [
 
                   <div>
 
-                    <h4>Our Vision</h4>
+                    <h4>
+                      Our Vision
+                    </h4>
 
                     <p>
                       To be a global leader in
@@ -260,7 +347,9 @@ const sidebarItems = [
                     <FaGem />
                   </span>
 
-                  <h4>Our Values</h4>
+                  <h4>
+                    Our Values
+                  </h4>
 
                 </div>
 
@@ -301,7 +390,9 @@ const sidebarItems = [
 
               <section className="offers-section">
 
-                <h3>What We Offer</h3>
+                <h3>
+                  What We Offer
+                </h3>
 
                 <div className="offers-row">
 
@@ -313,7 +404,9 @@ const sidebarItems = [
 
                     <div>
 
-                      <h5>Career Guidance</h5>
+                      <h5>
+                        Career Guidance
+                      </h5>
 
                       <p>
                         Expert counseling for the
@@ -332,7 +425,9 @@ const sidebarItems = [
 
                     <div>
 
-                      <h5>Skill Development</h5>
+                      <h5>
+                        Skill Development
+                      </h5>
 
                       <p>
                         Industry-oriented training
@@ -351,7 +446,9 @@ const sidebarItems = [
 
                     <div>
 
-                      <h5>Global Exposure</h5>
+                      <h5>
+                        Global Exposure
+                      </h5>
 
                       <p>
                         International partnerships
@@ -370,7 +467,9 @@ const sidebarItems = [
 
                     <div>
 
-                      <h5>Placement Support</h5>
+                      <h5>
+                        Placement Support
+                      </h5>
 
                       <p>
                         Assistance for better career
@@ -388,7 +487,9 @@ const sidebarItems = [
               {/* CONTACT CARD */}
               <div className="get-in-touch-card">
 
-                <h4>Get in Touch</h4>
+                <h4>
+                  Get in Touch
+                </h4>
 
                 <p>
                   Have questions or need more
@@ -408,6 +509,7 @@ const sidebarItems = [
             </div>
 
           </main>
+
         </div>
       </div>
 
