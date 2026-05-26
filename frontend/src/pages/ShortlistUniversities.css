@@ -8,13 +8,12 @@
 /* --- Hero Banner Layout (FIXED: Image Visibility & Text Contrast) --- */
 .visa-hero-banner {
   /* Linear gradient mein opacity (rgba) lagayi hai taaki image saaf dikhe */
-  background-image: linear-gradient(to right, rgba(6, 51, 6, 0.85), rgba(6, 51, 6, 0.45)), 
-                    url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1600&auto=format&fit=crop');
+ background-image:  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center/cover;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 60px;
-  color: #ffffff; /* FIXED: Text color ko white kiya taaki green par padha ja sake */
+  color: #054914; /* FIXED: Text color ko white kiya taaki green par padha ja sake */
   min-height: 150px;
   display: flex;
   align-items: center;

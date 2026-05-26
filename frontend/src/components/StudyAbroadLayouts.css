@@ -63,16 +63,23 @@
 /* ===================================================
    SECTION 1: SUCCESS STORIES (TESTIMONIALS)
    =================================================== */
+/* ===================================================
+   SECTION 1: SUCCESS STORIES (TESTIMONIALS) - FIXED RESPONSIVE
+   =================================================== */
 .success-stories-section {
   background-color: #012819;
   padding: 60px 20px;
+  width: 100%;
 }
 
-/* Isse agar ek hi card hai toh wo perfect look ke saath screen ke center mein rahegi */
+/* Changed from Flex to an auto-adjusting responsive CSS Grid layout */
 .testimonials-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   justify-content: center;
-  align-items: center;
+  justify-items: center; /* Center aligns cards horizontally */
+  align-items: stretch;  /* Keeps uniform height if more cards have uneven text */
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -85,12 +92,13 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.04); 
   border: 1px solid #eceaf0e5;
-  padding: 30px 24px;
+  padding: 30px 20px;
   border-radius: 16px;
   width: 100%;
-  max-width: 320px; /* Card size ab limit ho chuka hai */
+  max-width: 340px; /* Limits size cleanly on extra wide layout spreads */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .testimonial-card:hover {
@@ -100,7 +108,8 @@
 
 .video-thumbnail-box {
   width: 100%;
-  height: 200px; 
+  height: auto;
+  aspect-ratio: 16 / 10; /* Ensures container scales proportionally on smaller layouts */
   border-radius: 12px;
   position: relative;
   overflow: hidden;
@@ -111,8 +120,8 @@
 }
 
 .circular-video-frame {
-  width: 140px; 
-  height: 140px;
+  width: 130px; 
+  height: 130px;
   border-radius: 50%;
   border: 3px solid #c9f270; 
   position: relative;
@@ -124,6 +133,7 @@
   z-index: 2;
 }
 
+/* Prevents images/videos from breaking aspect ratio limits on viewports */
 .circular-video-frame video,
 .circular-video-frame img {
   width: 100%;
@@ -133,15 +143,15 @@
 
 .play-btn-overlay {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   background-color: #012819;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #012819; 
-  font-size: 1rem;
+  color: #ffffff; /* Adjusted contrast to make play mark readable */
+  font-size: 0.95rem;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -155,15 +165,35 @@
 .testimonial-card:hover .play-btn-overlay {
   transform: scale(1.1);
   background-color: #ffffff;
+  color: #012819;
 }
 
 .student-name {
   color: #ffffff; 
   font-size: 1.15rem;
   font-weight: 600;
-  margin: 16px 0 0 0;
+  margin: 18px 0 0 0;
   letter-spacing: 0.02em;
 }
+
+/* Mobile Breakpoint Extra Tweaks */
+@media screen and (max-width: 480px) {
+  .success-stories-section {
+    padding: 40px 15px;
+  }
+  .testimonial-card {
+    padding: 24px 16px;
+  }
+  .circular-video-frame {
+    width: 115px;
+    height: 115px;
+  }
+}
+
+
+
+
+
 /* ===================================================
    SECTION 2: UPCOMING UNIVERSITY VISITS (SLIDER MODE)
    =================================================== */

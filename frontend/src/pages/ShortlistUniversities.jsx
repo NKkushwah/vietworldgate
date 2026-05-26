@@ -13,9 +13,9 @@ const ShortlistUniversities = () => {
       
       <header className="visa-hero-banner">
         <div className="hero-content-left">
-          <h2>University Shortlisting</h2>
+          <h2></h2>
           <div className="breadcrumb-trail">
-            <span className="home-icon">🏠</span> ➔ <span className="current-page">University Shortlisting</span>
+            <span className="home-icon"></span> ➔ <span className="current-page"></span>
           </div>
         </div>
       </header>
