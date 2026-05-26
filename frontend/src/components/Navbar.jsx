@@ -251,11 +251,15 @@ function Navbar() {
             </Link>
           </li>
               <li onClick={closeMenu}>
+                <Link to="/ourteam">
                 Our Team
+                  </Link>
               </li>
 
               <li onClick={closeMenu}>
+                <Link to="/MissionVision">
                 Mission & Vision
+                 </Link>
               </li>
 
               <li onClick={closeMenu}>

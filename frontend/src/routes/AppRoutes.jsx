@@ -13,7 +13,7 @@ function AppRoutes() {
     <BrowserRouter>
 
       <Routes>
-        <Route path = "ourteam" element = {<OurTeam />} />
+        <Route path = "/ourteam" element = {<OurTeam />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/MissionVision" element={<MissionVision />} />
         <Route path="/contact-us" element={<ContactUs />} />

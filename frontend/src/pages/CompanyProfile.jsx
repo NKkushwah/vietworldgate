@@ -14,7 +14,7 @@ const sidebarItems = [
   { name: 'Our Values', icon: '💎', link: '/ValuesGrid' },
   { name: 'Why Choose Us', icon: '👍', link: '/about/why-choose-us' },
   { name: 'Our Achievements', icon: '🏆', link: '/about/achievements' },
-  { name: 'Our Team', icon: '👥', link: '/about/team' },
+  { name: 'Our Team', icon: '👥', link: '/about/ourteam' },
   { name: 'Our Infrastructure', icon: '🏢', link: '/about/infrastructure' },
   { name: 'Accreditations', icon: '🏅', link: '/about/accreditations' },
   { name: 'Our Presence', icon: '🌐', link: '/about/presence' },
