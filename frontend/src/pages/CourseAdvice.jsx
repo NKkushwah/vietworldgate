@@ -1,9 +1,12 @@
 import React from 'react';
-import './VisaAssistance.css';
+import './CourseAdvice.css'; // Aap iska naam ya classes badal sakte hain, par abhi workflow same rakha hai
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const VisaAssistance = () => {
+const CourseAdvice = () => {
+  // WhatsApp Link with a custom pre-filled message for Course Advice
+  const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20need%20Course%20Advice%20and%20Career%20Counseling.%20Please%20help%20me%20choose%20the%20right%20course%20and%20university.";
+
   return (
     <>
     <Navbar />
@@ -11,7 +14,7 @@ const VisaAssistance = () => {
       
       {/* Hero Banner Section */}
       <header className="visa-hero-banner">
-        <h2>Visa Assistance Services</h2>
+        <h2>Course Advice & Career Counseling</h2>
         <div className="hero-overlay">
           <div className="hero-content">
           </div>
@@ -22,7 +25,7 @@ const VisaAssistance = () => {
       <main className="visa-main-content">
         <div className="visa-grid-container">
           
-          {/* Left Column */}
+          {/* Left Column (Sidebar) */}
           <aside className="visa-sidebar">
             
             {/* Call Widget */}
@@ -30,14 +33,14 @@ const VisaAssistance = () => {
               <div className="widget-flex">
                 <div className="headset-icon">🎧</div>
                 <div className="widget-text">
-                  <p>Book an Appointment with Our Experts</p>
+                  <p>Talk to Our Course Experts</p>
                   <a href="tel:+917982295530" className="phone-number">+91-7982295530</a>
                 </div>
               </div>
               <div className="white-arrow-decor">➔</div>
             </div>
 
-            {/* WhatsApp Chat */}
+            {/* WhatsApp Chat Card */}
             <div className="whatsapp-chat-card">
               <div className="wa-card-header">
                 <div className="wa-header-icon">
@@ -46,14 +49,14 @@ const VisaAssistance = () => {
                   </svg>
                 </div>
                 <div className="wa-header-meta">
-                  <h4>WhatsApp Support</h4>
-                  <p>Online • Ready to Assist</p>
+                  <h4>Academic Support</h4>
+                  <p>Online • Advisors Ready</p>
                 </div>
               </div>
               
               <div className="wa-card-body">
                 <p className="wa-welcome-msg">
-                  Need expert guidance for your visa application? Connect instantly with our advisors for quick and reliable assistance.
+                  Confused about which course or university to choose? Connect instantly with our expert counselors for personalized guidance.
                 </p>
                 <a 
                   href="https://wa.me/7982295530" 
@@ -67,48 +70,59 @@ const VisaAssistance = () => {
             </div>
           </aside>
 
-          {/* Right Column */}
+          {/* Right Column (Main Details) */}
           <section className="visa-details-body">
             <div className="workspace-preview-holder">
               <div className="mock-laptop-workspace">
-                <div className="passport-overlay-tag">PASSPORT</div>
-                <div className="application-form-tag">VISA APPLICATION</div>
+                <div className="passport-overlay-tag">PROSPECTUS</div>
+                
+                {/* --- APPOINTMENT FORM KI JAGAH WHATSFORM --- */}
+                <a 
+                  href={whatsappFormLink}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="whatsapp-form-tag-btn"
+                >
+                  <span className="wa-form-icon">📝</span> FILL WHATSAPP FORM
+                </a>
+                {/* ------------------------------------------- */}
+
               </div>
             </div>
 
             <div className="intro-text-block">
               <p>
-                We guide you through every step of the visa application process, ensuring all your documents are accurate, complete, and ready for successful submission.
+                We help you navigate through thousands of course options and universities worldwide, aligning your academic background and budget with the perfect career path.
               </p>
             </div>
 
-            {/* Services Grid */}
+            {/* Services/Features Grid */}
             <div className="services-three-column-grid">
               
               {/* Card 1 */}
               <div className="service-feature-card">
-                <div className="feature-icon-circle">👥</div>
-                <h4>Visa Documentation Guidance</h4>
+                <div className="feature-icon-circle">🎓</div>
+                <h4>Personalized Course Selection</h4>
                 <p>
-                  Visa documentation requirements vary by country. Our experts ensure you have the correct and complete set of documents tailored to your study destination.
+                  Get a curated list of courses and programs based on your interests, academic history, strengths, and long-term career goals.
                 </p>
               </div>
 
               {/* Card 2 */}
               <div className="service-feature-card">
-                <div className="feature-icon-circle">💬</div>
-                <h4>Financial Planning & Proof of Funds</h4>
+                <div className="feature-icon-circle">🏛️</div>
+                <h4>University Shortlisting</h4>
                 <p>
-                  We help you understand financial requirements and prepare the necessary proof of funds based on the specific guidelines of your chosen country.
+                  We help you compare and choose the right global universities based on rankings, tuition fees, location, and campus placement records.
                 </p>
               </div>
 
               {/* Card 3 */}
               <div className="service-feature-card">
-                <div className="feature-icon-circle">📜</div>
-                <h4>Medical & Background Requirements</h4>
+                <div className="feature-icon-circle">💼</div>
+                <h4>Career Pathway Mapping</h4>
                 <p>
-                  Certain countries require medical examinations and police clearance certificates. We guide you through these requirements to ensure compliance.
+                  Understand the job prospects, internship opportunities, and future market scope of your chosen field before making a final decision.
                 </p>
               </div>
 
@@ -118,14 +132,14 @@ const VisaAssistance = () => {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footer text specific to students */}
       <footer className="visa-footer-bar">
         <p>
-          As our student, you will always stay informed about the latest visa rules, requirements, and updates for a smooth application process.
+          Your future starts with the right choice. Our advisors ensure you receive the most updated information on eligibility criteria and intakes.
         </p>
       </footer>
 
-      {/* Floating WhatsApp */}
+      {/* Floating WhatsApp Bubble */}
       <div className="floating-action-widgets">
         <a 
           href="https://wa.me/7982295530" 
@@ -146,4 +160,4 @@ const VisaAssistance = () => {
   );
 };
 
-export default VisaAssistance;
+export default CourseAdvice;

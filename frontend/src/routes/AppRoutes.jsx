@@ -8,12 +8,18 @@ import ValuesGrid from "../pages/ValuesGrid";
 import OurTeam from "../pages/OurTeam";
 import Feedback from "../pages/Feedback"
 import VisaAssistance from "../pages/VisaAssistance";
+import CourseAdvice from "../pages/CourseAdvice";
+import ShortlistUniversities from "../pages/ShortlistUniversities";
+import PreDeparture from "../pages/PreDeparture";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+          <Route path="/PreDeparture" element={<PreDeparture />} />
+         <Route path="/ShortlistUniversities" element={<ShortlistUniversities />} />
+         <Route path="/courseAdvice" element={<CourseAdvice />} />
         <Route path="/visaAssistance" element={<VisaAssistance />} />
         <Route path = "/ourteam" element = {<OurTeam />} />
         <Route path="/" element={<Dashboard />} />
