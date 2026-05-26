@@ -26,7 +26,7 @@ export default function StudyAbroadLayouts() {
     },
      {
       id: 2,
-      name: "Vibhu Patel",
+      name: "Lakshya Sharma",
       img: logo2, 
       isVideo: true 
     },

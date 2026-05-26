@@ -7,12 +7,14 @@ import MissionVision from "../pages/MissionVision";
 import ValuesGrid from "../pages/ValuesGrid";
 import OurTeam from "../pages/OurTeam";
 import Feedback from "../pages/Feedback"
+import VisaAssistance from "../pages/VisaAssistance";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+        <Route path="/visaAssistance" element={<VisaAssistance />} />
         <Route path = "/ourteam" element = {<OurTeam />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/MissionVision" element={<MissionVision />} />
