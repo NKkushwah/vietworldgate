@@ -151,9 +151,7 @@ const Footer = () => {
           </div>
           
           {/* Scroll to Top Trigger */}
-          <a href="#top" className="scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
-            <FaChevronUp />
-          </a>
+          
         </div>
 
       </div>

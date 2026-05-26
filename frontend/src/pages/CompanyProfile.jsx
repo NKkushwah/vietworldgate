@@ -29,79 +29,20 @@ import Footer from "../components/Footer";
 export default function CompanyProfile() {
   const [activeTab, setActiveTab] = useState("Overview");
 
-  const sidebarItems = [
-    {
-      name: "Overview",
-      icon: <FaClipboardList />,
-      link: "/about/overview",
-    },
-
-    {
-      name: "Our History",
-      icon: <FaHistory />,
-      link: "/about/history",
-    },
-
-    {
-      name: "Vision & Mission",
-      icon: <FaEye />,
-      link: "/MissionVision",
-    },
-
-    {
-      name: "Our Values",
-      icon: <FaGem />,
-      link: "/about/values",
-    },
-
-    {
-      name: "Why Choose Us",
-      icon: <FaThumbsUp />,
-      link: "/about/why-choose-us",
-    },
-
-    {
-      name: "Our Achievements",
-      icon: <FaTrophy />,
-      link: "/about/achievements",
-    },
-
-    {
-      name: "Our Team",
-      icon: <FaUsers />,
-      link: "/about/our-team",
-    },
-
-    {
-      name: "Our Infrastructure",
-      icon: <FaBuilding />,
-      link: "/about/infrastructure",
-    },
-
-    {
-      name: "Accreditations",
-      icon: <FaAward />,
-      link: "/about/accreditations",
-    },
-
-    {
-      name: "Our Presence",
-      icon: <FaGlobe />,
-      link: "/about/presence",
-    },
-
-    {
-      name: "Social Responsibility",
-      icon: <FaHeart />,
-      link: "/about/social-responsibility",
-    },
-
-    {
-      name: "Gallery",
-      icon: <FaImages />,
-      link: "/about/gallery",
-    },
-  ];
+const sidebarItems = [
+  { name: 'Overview', icon: '📋', link: '/about/overview' },
+  { name: 'Our History', icon: '🕒', link: '/about/history' },
+  { name: 'Vision & Mission', icon: '👁️', link: '/MissionVision' },
+  { name: 'Our Values', icon: '💎', link: '/ValuesGrid' },
+  { name: 'Why Choose Us', icon: '👍', link: '/about/why-choose-us' },
+  { name: 'Our Achievements', icon: '🏆', link: '/about/achievements' },
+  { name: 'Our Team', icon: '👥', link: '/about/ourteam' },
+  { name: 'Our Infrastructure', icon: '🏢', link: '/about/infrastructure' },
+  { name: 'Accreditations', icon: '🏅', link: '/about/accreditations' },
+  { name: 'Our Presence', icon: '🌐', link: '/about/presence' },
+  { name: 'Social Responsibility', icon: '❤️', link: '/about/social-responsibility' },
+  { name: 'Gallery', icon: '🖼️', link: '/about/gallery' }
+];
 
   const stats = [
     {

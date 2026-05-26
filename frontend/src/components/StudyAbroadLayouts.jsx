@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./StudyAbroadLayouts.css";
-import logo1 from "../assets/story1photo.jpeg";
-import logo2 from "../assets/story2photo.jpeg";
-import logo3 from "../assets/story1video.mp4";
+
+import logo1 from "../assets/story1video.mp4";
+import logo2 from "../assets/story2video.MOV"
 
 export default function StudyAbroadLayouts() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,7 +21,13 @@ export default function StudyAbroadLayouts() {
     {
       id: 1,
       name: "Vibhu Patel",
-      img: logo3, 
+      img: logo1, 
+      isVideo: true 
+    },
+     {
+      id: 2,
+      name: "Lakshya Sharma",
+      img: logo2, 
       isVideo: true 
     },
   
