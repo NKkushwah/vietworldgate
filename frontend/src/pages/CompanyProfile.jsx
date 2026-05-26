@@ -48,13 +48,13 @@ export default function CompanyProfile() {
     {
       name: "Vision & Mission",
       icon: <FaEye />,
-      link: "/about/mission-vision",
+      link: "/MissionVision",
     },
 
     {
       name: "Our Values",
       icon: <FaGem />,
-      link: "/about/values",
+      link: "/ourteam",
     },
 
     {
@@ -72,7 +72,7 @@ export default function CompanyProfile() {
     {
       name: "Our Team",
       icon: <FaUsers />,
-      link: "/about/our-team",
+      link: "#",
     },
 
     {
