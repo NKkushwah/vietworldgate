@@ -14,9 +14,9 @@ const PreDeparture = () => {
         {/* Hero Banner Section */}
         <header className="visa-hero-banner">
           <div className="hero-content-left">
-            <h2>Pre-Departure Guidelines</h2>
+            <h2>Pre-Departure Assistance</h2>
             <div className="breadcrumb-trail">
-              <span className="home-icon">🏠</span> ➔ <span className="current-page">Pre-departure Guidelines</span>
+              <span className="home-icon">🏠</span> ➔ <span className="current-page">Pre-Departure Assistance</span>
             </div>
           </div>
         </header>
@@ -32,7 +32,7 @@ const PreDeparture = () => {
               <div className="appointment-call-widget-banner">
                 <div className="widget-banner-image-placeholder">
                   <div className="purple-call-overlay">
-                    <p>Book an Appointment with Our Experts</p>
+                    <p>Speak with Our Study Abroad Experts</p>
                     <a href="tel:+911140515555" className="phone-number-banner">
                       <span className="phone-svg-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -45,16 +45,16 @@ const PreDeparture = () => {
                 </div>
               </div>
 
-              {/* Dynamic Instant WhatsApp Panel */}
+              {/* WhatsApp Panel */}
               <div className="whatsapp-chat-card-panel">
                 <div className="wa-panel-header">
-                  <h4>APPOINTMENT FORM</h4>
+                  <h4>QUICK CONNECT</h4>
                   <div className="purple-underline-decor"></div>
                 </div>
                 
                 <div className="wa-panel-body">
                   <p className="wa-panel-text">
-                    Skip lengthy forms. Share your destination details and preferences instantly with our team through WhatsApp for quick and personalized pre-departure assistance.
+                    Get instant pre-departure guidance. Share your travel plans, destination, and requirements with our experts via WhatsApp for quick and personalized support.
                   </p>
                   <a 
                     href={whatsappFormLink}
@@ -66,98 +66,77 @@ const PreDeparture = () => {
                       <path d="M12 20h9" />
                       <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
                     </svg>
-                    Connect Via WhatsApp
+                    Connect on WhatsApp
                   </a>
                 </div>
               </div>
             </aside>
 
-            {/* Informational Details Container Right */}
+            {/* Right Section */}
             <section className="visa-details-body">
               
               <div className="shortlist-intro-header">
-                <h3>Pre-departure Guidelines</h3>
+                <h3>Pre-Departure Support</h3>
                 <p>
-                  Congratulations on your upcoming study abroad adventure! We know it can be daunting to move to a new country, but we are here to help you prepare for services like Flights, Airport Pickup, Accommodation, Currency, Bank Account, Orientation, Enrolment etc. Our pre-departure sessions will cover a variety of topics.
+                  Preparing to study abroad is an exciting step, and we ensure you are fully ready before your journey begins. Our pre-departure assistance covers everything from travel arrangements and accommodation to financial planning and on-arrival support, helping you transition smoothly into your new academic environment.
                 </p>
               </div>
 
-              {/* Core Offerings Feature Columns Grid */}
+              {/* Features */}
               <div className="services-three-column-grid">
                 
                 <div className="service-feature-card-premium">
                   <div className="purple-icon-circle-badge">
-                    <span style={{ fontSize: '22px', color: '#fff' }}>📋</span>
+                    <span style={{ fontSize: '22px', color: '#fff' }}>🧳</span>
                   </div>
-                  <h4>Packing List</h4>
+                  <h4>Packing & Travel Guidance</h4>
                   <p>
-                    We will help you create a comprehensive packing list that includes everything you need for your new life and academic environment abroad.
+                    Receive a complete checklist of essential items, documents, and travel tips to ensure a stress-free departure and smooth journey.
                   </p>
                 </div>
 
                 <div className="service-feature-card-premium">
                   <div className="purple-icon-circle-badge">
-                    <span style={{ fontSize: '22px', color: '#fff' }}>💬</span>
+                    <span style={{ fontSize: '22px', color: '#fff' }}>✈️</span>
                   </div>
-                  <h4>Arrival Support</h4>
+                  <h4>Arrival & Settlement Support</h4>
                   <p>
-                    We will provide you with vital information about immigration procedures, customs rules, and how to get smoothly to your campus from the airport.
+                    Get detailed guidance on airport procedures, immigration, accommodation check-in, and settling into your new environment.
                   </p>
                 </div>
 
                 <div className="service-feature-card-premium">
                   <div className="purple-icon-circle-badge">
-                    <span style={{ fontSize: '22px', color: '#fff' }}>📜</span>
+                    <span style={{ fontSize: '22px', color: '#fff' }}>💳</span>
                   </div>
-                  <h4>Banking & Forex</h4>
+                  <h4>Banking & Financial Setup</h4>
                   <p>
-                    Our financial assistance helps you set up a secure local bank account and conveniently exchange currency at the best available rates.
+                    Assistance with opening bank accounts, managing foreign exchange, and understanding financial systems in your destination country.
                   </p>
                 </div>
 
               </div>
 
-              {/* Life as a Student Detailed Checklist Block */}
+              {/* Life Section */}
               <div className="admission-checklist-block">
-                <h3>Life as a student in your new country</h3>
+                <h3>Life in Your Study Destination</h3>
                 <p className="checklist-lead-text">
-                  Our pre-departure guidelines will teach you about local culture, university life, cultural adjustment, support and wellness, working while learning, homesickness, and legal issues in your new study destination. We will also encourage you to network with other students in order to get advice and form a supportive network.
+                  Our sessions prepare you beyond academics by helping you understand lifestyle, culture, and responsibilities as an international student.
                 </p>
                 
-                <p className="checklist-subheading">The following are some of the specific themes we will discuss:</p>
-                
                 <ul className="custom-checkmark-list">
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Local culture:</strong> We will inform you of the local traditions, customs, and activities. This will ease the transition into the community and allow you to interact effectively with new friends.
-                  </li>
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Student life:</strong> We will talk about diverse methods of learning, class conditions, and the expectations of students in your new nation. As a student, this will help you acclimate to a fresh academic environment and the customs of the community.
-                  </li>
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Cultural shock:</strong> We will go over the various phases of adjusting to culture and how to deal with them. This is critical for adapting to your new learning location.
-                  </li>
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Working while studying:</strong> We will go over how to follow the rules of your student visa and provide advice on how to discover suitable student employment opportunities. This can improve your study and living environments.
-                  </li>
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Homesickness:</strong> We recognize that being separated from family and friends might cause homesickness. Once you reach your study destination, we will provide you with useful hints on how to deal with homesickness.
-                  </li>
-                  <li>
-                    <span className="blue-check-icon">✓</span> 
-                    <strong>Legalities:</strong> We will provide you with vital information about your study country's rules and regulations. This will ensure that you understand your rights as an international student.
-                  </li>
+                  <li><span className="blue-check-icon">✓</span> Understanding local culture, traditions, and lifestyle</li>
+                  <li><span className="blue-check-icon">✓</span> Adapting to university education systems and expectations</li>
+                  <li><span className="blue-check-icon">✓</span> Managing cultural transition and homesickness</li>
+                  <li><span className="blue-check-icon">✓</span> Working part-time while studying as per visa rules</li>
+                  <li><span className="blue-check-icon">✓</span> Awareness of legal rights and responsibilities</li>
                 </ul>
               </div>
 
-              {/* Global Partnership Endorsement Block */}
+              {/* Closing */}
               <div className="university-partners-panel">
                 <p className="checklist-closing-text" style={{ fontStyle: 'normal', color: '#555' }}>
-                  In addition to our comprehensive Pre-Departure Program, <strong>VIEC</strong> proudly recommends the <em>Smart Prep – Student Readiness Program</em> delivered by <strong>Global Education Success</strong>. Smart Prep provides structured guidance, practical tools, and personalised planning to help you arrive confident, focused, and fully prepared for academic and cultural success. It supports a smoother transition, reduces common first-semester mistakes, and ensures you don't just travel overseas, but begin your journey ready to thrive.
+                  Our goal is to ensure you are confident, prepared, and fully equipped before starting your international education journey. With expert guidance and practical support, we help you transition smoothly and succeed from day one.
                 </p>
               </div>
 
@@ -166,7 +145,7 @@ const PreDeparture = () => {
           </div>
         </main>
 
-        {/* WhatsApp Pop Floating Icon Widget */}
+        {/* Floating WhatsApp */}
         <div className="floating-action-widgets">
           <a 
             href="https://wa.me/917982295530" 

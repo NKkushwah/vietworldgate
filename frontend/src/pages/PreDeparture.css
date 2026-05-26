@@ -1,5 +1,5 @@
 :root {
-  --primary-purple: #7a005a;
+  --primary-purple: #0b4914;
   --text-dark: #2d3748;
   --text-muted: #5a6a85;
   --bg-light: #f8fafc;
@@ -17,8 +17,7 @@
 
 /* Hero Section Banner */
 .visa-hero-banner {
-  background: linear-gradient(135deg, rgba(122, 0, 90, 0.95) 30%, rgba(0, 0, 0, 0.5)), 
-              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center/cover;
+  background-image:  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center/cover;
   height: 220px;
   display: flex;
   align-items: center;
@@ -83,7 +82,7 @@
 .purple-call-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(122, 0, 90, 0.88);
+  background: rgba(86, 148, 112, 0.88);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,7 +134,7 @@
 .purple-underline-decor {
   width: 40px;
   height: 3px;
-  background-color: var(--primary-purple);
+  background-color: #0b4914;
   margin-bottom: 20px;
 }
 
@@ -201,7 +200,7 @@
 .purple-icon-circle-badge {
   width: 50px;
   height: 50px;
-  background-color: var(--primary-purple);
+  background-color: #0b4914;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -260,7 +259,7 @@
   top: 2px;
   width: 18px;
   height: 18px;
-  background-color: #2b5c8f;
+  background-color: #258f51;
   color: var(--white);
   border-radius: 50%;
   display: flex;
