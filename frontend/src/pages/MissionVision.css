@@ -4,7 +4,7 @@
   min-height: 100vh;
   background-color: #f9fafb;
   font-family: system-ui, -apple-system, sans-serif;
-  color: #065a11;
+  color: white;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -17,8 +17,8 @@
 
 /* Yellow Top Header Section */
 .mv-banner {
-  background-color: #F2C010;
-color: green;
+  background-color: white;
+color: #012819;
   padding: 60px 20px 140px 20px;
 }
 
@@ -56,7 +56,7 @@ color: green;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, green 0%, green 50%, green 100%);
+  background: linear-gradient(135deg, #012819, #012819, #012819);
   transform: skewY(-2.5deg);
   transform-origin: top left;
   z-index: 1;
@@ -92,7 +92,7 @@ color: green;
 .mv-icon-circle {
   width: 64px;
   height: 64px;
-  background-color: #F2C010;
+  background-color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -111,7 +111,7 @@ color: green;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #F2C010;
+  color: white;
   margin: 0 0 10px 0;
   font-weight: 700;
 }
@@ -139,7 +139,7 @@ color: green;
 .mv-section-label {
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: rgba(242, 192, 16, 0.8);
+  color: white(242, 192, 16, 0.8);
   letter-spacing: 1.5px;
   margin-bottom: 12px;
   font-weight: 600;

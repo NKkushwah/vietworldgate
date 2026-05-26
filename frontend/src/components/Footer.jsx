@@ -79,7 +79,7 @@ const Footer = () => {
               <li><a href="#service-institution">Service to institutions</a></li>
               <li><a href="#scholarships">Scholarships</a></li>
               <li><a href="#events">Events</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="/feedback">Testimonials</a></li>
               <li><a href="#careers">Careers</a></li>
               <li><a href="#blogs">Blogs</a></li>
             </ul>
@@ -144,8 +144,8 @@ const Footer = () => {
             Copyright © 2020 All Rights Reserved. VIET WORLDGATE Pvt. Ltd . company
           </div>
           <div className="footer-bottom-links">
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
+            <a href="/companyprofile">About Us</a>
+            <a href="/contact-us">Contact Us</a>
             <a href="#privacy">Privacy Policy</a>
             <a href="#branches">Branches</a>
           </div>
