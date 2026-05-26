@@ -497,7 +497,7 @@ export default function CompanyProfile() {
                 </p>
 
                 <button className="contact-btn">
-                  Contact Us →
+                  Contact us →
                 </button>
 
                 <div className="headphone-bg-icon">
