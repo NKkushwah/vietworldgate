@@ -87,7 +87,7 @@ const Footer = () => {
                 <FaFacebookF />
               </a>
 
-              <a href="#instagram" aria-label="Instagram">
+              <a href="//www.instagram.com/viet.india" aria-label="Instagram">
                 <FaInstagram />
               </a>
 
@@ -99,7 +99,7 @@ const Footer = () => {
                 <FaLinkedinIn />
               </a>
 
-              <a href="#whatsapp" aria-label="WhatsApp">
+              <a href="https://wa.me/7982295530" aria-label="WhatsApp">
                 <FaWhatsapp />
               </a>
             </div>

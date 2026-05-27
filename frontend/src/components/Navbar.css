@@ -168,8 +168,8 @@ ul{
 
   border:none;
 
-  background:#7e0c72;
-  color:#fff;
+  background:#60bb8400;
+  color:black;
 
   display:flex;
   justify-content:center;
@@ -181,7 +181,7 @@ ul{
 }
 
 .search-box button:hover{
-  background:#25D366;
+  background:white;
 }
 
 /* =========================================

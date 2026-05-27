@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const PreDeparture = () => {
-  const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20want%20to%20attend%20the%20pre-departure%20sessions.%20Please%20guide%20me%20with%20the%20process.";
+  const whatsappFormLink = "https://wa.me/+447500494401?text=Hi,%20I%20want%20to%20attend%20the%20pre-departure%20sessions.%20Please%20guide%20me%20with%20the%20process.";
 
   return (
     <>
@@ -148,7 +148,7 @@ const PreDeparture = () => {
         {/* Floating WhatsApp */}
         <div className="floating-action-widgets">
           <a 
-            href="https://wa.me/917982295530" 
+            href="https://wa.me/+447500494401" 
             className="whatsapp-bubble-widget" 
             target="_blank" 
             rel="noopener noreferrer"
