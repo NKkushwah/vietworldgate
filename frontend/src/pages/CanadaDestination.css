@@ -1,0 +1,361 @@
+:root {
+  --primary-purple: #800060;
+  --dark-purple: #600048;
+  --text-dark: #333333;
+  --text-muted: #555555;
+  --border-color: #e0e0e0;
+  --wa-green: #25D366;
+  --wa-dark-green: #128C7E;
+}
+
+/* Global Container with Background Image Layout */
+.dest-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: green;
+  line-height: 1.6;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #ffffff; /* Ab baaki poori body clean white rahegi */
+}
+
+/* Header Banner Styling */
+.dest-header {
+  /* Linear gradient text readability ke liye hai, aur uske baad image path specify kiya hai */
+background-image: url('https://images.unsplash.com/photo-1526779259212-939e64788e3c');/* Apni image ka sahi path yahan dalein */
+  
+  background-repeat: no-repeat;
+  background-position: center right; /* Image ko right side me set karne ke liye */
+  background-size: cover;
+  
+  color: rgb(7, 43, 19);
+  padding: 40px 6%;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+}
+
+.header-overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.header-content h1 {
+  font-size: 2.8rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+ 
+}
+
+.breadcrumbs {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(94, 207, 141, 0.8); /* Breadcrumbs ke liye semi-transparent background */
+}
+
+/* Main Grid Layout structure */
+.dest-layout-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  padding: 40px 6%;
+  position: relative;
+  z-index: 1; /* Places main layout safely above base backgrounds */
+}
+
+/* Sidebar Call Box Layouts */
+.dest-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.call-service-box {
+  background-color: rgb(16, 73, 28);
+  color: white;
+  padding: 18px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.call-service-box p {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.phone-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Sidebar WhatsApp Component Card styles */
+.whatsapp-chat-card {
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white to pop out against the background image */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(4px); /* Smoothes out underlying background textures */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.wa-card-header {
+  background-color: var(--wa-dark-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+}
+
+.wa-header-icon {
+  display: flex;
+  align-items: center;
+}
+
+.wa-header-meta h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.wa-header-meta p {
+  margin: 2px 0 0 0;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.wa-card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.wa-welcome-msg {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.wa-action-btn {
+  display: block;
+  background-color: var(--wa-green);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.wa-action-btn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-1px);
+}
+
+/* Right Content Info & Core Blocks */
+.dest-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.85); /* Ensures sharp text readability over custom background map elements */
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.info-block h2 {
+  color: #2c2c2c;
+  font-size: 1.65rem;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.info-block p {
+  color: var(--text-muted);
+  margin: 0;
+  text-align: justify;
+}
+
+/* Feature Grid Cards Styles */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.feature-card {
+  background-color: rgba(249, 251, 253, 0.92);
+  border: 1px solid #eff2f6;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  background-color: rgb(8, 34, 8);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 16px auto;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin: 0 0 12px 0;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Lower Section CTA Action Layouts */
+.explore-footer-cta {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 25px 15px;
+}
+
+.sub-tagline {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  color: #888;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.explore-footer-cta h2 {
+  font-size: 2.1rem;
+  color: #1a365d;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin: 0 0 12px 0;
+}
+
+.sub-text {
+  color: #718096;
+  margin: 0 0 30px 0;
+}
+
+.cta-button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-btn.action-purple-link {
+  display: inline-block;
+  background-color: rgb(11, 43, 11);
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.cta-btn.action-purple-link:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Floating Action Widgets */
+.floating-action-widgets {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 100;
+}
+
+.whatsapp-bubble-widget {
+  width: 50px;
+  height: 50px;
+  background-color: var(--wa-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.whatsapp-bubble-widget:hover {
+  transform: scale(1.08);
+}
+
+.sticky-back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary-purple);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+/* Tablet and Smartphone Responsiveness adjustments */
+@media (max-width: 900px) {
+  .dest-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .dest-header {
+    text-align: center;
+    padding: 30px 4%;
+  }
+
+  .header-overlay {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
