@@ -11,12 +11,28 @@ import VisaAssistance from "../pages/VisaAssistance";
 import CourseAdvice from "../pages/CourseAdvice";
 import ShortlistUniversities from "../pages/ShortlistUniversities";
 import PreDeparture from "../pages/PreDeparture";
+import AustraliaDestination from "../pages/AustraliaDestination";
+import CanadaDestination from "../pages/CanadaDestination";
+import GermanyDestination from "../pages/GermanyDestination";
+import DubaiDestination from "../pages/DubaiDestination";
+import UKDestination from "../pages/UKDestination";
+import NZDestination from "../pages/NZDestination";
+import JapanDestination from "../pages/JapanDestination";
+import ItalyDestination from "../pages/ItalyDestination";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+        <Route path = "/ItalyDestination" element={<ItalyDestination  />} />
+          <Route path = "/JapanDestination" element={<JapanDestination  />} />
+          <Route path = "/NZDestination" element={<NZDestination  />} />
+          <Route path = "/UKDestination" element={<UKDestination />} />
+        <Route path = "/DubaiDestination" element={<DubaiDestination />} />
+        <Route path = "/GermanyDestination" element={<GermanyDestination />} />
+        <Route path = "/CanadaDestination" element={<CanadaDestination />} />
+        <Route path = "/AustraliaDestination" element={<AustraliaDestination />} />
           <Route path="/PreDeparture" element={<PreDeparture />} />
          <Route path="/ShortlistUniversities" element={<ShortlistUniversities />} />
          <Route path="/courseAdvice" element={<CourseAdvice />} />

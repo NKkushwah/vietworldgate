@@ -1,0 +1,376 @@
+:root {
+  --corporate-purple: #800060;
+  --deep-purple-hover: #600048;
+  --text-dark-slate: #2b3641;
+  --text-body-gray: #515e6d;
+  --ui-border-light: #e2e8f0;
+  --card-bg-subtle: #f8fafc;
+  --white: #ffffff;
+  --wa-green: #25D366;
+  --wa-dark-green: #128C7E;
+}
+
+.global-destination-wrapper {
+  background-color: var(--white);
+  color: var(--text-dark-slate);
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO BANNER DESIGN (Background limited to this element only)
+   ========================================================================== */
+.dynamic-hero-banner {
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background-image:  url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+}
+
+.hero-grid-max {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-left-content {
+  color: var(--white);
+}
+
+.hero-main-title {
+  font-size: 3.25rem;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.navigation-breadcrumbs {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+}
+
+.hero-right-graphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-mask-container {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.country-large-emoji {
+  font-size: 5rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+/* ==========================================================================
+   SECTION 2: MASTER STRUCTURAL INTERACTION GRID
+   ========================================================================== */
+.master-content-layout-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 4%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+}
+
+.fixed-width-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.callback-cta-container {
+  background-color: rgb(3, 34, 3);
+  color: var(--white);
+  padding: 24px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cta-meta-text {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.phone-interactive-anchor {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.45rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   WHATSAPP ADVISOR COMPONENT CARD (Replaced the Form structure)
+   ========================================================================== */
+.sidebar-whatsapp-card {
+  border: 1px solid var(--ui-border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  background: var(--white);
+}
+
+.wa-card-header {
+  background-color: var(--wa-dark-green);
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wa-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-header-text h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.wa-header-text p {
+  font-size: 0.8rem;
+  margin: 2px 0 0 0;
+  opacity: 0.85;
+}
+
+.wa-card-body {
+  padding: 24px;
+  background: var(--white);
+}
+
+.wa-card-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body-gray);
+  margin: 0 0 24px 0;
+}
+
+.wa-action-btn {
+  display: block;
+  background-color: var(--wa-green);
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.wa-action-btn:hover {
+  transform: translateY(-2px);
+  background-color: #22c35e;
+}
+
+/* ==========================================================================
+   RIGHT CONTENT LAYOUT STYLING
+   ========================================================================== */
+.variable-content-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.copywriting-block .section-header-title {
+  font-size: 2.1rem;
+  color: var(--text-dark-slate);
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.copywriting-block .section-body-paragraph {
+  font-size: 1.05rem;
+  color: var(--text-body-gray);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* Dynamic Triple Column Grid Section */
+.dynamic-triple-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.structural-feature-card {
+  background-color: var(--card-bg-subtle);
+  border-radius: 6px;
+  padding: 40px 24px;
+  text-align: center;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.purple-icon-globe-badge {
+  width: 64px;
+  height: 64px;
+  background-color: rgb(3, 37, 3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
+
+.badge-unicode-graphic {
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+.card-headline-title {
+  font-size: 1.35rem;
+  margin: 0 0 12px 0;
+}
+
+.card-descriptive-text {
+  font-size: 0.95rem;
+  color: var(--text-body-gray);
+  line-height: 1.6;
+}
+
+/* Lower End Call To Action Elements */
+.lower-conversion-cta-block {
+  border-top: 1px solid var(--ui-border-light);
+  padding-top: 45px;
+}
+
+.meta-tracking-tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.cta-block-main-heading {
+  font-size: 2.5rem;
+  color: var(--text-dark-slate);
+  margin: 0 0 24px 0;
+}
+
+.cta-block-bold-lead {
+  font-size: 1.25rem;
+  margin: 0 0 12px 0;
+}
+
+.cta-block-subsidiary-text {
+  color: var(--text-body-gray);
+  margin: 0 0 35px 0;
+}
+
+.cta-dual-action-row {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-conversion-btn-anchor {
+  display: inline-block;
+  background-color: rgb(3, 34, 3);
+  color: var(--white);
+  padding: 15px 36px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.primary-conversion-btn-anchor:hover {
+  background-color: var(--deep-purple-hover);
+}
+
+/* Float elements settings */
+.fixed-chat-trigger-bubble {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 99;
+  text-decoration: none;
+}
+
+.fixed-scroll-to-top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--corporate-purple);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+}
+
+/* Layout Responsiveness Adaptability Rules */
+@media (max-width: 1024px) {
+  .master-content-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .dynamic-hero-banner {
+    text-align: center;
+  }
+
+  .hero-grid-max {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-right-graphic {
+    display: none;
+  }
+
+  .dynamic-triple-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-dual-action-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

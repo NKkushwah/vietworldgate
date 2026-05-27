@@ -189,11 +189,31 @@ function Navbar() {
               </span>
             </span>
             <ul className="dropdown-menu">
-              <li onClick={closeMenu}>Canada</li>
-              <li onClick={closeMenu}>Australia</li>
-              <li onClick={closeMenu}>United Kingdom</li>
-              <li onClick={closeMenu}>USA</li>
-              <li onClick={closeMenu}>Germany</li>
+             <li onClick={closeMenu}>
+                <Link to="/CanadaDestination">Canada</Link>
+              </li>
+            <li onClick={closeMenu}>
+                <Link to="/AustraliaDestination">Australia</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/DubaiDestination">Dubai</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/GermanyDestination">Germany</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/ItalyDestination">Italy</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/JapanDestination">Japan</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/NZDestination">New Zealand</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/UKDestination">UK</Link>
+              </li>
+             
             </ul>
           </li>
 

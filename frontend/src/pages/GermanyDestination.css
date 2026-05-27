@@ -1,0 +1,575 @@
+:root {
+  --primary-purple: #800060;
+  --dark-purple: #600048;
+  --text-dark: #2c3e50;
+  --text-muted: #5a6c7d;
+  --border-color: #e6ebf0;
+  --wa-green: #25D366;
+  --wa-dark-green: #128C7E;
+  --panel-bg: #fdfdfd;
+}
+
+/* Base Wrapper Reset */
+.dest-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.65;
+  background-color: #ffffff;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden; /* Micro-scrolling break fields protect karne ke liye */
+}
+
+/* ==========================================
+   HEADER BANNER SECTION
+   ========================================== */
+.dest-header {
+  position: relative;
+  min-height: 240px;
+  padding: 40px 6%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: rgb(8, 53, 23);
+background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+}
+
+.header-overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 5;
+  gap: 20px;
+}
+
+.header-content h1 {
+  font-size: 3.2rem;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: rgb(8, 53, 23);
+}
+
+.breadcrumbs {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.9;
+  flex-wrap: wrap; /* Aggressive text break wrapper text overlap bachaane ke liye */
+}
+
+.breadcrumbs .arrow {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.header-graphic-side {
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+.country-badge-circle {
+  font-size: 4.5rem;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+/* ==========================================
+   GRID LAYOUT STRUCTURE
+   ========================================== */
+.dest-layout-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 45px;
+  padding: 50px 6%;
+}
+
+/* ==========================================
+   SIDEBAR COMPONENTS
+   ========================================== */
+.dest-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+/* Service Phone Block */
+.call-service-box {
+  background-color: rgb(16, 73, 28);
+  color: white;
+  padding: 22px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(128, 0, 96, 0.15);
+}
+
+.call-service-box p {
+  margin: 0 0 10px 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+}
+
+.phone-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* Refined Form-Style WhatsApp Widget */
+.whatsapp-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.wa-form-header {
+  background-color: #fcfdfe;
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-form-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.wa-status-badge {
+  font-size: 0.75rem;
+  background-color: #e6f9ed;
+  color: #15803d;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--wa-green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: wavePulse 1.8s infinite ease-in-out;
+}
+
+.wa-form-body {
+  padding: 24px;
+}
+
+.wa-intro-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.wa-info-highlight {
+  background-color: #f8fafc;
+  border-left: 3px solid var(--primary-purple);
+  padding: 12px 15px;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 24px;
+}
+
+.wa-action-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--wa-green);
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.wa-action-submit-btn:hover {
+  background-color: #1ebe57;
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   RIGHT CONTENT REGION & TYPOGRAPHY
+   ========================================== */
+.dest-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.info-block h2 {
+  font-size: 1.9rem;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.purple-divider {
+  width: 50px;
+  height: 3px;
+  background-color: rgb(3, 34, 3);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.info-block p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0 0 15px 0;
+  text-align: justify;
+}
+
+.nested-content-section {
+  margin-top: 24px;
+}
+
+.nested-content-section h3 {
+  font-size: 1.25rem;
+  color: #334155;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.custom-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.custom-bullet-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.custom-bullet-list li::before {
+  content: "•";
+  color: rgb(3, 34, 3);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 4px;
+  top: -3px;
+}
+
+/* ==========================================
+   GRID CARDS BLOCK
+   ========================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 15px 0;
+}
+
+.feature-card {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(3, 34, 3);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 18px auto;
+  box-shadow: 0 4px 10px rgba(128, 0, 96, 0.15);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================
+   EXPLORER ACTION FOOTER
+   ========================================== */
+.explore-footer-cta {
+  border-top: 1px solid var(--border-color);
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.sub-tagline {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.explore-footer-cta h2 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.sub-text {
+  color: var(--text-muted);
+  margin: 0 0 30px 0;
+}
+
+.cta-button-group {
+  display: flex;
+  gap: 16px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: rgb(3, 34, 3);
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 12px rgba(128, 0, 96, 0.15);
+}
+
+.cta-btn:hover {
+  opacity: 0.92;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTONS
+   ========================================== */
+.floating-action-widgets {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 100;
+}
+
+.whatsapp-bubble-widget {
+  width: 52px;
+  height: 52px;
+  background-color: var(--wa-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.whatsapp-bubble-widget:hover {
+  transform: scale(1.06);
+}
+
+.sticky-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  background-color: var(--primary-purple);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+/* Pulse animation for the Status Dot */
+@keyframes wavePulse {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+/* ==========================================
+   ADVANCED EXTRA RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+/* 1. Intermediate Device Viewport (Tablets & Medium Screen Folds) */
+@media (max-width: 1024px) {
+  .dest-layout-grid {
+    grid-template-columns: 1fr; /* Grid transitions into single vertical pipe */
+    gap: 40px;
+    padding: 40px 5%;
+  }
+  
+  .dest-header {
+    padding: 40px 5%;
+    text-align: center;
+    background-position: center; /* Centers wallpaper frame gracefully */
+  }
+
+  .header-overlay {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .header-graphic-side {
+    padding-right: 0;
+  }
+
+  .cta-button-group {
+    flex-direction: column; /* Stacks primary buttons */
+    gap: 12px;
+  }
+
+  .cta-btn {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Width calculation logic safe wrapper */
+  }
+}
+
+/* 2. Standard Smartphone Breakpoint (Landscape/Portrait mobiles) */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2.5rem; /* Dynamic fluid typography */
+  }
+
+  .breadcrumbs {
+    justify-content: center;
+  }
+
+  .info-block h2 {
+    font-size: 1.6rem;
+  }
+
+  .explore-footer-cta h2 {
+    font-size: 1.85rem;
+  }
+
+  .phone-link {
+    font-size: 1.25rem;
+  }
+}
+
+/* 3. Small Screen Viewport Control (Compact Devices / Folds) */
+@media (max-width: 480px) {
+  .dest-header {
+    min-height: 200px;
+    padding: 30px 4%;
+  }
+
+  .header-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.85rem;
+  }
+
+  .country-badge-circle {
+    font-size: 3.5rem;
+  }
+
+  .dest-layout-grid {
+    padding: 30px 4%;
+  }
+
+  .wa-form-header {
+    flex-direction: column; /* Form header scales down perfectly on small screens */
+    text-align: center;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .wa-form-body {
+    padding: 20px 15px;
+  }
+
+  .info-block p {
+    font-size: 0.98rem;
+    text-align: left; /* Resolves extreme justify breaks on tiny frames */
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Enforces single column block */
+  }
+
+  .floating-action-widgets {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .whatsapp-bubble-widget {
+    width: 46px;
+    height: 46px;
+  }
+
+  .sticky-back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
