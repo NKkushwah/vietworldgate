@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 const scholarshipData = [
   {
     id: 1,
-    institution: "CQUniversity Australia",
+    institution: "University of west london",
     scholarshipName: "International Merit Scholarship",
     value: "15% to 25% of the total course fee",
     deadline: "31-12-2030",
@@ -22,7 +22,7 @@ const scholarshipData = [
   },
   {
     id: 2,
-    institution: "Griffith University",
+    institution: "Heartsforshine University",
     scholarshipName: "International Student Academic Excellence Scholarship",
     value: "25% of tuition fees",
     deadline: "For year 2025 & 2026 intakes",
@@ -35,14 +35,15 @@ const scholarshipData = [
     ],
     link: "https://www.griffith.edu.au/international/scholarships-finance/scholarships/academic-excellence"
   },
-  { id: 3, institution: "The University of Western Australia", placeholder: true },
-  { id: 4, institution: "University of Technology Sydney (UTS)", placeholder: true },
-  { id: 5, institution: "UTS College", placeholder: true },
-  { id: 6, institution: "The University of Queensland", placeholder: true },
-  { id: 7, institution: "Navitas - Deakin College", placeholder: true },
-  { id: 8, institution: "Victoria University", placeholder: true },
-  { id: 9, institution: "Australian Catholic University", placeholder: true },
-  { id: 10, institution: "RMIT University", placeholder: true }
+  { id: 3, institution: "Coventry University", placeholder: true },
+  { id: 4, institution: "University of Essex", placeholder: true },
+  { id: 5, institution: "BPB University", placeholder: true },
+  { id: 6, institution: "University of Chester", placeholder: true },
+  { id: 7, institution: "University of Bedfrordshine", placeholder: true },
+  { id: 8, institution: "University of Sunderland", placeholder: true },
+  { id: 9, institution: "University of Cumbria", placeholder: true },
+  { id: 10, institution: "University of Bolton", placeholder: true },
+   { id: 11, institution: "University of Wales", placeholder: true }
 ];
 
 export default function Scholarships() {
