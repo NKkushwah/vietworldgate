@@ -1,12 +1,12 @@
-/* --- Yeh pure website ka scrollbar wapas laane ke liye hai --- */
+
 html, body {
-  overflow-y: auto !important;  /* Forcefully vertical scrollbar on karega */
-  overflow-x: hidden !important; /* Faltu ka horizontal scroll rokega */
-  height: auto !important;       /* Height ko lock hone se bachayega */
+  overflow-y: auto !important;  
+  overflow-x: hidden !important; 
+  height: auto !important;       
   min-height: 100vh;
 }
 
-/* Aapka puraana code jaisa hai waisa hi rahega */
+
 .scroll-top {
   position: fixed;
   bottom: 20px;

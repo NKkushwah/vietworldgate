@@ -16,16 +16,16 @@
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #ffffff; /* Ab baaki poori body clean white rahegi */
+  background-color: #ffffff; 
 }
 
-/* Header Banner Styling */
+
 .dest-header {
-  /* Linear gradient text readability ke liye hai, aur uske baad image path specify kiya hai */
-background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9'); /* Apni image ka sahi path yahan dalein */
+  
+background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9'); 
   
   background-repeat: no-repeat;
-  background-position: center right; /* Image ko right side me set karne ke liye */
+  background-position: center right; 
   background-size: cover;
   
   color: rgb(7, 43, 19);
@@ -78,7 +78,7 @@ background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e
 }
 
 .call-service-box {
-  background-color: rgb(16, 73, 28);
+  background-color: #012819;
   color: white;
   padding: 18px;
   border-radius: 4px;
