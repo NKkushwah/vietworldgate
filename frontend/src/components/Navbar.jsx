@@ -280,12 +280,21 @@ function Navbar() {
             </span>
 
             <ul className="dropdown-menu">
-              <li onClick={closeMenu}>Delhi</li>
-              <li onClick={closeMenu}>Noida</li>
-              <li onClick={closeMenu}>Ghaziabad</li>
+             <li onClick={closeMenu}>
+            <Link to="/ContactDelhi">Delhi</Link>
+          </li>
+
+            <li onClick={closeMenu}>
+            <Link to="/ContactNoida">Noida</Link>
+          </li>
+
               <li onClick={closeMenu}>
-                International Branch London
-              </li>
+            <Link to="/ContactGhaziabad">Ghaziabad</Link>
+          </li>
+              <li onClick={closeMenu}>
+            <Link to="/ContactLondon">International Branch London</Link>
+          </li>
+
             </ul>
           </li>
 

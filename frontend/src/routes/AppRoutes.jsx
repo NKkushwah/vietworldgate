@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Dashboard from "../pages/Dashboard";
 import ContactUs from "../pages/ContactUs";
 import CompanyProfile from "../pages/CompanyProfile";
@@ -20,13 +19,19 @@ import NZDestination from "../pages/NZDestination";
 import JapanDestination from "../pages/JapanDestination";
 import ItalyDestination from "../pages/ItalyDestination";
 import Scholarships from "../pages/Scholarships";
-import ContactDelhi from "../pages/ContactDelhi";
+import ContactDelhi from "../pages/branches/ContactDelhi";
+import ContactNoida from "../pages/branches/ContactNoida";
+import ContactGhaziabad from "../pages/branches/ContactGhaziabad";
+import ContactLondon from "../pages/branches/ContactLondon";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+        <Route path = "/ContactLondon" element={<ContactLondon />} />
+         <Route path = "/ContactGhaziabad" element={<ContactGhaziabad />} />
+         <Route path = "/ContactNoida" element={<ContactNoida />} />
          <Route path = "/ContactDelhi" element={<ContactDelhi />} />
          <Route path = "/Scholarships" element={<Scholarships  />} />
         <Route path = "/ItalyDestination" element={<ItalyDestination  />} />
