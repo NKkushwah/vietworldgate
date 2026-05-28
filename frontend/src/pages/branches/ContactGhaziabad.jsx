@@ -1,142 +1,159 @@
-import React from 'react';
-import './ContactGhaziabad.css';
-import Footer from '../../components/Footer';
-import Navbar from '../../components/Navbar';
+import React from "react";
+import "./ContactGhaziabad.css";
 
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+
+import {
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaUserAlt,
+  FaBriefcase,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const ContactGhaziabad = () => {
-  // WhatsApp Link specifically configured for Ghaziabad branch requests
-  const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20abroad%20from%20Ghaziabad.%20Please%20help%20me%20with%20course%20options,%20universities,%20and%20the%20visa%20process.";
+
+  const whatsappFormLink =
+    "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20abroad%20from%20Ghaziabad.";
 
   return (
     <>
       <Navbar />
-      <div className="contact-page-container">
-        {/* Top Banner Section */}
-        <header className="contact-banner">
-          <div className="banner-overlay">
-            <div className="banner-content">
-              <h1>Ghaziabad</h1>
-              <p className="breadcrumb">
-                <span className="home-icon">🏠</span> → Ghaziabad
-              </p>
-            </div>
-          </div>
-        </header>
 
-        {/* Main Content Card */}
-        <main className="contact-card">
-          <div className="card-header">
-            <span className="subtitle">CONTACT US</span>
-            <h2>Get in <strong>touch</strong></h2>
+      <div className="contact-page">
+
+        {/* HERO SECTION */}
+        <section className="contact-hero">
+          <div className="hero-overlay">
+            <h1>Ghaziabad Branch</h1>
+            <p>Home / Ghaziabad</p>
+          </div>
+        </section>
+
+        {/* MAIN CONTENT */}
+        <section className="contact-wrapper">
+
+          {/* HEADING */}
+          <div className="contact-heading">
+            <span>CONTACT US</span>
+
+            <h2>
+              Get in <strong>Touch</strong>
+            </h2>
           </div>
 
-          {/* Integrated Premium WhatsApp box */}
-          <div className="whatsapp-chat-card">
-            <div className="wa-card-header">
-              <div className="wa-header-icon">
-                <svg viewBox="0 0 448 512" width="24" height="24" fill="#ffffff">
-                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
-                </svg>
+          {/* WHATSAPP CARD */}
+          <div className="whatsapp-card">
+
+            <div className="whatsapp-top">
+
+              <div className="whatsapp-icon">
+                <FaWhatsapp />
               </div>
-              <div className="wa-header-meta">
-                <h4>Academic Support</h4>
+
+              <div>
+                <h3>Academic Support</h3>
                 <p>Online • Advisors Ready</p>
               </div>
+
             </div>
-            
-            <div className="wa-card-body">
-              <p className="wa-welcome-msg">
-                Confused about standard applications, requirements, or courses in Ghaziabad? Connect instantly with our experts for immediate support.
-              </p>
-              <a 
-                href={whatsappFormLink}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="wa-action-btn"
-              >
-                Start Chat Now
-              </a>
-            </div>
+
+            <p className="whatsapp-text">
+              Need guidance for study abroad admissions,
+              universities, scholarships, or visa process?
+              Connect instantly with our expert counselors
+              for quick support.
+            </p>
+
+            <a
+              href={whatsappFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
+              Start Chat
+            </a>
+
           </div>
 
-          <hr className="section-divider" />
+          {/* INFO GRID */}
+          <div className="info-grid">
 
-          {/* Directions / Info Grid Section - Premium 4-Card layout centered perfectly */}
-          <section className="directions-section">
-            <h3>How to Reach VIET Study Abroad Ghaziabad</h3>
-            
-            <div className="info-grid-premium">
-              {/* Card 1: Our Address */}
-              <div className="info-card-premium">
-                <div className="icon-circle-premium">
-                  <span className="icon-emoji">📍</span>
-                </div>
-                <h4>Our Address</h4>
-                <p className="bold-text">C/o VIET Ghaziabad International Center</p>
-                <p className="detail-text">RDC, Raj Nagar, Near Shaheed Sthal Metro Station, Above ICICI Bank, Ghaziabad, Uttar Pradesh - 201002</p>
+            {/* ADDRESS */}
+            <div className="info-card">
+
+              <div className="info-icon">
+                <FaMapMarkerAlt />
               </div>
 
-              {/* Card 2: Name */}
-              <div className="info-card-premium">
-                <div className="icon-circle-premium">
-                  <span className="icon-emoji">👤</span>
-                </div>
-                <h4>Name</h4>
-                <p className="detail-text">Navneet Kaur</p>
-              </div>
+              <h4>Address</h4>
 
-              {/* Card 3: Designation */}
-              <div className="info-card-premium">
-                <div className="icon-circle-premium">
-                  <span className="icon-emoji">💼</span>
-                </div>
-                <h4>Designation</h4>
-                <p className="detail-text">Ghaziabad Regional Admissions Director</p>
-              </div>
+              <p>
+                RDC, Raj Nagar,
+                Near Shaheed Sthal Metro Station,
+                Ghaziabad,
+                Uttar Pradesh - 201002
+              </p>
 
-              {/* Card 4: Phone Number */}
-              <div className="info-card-premium">
-                <div className="icon-circle-premium">
-                  <span className="icon-emoji">📞</span>
-                </div>
-                <h4>Phone Number</h4>
-                <p className="detail-text">+91 79822 95530</p>
-              </div>
             </div>
 
-            {/* Interactive Centered Map Wrapper configured for Ghaziabad */}
-            <div className="map-container">
-       <iframe
-    src="https://www.google.com/maps?q=28.6739,77.3646&z=17&output=embed"
-    width="600"
-    height="450"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-  ></iframe>
-              <div className="map-overlay-instruction">
-                <span>Use ctrl + scroll to zoom the map</span>
-              </div>
-            </div>
-          </section>
-        </main>
+            {/* NAME */}
+            <div className="info-card">
 
-        {/* Floating Quick Action Widgets */}
-        <div className="floating-action-widgets">
-          <a 
-            href={whatsappFormLink}
-            className="whatsapp-bubble-widget" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-          >
-            <svg viewBox="0 0 448 512" width="26" height="26" fill="currentColor">
-              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9z"/>
-            </svg>
-          </a>
-        </div>
+              <div className="info-icon">
+                <FaUserAlt />
+              </div>
+
+              <h4>Name</h4>
+
+              <p>Navneet Kaur</p>
+
+            </div>
+
+            {/* DESIGNATION */}
+            <div className="info-card">
+
+              <div className="info-icon">
+                <FaBriefcase />
+              </div>
+
+              <h4>Designation</h4>
+
+              <p>Regional Admissions Director</p>
+
+            </div>
+
+            {/* PHONE */}
+            <div className="info-card">
+
+              <div className="info-icon">
+                <FaPhoneAlt />
+              </div>
+
+              <h4>Phone</h4>
+
+              <p>+91 79822 95530</p>
+
+            </div>
+
+          </div>
+
+          {/* MAP */}
+          <div className="map-box">
+
+            <iframe
+              title="Ghaziabad Map"
+              src="https://www.google.com/maps?q=28.6739,77.3646&z=17&output=embed"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+
+          </div>
+
+        </section>
       </div>
+
       <Footer />
     </>
   );
