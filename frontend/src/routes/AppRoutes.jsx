@@ -19,12 +19,16 @@ import UKDestination from "../pages/UKDestination";
 import NZDestination from "../pages/NZDestination";
 import JapanDestination from "../pages/JapanDestination";
 import ItalyDestination from "../pages/ItalyDestination";
+import Scholarships from "../pages/Scholarships";
+import ContactDelhi from "../pages/ContactDelhi";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+         <Route path = "/ContactDelhi" element={<ContactDelhi />} />
+         <Route path = "/Scholarships" element={<Scholarships  />} />
         <Route path = "/ItalyDestination" element={<ItalyDestination  />} />
           <Route path = "/JapanDestination" element={<JapanDestination  />} />
           <Route path = "/NZDestination" element={<NZDestination  />} />
