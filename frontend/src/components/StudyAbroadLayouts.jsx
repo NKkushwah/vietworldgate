@@ -89,7 +89,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Dr. Alan Mercer",
       branch: "VIET WORLDGATE-Delhi (Office)",
       type: "Global Meet",
-      img: "https://images.unsplash.com/photo-1574097656146-0b43b7660cb6?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/12167748/pexels-photo-12167748.jpeg"
     },
     {
       id: 7,
@@ -98,7 +98,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Mr. Ryan Reynolds",
       branch: "VIET WORLDGATE-Noida (Office)",
       type: "Admissions Day",
-      img: "https://images.unsplash.com/photo-1548449112-96a38a643324?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/19014974/pexels-photo-19014974.jpeg"
     },
     {
       id: 8,
@@ -125,7 +125,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Ms. Emma Walsh",
       branch: "VIET WORLDGATE-Noida (Office)",
       type: "University Visits",
-      img: "https://images.unsplash.com/photo-1564982743470-47edd0c2c507?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/33770005/pexels-photo-33770005.jpeg"
     }
   ];
 

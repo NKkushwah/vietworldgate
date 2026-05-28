@@ -85,12 +85,12 @@
 
 .sidebar-nav ul li:hover {
   background-color: #f1f5f9;
-  color: #5c1451;
+  color: #012819;
 }
 
 .sidebar-nav ul li.active {
   background-color: #fbf4fa;
-  color: #5c1451;
+  color: #012819;
   font-weight: 600;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .know-more-btn {
-  background: #5c1451;
+  background: #012819;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -204,7 +204,7 @@
 
 .stat-card h3 {
   font-size: 28px;
-  color: #5c1451;
+  color: black;
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -307,7 +307,7 @@
 
 .quote-mark {
   font-size: 60px;
-  color: #5c1451;
+  color: #012819;
   font-family: serif;
   line-height: 1;
   margin-bottom: -10px;

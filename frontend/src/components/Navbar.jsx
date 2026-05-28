@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
@@ -31,6 +31,7 @@ function Navbar() {
   // =========================
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+
     if (!isMenuOpen) {
       setActiveDropdown(null);
     }
@@ -43,6 +44,7 @@ function Navbar() {
     if (window.innerWidth <= 1024) {
       e.preventDefault();
       e.stopPropagation();
+
       setActiveDropdown(activeDropdown === index ? null : index);
     }
   };
@@ -65,17 +67,19 @@ function Navbar() {
         <div className="top-scroll">
           <div className="top-left">
             <span className="branch-heading">
-              Our New Branches In India –{" "}
+              Our New Branches In India –
             </span>
-            <a href="#">Noida</a>
-            <a href="#">Ghaziabad</a>
-            <a href="#">Delhi</a>
+
+            <a href="/">Noida</a>
+            <a href="/">Ghaziabad</a>
+            <a href="/">Delhi</a>
 
             {/* INTERNATIONAL BRANCH */}
             <div className="international-branch">
               <span className="branch-heading">
-                International Branch –{" "}
+                International Branch –
               </span>
+
               <span className="london-text">
                 OXFORD STREET, LONDON
               </span>
@@ -86,7 +90,10 @@ function Navbar() {
         {/* SEARCH */}
         <div className="search-box">
           <input type="text" placeholder="Search here..." />
-          <button>🔍</button>
+
+          <button type="button">
+            <FiSearch />
+          </button>
         </div>
       </div>
 
@@ -101,6 +108,7 @@ function Navbar() {
             alt="Viet World Gate Logo"
             className="logo-img"
           />
+
           <div className="logo-text">
             <h2>VIET WORLDGATE</h2>
             <p>Your Gateway to Global Opportunities</p>
@@ -112,12 +120,14 @@ function Navbar() {
           className={`mobile-menu ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}
         >
-          {/* Hamburger icon lines can be added here in CSS */}
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         {/* NAV LINKS */}
         <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
-          
+
           {/* HOME */}
           <li onClick={closeMenu}>
             <Link to="/">Home</Link>
@@ -125,69 +135,101 @@ function Navbar() {
 
           {/* ABOUT */}
           <li
-            className={`dropdown ${activeDropdown === 1 ? "drop-active" : ""}`}
+            className={`dropdown ${
+              activeDropdown === 1 ? "drop-active" : ""
+            }`}
             onClick={(e) => handleDropdownClick(e, 1)}
           >
             <span className="nav-item">
               About Us
+
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
+
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>
-                <Link to="/companyprofile">Company Profile</Link>
+                <Link to="/companyprofile">
+                  Company Profile
+                </Link>
               </li>
+
               <li onClick={closeMenu}>
                 <Link to="/ourteam">Our Team</Link>
               </li>
+
               <li onClick={closeMenu}>
-                <Link to="/MissionVision">Mission & Vision</Link>
+                <Link to="/MissionVision">
+                  Mission & Vision
+                </Link>
               </li>
+
               <li onClick={closeMenu}>
-                <Link to="/feedback">Success Stories</Link>
+                <Link to="/feedback">
+                  Success Stories
+                </Link>
               </li>
             </ul>
           </li>
 
-          {/* SERVICES - FIX: Changed <i> to </li> structure */}
+          {/* SERVICES */}
           <li
-            className={`dropdown ${activeDropdown === 2 ? "drop-active" : ""}`}
+            className={`dropdown ${
+              activeDropdown === 2 ? "drop-active" : ""
+            }`}
             onClick={(e) => handleDropdownClick(e, 2)}
           >
             <span className="nav-item">
               Services
+
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
+
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>
-                <Link to="/PreDeparture">Pre-Departure Guidelines</Link>
+                <Link to="/PreDeparture">
+                  Pre-Departure Guidelines
+                </Link>
               </li>
+
               <li onClick={closeMenu}>
-                <Link to="/VisaAssistance">Visa Assistance</Link>
+                <Link to="/VisaAssistance">
+                  Visa Assistance
+                </Link>
               </li>
+
               <li onClick={closeMenu}>
-                <Link to="/ShortlistUniversities">Shortlist University</Link>
+                <Link to="/ShortlistUniversities">
+                  Shortlist University
+                </Link>
               </li>
+
               <li onClick={closeMenu}>
-                <Link to="/CourseAdvice">Course Advice</Link>
+                <Link to="/CourseAdvice">
+                  Course Advice
+                </Link>
               </li>
             </ul>
           </li>
 
           {/* DESTINATIONS */}
           <li
-            className={`dropdown ${activeDropdown === 3 ? "drop-active" : ""}`}
+            className={`dropdown ${
+              activeDropdown === 3 ? "drop-active" : ""
+            }`}
             onClick={(e) => handleDropdownClick(e, 3)}
           >
             <span className="nav-item">
               Destinations
+
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
+
             <ul className="dropdown-menu">
              <li onClick={closeMenu}>
                 <Link to="/CanadaDestination">Canada</Link>
@@ -218,41 +260,55 @@ function Navbar() {
           </li>
 
           {/* SCHOLARSHIPS */}
-          <li onClick={closeMenu}>Scholarships</li>
+          <li onClick={closeMenu}>
+            <Link to="/scholarships">Scholarships</Link>
+          </li>
 
           {/* BRANCHES */}
           <li
-            className={`dropdown ${activeDropdown === 4 ? "drop-active" : ""}`}
+            className={`dropdown ${
+              activeDropdown === 4 ? "drop-active" : ""
+            }`}
             onClick={(e) => handleDropdownClick(e, 4)}
           >
             <span className="nav-item">
               Branches
+
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
+
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Delhi</li>
               <li onClick={closeMenu}>Noida</li>
               <li onClick={closeMenu}>Ghaziabad</li>
-              <li onClick={closeMenu}>International Branch London</li>
+              <li onClick={closeMenu}>
+                International Branch London
+              </li>
             </ul>
           </li>
 
           {/* GALLERY */}
-          <li onClick={closeMenu}>Gallery</li>
+          <li onClick={closeMenu}>
+            <Link to="/gallery">Gallery</Link>
+          </li>
 
           {/* EVENTS */}
           <li
-            className={`dropdown ${activeDropdown === 5 ? "drop-active" : ""}`}
+            className={`dropdown ${
+              activeDropdown === 5 ? "drop-active" : ""
+            }`}
             onClick={(e) => handleDropdownClick(e, 5)}
           >
             <span className="nav-item">
               Events
+
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
+
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>Upcoming Events</li>
               <li onClick={closeMenu}>Seminars</li>
@@ -261,8 +317,14 @@ function Navbar() {
           </li>
 
           {/* OTHER LINKS */}
-          <li onClick={closeMenu}>Find a Course</li>
-          <li onClick={closeMenu}>Careers</li>
+          <li onClick={closeMenu}>
+            <Link to="/find-course">Find a Course</Link>
+          </li>
+
+          <li onClick={closeMenu}>
+            <Link to="/careers">Careers</Link>
+          </li>
+
           <li onClick={closeMenu}>
             <Link to="/contact-us">Contact Us</Link>
           </li>

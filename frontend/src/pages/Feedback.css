@@ -107,6 +107,7 @@
   overflow: visible !important;
   height: auto !important;
   max-height: none !important;
+  
 }
 
 /* =========================================
@@ -211,7 +212,7 @@
   margin: 0 0 8px 0;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #3b234a;
+  color: #012819;
 }
 
 .feedback-student-name {
@@ -226,7 +227,7 @@
   margin: 0 0 12px 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #b77dbf;
+  color: #000402;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
