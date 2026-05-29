@@ -24,11 +24,13 @@ import ContactNoida from "../pages/branches/ContactNoida";
 import ContactGhaziabad from "../pages/branches/ContactGhaziabad";
 import ContactLondon from "../pages/branches/ContactLondon";
 
+
 function AppRoutes() {
   return (
     <BrowserRouter>
 
       <Routes>
+       
         <Route path = "/ContactLondon" element={<ContactLondon />} />
          <Route path = "/ContactGhaziabad" element={<ContactGhaziabad />} />
          <Route path = "/ContactNoida" element={<ContactNoida />} />

@@ -92,10 +92,7 @@ const ContactDelhi = () => {
               <h4>Address</h4>
 
               <p>
-                Opposite Metro Station Gate No. 2,
-                Above Axis Bank,
-                Connaught Place,
-                New Delhi - 110001
+                06 B block, Lajpat nagar Delhi
               </p>
 
             </div>
@@ -135,7 +132,7 @@ const ContactDelhi = () => {
 
               <h4>Phone</h4>
 
-              <p>+91 79822 95530</p>
+              <p>+91 7982549603</p>
 
             </div>
 

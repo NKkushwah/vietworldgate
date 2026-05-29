@@ -1,68 +1,47 @@
 :root {
-  --primary-purple: #7a005a;
-  --dark-purple: #56003f;
-  --bg-light-blue: #f4f7f9;
-  --table-header-blue: #3a536b;
-  --table-body-blue: #2c3e50;
-  --text-dark: #333333;
+  --primary-green: rgb(7, 44, 7);
+  --accent-green: rgb(3, 17, 3);
+  --bg-light: #f4f7f9;
+  --text-main: #333333;
   --border-color: #e2e8f0;
 }
 
 .scholarship-portal {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-dark);
+  color: var(--text-main);
   background-color: #fcfcfc;
   min-height: 100vh;
 }
 
+/* Hero Banner Layout */
 .hero-banner {
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* change image here */
-  background-size: cover;        /* full cover */
-  background-position: center;   /* center image */
-  background-repeat: no-repeat;  /* no repeat */
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
-  padding: 40px 10%;
+  padding: 60px 10%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  min-height: 180px;
   position: relative;
-  overflow: hidden;
-  min-height: 200px; /* little bigger looks better */
-
-  border-radius: 10px; /* optional modern look */
-}
-
-/* optional overlay for dark effect */
-.hero-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* dark overlay */
-  z-index: 0;
-}
-
-/* make content above overlay */
-.hero-banner > * {
-  position: relative;
-  z-index: 1;
 }
 
 .hero-content h1 {
   font-size: 2.5rem;
   margin: 0 0 10px 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .breadcrumb {
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
-/* Filter Bar Styling */
+/* Filter Bar Container configurations */
 .filter-container {
   max-width: 1200px;
-  margin: -25px auto 30px auto;
+  margin: -30px auto 30px auto;
   padding: 0 20px;
   position: relative;
   z-index: 10;
@@ -70,18 +49,18 @@
 
 .filter-bar {
   background: white;
-  padding: 15px;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
 .filter-select, .filter-input {
-  padding: 12px;
+  padding: 14px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
 }
@@ -90,7 +69,7 @@
   flex: 1;
   background-color: #fff;
   cursor: pointer;
-  color: #666;
+  color: #555;
 }
 
 .filter-input {
@@ -98,43 +77,44 @@
 }
 
 .reset-btn {
-  background-color: rgb(3, 17, 3);
+  background-color: var(--accent-green);
   color: white;
   border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
+  padding: 14px 30px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .reset-btn:hover {
-  background-color: rgb(7, 44, 7);
+  background-color: var(--primary-green);
 }
 
-/* Accordion Layout */
+/* Accordion Outer Containers */
 .accordion-container {
   max-width: 1200px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 40px auto;
   padding: 0 20px;
 }
 
 .accordion-item {
   background: white;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
   border: 1px solid #edf2f7;
   overflow: hidden;
+  transition: border-color 0.2s;
 }
 
 .accordion-item.active {
-  border-color: rgb(7, 44, 7);
+  border-color: var(--primary-green);
 }
 
 .accordion-header {
-  background-color: var(--bg-light-blue);
-  padding: 18px 24px;
+  background-color: #ffffff;
+  padding: 20px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,123 +123,190 @@
 }
 
 .accordion-item.active .accordion-header {
-  background-color: rgb(7, 44, 7);
+  background-color: var(--primary-green);
   color: white;
 }
 
 .institution-title {
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 .arrow-icon {
-  font-size: 0.8rem;
-  transition: transform 0.2s;
+  font-size: 0.85rem;
 }
 
-.accordion-item.active .arrow-icon {
-  transform: rotate(180deg);
-}
-
-/* Inner Details Table Grid */
 .accordion-content {
   border-top: 1px solid var(--border-color);
+  background: #fdfdfd;
 }
 
-.table-wrapper {
-  overflow-x: auto;
+/* Cards Responsive Grid Wrapper */
+.scholarships-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 24px;
 }
 
-.scholarship-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.92rem;
-  background-color: var(--table-body-blue);
-  color: #e2e8f0;
+.scholarship-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.scholarship-table th {
-  background-color: rgb(70, 163, 135);;
-  color: white;
-  padding: 14px;
+.scholarship-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Color Circle badge properties matching image theme */
+.merit-icon { background-color: #e6f4ea; }
+.vc-icon { background-color: #fef7e0; }
+.global-icon { background-color: #e8f0fe; }
+.pg-icon { background-color: #fce8e6; }
+
+.header-title-group h3 {
+  font-size: 1.05rem;
   font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #243342;
+  margin: 0 0 6px 0;
+  color: #1a202c;
+  line-height: 1.3;
 }
 
-.scholarship-table td {
-  padding: 20px 14px;
-  vertical-align: top;
+.value-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #137333;
+  margin-top: 2px;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  color: #4a5568;
   line-height: 1.5;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 20px 0;
 }
 
-.scholarship-table td:last-child {
-  border-right: none;
+/* Card inner details configuration metadata list */
+.card-meta {
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.fw-bold {
-  font-weight: bold;
-}
-
-/* Eligibility List inside Table */
-.eligibility-list {
-  margin: 0 0 15px 0;
-  padding-left: 20px;
-}
-
-.eligibility-list li {
-  margin-bottom: 8px;
-}
-
-.source-link {
-  color: #63b3ed;
-  text-decoration: none;
-  word-break: break-all;
+.meta-item {
+  display: flex;
   font-size: 0.85rem;
-  display: block;
 }
 
-.source-link:hover {
-  text-decoration: underline;
+.meta-label {
+  color: #718096;
+  width: 95px;
+  font-weight: 500;
+  flex-shrink: 0;
 }
 
-/* Register Action column */
-.register-cell {
-  text-align: center;
-  width: 80px;
+.meta-value {
+  color: #2d3748;
+  font-weight: 600;
 }
 
-.register-icon-btn {
-  background: transparent;
-  color: #cbd5e0;
+/* Dark action buttons layout configuration */
+.card-action-btn {
+  background-color: #031103;
+  color: #ffffff;
   border: none;
-  font-size: 1.5rem;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: background-color 0.2s;
 }
 
-.register-icon-btn:hover {
+.card-action-btn:hover {
+  background-color: var(--primary-green);
+}
+
+/* Main Load/Show More controls styling */
+.show-more-container {
+  text-align: center;
+  margin: 30px 0 60px 0;
+}
+
+.show-more-btn {
+  background: none;
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.show-more-btn:hover {
+  background-color: var(--primary-green);
   color: white;
 }
 
-.no-data {
-  padding: 20px;
+.no-data, .no-results {
+  padding: 30px;
   color: #718096;
   text-align: center;
   font-style: italic;
+  font-size: 0.95rem;
 }
 
-/* Responsive Tweaks */
+/* Responsive Grid Breakpoints */
+@media (max-width: 1200px) {
+  .scholarships-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .filter-bar {
     flex-direction: column;
     align-items: stretch;
   }
-  .scholarship-table th, .scholarship-table td {
-    padding: 10px;
+  .scholarships-card-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
   }
 }

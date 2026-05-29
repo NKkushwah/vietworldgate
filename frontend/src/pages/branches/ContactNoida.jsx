@@ -80,8 +80,9 @@ const ContactNoida = () => {
               <h4>Address</h4>
 
               <p>
-                Sector 62, Near Electronic City Metro Station,
-                Noida, Uttar Pradesh - 201301
+               36, Block H, Sector 63,
+Uttar Pradesh 201301, Noida
+Delhi, India
               </p>
             </div>
 

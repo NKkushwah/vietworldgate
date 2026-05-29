@@ -90,10 +90,7 @@ const ContactGhaziabad = () => {
               <h4>Address</h4>
 
               <p>
-                RDC, Raj Nagar,
-                Near Shaheed Sthal Metro Station,
-                Ghaziabad,
-                Uttar Pradesh - 201002
+                A-112, First Floor, Shyam Park Extension, Sahibabad, Ghaziabad, Ghaziabad, India, 201005
               </p>
 
             </div>
@@ -133,7 +130,7 @@ const ContactGhaziabad = () => {
 
               <h4>Phone</h4>
 
-              <p>+91 79822 95530</p>
+              <p>+91 7982549603</p>
 
             </div>
 

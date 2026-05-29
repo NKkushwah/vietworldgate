@@ -90,10 +90,9 @@ const ContactLondon = () => {
               <h4>Address</h4>
 
               <p>
-                Business Design Centre,
-                52 Upper St, Angel,
-                London N1 0QH,
-                United Kingdom
+    401, A Oxford Street
+London
+United Kingdom
               </p>
 
             </div>
