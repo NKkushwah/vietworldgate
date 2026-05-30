@@ -13,6 +13,73 @@
   min-height: 100vh;
 }
 
+
+/* Section */
+.search-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* WhatsApp Top Button */
+.whatsapp-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.whatsapp-btn img {
+  width: 20px;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgb(6, 44, 6);
+}
+
+
+
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .whatsapp-top {
+    justify-content: center;
+  }
+
+  .whatsapp-btn span {
+    display: none;
+  }
+
+  .whatsapp-btn {
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
+
 /* Hero Banner Layout */
 .hero-banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
@@ -308,5 +375,57 @@
   .scholarships-card-grid {
     grid-template-columns: 1fr;
     padding: 16px;
+  }
+}
+
+
+.whatsapp-top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Phone Button */
+.phone-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: Green;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.phone-btn img {
+  width: 18px;
+}
+
+.phone-btn:hover {
+  transform: scale(1.05);
+  background-color:red;
+}
+
+/* WhatsApp Button */
+
+
+
+
+/* 📱 Mobile Responsive */
+@media (max-width: 480px) {
+  .phone-btn span,
+  .whatsapp-btn span {
+    display: none;
+  }
+
+  .phone-btn
+   {
+    padding: 10px;
+    border-radius: 50%;
   }
 }
