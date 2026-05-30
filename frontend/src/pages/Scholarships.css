@@ -417,15 +417,3 @@
 
 
 /* 📱 Mobile Responsive */
-@media (max-width: 480px) {
-  .phone-btn span,
-  .whatsapp-btn span {
-    display: none;
-  }
-
-  .phone-btn
-   {
-    padding: 10px;
-    border-radius: 50%;
-  }
-}
