@@ -1,16 +1,67 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import './StudyDestinations.css';
 
+// Study destinaton
 const destinations = [
-  { id: 1, name: 'Italy', image: "https://images.pexels.com/photos/13849371/pexels-photo-13849371.jpeg" },
-  { id: 2, name: 'Australia', image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=600&auto=format&fit=crop' },
-  { id: 3, name: 'Canada', image: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop' },
-  { id: 4, name: 'UK', image: 'https://images.pexels.com/photos/28245665/pexels-photo-28245665.jpeg' },
-  { id: 5, name: 'Germany', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600&auto=format&fit=crop' },
-  { id: 6, name: 'New Zealand', image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=600&auto=format&fit=crop' },
+  { 
+    id: 1, 
+    name: 'Italy',
+    path: '/ItalyDestination', 
+    image: "https://images.pexels.com/photos/13849371/pexels-photo-13849371.jpeg" 
+    
+  },
+
+  { 
+    id: 2,
+     name: 'Australia',
+     path: '/AustraliaDestination', 
+     image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=600&auto=format&fit=crop' 
+    },
+
+  { 
+    id: 3,
+     name: 'Canada',
+     path: '/CanadaDestination', 
+     image: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop' 
+    },
+
+  { 
+    id: 4, 
+    path: '/UKDestination',
+    name: 'UK', 
+    image: 'https://images.pexels.com/photos/28245665/pexels-photo-28245665.jpeg' 
+  },
+
+  { 
+    id: 5,
+    path: '/GermanyDestination', 
+    name: 'Germany', 
+    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600&auto=format&fit=crop'
+   },
+
+  { 
+    id: 6, 
+    path: '/NZDestination',
+    name: 'New Zealand', 
+    image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=600&auto=format&fit=crop' 
+  },
+   { 
+    id: 7, 
+    path:'/DubaiDestination',
+    name: 'Dubai', 
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop' 
+  },
+
+  {
+    id: 8,
+    path: '/JapanDestination',
+    name: 'Japan',
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600&auto=format&fit=crop'
+  }
 ];
 
-// Naya data array Work Destinations ke liye
+// work destination
 const workDestinations = [
   { 
     id: 1, 
@@ -19,7 +70,7 @@ const workDestinations = [
   },
   { 
     id: 2, 
-    name: 'Cyprus', 
+    name: 'Canada', 
     image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop' 
   },
   { 
@@ -29,12 +80,12 @@ const workDestinations = [
   },
   { 
     id: 4, 
-    name: 'Russia', 
+    name: 'Italy', 
     image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=600&auto=format&fit=crop' 
   },
   { 
     id: 5, 
-    name: 'England', 
+    name: 'New Zealand', 
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600&auto=format&fit=crop' 
   },
   { 
@@ -44,14 +95,15 @@ const workDestinations = [
   },
   { 
     id: 7, 
-    name: 'Romania', 
+    name: 'UK', 
     image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=600&auto=format&fit=crop' 
   },
+  
 ];
 
 export default function StudyDestinations() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentWorkIndex, setCurrentWorkIndex] = useState(0); // Naya state work slider ke liye
+  const [currentWorkIndex, setCurrentWorkIndex] = useState(0); 
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
   // Dynamic screen sizing check
@@ -82,11 +134,11 @@ export default function StudyDestinations() {
     return () => clearInterval(autoSlideTimer);
   }, [maxIndex]);
 
-  // Work Slider Auto-sliding Effect (Naya loop)
+  // Work Slider Auto-sliding Effect 
   useEffect(() => {
     const autoWorkSlideTimer = setInterval(() => {
       setCurrentWorkIndex((prevIndex) => (prevIndex < maxWorkIndex ? prevIndex + 1 : 0));
-    }, 3500); // Thoda sa different time taaki dono ek sath na bhaagen
+    }, 3500); 
     return () => clearInterval(autoWorkSlideTimer);
   }, [maxWorkIndex]);
 
@@ -114,7 +166,7 @@ export default function StudyDestinations() {
         </p>
       </section>
 
-      {/* Study Slider Section */}
+      Study Slider Section
       <section className="destination-slider-section">
         <h2 className="section-title">Choose your <span>Study Destination</span></h2>
         <p className="section-subtitle">
@@ -127,29 +179,38 @@ export default function StudyDestinations() {
             style={{ transform: `translateX(-${getTranslateX(currentIndex)}%)` }} 
           >
             {destinations.map((dest) => (
-              <div className="destination-card" key={dest.id}>
-                <div className="card-image-wrapper">
-                  <img src={dest.image} alt={dest.name} />
-                </div>
-                <div className="card-content">
-                  <h3>{dest.name}</h3>
-                  <div className="read-more-wrapper">
-                    <span className="arrow-circle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                    <span className="read-more-text">Read More</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+  <div className="destination-card" key={dest.id}>
+    <div className="card-image-wrapper">
+      <img src={dest.image} alt={dest.name} />
+    </div>
+
+    <div className="card-content">
+      <h3>{dest.name}</h3>
+
+      <Link to={dest.path} className="read-more-wrapper">
+        <span className="arrow-circle">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+
+        <span className="read-more-text">
+          Read More
+        </span>
+      </Link>
+    </div>
+  </div>
+))}
           </div>
         </div>
       </section>
 
-      {/* Work Slider Section (Naya Section jo aapne manga tha) */}
       <section className="destination-slider-section work-slider-section">
         <h2 className="section-title">Choose your <span>Work Destination</span></h2>
         <p className="section-subtitle">

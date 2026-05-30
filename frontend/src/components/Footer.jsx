@@ -112,21 +112,21 @@ const Footer = () => {
 
             <ul>
               <li>
-                <Link to="/">VIET WORLDGATE Delhi</Link>
+                <Link to="/ContactDelhi">VIET WORLDGATE Delhi</Link>
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/ContactGhaziabad">
                   VIET WORLDGATE Ghaziabad(Registered Office)
                 </Link>
               </li>
 
               <li>
-                <Link to="/">VIET WORLDGATE Noida</Link>
+                <Link to="/ContactNoida">VIET WORLDGATE Noida</Link>
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/ContactLondon">
                   VIET WORLDGATE International branch London
                 </Link>
               </li>
@@ -152,7 +152,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/Scholarships">
                   Scholarships
                 </Link>
               </li>
@@ -287,7 +287,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
 
-            <Link to="/branches" onClick={scrollToTop}>
+            <Link to="/ContactNoida" onClick={scrollToTop}>
               Branches
             </Link>
 
