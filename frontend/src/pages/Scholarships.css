@@ -377,3 +377,55 @@
     padding: 16px;
   }
 }
+
+
+.whatsapp-top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Phone Button */
+.phone-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: Green;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.phone-btn img {
+  width: 18px;
+}
+
+.phone-btn:hover {
+  transform: scale(1.05);
+  background-color:red;
+}
+
+/* WhatsApp Button */
+
+
+
+
+/* 📱 Mobile Responsive */
+@media (max-width: 480px) {
+  .phone-btn span,
+  .whatsapp-btn span {
+    display: none;
+  }
+
+  .phone-btn
+   {
+    padding: 10px;
+    border-radius: 50%;
+  }
+}

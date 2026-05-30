@@ -811,6 +811,21 @@ const handleWhatsAppShare = (sch, institution) => {
           </div>
         </div>
 
+           <div className="whatsapp-top">
+
+  {/* Phone Button */}
+  <a href="tel:+91 79822 95530" className="phone-btn">
+    <img
+      src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"
+      alt="phone"
+    />
+    <span>Call Us</span>
+  </a>
+
+ 
+
+</div>
+
         {/* Accordion List Section */}
         <div className="accordion-container">
           {displayedData.length > 0 ? (
@@ -936,6 +951,7 @@ const handleWhatsAppShare = (sch, institution) => {
       
 
     </div>
+ 
       <Footer />
     </>
   );
