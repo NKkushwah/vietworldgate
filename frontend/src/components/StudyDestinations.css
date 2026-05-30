@@ -218,3 +218,20 @@
   padding-top: 10px;
   border-top: 1px solid #f2edf4; /* Dono sliders ke beech ek light partition ke liye */
 }
+
+.destination-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.read-more-wrapper{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+
+.read-more-text{
+  font-weight:600;
+}

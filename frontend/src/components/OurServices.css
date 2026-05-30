@@ -1,160 +1,185 @@
-/* Color Variables */
+/* ===========================
+   COLOR VARIABLES
+=========================== */
 :root {
-  --purple-brand: #012819;;
-  --text-dark: #333333;
-  --text-muted: #666666;
-  --bg-light: #ffffff;
+  --primary-color: #012819;
+  --text-dark: #333;
+  --text-muted: #666;
+  --bg-light: #fff;
 }
 
+/* ===========================
+   SECTION
+=========================== */
 .services-section {
-  padding: 60px 16px;
-  background-color: #fafafa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 80px 20px;
+  background: #fafafa;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .services-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1250px;
+  margin: auto;
 }
 
-/* Header Styling */
+/* ===========================
+   HEADER
+=========================== */
 .services-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
 .services-header h2 {
-  font-size: 2.25rem;
-  font-weight: 400;
-  color: var(--purple-brand);
-  margin: 0 0 12px 0;
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
 }
 
-.services-header .italic-title {
+.italic-title {
   font-style: italic;
   font-weight: 700;
 }
 
 .services-header p {
   color: var(--text-muted);
-  font-size: 1rem;
-  margin: 0;
+  font-size: 1.05rem;
 }
 
-/* Grid Layout */
+/* ===========================
+   GRID
+=========================== */
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* Card Styling */
+/* ===========================
+   LINK WRAPPER
+=========================== */
+.service-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   CARD
+=========================== */
 .service-card {
-  background-color: var(--bg-light);
-  border-radius: 40px; /* Base container roundness */
+  background: #fff;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px #012819;;
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(1,40,25,0.18);
 }
 
-/* Image Wrappers & Asymmetric Border Cutout */
+/* ===========================
+   IMAGE
+=========================== */
 .service-image-wrapper {
   position: relative;
-  width: 100%;
-  height: 240px;
   overflow: hidden;
-  /* Replicating the unique asymmetric curve from the screenshot */
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
+  height: 240px;
 }
 
 .service-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s ease;
 }
 
-/* Circular Floating Purple Icon Badge */
+.service-card:hover .service-img {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   ICON BADGE
+=========================== */
 .service-icon-badge {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  background-color: var(--purple-brand);
-  width: 44px;
-  height: 44px;
+  bottom: 15px;
+  right: 15px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
+  background: var(--primary-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px #012819;;
-  z-index: 2;
+
+  box-shadow: 0 5px 15px rgba(1,40,25,0.3);
 }
 
-/* Text & Info Area */
+/* ===========================
+   CONTENT
+=========================== */
 .service-content {
-  padding: 24px 30px 30px 30px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  padding: 25px;
 }
 
 .service-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.4rem;
   color: var(--text-dark);
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
 }
 
 .service-description {
-  font-size: 0.925rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0 0 24px 0;
-  flex-grow: 1;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
 
-/* Read More Button styling */
+/* ===========================
+   BUTTON
+=========================== */
 .btn-read-more {
-  align-self: flex-start;
-  background-color: var(--purple-brand);
-  color: #ffffff;
+  background: var(--primary-color);
+  color: white;
   border: none;
-  padding: 10px 22px;
-  font-size: 0.8rem;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.85rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: 0.3s ease;
 }
 
 .btn-read-more:hover {
-  background-color: #012819;;
+  background: #03472d;
+  transform: translateX(5px);
 }
 
-/* ==========================================
-   Responsive Breakpoints
-   ========================================== */
-
-/* Tablet View */
-@media screen and (min-width: 680px) {
+/* ===========================
+   TABLET
+=========================== */
+@media(max-width:992px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop View */
-@media screen and (min-width: 992px) {
+/* ===========================
+   MOBILE
+=========================== */
+@media(max-width:768px) {
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
   .services-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .service-image-wrapper {
+    height: 220px;
   }
 }
