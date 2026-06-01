@@ -1,0 +1,1148 @@
+import React, { useState, useMemo, useRef } from 'react';
+import './CoursePortal.css';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+const initialCourses = [
+  {
+    id: '078172B',
+    title: 'Bachelor of Occupational Therapy',
+    university: 'Australian Catholic University',
+    intake: 'February',
+    tuitionFee: 52544,
+    faculty: 'Allied Health',
+    campuses: ['Bel', 'Bris', 'Can', 'Mel', 'North Syd'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '7',
+    country: 'Australia'
+  },
+  {
+    id: '071515G',
+    title: 'Bachelor of Physiotherapy',
+    university: 'Australian Catholic University',
+    intake: 'February',
+    tuitionFee: 52544,
+    faculty: 'Allied Health',
+    campuses: ['Bal', 'Bris', 'North Syd'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '7',
+    country: 'Australia'
+  },
+  {
+    id: '084790C',
+    title: 'Bachelor of Social Work',
+    university: 'Australian Catholic University',
+    intake: 'February',
+    tuitionFee: 32392,
+    faculty: 'Allied Health',
+    campuses: ['Can', 'str'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '7',
+    country: 'Australia'
+  },
+  {
+    id: '078174M',
+    title: 'Bachelor of Speech Pathology',
+    university: 'Australian Catholic University',
+    intake: 'February',
+    tuitionFee: 43785,
+    faculty: 'Allied Health',
+    campuses: ['Bris', 'Mel', 'North Syd'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: '097207E',
+    title: 'Master of Leadership and Management in Health Care',
+    university: 'Australian Catholic University',
+    intake: 'January',
+    tuitionFee: 32688,
+    faculty: 'Allied Health',
+    campuses: ['North Syd'],
+    level: 'Master (coursework)',
+    duration: '12 - 24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },   
+ 
+  {
+    id: 'B001',
+    title: 'Bachelor of Nursing',
+    university: 'Deakin University',
+    intake: 'February, July',
+    tuitionFee: 36000,
+    faculty: 'Health',
+    campuses: ['Melbourne', 'Geelong'],
+    level: 'Bachelor',
+    duration: '36 Months',
+    ielts: '7',
+    country: 'Australia'
+  },
+  {
+    id: 'B002',
+    title: 'Bachelor of Information Technology',
+    university: 'University of Technology Sydney',
+    intake: 'February, July',
+    tuitionFee: 42000,
+    faculty: 'IT',
+    campuses: ['Sydney'],
+    level: 'Bachelor',
+    duration: '36 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'B003',
+    title: 'Bachelor of Business',
+    university: 'Griffith University',
+    intake: 'February, July, November',
+    tuitionFee: 33000,
+    faculty: 'Business',
+    campuses: ['Gold Coast', 'Brisbane'],
+    level: 'Bachelor',
+    duration: '36 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'B004',
+    title: 'Bachelor of Engineering (Civil)',
+    university: 'University of Adelaide',
+    intake: 'February, July',
+    tuitionFee: 45000,
+    faculty: 'Engineering',
+    campuses: ['Adelaide'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D001',
+    title: 'Diploma of Business',
+    university: 'La Trobe College Australia',
+    intake: 'February, June, October',
+    tuitionFee: 22000,
+    faculty: 'Business',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D002',
+    title: 'Diploma of Engineering',
+    university: 'Monash College',
+    intake: 'February, July',
+    tuitionFee: 30000,
+    faculty: 'Engineering',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'D003',
+    title: 'Diploma of Hospitality Management',
+    university: 'William Angliss Institute',
+    intake: 'February, July',
+    tuitionFee: 18000,
+    faculty: 'Hospitality',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 - 18 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M001',
+    title: 'Master of Business Administration (MBA)',
+    university: 'University of Sydney',
+    intake: 'February, August',
+    tuitionFee: 60000,
+    faculty: 'Business',
+    campuses: ['Sydney'],
+    level: 'Master (coursework)',
+    duration: '18 Months',
+    ielts: '7',
+    country: 'Australia'
+  },
+  {
+    id: 'M002',
+    title: 'Master of Cyber Security',
+    university: 'RMIT University',
+    intake: 'February, July',
+    tuitionFee: 47000,
+    faculty: 'IT',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M003',
+    title: 'Master of Public Health',
+    university: 'University of Queensland',
+    intake: 'February, July',
+    tuitionFee: 42000,
+    faculty: 'Health',
+    campuses: ['Brisbane'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'AD001',
+    title: 'Associate Degree in IT',
+    university: 'University of Canberra',
+    intake: 'February, July',
+    tuitionFee: 26000,
+    faculty: 'IT',
+    campuses: ['Canberra'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'AD002',
+    title: 'Associate Degree in Business',
+    university: 'Swinburne University',
+    intake: 'February, July',
+    tuitionFee: 27000,
+    faculty: 'Business',
+    campuses: ['Melbourne'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'CIV001',
+    title: 'Certificate IV in Kitchen Management',
+    university: 'TAFE Queensland',
+    intake: 'January, April, July',
+    tuitionFee: 15000,
+    faculty: 'Hospitality',
+    campuses: ['Brisbane'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'CIV002',
+    title: 'Certificate IV in Automotive Technology',
+    university: 'TAFE NSW',
+    intake: 'February, July',
+    tuitionFee: 14000,
+    faculty: 'Automotive',
+    campuses: ['Sydney'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'B005',
+    title: 'Bachelor of Psychology',
+    university: 'Macquarie University',
+    intake: 'February, July',
+    tuitionFee: 37000,
+    faculty: 'Arts',
+    campuses: ['Sydney'],
+    level: 'Bachelor',
+    duration: '36 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'B006',
+    title: 'Bachelor of Accounting',
+    university: 'Curtin University',
+    intake: 'February, July',
+    tuitionFee: 34000,
+    faculty: 'Business',
+    campuses: ['Perth'],
+    level: 'Bachelor',
+    duration: '36 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'M004',
+    title: 'Master of Engineering Management',
+    university: 'University of Melbourne',
+    intake: 'February, July',
+    tuitionFee: 50000,
+    faculty: 'Engineering',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M005',
+    title: 'Master of Finance',
+    university: 'University of New South Wales',
+    intake: 'February, September',
+    tuitionFee: 55000,
+    faculty: 'Finance',
+    campuses: ['Sydney'],
+    level: 'Master (coursework)',
+    duration: '18 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D004',
+    title: 'Diploma of Early Childhood Education',
+    university: 'Victoria University',
+    intake: 'February, July',
+    tuitionFee: 19000,
+    faculty: 'Education',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 - 18 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'CIV003',
+    title: 'Certificate IV in Building and Construction',
+    university: 'Holmesglen Institute',
+    intake: 'February, July',
+    tuitionFee: 16000,
+    faculty: 'Construction',
+    campuses: ['Melbourne'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D101',
+    title: 'Diploma of Information Technology',
+    university: 'TAFE NSW',
+    intake: 'February, July',
+    tuitionFee: 16000,
+    faculty: 'IT',
+    campuses: ['Sydney', 'Newcastle'],
+    level: 'Diploma',
+    duration: '12 - 18 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'D102',
+    title: 'Diploma of Business',
+    university: 'La Trobe College Australia',
+    intake: 'February, June, October',
+    tuitionFee: 22000,
+    faculty: 'Business',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D103',
+    title: 'Diploma of Engineering',
+    university: 'Monash College',
+    intake: 'February, July',
+    tuitionFee: 30000,
+    faculty: 'Engineering',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 Months',
+    ielts: '6',
+    country: 'Australia'
+  },
+  {
+    id: 'D104',
+    title: 'Diploma of Hospitality Management',
+    university: 'William Angliss Institute',
+    intake: 'February, July',
+    tuitionFee: 18000,
+    faculty: 'Hospitality',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 - 18 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D105',
+    title: 'Diploma of Early Childhood Education',
+    university: 'Victoria University',
+    intake: 'February, July',
+    tuitionFee: 19000,
+    faculty: 'Education',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 - 18 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'D106',
+    title: 'Diploma of Marketing and Communication',
+    university: 'RMIT University',
+    intake: 'February, July',
+    tuitionFee: 21000,
+    faculty: 'Marketing',
+    campuses: ['Melbourne'],
+    level: 'Diploma',
+    duration: '12 Months',
+    ielts: '6',
+    country: 'Australia'
+  } ,
+
+  {
+    id: 'M201',
+    title: 'Master of Information Technology',
+    university: 'University of Melbourne',
+    intake: 'February, July',
+    tuitionFee: 48000,
+    faculty: 'IT',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M202',
+    title: 'Master of Business Administration (MBA)',
+    university: 'Monash University',
+    intake: 'February, July',
+    tuitionFee: 50000,
+    faculty: 'Business',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '18 - 24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M203',
+    title: 'Master of Engineering',
+    university: 'University of Sydney',
+    intake: 'February, August',
+    tuitionFee: 53000,
+    faculty: 'Engineering',
+    campuses: ['Sydney'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M204',
+    title: 'Master of Public Health',
+    university: 'Deakin University',
+    intake: 'March, July, November',
+    tuitionFee: 42000,
+    faculty: 'Health',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '18 - 24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  },
+  {
+    id: 'M205',
+    title: 'Master of Data Science',
+    university: 'RMIT University',
+    intake: 'February, July',
+    tuitionFee: 47000,
+    faculty: 'Data Science',
+    campuses: ['Melbourne'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Australia'
+  }
+  ,
+
+  {
+    id: 'C401',
+    title: 'Certificate IV in Information Technology',
+    university: 'TAFE Queensland',
+    intake: 'January, July',
+    tuitionFee: 14000,
+    faculty: 'IT',
+    campuses: ['Brisbane'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'C402',
+    title: 'Certificate IV in Business',
+    university: 'TAFE NSW',
+    intake: 'February, July',
+    tuitionFee: 13000,
+    faculty: 'Business',
+    campuses: ['Sydney'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'C403',
+    title: 'Certificate IV in Marketing and Communication',
+    university: 'RMIT University',
+    intake: 'February, July',
+    tuitionFee: 15000,
+    faculty: 'Marketing',
+    campuses: ['Melbourne'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'C404',
+    title: 'Certificate IV in Hospitality',
+    university: 'William Angliss Institute',
+    intake: 'February, July',
+    tuitionFee: 13500,
+    faculty: 'Hospitality',
+    campuses: ['Melbourne'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+  {
+    id: 'C405',
+    title: 'Certificate IV in Accounting and Bookkeeping',
+    university: 'Victoria University',
+    intake: 'February, July',
+    tuitionFee: 14500,
+    faculty: 'Accounting',
+    campuses: ['Melbourne'],
+    level: 'Certificate IV',
+    duration: '6 - 12 Months',
+    ielts: '5.5',
+    country: 'Australia'
+  },
+
+  {
+    id: 'CB101',
+    title: 'Bachelor of Computer Science',
+    university: 'University of Toronto',
+    intake: 'September, January',
+    tuitionFee: 60000,
+    faculty: 'IT',
+    campuses: ['Toronto'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'CB102',
+    title: 'Bachelor of Business Administration',
+    university: 'York University',
+    intake: 'September, January',
+    tuitionFee: 55000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'CB103',
+    title: 'Bachelor of Engineering',
+    university: 'University of British Columbia',
+    intake: 'September',
+    tuitionFee: 58000,
+    faculty: 'Engineering',
+    campuses: ['Vancouver'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'CB104',
+    title: 'Bachelor of Nursing',
+    university: 'McMaster University',
+    intake: 'September',
+    tuitionFee: 52000,
+    faculty: 'Health',
+    campuses: ['Hamilton'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'CB105',
+    title: 'Bachelor of Data Science',
+    university: 'University of Waterloo',
+    intake: 'September, January',
+    tuitionFee: 61000,
+    faculty: 'Data Science',
+    campuses: ['Waterloo'],
+    level: 'Bachelor',
+    duration: '48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+
+  {
+    id: 'CD101',
+    title: 'Diploma in Business Administration',
+    university: 'Seneca College',
+    intake: 'January, May, September',
+    tuitionFee: 17000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'CD102',
+    title: 'Diploma in Computer Programming',
+    university: 'George Brown College',
+    intake: 'January, May, September',
+    tuitionFee: 18000,
+    faculty: 'IT',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'CD103',
+    title: 'Diploma in Engineering Technology',
+    university: 'Centennial College',
+    intake: 'January, September',
+    tuitionFee: 17500,
+    faculty: 'Engineering',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'CD104',
+    title: 'Diploma in Hospitality Management',
+    university: 'Fanshawe College',
+    intake: 'January, May, September',
+    tuitionFee: 16500,
+    faculty: 'Hospitality',
+    campuses: ['London'],
+    level: 'Diploma',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'CD105',
+    title: 'Diploma in Accounting',
+    university: 'Humber College',
+    intake: 'January, May, September',
+    tuitionFee: 18000,
+    faculty: 'Accounting',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+
+  {
+    id: 'M301',
+    title: 'Master of Business Administration',
+    university: 'University of Toronto',
+    intake: 'January, September',
+    tuitionFee: 45000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'M302',
+    title: 'Master of Data Science',
+    university: 'University of British Columbia',
+    intake: 'September',
+    tuitionFee: 42000,
+    faculty: 'IT',
+    campuses: ['Vancouver'],
+    level: 'Master (coursework)',
+    duration: '18 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'M303',
+    title: 'Master of Engineering',
+    university: 'University of Alberta',
+    intake: 'January, September',
+    tuitionFee: 40000,
+    faculty: 'Engineering',
+    campuses: ['Edmonton'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'M304',
+    title: 'Master of Public Health',
+    university: 'University of Ottawa',
+    intake: 'September',
+    tuitionFee: 38000,
+    faculty: 'Health',
+    campuses: ['Ottawa'],
+    level: 'Master (coursework)',
+    duration: '24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'M305',
+    title: 'Master of Finance',
+    university: 'York University',
+    intake: 'January, September',
+    tuitionFee: 47000,
+    faculty: 'Finance',
+    campuses: ['Toronto'],
+    level: 'Master (coursework)',
+    duration: '18 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+
+  {
+    id: 'A401',
+    title: 'Associate of Arts',
+    university: 'Douglas College',
+    intake: 'January, May, September',
+    tuitionFee: 18000,
+    faculty: 'Arts',
+    campuses: ['New Westminster'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'A402',
+    title: 'Associate of Science',
+    university: 'Langara College',
+    intake: 'January, September',
+    tuitionFee: 17500,
+    faculty: 'Science',
+    campuses: ['Vancouver'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'A403',
+    title: 'Associate of Business',
+    university: 'Capilano University',
+    intake: 'January, September',
+    tuitionFee: 17000,
+    faculty: 'Business',
+    campuses: ['North Vancouver'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'A404',
+    title: 'Associate of Computer Science',
+    university: 'Columbia College',
+    intake: 'January, May, September',
+    tuitionFee: 18500,
+    faculty: 'IT',
+    campuses: ['Vancouver'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+  {
+    id: 'A405',
+    title: 'Associate of Environmental Studies',
+    university: 'Camosun College',
+    intake: 'September',
+    tuitionFee: 16000,
+    faculty: 'Environment',
+    campuses: ['Victoria'],
+    level: 'Associate Degree',
+    duration: '24 Months',
+    ielts: '6',
+    country: 'Canada'
+  },
+
+  {
+    id: 'C501',
+    title: 'Certificate IV in Business Administration',
+    university: 'Seneca College',
+    intake: 'January, May, September',
+    tuitionFee: 14000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C502',
+    title: 'Certificate IV in Information Technology',
+    university: 'George Brown College',
+    intake: 'January, September',
+    tuitionFee: 15000,
+    faculty: 'IT',
+    campuses: ['Toronto'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C503',
+    title: 'Certificate IV in Accounting',
+    university: 'Humber College',
+    intake: 'January, May, September',
+    tuitionFee: 14500,
+    faculty: 'Accounting',
+    campuses: ['Toronto'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C504',
+    title: 'Certificate IV in Hospitality',
+    university: 'Fanshawe College',
+    intake: 'January, September',
+    tuitionFee: 13500,
+    faculty: 'Hospitality',
+    campuses: ['London'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C505',
+    title: 'Certificate IV in Marketing',
+    university: 'Centennial College',
+    intake: 'January, May, September',
+    tuitionFee: 15000,
+    faculty: 'Marketing',
+    campuses: ['Toronto'],
+    level: 'Certificate IV',
+    duration: '12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  }
+
+];
+
+const CoursePortal = () => {
+  // --- CONFIGURATION ---
+  const WHATSAPP_NUMBER = "7982295530"; 
+
+  // --- STATE MANAGEMENT ---
+  const [searchInput, setSearchInput] = useState('');
+  const [searchLevel, setSearchLevel] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('Australia');
+  
+  // Active Filter States (applied to calculation loop)
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeSearchLevel, setActiveSearchLevel] = useState('');
+  const [activeCountry, setActiveCountry] = useState('Australia');
+
+  const [selectedFaculty, setSelectedFaculty] = useState('Allied Health'); 
+  const [selectedLevels, setSelectedLevels] = useState([]);
+  const [selectedDurations, setSelectedDurations] = useState([]);
+  const [selectedIntakes, setSelectedIntakes] = useState([]);
+
+  // --- DOM REFERENCES ---
+  const sliderRef = useRef(null);
+
+  // --- SLIDER ARROW SCROLLING HANDLER ---
+  const scrollSlider = (direction) => {
+    if (sliderRef.current) {
+      const firstChild = sliderRef.current.firstElementChild;
+      const scrollAmount = firstChild ? firstChild.offsetWidth * 2 : 200; 
+
+      if (direction === 'left') {
+        sliderRef.current.scrollLeft -= scrollAmount;
+      } else {
+        sliderRef.current.scrollLeft += scrollAmount;
+      }
+    }
+  };
+
+  // --- FILTER TOGGLE HANDLERS ---
+  const handleLevelChange = (level) => {
+    setSelectedLevels(prev => 
+      prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]
+    );
+  };
+
+  const handleDurationChange = (duration) => {
+    setSelectedDurations(prev => 
+      prev.includes(duration) ? prev.filter(d => d !== duration) : [...prev, duration]
+    );
+  };
+
+  const handleIntakeChange = (intake) => {
+    setSelectedIntakes(prev => 
+      prev.includes(intake) ? prev.filter(i => i !== intake) : [...prev, intake]
+    );
+  };
+
+  // --- SEARCH EXECUTION HANDLER ---
+  const handleSearchSubmit = () => {
+    setSearchQuery(searchInput);
+    setActiveSearchLevel(searchLevel);
+    setActiveCountry(selectedCountry);
+  };
+
+  // --- RESET BUTTON WORKING ---
+  const handleResetFilters = () => {
+    setSearchInput('');
+    setSearchLevel('');
+    setSelectedCountry('Australia');
+    setSearchQuery('');
+    setActiveSearchLevel('');
+    setActiveCountry('Australia');
+    setSelectedFaculty('');
+    setSelectedLevels([]);
+    setSelectedDurations([]);
+    setSelectedIntakes([]);
+  };
+
+  // --- APPLICATION LOGIC FILTER ---
+  const filteredCourses = useMemo(() => {
+    return initialCourses.filter(course => {
+      const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            course.id.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesFaculty = selectedFaculty ? course.faculty === selectedFaculty : true;
+
+      const matchesSidebarLevel = selectedLevels.length > 0 ? selectedLevels.includes(course.level) : true;
+      const matchesHeaderLevel = activeSearchLevel ? course.level === activeSearchLevel : true;
+      
+      const matchesCountry = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
+      const matchesDuration = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
+      const matchesIntake = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
+
+      return matchesSearch && matchesFaculty && matchesSidebarLevel && matchesHeaderLevel && matchesCountry && matchesDuration && matchesIntake;
+    });
+  }, [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel, activeCountry, selectedDurations, selectedIntakes]);
+
+  // --- WHATSAPP CLICK HANDLER ---
+  const handleWhatsAppContact = (courseTitle, courseId) => {
+    const message = encodeURIComponent(`Hi! I am interested in learning more about the course: ${courseTitle} (${courseId}).`);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+  };
+
+  return (
+    <>
+    <Navbar />
+    <div className="portal-container">
+      {/* Top Hero Section */}
+      <header className="Hero-section">
+        <h1>4,000+ Best Courses Available Here!</h1>
+        <div className="search-bar-container">
+          <select 
+            className="search-select"
+            value={searchLevel}
+            onChange={(e) => setSearchLevel(e.target.value)}
+          >
+            <option value="">Select Level</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Master (coursework)">Master (coursework)</option>
+            <option value="Associate Degree">Associate Degree</option>
+            <option value="Certificate IV">Certificate IV</option>
+          </select>
+          
+          <select 
+            className="search-select"
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          >
+            <option value="Australia">Australia</option>
+             <option value="Canada">Canada</option>
+          </select>
+          
+          <input 
+            type="text" 
+            placeholder="Search Courses....." 
+            className="search-input" 
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button className="search-btn" onClick={handleSearchSubmit}>Search Here</button>
+        </div>
+        
+        {/* Quick Category Menu Links */}
+        <div className="category-slider-wrapper">
+          <button className="slider-arrow left" onClick={() => scrollSlider('left')}>‹</button>
+          
+          <div className="category-slider" ref={sliderRef}>
+            {[ 'Business', 'Allied Health', 'Global Studies And', 'Law And Criminology', 'Public Health and', 'Psychology', 'Science and Enviroment', 'Low and Criminology', 'Sports and Excercise', 'Teaching', 'youth work and ','Nursing, Midwifery And' ].map((fac) => (
+              <label key={fac} className={`cat-chip ${selectedFaculty === fac ? 'active-chip' : ''}`}>
+                <input 
+                  type="checkbox" 
+                  style={{ display: 'none' }} 
+                  checked={selectedFaculty === fac} 
+                  onChange={() => setSelectedFaculty(selectedFaculty === fac ? '' : fac)} 
+                /> 
+                {fac}
+              </label>
+            ))}
+          </div>
+
+          <button className="slider-arrow right" onClick={() => scrollSlider('right')}>›</button>
+        </div>
+      </header>
+
+      {/* Main Content Area */}
+      <div className="main-layout">
+        {/* Sidebar Filters */}
+        <aside className="sidebar">
+          <button className="reset-btn" onClick={handleResetFilters}>⟲ Reset Filters</button>
+          
+          <div className="filter-group">
+            <h3>Course level</h3>
+            {['Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
+              <label key={lvl}>
+                <input 
+                  type="checkbox" 
+                  checked={selectedLevels.includes(lvl)} 
+                  onChange={() => handleLevelChange(lvl)}
+                /> {lvl}
+              </label>
+            ))}
+          </div>
+
+          <div className="filter-group">
+            <h3>Duration</h3>
+            {['1 - 12 Months', '12 - 24 Months', '24 - 36 Months', '36 - 48 Months', 'Above 48 Months'].map(dur => (
+              <label key={dur}>
+                <input 
+                  type="checkbox" 
+                  checked={selectedDurations.includes(dur)} 
+                  onChange={() => handleDurationChange(dur)}
+                /> {dur}
+              </label>
+            ))}
+          </div>
+
+          <div className="filter-group">
+            <h3>Intake</h3>
+            {['January', 'February', 'March', 'April'].map(month => (
+              <label key={month}>
+                <input 
+                  type="checkbox" 
+                  checked={selectedIntakes.includes(month)} 
+                  onChange={() => handleIntakeChange(month)}
+                /> {month}
+              </label>
+            ))}
+          </div>
+        </aside>
+
+        {/* Course Listings */}
+        <main className="results-container">
+          <div className="results-header">
+            <span>Total No. of Record {filteredCourses.length}</span>
+            <span>Page No. 1</span>
+          </div>
+
+          <div className="course-list">
+            {filteredCourses.length === 0 ? (
+              <div className="no-records">No courses match your selected filter options.</div>
+            ) : (
+              filteredCourses.map((course) => (
+                <div key={course.id} className="course-card">
+                  <div className="country-ribbon">{course.country}</div>
+                  
+                  <div className="card-body">
+                    <div className="card-main-info">
+                      <h2 className="course-title">{course.title} - {course.id}</h2>
+                      <p className="univ-name">🏛️ <strong>University :</strong> {course.university}</p>
+                      
+                      <div className="meta-row">
+                        <span>📅 <strong>Intake :</strong> {course.intake}</span>
+                        <span>💵 <strong>Tuition Fee :</strong> ${course.tuitionFee.toLocaleString()}</span>
+                      </div>
+                      
+                      <p className="faculty-info">👤 <strong>Faculty :</strong> {course.faculty}</p>
+                      
+                      <div className="badge-row">
+                        <span className="badge-pill">📍 Campus : {course.campuses.join(', ')}</span>
+                        <span className="badge-pill">🎓 Course level : {course.level}</span>
+                        <span className="badge-pill">⏱️ Duration : {course.duration}</span>
+                      </div>
+                    </div>
+
+                    <div className="card-right-info">
+                      <span className="ielts-tag">📋 IELTS Band : {course.ielts}</span>
+                    </div>
+                  </div>
+
+                  <div className="card-footer">
+                    <span className="website-status">🌐 Website : Not Available</span>
+                    <div className="footer-actions">
+                      <button 
+                        className="whatsapp-btn" 
+                        onClick={() => handleWhatsAppContact(course.title, course.id)}
+                      >
+                        💬 Contact WhatsApp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </main>
+      </div>
+    </div>
+    <Footer />
+    </>
+  );
+};
+
+export default CoursePortal;
