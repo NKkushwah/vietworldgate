@@ -53,7 +53,7 @@ const FaqSection = () => {
           <div className="circle-bg-layer layer-2"></div>
           {/* Apni pointing student transparent image ka path yaha setup karein */}
           <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=500&auto=format&fit=crop" 
+            src="https://images.pexels.com/photos/2789781/pexels-photo-2789781.jpeg" 
             alt="Student pointing" 
             className="faq-student-img" 
           />

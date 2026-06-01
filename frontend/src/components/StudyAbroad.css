@@ -1,10 +1,12 @@
-/* Color Variables for easy theme management */
+/* Color Variables */
 :root {
-  --brand-purple: #012819;;
-  --brand-dark: #2C1B2A;
+  --brand-purple: #012819;     /* Exact Purple from screenshot */
+  --brand-green: #012819;      /* Dark Green Brand Color */
+  --brand-dark: #2C1B2A;       /* Routes Section Dark Background */
   --text-gray-dark: #333333;
   --text-gray-light: #666666;
-  --border-color: #e2e8f0;
+  --border-color: #e5e7eb;
+  --white: #ffffff;
 }
 
 /* Container Settings */
@@ -22,14 +24,12 @@
 }
 
 /* ==========================================
-   SECTION 1: Banner & University Partners 
+   SECTION 1: Banner Layout
    ========================================== */
-
-/* Main Banner Layout */
 .banner-card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--white);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
@@ -46,10 +46,11 @@
   justify-content: center;
 }
 
-.banner-image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.banner-lucide-icon {
+  width: 120px;
+  height: 120px;
+  stroke-width: 1;
+  color: var(--brand-purple);
 }
 
 .banner-text-side {
@@ -79,54 +80,54 @@
   font-size: 1rem;
 }
 
-/* Custom Buttons */
+/* Buttons (Premium Style) */
 .btn-primary {
-  background-color: var(--brand-purple);
-  color: #ffffff;
+  background-color: #012819;
+  color: var(--white);
   font-weight: 600;
   padding: 12px 28px;
   border: none;
   border-radius: 4px;
   font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #012819;;
+  background-color: #012819;
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background-color: var(--brand-purple);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 10px 28px;
+  background-color: #012819;
+  color: var(--white);
+  font-weight: 500;
+  padding: 12px 36px;
   border: none;
-  border-radius: 4px;
-  font-size: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(128, 0, 128, 0.15);
+  transition: all 0.2s ease-in-out;
 }
 
 .btn-secondary:hover {
-  background-color: #012819;;
-  box-shadow: 0 4px 6px #012819;;
+  background-color: #012819;
+  transform: translateY(-1px);
+  box-shadow: #012819;
 }
 
 .center-btn-wrapper {
   text-align: center;
-  margin-top: 12px;
+  margin-top: 40px;
 }
 
-/* Header Sections */
 .section-title-center {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section-title-center h3 {
@@ -141,79 +142,96 @@
   font-weight: 700;
 }
 
-/* Partner Grid Layout & HOVER Effect */
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 32px;
+/* ==========================================
+   IMAGE CARDS & INFINITE SCROLLER (Full Image Fix)
+   ========================================== */
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 15px 0;
 }
 
+/* Edges transition shadows */
+.slider-wrapper::before,
+.slider-wrapper::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.slider-wrapper::before { left: 0; background: linear-gradient(to right, #f9fafb, transparent); }
+.slider-wrapper::after { right: 0; background: linear-gradient(to left, #f9fafb, transparent); }
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: scrollContinuous 40s linear infinite;
+}
+
+.slider-wrapper:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* Exact Card Setup from Image */
 .logo-card {
-  background-color: #ffffff;
-  padding: 16px;
+  flex: 0 0 240px; 
+  height: 95px;
+  background: var(--white);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-  transition: all 0.25s ease-in-out;
-  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
 }
 
-/* Perfect Background & Border Hover Logic */
 .logo-card:hover {
-  background-color: #fff0fc; /* Light purple tint on hover */
-  border-color: var(--brand-purple); /* Border matches brand color */
-  box-shadow: 0 6px 12px rgba(125, 0, 104, 0.08);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
 }
 
-/* Internal SVG layout styling for university logos */
-.uni-logo-flex {
+/* Logo Fix: ensures image is 100% visible and uncropped */
+.logo-image-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
   justify-content: center;
+  padding: 12px 18px; /* Perfectly balances logo bounds inside card */
+  box-sizing: border-box;
 }
 
-.uni-logo-flex svg {
-  flex-shrink: 0;
+.university-logo {
+  width: 150%;
+  height: 150%;
+  object-fit: contain; /* Restricts stretching, keeps absolute proportions */
 }
 
-.uni-text-box {
-  display: flex;
-  flex-direction: column;
-}
+@keyframes scrollContinuous {
+  from {
+    transform: translateX(0);
+  }
 
-.uni-main-title {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #1a202c;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  line-height: 1.1;
-}
-
-.uni-sub-title {
-  font-size: 0.7rem;
-  color: #718096;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 2px;
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================
-   SECTION 2: International Education Routes 
+   SECTION 3: International Routes
    ========================================== */
-
 .dark-bg-section {
   background-color: var(--brand-dark);
-  color: #ffffff;
+  color: var(--white);
   padding: 80px 16px;
+  margin-top: 50px;
 }
 
 .dark-section-title {
@@ -221,7 +239,6 @@
   font-size: 1.85rem;
   font-weight: 400;
   margin: 0 0 56px 0;
-  letter-spacing: 0.5px;
   line-height: 1.4;
 }
 
@@ -229,7 +246,6 @@
   color: #a3e635;
 }
 
-/* Navigation Option Cards */
 .routes-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -238,7 +254,7 @@
 
 .route-card {
   position: relative;
-  background: linear-gradient(to right, #ffffff, #fffdfa);
+  background: linear-gradient(to right, var(--white), #fffdfa);
   color: #333333;
   padding: 24px;
   border-radius: 8px;
@@ -257,7 +273,7 @@
 }
 
 .icon-box {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 14px;
   border-radius: 8px;
   border: 1px solid #f1f5f9;
@@ -265,7 +281,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.route-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--brand-purple);
 }
 
 .route-card-title {
@@ -279,7 +300,6 @@
   color: var(--brand-purple);
 }
 
-/* The Bottom Right Diagonal Cut (Purple Corner) */
 .corner-cut {
   position: absolute;
   bottom: 0;
@@ -291,48 +311,18 @@
   pointer-events: none;
 }
 
-/* Floating Scroll Button */
-.floating-scroll-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: var(--brand-purple);
-  color: #ffffff;
-  border: none;
-  padding: 14px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(125, 0, 104, 0.3);
-  cursor: pointer;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.floating-scroll-btn:hover {
-  transform: scale(1.1);
-  background-color: #012819;;
-}
-
-
 /* ==========================================
-   MEDIA QUERIES (Responsive Logic)
+   RESPONSIVE DESIGN (Media Queries)
    ========================================== */
-
-@media screen and (min-width: 640px) {
-  .partners-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media screen and (min-width: 768px) {
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 992px) {
   .banner-card {
     flex-direction: row;
-  }
-  
-  .partners-grid {
-    grid-template-columns: repeat(5, 1fr);
   }
 
   .routes-grid {
@@ -343,42 +333,3 @@
     font-size: 2.5rem;
   }
 }
-
-/* ===== SLIDER FIX START ===== */
-
-/* WRAPPER */
-.partners-wrapper {
-  overflow: hidden;
-  width: 240px; /* card (220) + gap adjust */
-  position: relative;
-}
-
-/* GRID → FLEX FIX */
-.partners-grid {
-  display: flex !important;
-  gap: 20px;
-  width: max-content;
-  animation: slideOne 5s steps(5) infinite;
-}
-
-/* CARD FIX (NO CUT EVER) */
-.logo-card {
-  flex: 0 0 220px;
-}
-
-/* PERFECT STEP ANIMATION */
-@keyframes slideOne {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-1200px); /* (220 + 20 gap) × 5 */
-  }
-}
-
-/* HOVER PAUSE (PRO FEEL) */
-.partners-wrapper:hover .partners-grid {
-  animation-play-state: paused;
-}
-
-/* ===== SLIDER FIX END ===== */
