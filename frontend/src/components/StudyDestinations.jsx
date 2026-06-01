@@ -8,7 +8,7 @@ const destinations = [
     id: 1, 
     name: 'Italy',
     path: '/ItalyDestination', 
-    image: "https://images.pexels.com/photos/13849371/pexels-photo-13849371.jpeg" 
+    image: "https://images.pexels.com/photos/20053306/pexels-photo-20053306.jpeg" 
     
   },
 
@@ -16,48 +16,48 @@ const destinations = [
     id: 2,
      name: 'Australia',
      path: '/AustraliaDestination', 
-     image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=600&auto=format&fit=crop' 
+     image: 'https://images.pexels.com/photos/32329031/pexels-photo-32329031.jpeg' 
     },
 
   { 
     id: 3,
      name: 'Canada',
      path: '/CanadaDestination', 
-     image: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600&auto=format&fit=crop' 
+     image: 'https://images.pexels.com/photos/25696388/pexels-photo-25696388.jpeg' 
     },
 
   { 
     id: 4, 
     path: '/UKDestination',
     name: 'UK', 
-    image: 'https://images.pexels.com/photos/28245665/pexels-photo-28245665.jpeg' 
+    image: 'https://images.pexels.com/photos/5209876/pexels-photo-5209876.jpeg' 
   },
 
   { 
     id: 5,
     path: '/GermanyDestination', 
     name: 'Germany', 
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600&auto=format&fit=crop'
+    image: 'https://images.pexels.com/photos/532867/pexels-photo-532867.jpeg'
    },
 
   { 
     id: 6, 
     path: '/NZDestination',
     name: 'New Zealand', 
-    image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/724963/pexels-photo-724963.png' 
   },
    { 
     id: 7, 
     path:'/DubaiDestination',
     name: 'Dubai', 
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/5577693/pexels-photo-5577693.jpeg' 
   },
 
   {
     id: 8,
     path: '/JapanDestination',
     name: 'Japan',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600&auto=format&fit=crop'
+    image: 'https://images.pexels.com/photos/32398720/pexels-photo-32398720.jpeg'
   }
 ];
 
@@ -66,22 +66,22 @@ const workDestinations = [
   { 
     id: 1, 
     name: 'Dubai', 
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/28350360/pexels-photo-28350360.jpeg' 
   },
   { 
     id: 2, 
     name: 'Canada', 
-    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/3744724/pexels-photo-3744724.jpeg' 
   },
   { 
     id: 3, 
     name: 'Germany', 
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/34173603/pexels-photo-34173603.jpeg' 
   },
   { 
     id: 4, 
     name: 'Italy', 
-    image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/620308/pexels-photo-620308.jpeg' 
   },
   { 
     id: 5, 
@@ -91,12 +91,12 @@ const workDestinations = [
   { 
     id: 6, 
     name: 'Australia', 
-    image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg' 
   },
   { 
     id: 7, 
     name: 'UK', 
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=600&auto=format&fit=crop' 
+    image: 'https://images.pexels.com/photos/58602/pexels-photo-58602.jpeg' 
   },
   
 ];

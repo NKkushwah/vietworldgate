@@ -12,7 +12,7 @@ export default function OurServices() {
       description:
         "Our expert counsellors assist you in selecting the correct program that is tailored to your career aspirations.",
       imageUrl:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600",
+        "https://images.pexels.com/photos/8199159/pexels-photo-8199159.jpeg",
       path: "/courseAdvice",
       icon: <BookOpen size={22} color="#ffffff" />
     },
@@ -23,7 +23,7 @@ export default function OurServices() {
       description:
         "After choosing the right course, our advisors help you match your personal, academic, and financial profile to ideal universities.",
       imageUrl:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600",
+        "https://images.pexels.com/photos/37836828/pexels-photo-37836828.jpeg",
       path: "/ShortlistUniversities",
       icon: <GraduationCap size={22} color="#ffffff" />
     },
@@ -34,7 +34,7 @@ export default function OurServices() {
       description:
         "We will walk you through the application process and assist you in preparing documentation for a successful visa outcome.",
       imageUrl:
-        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600",
+        "https://images.pexels.com/photos/32642486/pexels-photo-32642486.jpeg",
       path: "/visaAssistance",
       icon: <FileCheck size={22} color="#ffffff" />
     }

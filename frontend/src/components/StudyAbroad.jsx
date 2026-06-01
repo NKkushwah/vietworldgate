@@ -1,200 +1,182 @@
-import React from 'react';
-import { GraduationCap, Gift, FileText, Calendar, BookOpen, Users, ArrowUp } from 'lucide-react';
-import './StudyAbroad.css';
+import React from "react";
+import {
+  GraduationCap,
+  Gift,
+  FileText,
+  Calendar,
+  BookOpen,
+  Users,
+} from "lucide-react";
+
+import "./StudyAbroad.css";
 
 export default function StudyAbroad() {
-  
-  // Custom Rendered Logos data to avoid broken images issues
- const universities = [
-  {
-    main: "Charles Darwin",
-    sub: "University Australia",
-    iconColor: "#1A365D",
-    isDarkBg: false
+  const universities = [
+    {
+    main: "University of West London",
+    logo: "/logos/uwl.jpg",
+    website: "https://www.uwl.ac.uk",
   },
   {
-    main: "Charles Sturt",
-    sub: "University",
-    iconColor: "#DD6B20",
-    isDarkBg: false
+    main: "ETH Zurich",
+    logo: "/logos/OlP.jpg",
+    website: "https://ethz.ch",
   },
   {
-    main: "CQ University",
-    sub: "Australia",
-    iconColor: "#2B6CB0",
-    isDarkBg: false
+    main: "Technical University of Munich",
+    logo: "/logos/Tum.jpg",
+    website: "https://www.tum.de",
   },
   {
-    main: "Curtin University",
-    sub: "",
-    iconColor: "#D69E2E",
-    isDarkBg: true
+    main: "Delft University of Technology",
+    logo: "/logos/Tud.jpg ",
+    website: "https://www.tudelft.nl",
   },
   {
-    main: "Deakin",
-    sub: "University",
-    iconColor: "#2D3748",
-    isDarkBg: false
+    main: "University of Bologna",
+    logo: "/logos/bologna.jpg",
+    website: "https://www.unibo.it",
   },
-
-  // 🔥 NEW UNIVERSITIES
+  {
+    main: "PSL University",
+    logo: "/logos/psl.jpg",
+    website: "https://psl.eu",
+  },
+  {
+    main: "University of British Columbia",
+    logo: "/logos/ubc.jpg",
+    website: "https://www.ubc.ca",
+  },
+  {
+    main: "University of Waterloo",
+    logo: "/logos/waterloo.jpg",
+    website: "https://uwaterloo.ca",
+  },
+  {
+    main: "McGill University",
+    logo: "/logos/mcgill.jpg",
+    website: "https://www.mcgill.ca",
+  },
   {
     main: "University of Melbourne",
-    sub: "Australia",
-    iconColor: "#003A8F",
-    isDarkBg: false
+    logo: "/logos/mlb.jpg",
+    website: "https://www.unimelb.edu.au",
   },
   {
-    main: "Monash",
-    sub: "University",
-    iconColor: "#0055A4",
-    isDarkBg: false
+    main: "Australian National University",
+    logo: "/logos/Anu.jpg",
+    website: "https://www.anu.edu.au",
   },
   {
     main: "University of Sydney",
-    sub: "",
-    iconColor: "#B22222",
-    isDarkBg: false
+    logo: "/logos/sydney.png",
+    website: "https://www.sydney.edu.au",
   },
   {
-    main: "RMIT",
-    sub: "University",
-    iconColor: "#E60028",
-    isDarkBg: false
+    main: "Monash University",
+    logo: "/logos/monas.png",
+    website: "https://www.monash.edu",
   },
   {
-    main: "University of Queensland",
-    sub: "",
-    iconColor: "#51247A",
-    isDarkBg: false
-  }
-];
+    main: "Coventry University",
+    logo: "/logos/coventry.jpeg",
+    website: "https://www.coventry.ac.uk/",
+  },
+  ];
 
   const routes = [
-    { title: 'University Visits', icon: <GraduationCap size={26} color="#7D0068" /> },
-    { title: 'Scholarships', icon: <Gift size={26} color="#7D0068" /> },
-    { title: 'Post Study Work Permit', icon: <FileText size={26} color="#7D0068" /> },
-    { title: 'Upcoming Events', icon: <Calendar size={26} color="#7D0068" /> },
-    { title: 'Course Finder', icon: <BookOpen size={26} color="#7D0068" /> },
-    { title: 'Students Feedback', icon: <Users size={26} color="#7D0068" /> },
+    { title: "University", icon: <GraduationCap className="route-icon" /> },
+    { title: "Scholarships", icon: <Gift className="route-icon" /> },
+    { title: "Post Study Work Permit", icon: <FileText className="route-icon" /> },
+    { title: "Upcoming Events", icon: <Calendar className="route-icon" /> },
+    { title: "Course Finder", icon: <BookOpen className="route-icon" /> },
+    { title: "Students Feedback", icon: <Users className="route-icon" /> },
   ];
 
   return (
     <div className="study-abroad-container">
-      
-      {/* ==========================================
-          SECTION 1: Banner & University Partners 
-         ========================================== */}
+      {/* Banner Section */}
       <section className="max-width-wrapper">
-        
-        {/* Main Banner Card */}
         <div className="banner-card">
-          {/* Left Side: Mock Image Graphics */}
           <div className="banner-image-side">
-            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#7D0068" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
-            </svg>
+            <GraduationCap className="banner-lucide-icon" />
           </div>
-          
-          {/* Right Side: Information Content */}
+
           <div className="banner-text-side">
             <h2>
-              Aspiring to Study Abroad? <span className="purple-highlight">We Can Help!</span>
+              Aspiring to Study Abroad?{" "}
+              <span className="purple-highlight">We Can Help!</span>
             </h2>
-            <p>
-              Contact us today and our experts will be in touch with you soon.
-            </p>
-            <button className="btn-primary">
-              Study Abroad?
-            </button>
+            <p>Contact us today and our experts will be in touch with you soon.</p>
+            <button className="btn-primary">Study Abroad?</button>
           </div>
         </div>
 
-        {/* Section Heading */}
+        {/* University Partners Title */}
         <div className="section-title-center">
           <h3>
             University <span className="purple-highlight italic-bold">Partners</span>
           </h3>
         </div>
 
-        {/* University Logos Grid with Custom Layout and Hover Effects */}
-        <div className="partners-grid">
-          {universities.map((uni, idx) => (
-            <div 
-              key={idx} 
-              className="logo-card"
-              style={{ backgroundColor: uni.isDarkBg ? '#111111' : '' }}
-            >
-              <div className="uni-logo-flex">
-                {/* Dynamic SVG Icon Badge */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill={uni.iconColor}>
-                  <rect width="24" height="24" rx="4" opacity="0.15" />
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke={uni.iconColor} strokeWidth="1.5" fill="none" />
-                </svg>
-                
-                {/* University Name Labels */}
-                <div className="uni-text-box">
-                  <span 
-                    className="uni-main-title"
-                    style={{ color: uni.isDarkBg ? '#FFFFFF' : '#1A202C' }}
-                  >
-                    {uni.main}
-                  </span>
-                  {uni.sub && (
-                    <span 
-                      className="uni-sub-title"
-                      style={{ color: uni.isDarkBg ? '#A0AEC0' : '#718096' }}
-                    >
-                      {uni.sub}
-                    </span>
-                  )}
+        {/* --- INFINITE AUTO-SCROLLER --- */}
+        <div className="slider-wrapper">
+          <div className="slider-track">
+            {/* First Loop */}
+            {universities.map((uni, idx) => (
+              <a
+                key={`first-${idx}`}
+                href={uni.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="logo-card"
+              >
+                <div className="logo-image-wrapper">
+                  <img src={uni.logo} alt={uni.main} className="university-logo" />
                 </div>
-              </div>
-            </div>
-          ))}
+              </a>
+            ))}
+            {/* Second Loop (For seamless transition) */}
+            {universities.map((uni, idx) => (
+              <a
+                key={`second-${idx}`}
+                href={uni.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="logo-card"
+              >
+                <div className="logo-image-wrapper">
+                  <img src={uni.logo} alt={uni.main} className="university-logo" />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Center Section Action Trigger */}
         <div className="center-btn-wrapper">
-          <button className="btn-secondary">
-            View All
-          </button>
+          <button className="btn-secondary">View All</button>
         </div>
       </section>
 
-
-      {/* ==========================================
-          SECTION 2: International Education Routes 
-         ========================================== */}
+      {/* Routes Section */}
       <section className="dark-bg-section">
         <div className="max-width-wrapper">
-          
           <h2 className="dark-section-title">
-            Discover your route to <span className="lime-highlight italic-bold">International Education</span>
+            Discover your route to{" "}
+            <span className="lime-highlight italic-bold">International Education</span>
           </h2>
 
           <div className="routes-grid">
             {routes.map((route, idx) => (
               <div key={idx} className="route-card">
-                <div className="icon-box">
-                  {route.icon}
-                </div>
-                
-                <span className="route-card-title">
-                  {route.title}
-                </span>
-
-                {/* Bottom-Right Purple Cutout Corner */}
+                <div className="icon-box">{route.icon}</div>
+                <span className="route-card-title">{route.title}</span>
                 <div className="corner-cut"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-    
-
     </div>
   );
 }

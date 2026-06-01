@@ -5,7 +5,7 @@ import './StudyAbroadFeatures.css';
 export default function StudyAbroadFeatures() {
 
   const studentBannerImg =
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500";
+    "https://images.pexels.com/photos/35444254/pexels-photo-35444254.jpeg";
 
   const steps = [
     {
@@ -34,7 +34,7 @@ export default function StudyAbroadFeatures() {
     {
       title: "Comprehensive Support",
       desc: "As a top-rated study abroad consultant in India, we provide end-to-end services including course advice, university short-listing, application assistance, visa processing and pre-departure guidance.",
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/8866736/pexels-photo-8866736.jpeg"
     },
     {
       title: "Personalized Guidance",
@@ -44,7 +44,7 @@ export default function StudyAbroadFeatures() {
     {
       title: "End-to-End Guidance",
       desc: "We offer complete support from shortlisting universities to visa preparation and pre-departure assistance.",
-      img: "https://images.unsplash.com/photo-1521791136366-3e553771295d?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/7876035/pexels-photo-7876035.jpeg"
     },
     {
       title: "Wide Network & Global Reach",
@@ -54,7 +54,7 @@ export default function StudyAbroadFeatures() {
     {
       title: "Local Presence",
       desc: "Meet our mentors in your city and get personalized support for your study abroad journey.",
-      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.pexels.com/photos/8828418/pexels-photo-8828418.jpeg"
     },
     {
       title: "Track Record of Success",
@@ -81,9 +81,11 @@ export default function StudyAbroadFeatures() {
               <h2>Find My Dream University</h2>
               <p>Shortlist Universities With Our Course Finder</p>
 
+              <Link to="/scholarships">
               <button className="btn-shortlist">
                 Shortlist Universities
               </button>
+              </Link>
             </div>
           </div>
 
