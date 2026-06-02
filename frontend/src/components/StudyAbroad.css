@@ -286,7 +286,7 @@
 .route-icon {
   width: 26px;
   height: 26px;
-  color: var(--brand-purple);
+  color: #012819;
 }
 
 .route-card-title {
@@ -297,7 +297,7 @@
 }
 
 .route-card:hover .route-card-title {
-  color: var(--brand-purple);
+  color:#012819;
 }
 
 .corner-cut {
@@ -306,7 +306,7 @@
   right: 0;
   width: 32px;
   height: 32px;
-  background-color: var(--brand-purple);
+  background-color:#012819;
   transform: translate(16px, 16px) rotate(45deg);
   pointer-events: none;
 }

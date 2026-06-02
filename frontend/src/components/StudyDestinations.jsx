@@ -2,13 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './StudyDestinations.css';
 
+import AusImg  from '../assets/studydestination/austraila.jpg';
+import Canada from '../assets/studydestination/canada.jpg';
+import Dubai from '../assets/studydestination/dubai.jpg';
+import Germany from '../assets/studydestination/italy.jpg';
+import Japan from '../assets/studydestination/japan.jpg';
+import Newszeland from '../assets/studydestination/newszeland.png';
+import Uk from '../assets/studydestination/ukdest.jpg';
+import Italy from '../assets/studydestination/italy.jpg';
+
 // Study destinaton
 const destinations = [
   { 
     id: 1, 
     name: 'Italy',
     path: '/ItalyDestination', 
-    image: "https://images.pexels.com/photos/20053306/pexels-photo-20053306.jpeg" 
+    image: Italy
     
   },
 
@@ -16,48 +25,48 @@ const destinations = [
     id: 2,
      name: 'Australia',
      path: '/AustraliaDestination', 
-     image: 'https://images.pexels.com/photos/32329031/pexels-photo-32329031.jpeg' 
+     image: AusImg 
     },
 
   { 
     id: 3,
      name: 'Canada',
      path: '/CanadaDestination', 
-     image: 'https://images.pexels.com/photos/25696388/pexels-photo-25696388.jpeg' 
+     image: Canada
     },
 
   { 
     id: 4, 
     path: '/UKDestination',
     name: 'UK', 
-    image: 'https://images.pexels.com/photos/5209876/pexels-photo-5209876.jpeg' 
+    image: Uk
   },
 
   { 
     id: 5,
     path: '/GermanyDestination', 
     name: 'Germany', 
-    image: 'https://images.pexels.com/photos/532867/pexels-photo-532867.jpeg'
+    image: Germany
    },
 
   { 
     id: 6, 
     path: '/NZDestination',
     name: 'New Zealand', 
-    image: 'https://images.pexels.com/photos/724963/pexels-photo-724963.png' 
+    image: Newszeland
   },
    { 
     id: 7, 
     path:'/DubaiDestination',
     name: 'Dubai', 
-    image: 'https://images.pexels.com/photos/5577693/pexels-photo-5577693.jpeg' 
+    image:Dubai
   },
 
   {
     id: 8,
     path: '/JapanDestination',
     name: 'Japan',
-    image: 'https://images.pexels.com/photos/32398720/pexels-photo-32398720.jpeg'
+    image: Japan
   }
 ];
 
@@ -66,37 +75,37 @@ const workDestinations = [
   { 
     id: 1, 
     name: 'Dubai', 
-    image: 'https://images.pexels.com/photos/28350360/pexels-photo-28350360.jpeg' 
+    image: Dubai
   },
   { 
     id: 2, 
     name: 'Canada', 
-    image: 'https://images.pexels.com/photos/3744724/pexels-photo-3744724.jpeg' 
+    image: Canada
   },
   { 
     id: 3, 
     name: 'Germany', 
-    image: 'https://images.pexels.com/photos/34173603/pexels-photo-34173603.jpeg' 
+    image: Germany
   },
   { 
     id: 4, 
     name: 'Italy', 
-    image: 'https://images.pexels.com/photos/620308/pexels-photo-620308.jpeg' 
+    image: Italy 
   },
   { 
     id: 5, 
     name: 'New Zealand', 
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600&auto=format&fit=crop' 
+    image: Newszeland
   },
   { 
     id: 6, 
     name: 'Australia', 
-    image: 'https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg' 
+    image: AusImg
   },
   { 
     id: 7, 
     name: 'UK', 
-    image: 'https://images.pexels.com/photos/58602/pexels-photo-58602.jpeg' 
+    image: Uk
   },
   
 ];
@@ -166,7 +175,6 @@ export default function StudyDestinations() {
         </p>
       </section>
 
-      Study Slider Section
       <section className="destination-slider-section">
         <h2 className="section-title">Choose your <span>Study Destination</span></h2>
         <p className="section-subtitle">

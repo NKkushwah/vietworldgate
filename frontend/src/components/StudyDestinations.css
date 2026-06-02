@@ -65,7 +65,7 @@
 }
 
 .section-title span {
-  color: var(--primary-purple);
+  color: #012819;
   font-style: italic;
 }
 
@@ -187,7 +187,7 @@
   .destination-card { 
     flex: 0 0 50%;
     width: 50%;
-    padding-right: 2%; /* Smooth spacing buffer for middle screens */
+    padding-right: 2%; 
   }
 }
 
@@ -198,7 +198,7 @@
   .destination-card { 
     flex: 0 0 100%;
     width: 100%;
-    padding-right: 0px; /* Full fluid bleed setup across small phones */
+    padding-right: 0px; 
   }
   
   .card-image-wrapper {
@@ -213,10 +213,10 @@
     font-size: 26px;
   }
 }
-/* Work Slider Section Extra Spacing */
+
 .work-slider-section {
   padding-top: 10px;
-  border-top: 1px solid #f2edf4; /* Dono sliders ke beech ek light partition ke liye */
+  border-top: 1px solid #f2edf4; 
 }
 
 .destination-link{
