@@ -327,7 +327,7 @@ function Navbar() {
 
           {/* OTHER LINKS */}
           <li onClick={closeMenu}>
-            <Link to="/find-course">Find a Course</Link>
+            <Link to="/CoursePortal">Find a Course</Link>
           </li>
 
           <li onClick={closeMenu}>
