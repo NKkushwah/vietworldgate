@@ -12,6 +12,7 @@ import OurServices from "../components/OurServices";
 import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
 import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
+import BritishCouncilLogo from "../assets/bclogo.jpg";
 
 function Dashboard() {
 
@@ -19,7 +20,22 @@ function Dashboard() {
 
     <>
       <Navbar />
+<section className="trust-bar">
+  <div className="trust-container">
 
+    <div className="trust-right">
+
+     <img
+  src={BritishCouncilLogo}
+  alt="British Council"
+/>
+
+      <span>Certified by British Council</span>
+
+    </div>
+
+  </div>
+</section>
       {/* HERO SECTION */}
       <section className="hero-section">
 
