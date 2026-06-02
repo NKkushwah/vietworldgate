@@ -68,8 +68,7 @@ const initialCourses = [
     duration: '12 - 24 Months',
     ielts: '6.5',
     country: 'Australia'
-  },   
- 
+  },
   {
     id: 'B001',
     title: 'Bachelor of Nursing',
@@ -144,7 +143,7 @@ const initialCourses = [
     faculty: 'Engineering',
     campuses: ['Melbourne'],
     level: 'Diploma',
-    duration: '12 Months',
+    duration: '1 - 12 Months',
     ielts: '6',
     country: 'Australia'
   },
@@ -209,7 +208,7 @@ const initialCourses = [
     faculty: 'IT',
     campuses: ['Canberra'],
     level: 'Associate Degree',
-    duration: '24 Months',
+    duration: '12 - 24 Months',
     ielts: '6',
     country: 'Australia'
   },
@@ -222,7 +221,7 @@ const initialCourses = [
     faculty: 'Business',
     campuses: ['Melbourne'],
     level: 'Associate Degree',
-    duration: '24 Months',
+    duration: '1 - 12 Months',
     ielts: '6',
     country: 'Australia'
   },
@@ -235,7 +234,7 @@ const initialCourses = [
     faculty: 'Hospitality',
     campuses: ['Brisbane'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -248,7 +247,7 @@ const initialCourses = [
     faculty: 'Automotive',
     campuses: ['Sydney'],
     level: 'Certificate IV',
-    duration: '12 Months',
+    duration: '12 - 24 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -326,7 +325,7 @@ const initialCourses = [
     faculty: 'Construction',
     campuses: ['Melbourne'],
     level: 'Certificate IV',
-    duration: '12 Months',
+    duration: '24 - 36 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -339,7 +338,7 @@ const initialCourses = [
     faculty: 'IT',
     campuses: ['Sydney', 'Newcastle'],
     level: 'Diploma',
-    duration: '12 - 18 Months',
+    duration: '12 - 24 Months',
     ielts: '6',
     country: 'Australia'
   },
@@ -407,8 +406,7 @@ const initialCourses = [
     duration: '12 Months',
     ielts: '6',
     country: 'Australia'
-  } ,
-
+  },
   {
     id: 'M201',
     title: 'Master of Information Technology',
@@ -473,9 +471,7 @@ const initialCourses = [
     duration: '24 Months',
     ielts: '6.5',
     country: 'Australia'
-  }
-  ,
-
+  },
   {
     id: 'C401',
     title: 'Certificate IV in Information Technology',
@@ -485,7 +481,7 @@ const initialCourses = [
     faculty: 'IT',
     campuses: ['Brisbane'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -498,7 +494,7 @@ const initialCourses = [
     faculty: 'Business',
     campuses: ['Sydney'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -511,7 +507,7 @@ const initialCourses = [
     faculty: 'Marketing',
     campuses: ['Melbourne'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -524,7 +520,7 @@ const initialCourses = [
     faculty: 'Hospitality',
     campuses: ['Melbourne'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
@@ -537,11 +533,10 @@ const initialCourses = [
     faculty: 'Accounting',
     campuses: ['Melbourne'],
     level: 'Certificate IV',
-    duration: '6 - 12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Australia'
   },
-
   {
     id: 'CB101',
     title: 'Bachelor of Computer Science',
@@ -551,7 +546,7 @@ const initialCourses = [
     faculty: 'IT',
     campuses: ['Toronto'],
     level: 'Bachelor',
-    duration: '48 Months',
+    duration: 'Above 48 Months',
     ielts: '6.5',
     country: 'Canada'
   },
@@ -607,7 +602,6 @@ const initialCourses = [
     ielts: '6.5',
     country: 'Canada'
   },
-
   {
     id: 'CD101',
     title: 'Diploma in Business Administration',
@@ -673,7 +667,6 @@ const initialCourses = [
     ielts: '6',
     country: 'Canada'
   },
-
   {
     id: 'M301',
     title: 'Master of Business Administration',
@@ -739,7 +732,6 @@ const initialCourses = [
     ielts: '6.5',
     country: 'Canada'
   },
-
   {
     id: 'A401',
     title: 'Associate of Arts',
@@ -805,7 +797,6 @@ const initialCourses = [
     ielts: '6',
     country: 'Canada'
   },
-
   {
     id: 'C501',
     title: 'Certificate IV in Business Administration',
@@ -854,89 +845,254 @@ const initialCourses = [
     faculty: 'Hospitality',
     campuses: ['London'],
     level: 'Certificate IV',
-    duration: '12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Canada'
   },
   {
     id: 'C505',
-    title: 'Certificate IV in Marketing',
-    university: 'Centennial College',
+    title: 'Diploma in Business Management',
+    university: 'Humber College',
     intake: 'January, May, September',
-    tuitionFee: 15000,
-    faculty: 'Marketing',
+    tuitionFee: 16000,
+    faculty: 'Business',
     campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '12 - 24 Months',
+    ielts: '6.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C506',
+    title: 'Bachelor of Computer Science',
+    university: 'University of Windsor',
+    intake: 'September',
+    tuitionFee: 22000,
+    faculty: 'IT',
+    campuses: ['Windsor'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C507',
+    title: 'Master of Data Analytics',
+    university: 'Ryerson University',
+    intake: 'January, September',
+    tuitionFee: 25000,
+    faculty: 'Data Science',
+    campuses: ['Toronto'],
+    level: 'Master (coursework)',
+    duration: '12 - 24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C508',
+    title: 'PhD in Engineering',
+    university: 'University of Toronto',
+    intake: 'September',
+    tuitionFee: 30000,
+    faculty: 'Engineering',
+    campuses: ['Toronto'],
+    level: 'Doctorate',
+    duration: 'Above 48 Months',
+    ielts: '7.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C701',
+    title: 'Bachelor of Business Administration',
+    university: 'University of Windsor',
+    intake: 'January',
+    tuitionFee: 21000,
+    faculty: 'Business',
+    campuses: ['Windsor'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C702',
+    title: 'Diploma in Business Management',
+    university: 'Humber College',
+    intake: 'February',
+    tuitionFee: 16000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '12 - 24 Months',
+    ielts: '6.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C703',
+    title: 'Master of Information Technology',
+    university: 'Ryerson University',
+    intake: 'March',
+    tuitionFee: 25000,
+    faculty: 'IT',
+    campuses: ['Toronto'],
+    level: 'Master (coursework)',
+    duration: '12 - 24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C704',
+    title: 'Associate Degree in Arts',
+    university: 'George Brown College',
+    intake: 'April',
+    tuitionFee: 18000,
+    faculty: 'Arts',
+    campuses: ['Toronto'],
+    level: 'Associate Degree',
+    duration: '24 - 36 Months',
+    ielts: '6.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C705',
+    title: 'Certificate IV in Hospitality',
+    university: 'Fanshawe College',
+    intake: 'January',
+    tuitionFee: 13500,
+    faculty: 'Hospitality',
+    campuses: ['London'],
     level: 'Certificate IV',
-    duration: '12 Months',
+    duration: '1 - 12 Months',
     ielts: '5.5',
     country: 'Canada'
-  }
-
+  },
+  {
+    id: 'C706',
+    title: 'Bachelor of Computer Science',
+    university: 'University of Manitoba',
+    intake: 'February',
+    tuitionFee: 22000,
+    faculty: 'IT',
+    campuses: ['Winnipeg'],
+    level: 'Bachelor',
+    duration: '36 - 48 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C707',
+    title: 'Diploma in Hospitality Management',
+    university: 'Seneca College',
+    intake: 'March',
+    tuitionFee: 15500,
+    faculty: 'Hospitality',
+    campuses: ['Toronto'],
+    level: 'Diploma',
+    duration: '12 - 24 Months',
+    ielts: '6.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C708',
+    title: 'Master of Data Science',
+    university: 'University of Toronto',
+    intake: 'April',
+    tuitionFee: 27000,
+    faculty: 'Data Science',
+    campuses: ['Toronto'],
+    level: 'Master (coursework)',
+    duration: '12 - 24 Months',
+    ielts: '6.5',
+    country: 'Canada'
+  },
+  {
+    id: 'C709',
+    title: 'Associate Degree in Computer Science',
+    university: 'Douglas College',
+    intake: 'January',
+    tuitionFee: 17000,
+    faculty: 'IT',
+    campuses: ['Vancouver'],
+    level: 'Associate Degree',
+    duration: '24 - 36 Months',
+    ielts: '6.0',
+    country: 'Canada'
+  },
+  {
+    id: 'C710',
+    title: 'Certificate IV in Business',
+    university: 'Centennial College',
+    intake: 'February',
+    tuitionFee: 14000,
+    faculty: 'Business',
+    campuses: ['Toronto'],
+    level: 'Certificate IV',
+    duration: '1 - 12 Months',
+    ielts: '5.5',
+    country: 'Canada'
+  },
 ];
 
+const FEE_RANGES = [
+  { label: '$0 - $20,000',    value: '0-20000' },
+  { label: '$20,001 - $30,000', value: '20000-30000' },
+  { label: '$30,001 - $40,000', value: '30000-40000' },
+  { label: '$40,001 - $50,000', value: '40000-50000' },
+  { label: '$50,000+',         value: '50000+' },
+];
+
+const feeInRange = (fee, range) => {
+  if (range === '0-20000')    return fee >= 0     && fee <= 20000;
+  if (range === '20000-30000') return fee > 20000 && fee <= 30000;
+  if (range === '30000-40000') return fee > 30000 && fee <= 40000;
+  if (range === '40000-50000') return fee > 40000 && fee <= 50000;
+  if (range === '50000+')      return fee > 50000;
+  return false;
+};
+
 const CoursePortal = () => {
-  // --- CONFIGURATION ---
-  const WHATSAPP_NUMBER = "7982295530"; 
+  const WHATSAPP_NUMBER = "7982295530";
 
-  // --- STATE MANAGEMENT ---
-  const [searchInput, setSearchInput] = useState('');
-  const [searchLevel, setSearchLevel] = useState('');
+  // --- STATE ---
+  const [searchInput, setSearchInput]       = useState('');
+  const [searchLevel, setSearchLevel]       = useState('');
   const [selectedCountry, setSelectedCountry] = useState('Australia');
-  
-  // Active Filter States (applied to calculation loop)
-  const [searchQuery, setSearchQuery] = useState('');
+  const [openFilter, setOpenFilter]         = useState(null);
+
+  const [searchQuery, setSearchQuery]           = useState('');
   const [activeSearchLevel, setActiveSearchLevel] = useState('');
-  const [activeCountry, setActiveCountry] = useState('Australia');
+  const [activeCountry, setActiveCountry]       = useState('Australia');
 
-  const [selectedFaculty, setSelectedFaculty] = useState('Allied Health'); 
-  const [selectedLevels, setSelectedLevels] = useState([]);
+  const [selectedFaculty, setSelectedFaculty]   = useState('Allied Health');
+  const [selectedLevels, setSelectedLevels]     = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
-  const [selectedIntakes, setSelectedIntakes] = useState([]);
+  const [selectedIntakes, setSelectedIntakes]   = useState([]);
+  const [selectedFees, setSelectedFees]         = useState([]);   // ✅ fee filter state
 
-  // --- DOM REFERENCES ---
   const sliderRef = useRef(null);
 
-  // --- SLIDER ARROW SCROLLING HANDLER ---
+  // --- HANDLERS ---
+  const toggleFilter = (name) => setOpenFilter(openFilter === name ? null : name);
+
   const scrollSlider = (direction) => {
     if (sliderRef.current) {
       const firstChild = sliderRef.current.firstElementChild;
-      const scrollAmount = firstChild ? firstChild.offsetWidth * 2 : 200; 
-
-      if (direction === 'left') {
-        sliderRef.current.scrollLeft -= scrollAmount;
-      } else {
-        sliderRef.current.scrollLeft += scrollAmount;
-      }
+      const scrollAmount = firstChild ? firstChild.offsetWidth * 2 : 200;
+      sliderRef.current.scrollLeft += direction === 'left' ? -scrollAmount : scrollAmount;
     }
   };
 
-  // --- FILTER TOGGLE HANDLERS ---
-  const handleLevelChange = (level) => {
-    setSelectedLevels(prev => 
-      prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]
-    );
-  };
+  const handleLevelChange    = (v) => setSelectedLevels(prev    => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
+  const handleDurationChange = (v) => setSelectedDurations(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
+  const handleIntakeChange   = (v) => setSelectedIntakes(prev   => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
+  const handleFeeChange      = (v) => setSelectedFees(prev      => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]); // ✅
 
-  const handleDurationChange = (duration) => {
-    setSelectedDurations(prev => 
-      prev.includes(duration) ? prev.filter(d => d !== duration) : [...prev, duration]
-    );
-  };
-
-  const handleIntakeChange = (intake) => {
-    setSelectedIntakes(prev => 
-      prev.includes(intake) ? prev.filter(i => i !== intake) : [...prev, intake]
-    );
-  };
-
-  // --- SEARCH EXECUTION HANDLER ---
   const handleSearchSubmit = () => {
     setSearchQuery(searchInput);
     setActiveSearchLevel(searchLevel);
     setActiveCountry(selectedCountry);
   };
 
-  // --- RESET BUTTON WORKING ---
   const handleResetFilters = () => {
     setSearchInput('');
     setSearchLevel('');
@@ -948,28 +1104,33 @@ const CoursePortal = () => {
     setSelectedLevels([]);
     setSelectedDurations([]);
     setSelectedIntakes([]);
+    setSelectedFees([]);   // ✅ reset fee filter
   };
 
-  // --- APPLICATION LOGIC FILTER ---
+  // --- FILTERED COURSES ---
   const filteredCourses = useMemo(() => {
     return initialCourses.filter(course => {
-      const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                            course.id.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesFaculty = selectedFaculty ? course.faculty === selectedFaculty : true;
-
+      const matchesSearch   = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              course.id.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFaculty  = selectedFaculty ? course.faculty === selectedFaculty : true;
       const matchesSidebarLevel = selectedLevels.length > 0 ? selectedLevels.includes(course.level) : true;
-      const matchesHeaderLevel = activeSearchLevel ? course.level === activeSearchLevel : true;
-      
-      const matchesCountry = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
+      const matchesHeaderLevel  = activeSearchLevel ? course.level === activeSearchLevel : true;
+      const matchesCountry  = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
       const matchesDuration = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
-      const matchesIntake = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
+      const matchesIntake   = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
 
-      return matchesSearch && matchesFaculty && matchesSidebarLevel && matchesHeaderLevel && matchesCountry && matchesDuration && matchesIntake;
+      // ✅ Tuition fee filter — fixed
+      const matchesFee = selectedFees.length > 0
+        ? selectedFees.some(range => feeInRange(course.tuitionFee, range))
+        : true;
+
+      return matchesSearch && matchesFaculty && matchesSidebarLevel &&
+             matchesHeaderLevel && matchesCountry && matchesDuration &&
+             matchesIntake && matchesFee;  // ✅ included in return
     });
-  }, [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel, activeCountry, selectedDurations, selectedIntakes]);
+  }, [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel,
+      activeCountry, selectedDurations, selectedIntakes, selectedFees]); // ✅ dependency added
 
-  // --- WHATSAPP CLICK HANDLER ---
   const handleWhatsAppContact = (courseTitle, courseId) => {
     const message = encodeURIComponent(`Hi! I am interested in learning more about the course: ${courseTitle} (${courseId}).`);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
@@ -977,170 +1138,167 @@ const CoursePortal = () => {
 
   return (
     <>
-    <Navbar />
-    <div className="portal-container">
-      {/* Top Hero Section */}
-      <header className="Hero-section">
-        <h1>4,000+ Best Courses Available Here!</h1>
-        <div className="search-bar-container">
-          <select 
-            className="search-select"
-            value={searchLevel}
-            onChange={(e) => setSearchLevel(e.target.value)}
-          >
-            <option value="">Select Level</option>
-            <option value="Bachelor">Bachelor</option>
-            <option value="Diploma">Diploma</option>
-            <option value="Master (coursework)">Master (coursework)</option>
-            <option value="Associate Degree">Associate Degree</option>
-            <option value="Certificate IV">Certificate IV</option>
-          </select>
-          
-          <select 
-            className="search-select"
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-          >
-            <option value="Australia">Australia</option>
-             <option value="Canada">Canada</option>
-          </select>
-          
-          <input 
-            type="text" 
-            placeholder="Search Courses....." 
-            className="search-input" 
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <button className="search-btn" onClick={handleSearchSubmit}>Search Here</button>
-        </div>
-        
-        {/* Quick Category Menu Links */}
-        <div className="category-slider-wrapper">
-          <button className="slider-arrow left" onClick={() => scrollSlider('left')}>‹</button>
-          
-          <div className="category-slider" ref={sliderRef}>
-            {[ 'Business', 'Allied Health', 'Global Studies And', 'Law And Criminology', 'Public Health and', 'Psychology', 'Science and Enviroment', 'Low and Criminology', 'Sports and Excercise', 'Teaching', 'youth work and ','Nursing, Midwifery And' ].map((fac) => (
-              <label key={fac} className={`cat-chip ${selectedFaculty === fac ? 'active-chip' : ''}`}>
-                <input 
-                  type="checkbox" 
-                  style={{ display: 'none' }} 
-                  checked={selectedFaculty === fac} 
-                  onChange={() => setSelectedFaculty(selectedFaculty === fac ? '' : fac)} 
-                /> 
-                {fac}
-              </label>
-            ))}
+      <Navbar />
+      <div className="portal-container">
+        {/* Hero Section */}
+        <header className="Hero-section">
+          <h1>4,000+ Best Courses Available Here!</h1>
+          <div className="search-bar-container">
+            <select
+              className="search-select"
+              value={searchLevel}
+              onChange={(e) => setSearchLevel(e.target.value)}
+            >
+              <option value="">Select Level</option>
+              <option value="Bachelor">Bachelor</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Master (coursework)">Master (coursework)</option>
+              <option value="Associate Degree">Associate Degree</option>
+              <option value="Certificate IV">Certificate IV</option>
+            </select>
+
+            <select
+              className="search-select"
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+            >
+              <option value="Australia">Australia</option>
+              <option value="Canada">Canada</option>
+            </select>
+
+            <input
+              type="text"
+              placeholder="Search Courses....."
+              className="search-input"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <button className="search-btn" onClick={handleSearchSubmit}>Search Here</button>
           </div>
 
-          <button className="slider-arrow right" onClick={() => scrollSlider('right')}>›</button>
-        </div>
-      </header>
-
-      {/* Main Content Area */}
-      <div className="main-layout">
-        {/* Sidebar Filters */}
-        <aside className="sidebar">
-          <button className="reset-btn" onClick={handleResetFilters}>⟲ Reset Filters</button>
-          
-          <div className="filter-group">
-            <h3>Course level</h3>
-            {['Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
-              <label key={lvl}>
-                <input 
-                  type="checkbox" 
-                  checked={selectedLevels.includes(lvl)} 
-                  onChange={() => handleLevelChange(lvl)}
-                /> {lvl}
-              </label>
-            ))}
+          {/* Category Slider */}
+          <div className="category-slider-wrapper">
+            <button className="slider-arrow left" onClick={() => scrollSlider('left')}>‹</button>
+            <div className="category-slider" ref={sliderRef}>
+              {['Business', 'Allied Health', 'Global Studies And', 'Law And Criminology',
+                'Public Health and', 'Psychology', 'Science and Enviroment', 'Low and Criminology',
+                'Sports and Excercise', 'Teaching', 'youth work and ', 'Nursing, Midwifery And'
+              ].map((fac) => (
+                <label key={fac} className={`cat-chip ${selectedFaculty === fac ? 'active-chip' : ''}`}>
+                  <input
+                    type="checkbox"
+                    style={{ display: 'none' }}
+                    checked={selectedFaculty === fac}
+                    onChange={() => setSelectedFaculty(selectedFaculty === fac ? '' : fac)}
+                  />
+                  {fac}
+                </label>
+              ))}
+            </div>
+            <button className="slider-arrow right" onClick={() => scrollSlider('right')}>›</button>
           </div>
+        </header>
 
-          <div className="filter-group">
-            <h3>Duration</h3>
-            {['1 - 12 Months', '12 - 24 Months', '24 - 36 Months', '36 - 48 Months', 'Above 48 Months'].map(dur => (
-              <label key={dur}>
-                <input 
-                  type="checkbox" 
-                  checked={selectedDurations.includes(dur)} 
-                  onChange={() => handleDurationChange(dur)}
-                /> {dur}
-              </label>
-            ))}
-          </div>
+        {/* Main Layout */}
+        <div className="main-layout">
+          {/* Sidebar */}
+          <aside className="sidebar">
+            <button className="reset-btn" onClick={handleResetFilters}>⟲ Reset Filters</button>
 
-          <div className="filter-group">
-            <h3>Intake</h3>
-            {['January', 'February', 'March', 'April'].map(month => (
-              <label key={month}>
-                <input 
-                  type="checkbox" 
-                  checked={selectedIntakes.includes(month)} 
-                  onChange={() => handleIntakeChange(month)}
-                /> {month}
-              </label>
-            ))}
-          </div>
-        </aside>
+            {/* Course Level */}
+            <div className={`filter-group ${openFilter === 'level' ? 'active' : ''}`}>
+              <h3 onClick={() => toggleFilter('level')}>Course level</h3>
+              <div className="filter-content">
+                {['Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
+                  <label key={lvl}>
+                    <input
+                      type="checkbox"
+                      checked={selectedLevels.includes(lvl)}
+                      onChange={() => handleLevelChange(lvl)}
+                    />
+                    {lvl}
+                  </label>
+                ))}
+              </div>
+            </div>
 
-        {/* Course Listings */}
-        <main className="results-container">
-          <div className="results-header">
-            <span>Total No. of Record {filteredCourses.length}</span>
-            <span>Page No. 1</span>
-          </div>
+            {/* ✅ Tuition Fee Filter — fully working */}
+            <div className={`filter-group ${openFilter === 'fee' ? 'active' : ''}`}>
+              <h3 onClick={() => toggleFilter('fee')}>Tuition Fee</h3>
+              <div className="filter-content">
+                {FEE_RANGES.map(({ label, value }) => (
+                  <label key={value}>
+                    <input
+                      type="checkbox"
+                      checked={selectedFees.includes(value)}
+                      onChange={() => handleFeeChange(value)}
+                    />
+                    {label}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </aside>
 
-          <div className="course-list">
-            {filteredCourses.length === 0 ? (
-              <div className="no-records">No courses match your selected filter options.</div>
-            ) : (
-              filteredCourses.map((course) => (
-                <div key={course.id} className="course-card">
-                  <div className="country-ribbon">{course.country}</div>
-                  
-                  <div className="card-body">
-                    <div className="card-main-info">
-                      <h2 className="course-title">{course.title} - {course.id}</h2>
-                      <p className="univ-name">🏛️ <strong>University :</strong> {course.university}</p>
-                      
-                      <div className="meta-row">
-                        <span>📅 <strong>Intake :</strong> {course.intake}</span>
-                        <span>💵 <strong>Tuition Fee :</strong> ${course.tuitionFee.toLocaleString()}</span>
+          {/* Course Listings */}
+          <main className="results-container">
+            <div className="results-header">
+              <span>Total No. of Record {filteredCourses.length}</span>
+              <span>Page No. 1</span>
+            </div>
+
+            <div className="course-list">
+              {filteredCourses.length === 0 ? (
+                <div className="no-records">No courses match your selected filter options.</div>
+              ) : (
+                filteredCourses.map((course) => (
+                  <div key={course.id} className="course-card">
+                    <div className="country-ribbon">{course.country}</div>
+
+                    <div className="card-body">
+                      <div className="card-main-info">
+                        <h2 className="course-title">{course.title} - {course.id}</h2>
+                        <p className="univ-name">🏛️ <strong>University :</strong> {course.university}</p>
+
+                        <div className="meta-row">
+                          <span>📅 <strong>Intake :</strong> {course.intake}</span>
+                          {/* ✅ Dollar sign instead of Rupee */}
+                          <span>💵 <strong>Tuition Fee :</strong> ${course.tuitionFee.toLocaleString()}</span>
+                        </div>
+
+                        <p className="faculty-info">👤 <strong>Faculty :</strong> {course.faculty}</p>
+
+                        <div className="badge-row">
+                          <span className="badge-pill">📍 Campus : {course.campuses.join(', ')}</span>
+                          <span className="badge-pill">🎓 Course level : {course.level}</span>
+                          <span className="badge-pill">⏱️ Duration : {course.duration}</span>
+                        </div>
                       </div>
-                      
-                      <p className="faculty-info">👤 <strong>Faculty :</strong> {course.faculty}</p>
-                      
-                      <div className="badge-row">
-                        <span className="badge-pill">📍 Campus : {course.campuses.join(', ')}</span>
-                        <span className="badge-pill">🎓 Course level : {course.level}</span>
-                        <span className="badge-pill">⏱️ Duration : {course.duration}</span>
+
+                      <div className="card-right-info">
+                        <span className="ielts-tag">📋 IELTS Band : {course.ielts}</span>
                       </div>
                     </div>
 
-                    <div className="card-right-info">
-                      <span className="ielts-tag">📋 IELTS Band : {course.ielts}</span>
+                    <div className="card-footer">
+                      <span className="website-status">🌐 Website : Not Available</span>
+                      <div className="footer-actions">
+                        <button
+                          className="whatsapp-btn"
+                          onClick={() => handleWhatsAppContact(course.title, course.id)}
+                        >
+                          💬 Contact WhatsApp
+                        </button>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="card-footer">
-                    <span className="website-status">🌐 Website : Not Available</span>
-                    <div className="footer-actions">
-                      <button 
-                        className="whatsapp-btn" 
-                        onClick={() => handleWhatsAppContact(course.title, course.id)}
-                      >
-                        💬 Contact WhatsApp
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </main>
+                ))
+              )}
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };

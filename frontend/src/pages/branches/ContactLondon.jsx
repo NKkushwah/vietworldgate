@@ -27,7 +27,7 @@ const ContactLondon = () => {
         <section className="contact-hero">
           <div className="hero-overlay">
             <h1>London Branch</h1>
-            <p>Home / London</p>
+            
           </div>
         </section>
 

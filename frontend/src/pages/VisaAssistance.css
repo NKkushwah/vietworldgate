@@ -32,6 +32,10 @@ body {
   padding: 80px 20px; /* thoda spacing better */
 }
 
+.application-form-tag{
+  color: var(--white);
+  background-color: rgb(117, 195, 226);
+}
 /* ADD THIS */
 .hero-overlay {
   position: absolute;

@@ -13,6 +13,7 @@
   color: var(--text-dark);
   background-color: var(--white);
   line-height: 1.6;
+  padding-top: 60px;
 }
 
 /* Hero Section Banner */
@@ -22,6 +23,7 @@
   display: flex;
   align-items: center;
   color: var(--white);
+
 }
 
 .hero-content-left {
@@ -35,11 +37,16 @@
   font-size: 2.2rem;
   margin: 0 0 8px 0;
   font-weight: 600;
+  
 }
 
 .breadcrumb-trail {
   font-size: 0.9rem;
   opacity: 0.85;
+  background-color: green;
+  display: inline-block;   /* 🔥 important */
+  padding: 4px 10px;       /* spacing */
+  border-radius: 5px;      /* optional nice look */
 }
 
 .current-page {
@@ -303,6 +310,12 @@
 
 /* Fluid Responsiveness Rules */
 @media (max-width: 992px) {
+
+.visa-page-container {
+ 
+  padding-top: 0px;
+}
+
   .visa-grid-container {
     flex-direction: column;
   }
@@ -312,7 +325,12 @@
   }
 }
 
+
 @media (max-width: 650px) {
+
+
+
+
   .services-three-column-grid {
     grid-template-columns: 1fr;
   }

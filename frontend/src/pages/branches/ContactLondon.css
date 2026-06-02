@@ -33,18 +33,16 @@ body{
   width:100%;
   height:360px;
 
-  background:
-    linear-gradient(rgba(1,40,25,0.78),rgba(1,40,25,0.78)),
-    url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad")
+  background: 
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")
     center/cover no-repeat;
+
+  position:relative;
 
   display:flex;
   justify-content:center;
   align-items:center;
-
-  position:relative;
 }
-
 .hero-overlay{
   text-align:center;
   color:#fff;

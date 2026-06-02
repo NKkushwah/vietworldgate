@@ -15,7 +15,7 @@ const ShortlistUniversities = () => {
         <div className="hero-content-left">
           <h2></h2>
           <div className="breadcrumb-trail">
-            <span className="home-icon"></span> ➔ <span className="current-page"></span>
+            <span className="home-icon"></span><span className="current-page"></span>
           </div>
         </div>
       </header>

@@ -15,11 +15,11 @@ export default function CanadaDestination() {
         <header className="dest-header">
           <div className="header-overlay">
             <div className="header-content">
-              <h1>Canada</h1>
+              <h1>Australia</h1>
               <nav className="breadcrumbs">
                 <span className="home-icon">🏠</span> 
                 <span className="arrow">→</span> Destinations 
-                <span className="arrow">→</span> Canada
+                <span className="arrow">→</span> Australia
               </nav>
             </div>
             <div className="header-student-image">
