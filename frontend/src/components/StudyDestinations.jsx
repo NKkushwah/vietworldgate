@@ -5,7 +5,7 @@ import './StudyDestinations.css';
 import AusImg  from '../assets/studydestination/austraila.jpg';
 import Canada from '../assets/studydestination/canada.jpg';
 import Dubai from '../assets/studydestination/dubai.jpg';
-import Germany from '../assets/studydestination/italy.jpg';
+import Germany from '../assets/studydestination/germany.jpg';
 import Japan from '../assets/studydestination/japan.jpg';
 import Newszeland from '../assets/studydestination/newszeland.png';
 import Uk from '../assets/studydestination/ukdest.jpg';
