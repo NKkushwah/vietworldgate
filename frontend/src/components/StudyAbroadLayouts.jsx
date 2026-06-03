@@ -5,6 +5,7 @@ import logo1 from "../assets/story1video.mp4";
 import logo2 from "../assets/story2video.MOV";
 import logo3 from "../assets/story3video.mp4";
 import logo4 from "../assets/story4video.mp4";
+import logo5 from "../assets/story5video.mp4";
 
 export default function StudyAbroadLayouts() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,9 +44,14 @@ export default function StudyAbroadLayouts() {
         name: "Dharshini",
         img: logo4, 
         isVideo: true 
+      },
+      {
+        id: 5,
+        name: "Shafquat",
+        img: logo5, 
+        isVideo: true 
       }
 
-  
   ];
 
   // =========================
