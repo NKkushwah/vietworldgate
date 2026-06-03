@@ -367,7 +367,7 @@
   line-height: 1.8;
 }
 /* Exact typography & alignment matching WhatsApp Image 2026-06-03 at 11.50.22.jpeg */
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
+
 
 .team-wrapper {
   font-family: 'Work Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -451,7 +451,7 @@
 .member-designation {
   font-size: 0.82rem;
   font-weight: 400;
-  color: #a39c99; /* Soft grey matching the layout */
+  color: #535252; /* Soft grey matching the layout */
   margin: 0;
   line-height: 1.3;
 }

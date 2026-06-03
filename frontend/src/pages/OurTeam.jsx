@@ -3,16 +3,72 @@ import './OurTeam.css'; // Link to your separate CSS sheet
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import logo from '../assets/vietworldgate1.png'; // Import your company logo
+import NanduIMG from '../assets/team/nandu.png';
+import PawanImg from '../assets/team/pawan.jpeg';
+import Ritika from '../assets/team/ritika.jpeg';
+import Lakhshyasharma from '../assets/team/lkhsharma.png';
+import Lakhsenior from '../assets/team/lakhsenior.jpeg';
+import Raghav from '../assets/team/raghav.jpeg';
+import Anushka from '../assets/team/anushka.jpeg';
+import Navneet from '../assets/team/navneet.png';
+import Suraj from '../assets/team/surajsir.png';
+
+
+
 const teamMembers = [
-  { name: 'Lyn Bryan', role: 'CEO', image: 'https://via.placeholder.com/150' },
-  { name: 'Lauren Pybus', role: 'VP, Growth & Development', image: 'https://via.placeholder.com/150' },
-  { name: 'Raelene Thomas', role: 'VP, Finance & Operations', image: 'https://via.placeholder.com/150' },
-  { name: 'Mitchell Fawcett', role: 'VP, Strategy', image: 'https://via.placeholder.com/150' },
-  { name: 'Jieun Segal', role: 'VP, Sales & Marketing', image: 'https://via.placeholder.com/150' },
-  { name: 'Darren Maher', role: 'Creative Director', image: 'https://via.placeholder.com/150' },
-  { name: 'Ben Van Exan', role: 'Snr Account Executive', image: 'https://via.placeholder.com/150' },
-  { name: 'John Blown', role: 'Founding Partner', image: 'https://via.placeholder.com/150' },
-  { name: 'Chris Breikss', role: 'Founding Partner', image: 'https://via.placeholder.com/150' }
+  {
+     name: 'Suraj Sharma',
+      role: 'Founder & Director', 
+      image: Suraj
+     },
+
+  { 
+    name: 'Navneet Kaur', 
+    role: 'Co-Director', 
+    image: Navneet
+   },
+
+  { 
+    name: 'Lakshay Kataria', 
+    role: 'Bussiness Development Manager', 
+    image: Lakhsenior
+   },
+
+  { 
+    name: 'Raghav Trikha',
+    role: 'Bussiness Development Manager', 
+    image: Raghav
+   },
+
+  { 
+    name: 'Nandkishore Kushwah', 
+    role: 'Web Developer', 
+    image: NanduIMG
+  },
+
+  { 
+    name: 'Pavan Kushwah', 
+    role: 'Assistant Web developer', 
+    image: PawanImg
+   },
+
+  { 
+    name: 'Lakshy Sharma', 
+    role: 'Bussiness Development Executive', 
+    image: Lakhshyasharma
+  },
+
+  { 
+    name: 'Ritika Singh', 
+    role: 'Bussiness Development Executive', 
+    image: Ritika
+  },
+
+  { 
+    name: 'Anushka Gupta', 
+    role: 'Bussiness Development Executive', 
+    image: Anushka
+  }
 ];
 
 const OurTeam = () => {
