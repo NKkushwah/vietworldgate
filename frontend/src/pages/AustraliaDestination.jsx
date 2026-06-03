@@ -58,7 +58,7 @@ export default function CanadaDestination() {
               
               <div className="wa-card-body">
                 <p className="wa-welcome-msg">
-                  Confused about DLIs, SDS applications, requirements, or courses in Canada? Connect instantly with our experts for immediate support.
+                  Confused about DLIs, SDS applications, requirements, or courses in Australia? Connect instantly with our experts for immediate support.
                 </p>
                 <a 
                   href={whatsappFormLink}
@@ -75,16 +75,16 @@ export default function CanadaDestination() {
           {/* Right Info Section */}
           <main className="dest-main-content">
             <section className="info-block">
-              <h2>Study in Canada: Your Pathway to Global Success!</h2>
+              <h2>Study in Australia: Your Pathway to Global Success!</h2>
               <p>
-                Canada is globally recognized for its high-quality education system, offering an array of programs across top-tier universities and colleges. With a strong focus on research, practical learning, and co-op programs, Canada equips students with real-world industry experience. Along with affordable tuition fees compared to other major study destinations, students benefit from a high standard of living, excellent healthcare, and diverse post-graduation work opportunities.
+                Australia is globally recognized for its high-quality education system, offering an array of programs across top-tier universities and colleges. With a strong focus on research, practical learning, and co-op programs, Australia equips students with real-world industry experience. Along with affordable tuition fees compared to other major study destinations, students benefit from a high standard of living, excellent healthcare, and diverse post-graduation work opportunities.
               </p>
             </section>
 
             <section className="info-block">
-              <h2>Why study in Canada?</h2>
+              <h2>Why study in Australia?</h2>
               <p>
-                As an international student, Canada provides an exceptionally welcoming, safe, and multicultural environment. Educational institutions here hold dynamic campus cultures and robust support networks. Moreover, Canada’s Post-Graduation Work Permit (PGWP) program offers a direct avenue to gain invaluable international work experience, making it one of the most attractive destinations for students worldwide to build long-term careers.
+                As an international student, Australia provides an exceptionally welcoming, safe, and multicultural environment. Educational institutions here hold dynamic campus cultures and robust support networks. Moreover, Australia’s Post-Graduation Work Permit (PGWP) program offers a direct avenue to gain invaluable international work experience, making it one of the most attractive destinations for students worldwide to build long-term careers.
               </p>
             </section>
 
@@ -94,28 +94,28 @@ export default function CanadaDestination() {
                 <div className="icon-circle">🍁</div>
                 <div className="icon-circle">👥</div>
                 <h3>Student-Friendly Cities</h3>
-                <p>Top Canadian cities like Montreal, Toronto, and Vancouver consistently rank among the best student cities globally, offering vibrant cultures and safe environments.</p>
+                <p>Top Australian cities like Sydney, Melbourne, and Brisbane consistently rank among the best student cities globally, offering vibrant cultures and safe environments.</p>
               </div>
 
               <div className="feature-card">
                 <div className="icon-circle">🎓</div>
                 <h3>World-Class Institutions</h3>
-                <p>Canada boasts numerous universities ranking in the global top 100, providing top-notch degrees, advanced research spaces, and exceptional co-op facilities.</p>
+                <p>Australia boasts numerous universities ranking in the global top 100, providing top-notch degrees, advanced research spaces, and exceptional co-op facilities.</p>
               </div>
 
               <div className="feature-card">
                 <div className="icon-circle">💼</div>
                 <h3>Post-Study Work Options</h3>
-                <p>The Post-Graduation Work Permit (PGWP) allows eligible international graduates to stay and work in Canada, gaining crucial global industry experience.</p>
+                <p>The Post-Graduation Work Permit (PGWP) allows eligible international graduates to stay and work in Australia, gaining crucial global industry experience.</p>
               </div>
             </section>
 
             {/* Dynamic Bottom Explorer CTAs */}
             <section className="explore-footer-cta">
-              <span className="sub-tagline">UNLOCK YOUR FUTURE IN CANADA</span>
-              <h2>Explore Universities, Colleges, and Scholarships in Canada</h2>
-              <p className="lead-text">Discover the endless opportunities that await you in the Great White North.</p>
-              <p className="sub-text">Canada offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
+              <span className="sub-tagline">UNLOCK YOUR FUTURE IN AUSTRALIA</span>
+              <h2>Explore Universities, Colleges, and Scholarships in Australia</h2>
+              <p className="lead-text">Discover the endless opportunities that await you in the Land Down Under.</p>
+              <p className="sub-text">Australia offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
               
               <div className="cta-button-group">
                 <a 

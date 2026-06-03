@@ -4,6 +4,7 @@ import "./StudyAbroadLayouts.css";
 import logo1 from "../assets/story1video.mp4";
 import logo2 from "../assets/story2video.MOV";
 import logo3 from "../assets/story3video.mp4";
+import logo4 from "../assets/story4video.mp4";
 
 export default function StudyAbroadLayouts() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,12 +32,19 @@ export default function StudyAbroadLayouts() {
       img: logo2, 
       isVideo: true 
     },
-     {
-      id: 3,
-      name: "Ishita Verma",
-      img: logo3, 
-      isVideo: true 
-    },
+      {
+        id: 3,
+        name: "Ishita Verma",
+        img: logo3, 
+        isVideo: true 
+      },
+      {
+        id: 4,
+        name: "Dharshini",
+        img: logo4, 
+        isVideo: true 
+      }
+
   
   ];
 
