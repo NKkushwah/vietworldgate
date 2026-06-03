@@ -19,7 +19,7 @@ const teamMembers = [
   {
      name: 'Suraj Sharma',
       role: 'Founder & Director', 
-      image: '../assets/team/surajsir.png'
+      image: Suraj
      },
 
   { 
