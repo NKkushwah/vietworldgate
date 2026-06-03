@@ -16,9 +16,7 @@ export default function StudyAbroadLayouts() {
   // Ref to hold the auto-play timer instance
   const autoPlayRef = useRef(null);
 
-  // =========================
-  // TESTIMONIALS
-  // =========================
+
   const testimonials = [
    
     {
