@@ -22,7 +22,6 @@ const VisaAssistance = () => {
       <main className="visa-main-content">
         <div className="visa-grid-container">
           
-          {/* Left Column */}
           <aside className="visa-sidebar">
             
             {/* Call Widget */}
