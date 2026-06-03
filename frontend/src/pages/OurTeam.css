@@ -366,3 +366,112 @@
   font-weight: 300;
   line-height: 1.8;
 }
+/* Exact typography & alignment matching WhatsApp Image 2026-06-03 at 11.50.22.jpeg */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
+
+.team-wrapper {
+  font-family: 'Work Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  padding: 80px 40px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.team-main-heading {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2b2321; /* Same elegant dark brownish-charcoal text tint */
+  margin-bottom: 70px;
+  letter-spacing: -0.5px;
+}
+
+.team-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Space between row 1 and row 2 */
+}
+
+.team-grid-row {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Row 1: 5 Members */
+.row-of-5 {
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+}
+
+/* Row 2: 4 Members - with a max width constraint to shift items in alignment with the top row */
+.row-of-4 {
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  max-width: 940px; 
+  margin: 0 auto;
+  width: 100%;
+}
+
+.team-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circular frame with the precise subtle background shading seen in the image */
+.avatar-circle {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eef2f5; /* Light grey backdrop shading */
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Name styling - Muted soft black/brown */
+.member-fullname {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4a423f;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Role styling - Precise light grey uppercase vibe but subtle text */
+.member-designation {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #a39c99; /* Soft grey matching the layout */
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Keep the exact row structure on big screens, but allow wrap for tablet/mobile viewports */
+@media (max-width: 1024px) {
+  .row-of-5, .row-of-4 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .row-of-5, .row-of-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 440px) {
+  .row-of-5, .row-of-4 {
+    grid-template-columns: 1fr;
+  }
+}

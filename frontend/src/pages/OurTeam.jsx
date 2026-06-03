@@ -3,8 +3,22 @@ import './OurTeam.css'; // Link to your separate CSS sheet
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import logo from '../assets/vietworldgate1.png'; // Import your company logo
+const teamMembers = [
+  { name: 'Lyn Bryan', role: 'CEO', image: 'https://via.placeholder.com/150' },
+  { name: 'Lauren Pybus', role: 'VP, Growth & Development', image: 'https://via.placeholder.com/150' },
+  { name: 'Raelene Thomas', role: 'VP, Finance & Operations', image: 'https://via.placeholder.com/150' },
+  { name: 'Mitchell Fawcett', role: 'VP, Strategy', image: 'https://via.placeholder.com/150' },
+  { name: 'Jieun Segal', role: 'VP, Sales & Marketing', image: 'https://via.placeholder.com/150' },
+  { name: 'Darren Maher', role: 'Creative Director', image: 'https://via.placeholder.com/150' },
+  { name: 'Ben Van Exan', role: 'Snr Account Executive', image: 'https://via.placeholder.com/150' },
+  { name: 'John Blown', role: 'Founding Partner', image: 'https://via.placeholder.com/150' },
+  { name: 'Chris Breikss', role: 'Founding Partner', image: 'https://via.placeholder.com/150' }
+];
 
 const OurTeam = () => {
+
+  const topRow = teamMembers.slice(0, 5);
+  const bottomRow = teamMembers.slice(5);
   // Structured data for team roles
   const teamRoles = [
     {
@@ -79,6 +93,9 @@ const OurTeam = () => {
                 </p>
               </div>
 
+
+              
+
               {/* Right Column: Premium Geometric Value Card */}
               <div className="hero-badge-right">
                 <p className="badge-tagline">Result-Oriented Global Guidance</p>
@@ -97,6 +114,38 @@ const OurTeam = () => {
             </div>
           </div>
         </section>
+
+        <div className="team-wrapper">
+      <h1 className="team-main-heading">Meet the team</h1>
+      
+      <div className="team-grid-container">
+        {/* Top Row - Exact 5 columns */}
+        <div className="team-grid-row row-of-5">
+          {topRow.map((member, i) => (
+            <div key={i} className="team-member-card">
+              <div className="avatar-circle">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <h3 className="member-fullname">{member.name}</h3>
+              <p className="member-designation">{member.role}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Row - Exact 4 columns centered */}
+        <div className="team-grid-row row-of-4">
+          {bottomRow.map((member, i) => (
+            <div key={i} className="team-member-card">
+              <div className="avatar-circle">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <h3 className="member-fullname">{member.name}</h3>
+              <p className="member-designation">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
         {/* Grid Section: Who makes up our team */}
         <section className="team-roles-section">
