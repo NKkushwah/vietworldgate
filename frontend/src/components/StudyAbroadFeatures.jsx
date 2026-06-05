@@ -81,7 +81,7 @@ export default function StudyAbroadFeatures() {
               <h2>Find My Dream University</h2>
               <p>Shortlist Universities With Our Course Finder</p>
 
-              <Link to="/scholarships">
+              <Link to="/universitypartner">
               <button className="btn-shortlist">
                 Shortlist Universities
               </button>
