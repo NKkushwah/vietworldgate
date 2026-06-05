@@ -311,6 +311,12 @@
   pointer-events: none;
 }
 
+.route-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* ==========================================
    RESPONSIVE DESIGN (Media Queries)
    ========================================== */

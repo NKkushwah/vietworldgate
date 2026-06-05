@@ -110,7 +110,7 @@ export default function StudyAbroadFeatures() {
               <span className="bg-number">99</span>
             </div>
 
-            <Link to="/scholarships">
+            <Link to="/universitypartner">
               <button className="btn-click-here">
                 CLICK HERE ➔
               </button>
