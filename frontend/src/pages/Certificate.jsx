@@ -1,56 +1,52 @@
 import React from 'react';
-import './Certificate.css'; 
+import './Certificate.css';
 import LogoImage1 from '../assets/componycertificate/certificate1.jpg';
 import LogoImage2 from '../assets/componycertificate/certificate2.jpg';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+
 const Certificate = () => {
   return (
     <>
-    
-   <Navbar />
-    <div className="page-container">
-      
-      {/* HERO SECTION */}
-      <header className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">certificate & achievement</h1>
-         
-         
-        </div>
-      </header>
+      <Navbar />
+      <div className="cert-page">
 
-      {/* CARDS SECTION */}
-      <main className="cards-container">
-        <div className="cards-grid">
-          
-          {/* Card 1 - Pure Image with Styled Crop */}
-          <div className="card">
-            
-              <img 
-                src={LogoImage1}
-                alt="Certificate One" 
-                className="card-image"
-              />
-          
+        {/* HERO SECTION */}
+        <header className="cert-hero">
+          <div className="cert-hero__content">
+            <h1 className="cert-hero__title">certificate & achievement</h1>
           </div>
+        </header>
 
-          {/* Card 2 - Pure Image with Styled Crop */}
-          <div className="card">
-            <div className="card-image">
-              <img 
-                src={LogoImage2}
-                alt="Certificate Two" 
-                className="card-image"
+        {/* CARDS SECTION */}
+        <main className="cert-cards">
+          <div className="cert-cards__grid">
+
+            {/* Card 1 */}
+            <div className="cert-card">
+              <img
+                src={LogoImage1}
+                alt="Certificate One"
+                className="cert-card__img"
               />
             </div>
+
+            {/* Card 2 */}
+            <div className="cert-card">
+              <div className="cert-card__img">
+                <img
+                  src={LogoImage2}
+                  alt="Certificate Two"
+                  className="cert-card__img"
+                />
+              </div>
+            </div>
+
           </div>
+        </main>
 
-        </div>
-      </main>
-
-    </div>
-    <Footer />
+      </div>
+      <Footer />
     </>
   );
 };
