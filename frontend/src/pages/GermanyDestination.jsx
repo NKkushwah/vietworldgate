@@ -3,11 +3,13 @@ import './GermanyDestination.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
+
 export default function GermanyDestination() {
   const whatsappLink = "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20in%20Germany.%20Please%20guide%20me%20about%20public%20universities%20and%20the%20visa%20process.";
 
   return (
     <>
+     
     <Navbar />
     <div className="dest-container">
       {/* 1. Header Banner Block */}

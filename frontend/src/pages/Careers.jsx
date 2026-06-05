@@ -3,6 +3,7 @@ import './Careers.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+
 const Careers = () => {
   // Mock data specifically for a Global Mobility / Visa Industry company
   const initialJobs = [
@@ -23,6 +24,7 @@ const Careers = () => {
 
   return (
     <>
+     
       <Navbar />
       <div className="careers-container">
         

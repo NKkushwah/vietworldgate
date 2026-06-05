@@ -9,6 +9,7 @@ const CourseAdvice = () => {
 
   return (
     <>
+     
     <Navbar />
     <div className="visa-page-container">
       

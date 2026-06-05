@@ -3,6 +3,7 @@ import './CoursePortal.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 const initialCourses = [
   {
     id: '078172B',
@@ -1031,22 +1032,444 @@ const initialCourses = [
     ielts: '5.5',
     country: 'Canada'
   },
+
+  {
+    "id": "DE01",
+    "title": "Business, Social Sciences Program",
+    "university": "Freie Universität Berlin",
+    "intake": "April, October",
+    "tuitionFee": "~500 Semester",
+    "faculty": "Business, Social Sciences",
+    "campuses": ["Berlin"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Germany"
+  },
+  {
+    "id": "DE02",
+    "title": "Science, Business Program",
+    "university": "University of Bonn",
+    "intake": "April, October",
+    "tuitionFee": "300–700",
+    "faculty": "Science, Business",
+    "campuses": ["Bonn"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Germany"
+  },
+  {
+    "id": "DE03",
+    "title": "Engineering Program",
+    "university": "RWTH Aachen University",
+    "intake": "April, October",
+    "tuitionFee": "300–700",
+    "faculty": "Engineering",
+    "campuses": ["Aachen"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Germany"
+  },
+  {
+    "id": "DE04",
+    "title": "Engineering, IT Program",
+    "university": "Technical University of Chemnitz",
+    "intake": "April, October",
+    "tuitionFee": "300–600",
+    "faculty": "Engineering, IT",
+    "campuses": ["Chemnitz"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Germany"
+  },
+  {
+    "id": "DE05",
+    "title": "Engineering, Management Program",
+    "university": "FAU Erlangen-Nürnberg",
+    "intake": "April, October",
+    "tuitionFee": "150–300",
+    "faculty": "Engineering, Management",
+    "campuses": ["Erlangen"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Germany"
+  },
+  {
+    "id": "UK01",
+    "title": "Business, Computing Program",
+    "university": "University of Sunderland",
+    "intake": "January, September",
+    "tuitionFee": "13000–16000",
+    "faculty": "Business, Computing",
+    "campuses": ["Sunderland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "UK02",
+    "title": "Business, Engineering Program",
+    "university": "University of Bolton",
+    "intake": "January, September",
+    "tuitionFee": "13000–16500",
+    "faculty": "Business, Engineering",
+    "campuses": ["Bolton"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "UK03",
+    "title": "Health, Business Program",
+    "university": "University of Cumbria",
+    "intake": "January, September",
+    "tuitionFee": "14000–17000",
+    "faculty": "Health, Business",
+    "campuses": ["Carlisle"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "UK04",
+    "title": "Business, Media Program",
+    "university": "Leeds Trinity University",
+    "intake": "January, September",
+    "tuitionFee": "13500–16500",
+    "faculty": "Business, Media",
+    "campuses": ["Leeds"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "UK05",
+    "title": "Business, Computing Program",
+    "university": "University of Suffolk",
+    "intake": "January, September",
+    "tuitionFee": "15000–18000",
+    "faculty": "Business, Computing",
+    "campuses": ["Ipswich"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "CA01",
+    "title": "Business, IT Program",
+    "university": "Cape Breton University",
+    "intake": "January, May, September",
+    "tuitionFee": "18000–22000",
+    "faculty": "Business, IT",
+    "campuses": ["Nova Scotia"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Canada"
+  },
+  {
+    "id": "CA02",
+    "title": "MBA, Commerce Program",
+    "university": "University Canada West",
+    "intake": "Multiple",
+    "tuitionFee": "20000–25000",
+    "faculty": "MBA, Commerce",
+    "campuses": ["British Columbia"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Canada"
+  },
+  {
+    "id": "CA03",
+    "title": "Engineering Program",
+    "university": "Memorial University of Newfoundland",
+    "intake": "January, September",
+    "tuitionFee": "12000–20000",
+    "faculty": "Engineering",
+    "campuses": ["Newfoundland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Canada"
+  },
+  {
+    "id": "CA04",
+    "title": "Business Program",
+    "university": "University of Prince Edward Island",
+    "intake": "January, September",
+    "tuitionFee": "15000–22000",
+    "faculty": "Business",
+    "campuses": ["PEI"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Canada"
+  },
+  {
+    "id": "CA05",
+    "title": "Engineering, Business Program",
+    "university": "University of Regina",
+    "intake": "January, September",
+    "tuitionFee": "18000–24000",
+    "faculty": "Engineering, Business",
+    "campuses": ["Saskatchewan"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.5",
+    "country": "Canada"
+  },
+  {
+    "id": "AU01",
+    "title": "IT, Business Program",
+    "university": "Federation University Australia",
+    "intake": "February, July",
+    "tuitionFee": "24000–30000",
+    "faculty": "IT, Business",
+    "campuses": ["Victoria"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Australia"
+  },
+  {
+    "id": "AU02",
+    "title": "Nursing, Business Program",
+    "university": "Central Queensland University",
+    "intake": "February, July, November",
+    "tuitionFee": "25000–32000",
+    "faculty": "Nursing, Business",
+    "campuses": ["Queensland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Australia"
+  },
+  {
+    "id": "AU03",
+    "title": "Hospitality, Business Program",
+    "university": "Southern Cross University",
+    "intake": "February, July",
+    "tuitionFee": "25000–31000",
+    "faculty": "Hospitality, Business",
+    "campuses": ["NSW"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Australia"
+  },
+  {
+    "id": "AU04",
+    "title": "Engineering, IT Program",
+    "university": "University of Southern Queensland",
+    "intake": "February, July",
+    "tuitionFee": "26000–32000",
+    "faculty": "Engineering, IT",
+    "campuses": ["Queensland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Australia"
+  },
+  {
+    "id": "AU05",
+    "title": "Computing, Business Program",
+    "university": "Edith Cowan University",
+    "intake": "February, July",
+    "tuitionFee": "28000–35000",
+    "faculty": "Computing, Business",
+    "campuses": ["Perth"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "Australia"
+  },
+  {
+    "id": "NZ01",
+    "title": "IT, Business Program",
+    "university": "Southern Institute of Technology",
+    "intake": "February, July",
+    "tuitionFee": "18000–24000",
+    "faculty": "IT, Business",
+    "campuses": ["Invercargill"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "New Zealand"
+  },
+  {
+    "id": "NZ02",
+    "title": "Engineering, IT Program",
+    "university": "Unitec Institute of Technology",
+    "intake": "February, July",
+    "tuitionFee": "22000–28000",
+    "faculty": "Engineering, IT",
+    "campuses": ["Auckland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "New Zealand"
+  },
+  {
+    "id": "NZ03",
+    "title": "Nursing, Hospitality Program",
+    "university": "Ara Institute of Canterbury",
+    "intake": "February, July",
+    "tuitionFee": "21000–28000",
+    "faculty": "Nursing, Hospitality",
+    "campuses": ["Christchurch"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "New Zealand"
+  },
+  {
+    "id": "NZ04",
+    "title": "Applied Management Program",
+    "university": "Otago Polytechnic",
+    "intake": "February, July",
+    "tuitionFee": "20000–27000",
+    "faculty": "Applied Management",
+    "campuses": ["Dunedin"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "New Zealand"
+  },
+  {
+    "id": "NZ05",
+    "title": "Engineering, Business Program",
+    "university": "Manukau Institute of Technology",
+    "intake": "February, July",
+    "tuitionFee": "22000–29000",
+    "faculty": "Engineering, Business",
+    "campuses": ["Auckland"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "6.0",
+    "country": "New Zealand"
+  },
+  {
+    "id": "RU01",
+    "title": "Medicine, Engineering Program",
+    "university": "Peoples' Friendship University of Russia",
+    "intake": "September",
+    "tuitionFee": "3500–6000",
+    "faculty": "Medicine, Engineering",
+    "campuses": ["Moscow"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "Not Mandatory",
+    "country": "Russia"
+  },
+  {
+    "id": "RU02",
+    "title": "Medicine, Business Program",
+    "university": "Kazan Federal University",
+    "intake": "September",
+    "tuitionFee": "3000–5500",
+    "faculty": "Medicine, Business",
+    "campuses": ["Kazan"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "Not Mandatory",
+    "country": "Russia"
+  },
+  {
+    "id": "RU03",
+    "title": "Medicine Program",
+    "university": "Belgodrot State University",
+    "intake": "September",
+    "tuitionFee": "3000–5500",
+    "faculty": "Medicine",
+    "campuses": ["Belgorod"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "Not Mandatory",
+    "country": "Russia"
+  },
+  {
+    "id": "RU04",
+    "title": "Engineering, IT Program",
+    "university": "South Ural State University",
+    "intake": "September",
+    "tuitionFee": "2500–4500",
+    "faculty": "Engineering, IT",
+    "campuses": ["Chelyabinsk"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "Not Mandatory",
+    "country": "Russia"
+  },
+  {
+    "id": "RU05",
+    "title": "Technology, Business Program",
+    "university": "Far Eastern Federal University",
+    "intake": "September",
+    "tuitionFee": "3500–5500",
+    "faculty": "Technology, Business",
+    "campuses": ["Vladivostok"],
+    "level": "Degree/Program",
+    "duration": "N/A",
+    "ielts": "Not Mandatory",
+    "country": "Russia"
+  },
 ];
 
+// Currency map by country
+const CURRENCY_MAP = {
+  'Australia':      'A$',
+  'Canada':         'CA$',
+  'United Kingdom': '£',
+  'Germany':        '€',
+  'New Zealand':    'NZ$',
+  'Russia':         '₽',
+};
+
+const getCurrencySymbol = (country) => CURRENCY_MAP[country] || '$';
+
+// Sidebar fee ranges — no currency symbol, plain number ranges
 const FEE_RANGES = [
-  { label: '$0 - $20,000',    value: '0-20000' },
-  { label: '$20,001 - $30,000', value: '20000-30000' },
-  { label: '$30,001 - $40,000', value: '30000-40000' },
-  { label: '$40,001 - $50,000', value: '40000-50000' },
-  { label: '$50,000+',         value: '50000+' },
+  { label: 'Under 20,000',       value: '0-20000' },
+  { label: '20,001 - 30,000',    value: '20001-30000' },
+  { label: '30,001 - 40,000',    value: '30001-40000' },
+  { label: '40,001 - 50,000',    value: '40001-50000' },
+  { label: 'Above 50,000',       value: '50001+' },
 ];
 
 const feeInRange = (fee, range) => {
-  if (range === '0-20000')    return fee >= 0     && fee <= 20000;
-  if (range === '20000-30000') return fee > 20000 && fee <= 30000;
-  if (range === '30000-40000') return fee > 30000 && fee <= 40000;
-  if (range === '40000-50000') return fee > 40000 && fee <= 50000;
-  if (range === '50000+')      return fee > 50000;
+  let numFee;
+
+  if (typeof fee === 'number') {
+    numFee = fee;
+  } else if (typeof fee === 'string') {
+    // Extract all numbers from string like "20000–30000" or "18000–24000"
+    const nums = fee.match(/\d+/g);
+    if (!nums) return false;
+    if (nums.length >= 2) {
+      // Take average of range e.g. (20000 + 30000) / 2 = 25000
+      numFee = (parseInt(nums[0], 10) + parseInt(nums[1], 10)) / 2;
+    } else {
+      numFee = parseInt(nums[0], 10);
+    }
+  } else {
+    return false;
+  }
+
+  if (range === '0-20000')     return numFee >= 0     && numFee <= 20000;
+  if (range === '20001-30000') return numFee >= 20001 && numFee <= 30000;
+  if (range === '30001-40000') return numFee >= 30001 && numFee <= 40000;
+  if (range === '40001-50000') return numFee >= 40001 && numFee <= 50000;
+  if (range === '50001+')      return numFee > 50000;
   return false;
 };
 
@@ -1054,20 +1477,20 @@ const CoursePortal = () => {
   const WHATSAPP_NUMBER = "7982295530";
 
   // --- STATE ---
-  const [searchInput, setSearchInput]       = useState('');
-  const [searchLevel, setSearchLevel]       = useState('');
+  const [searchInput, setSearchInput]         = useState('');
+  const [searchLevel, setSearchLevel]         = useState('');
   const [selectedCountry, setSelectedCountry] = useState('Australia');
-  const [openFilter, setOpenFilter]         = useState(null);
+  const [openFilter, setOpenFilter]           = useState(null);
 
-  const [searchQuery, setSearchQuery]           = useState('');
-  const [activeSearchLevel, setActiveSearchLevel] = useState('');
-  const [activeCountry, setActiveCountry]       = useState('Australia');
+  const [searchQuery, setSearchQuery]               = useState('');
+  const [activeSearchLevel, setActiveSearchLevel]   = useState('');
+  const [activeCountry, setActiveCountry]           = useState('Australia');
 
-  const [selectedFaculty, setSelectedFaculty]   = useState('Allied Health');
-  const [selectedLevels, setSelectedLevels]     = useState([]);
+  const [selectedFaculty, setSelectedFaculty]     = useState('Allied Health');
+  const [selectedLevels, setSelectedLevels]       = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
-  const [selectedIntakes, setSelectedIntakes]   = useState([]);
-  const [selectedFees, setSelectedFees]         = useState([]);   // ✅ fee filter state
+  const [selectedIntakes, setSelectedIntakes]     = useState([]);
+  const [selectedFees, setSelectedFees]           = useState([]);
 
   const sliderRef = useRef(null);
 
@@ -1085,7 +1508,7 @@ const CoursePortal = () => {
   const handleLevelChange    = (v) => setSelectedLevels(prev    => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
   const handleDurationChange = (v) => setSelectedDurations(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
   const handleIntakeChange   = (v) => setSelectedIntakes(prev   => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
-  const handleFeeChange      = (v) => setSelectedFees(prev      => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]); // ✅
+  const handleFeeChange      = (v) => setSelectedFees(prev      => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
 
   const handleSearchSubmit = () => {
     setSearchQuery(searchInput);
@@ -1104,32 +1527,31 @@ const CoursePortal = () => {
     setSelectedLevels([]);
     setSelectedDurations([]);
     setSelectedIntakes([]);
-    setSelectedFees([]);   // ✅ reset fee filter
+    setSelectedFees([]);
   };
 
   // --- FILTERED COURSES ---
   const filteredCourses = useMemo(() => {
     return initialCourses.filter(course => {
-      const matchesSearch   = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                              course.id.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesFaculty  = selectedFaculty ? course.faculty === selectedFaculty : true;
+      const matchesSearch       = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                  course.id.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFaculty      = selectedFaculty ? course.faculty === selectedFaculty : true;
       const matchesSidebarLevel = selectedLevels.length > 0 ? selectedLevels.includes(course.level) : true;
       const matchesHeaderLevel  = activeSearchLevel ? course.level === activeSearchLevel : true;
-      const matchesCountry  = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
-      const matchesDuration = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
-      const matchesIntake   = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
+      const matchesCountry      = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
+      const matchesDuration     = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
+      const matchesIntake       = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
 
-      // ✅ Tuition fee filter — fixed
       const matchesFee = selectedFees.length > 0
         ? selectedFees.some(range => feeInRange(course.tuitionFee, range))
         : true;
 
       return matchesSearch && matchesFaculty && matchesSidebarLevel &&
              matchesHeaderLevel && matchesCountry && matchesDuration &&
-             matchesIntake && matchesFee;  // ✅ included in return
+             matchesIntake && matchesFee;
     });
   }, [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel,
-      activeCountry, selectedDurations, selectedIntakes, selectedFees]); // ✅ dependency added
+      activeCountry, selectedDurations, selectedIntakes, selectedFees]);
 
   const handleWhatsAppContact = (courseTitle, courseId) => {
     const message = encodeURIComponent(`Hi! I am interested in learning more about the course: ${courseTitle} (${courseId}).`);
@@ -1138,6 +1560,7 @@ const CoursePortal = () => {
 
   return (
     <>
+     
       <Navbar />
       <div className="portal-container">
         {/* Hero Section */}
@@ -1163,7 +1586,11 @@ const CoursePortal = () => {
               onChange={(e) => setSelectedCountry(e.target.value)}
             >
               <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="United kingdom">United Kingdom</option>
               <option value="Canada">Canada</option>
+              <option value="Russia">Russia</option>
+              <option value="New Zealand">New Zealand</option>
             </select>
 
             <input
@@ -1222,7 +1649,7 @@ const CoursePortal = () => {
               </div>
             </div>
 
-            {/* ✅ Tuition Fee Filter — fully working */}
+            {/* Tuition Fee Filter */}
             <div className={`filter-group ${openFilter === 'fee' ? 'active' : ''}`}>
               <h3 onClick={() => toggleFilter('fee')}>Tuition Fee</h3>
               <div className="filter-content">
@@ -1262,8 +1689,8 @@ const CoursePortal = () => {
 
                         <div className="meta-row">
                           <span>📅 <strong>Intake :</strong> {course.intake}</span>
-                          {/* ✅ Dollar sign instead of Rupee */}
-                          <span>💵 <strong>Tuition Fee :</strong> ${course.tuitionFee.toLocaleString()}</span>
+                          {/* ✅ Country-specific currency symbol */}
+                          <span>💵 <strong>Tuition Fee :</strong> {getCurrencySymbol(course.country)}{typeof course.tuitionFee === 'number' ? course.tuitionFee.toLocaleString() : course.tuitionFee}</span>
                         </div>
 
                         <p className="faculty-info">👤 <strong>Faculty :</strong> {course.faculty}</p>

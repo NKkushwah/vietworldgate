@@ -3,6 +3,7 @@ import './DubaiDestination.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
+
 export default function DubaiDestination() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -19,6 +20,7 @@ export default function DubaiDestination() {
 
   return (
     <>
+    
     <Navbar />
     <div className="global-destination-wrapper">
       

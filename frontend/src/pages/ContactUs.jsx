@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 
 import logo from "../assets/contactimage.jpeg";
 
+
 export default function ContactUs() {
 
   const addresses = [
@@ -41,6 +42,7 @@ export default function ContactUs() {
 
   return (
     <>
+     
       <Navbar />
 
       <div className="contact-container">

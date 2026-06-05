@@ -19,6 +19,7 @@ export default function NZDestination() {
 
   return (
     <>
+  
     <Navbar />
     <div className="global-destination-wrapper">
       

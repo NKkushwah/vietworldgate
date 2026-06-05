@@ -3,6 +3,7 @@ import './Scholarships.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { FiChevronDown, FiSearch } from "react-icons/fi";
+
 const scholarshipData = [
   // ================= EXISTING =================
 
@@ -707,21 +708,37 @@ const scholarshipData = [
       name: "Vice-Chancellor Undergraduate Scholarship",
       amount: "Up to £2,000",
       eligibility: "International undergraduate students",
+       level: "All Programs",
+      deadline: "Varies",
+      iconType: "merit",
+      targetUrl: "https://www.coventry.ac.uk"
     },
     {
       name: "Vice-Chancellor Postgraduate Scholarship",
       amount: "Up to £3,000",
       eligibility: "International postgraduate students",
+       level: "All Programs",
+      deadline: "Varies",
+      iconType: "Pg",
+      targetUrl: "https://www.coventry.ac.uk"
     },
     {
       name: "Early Payment Discount",
       amount: "£2,000",
       eligibility: "Students who pay tuition fees early",
+       level: "All Programs",
+      deadline: "Varies",
+      iconType: "global",
+      targetUrl: "https://www.coventry.ac.uk"
     },
     {
       name: "EU Support Bursary",
       amount: "Variable",
       eligibility: "EU students enrolling at Coventry University",
+       level: "All Programs",
+      deadline: "Varies",
+      iconType: "Sports",
+      targetUrl: "https://www.coventry.ac.uk"
     }
   ]
 }
@@ -794,6 +811,7 @@ const handleWhatsAppShare = (sch, institution) => {
 
   return (
     <> 
+   
       <Navbar />
       <div className="scholarship-portal">
         

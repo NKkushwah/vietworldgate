@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 const VisaAssistance = () => {
   return (
     <>
+    
     <Navbar />
     <div className="visa-page-container">
       

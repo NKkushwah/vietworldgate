@@ -3,7 +3,6 @@ import './JapanDestination.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-
 export default function JapanDestination() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -20,6 +19,7 @@ export default function JapanDestination() {
 
   return (
     <>
+     
     <Navbar />
     <div className="global-destination-wrapper">
       

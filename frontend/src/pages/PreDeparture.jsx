@@ -8,6 +8,7 @@ const PreDeparture = () => {
 
   return (
     <>
+    
       <Navbar />
       <div className="visa-page-container">
         

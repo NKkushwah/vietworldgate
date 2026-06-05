@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 import "./Dashboard.css";
 
 import Testimonials from "../components/Testimonials";
@@ -19,6 +20,7 @@ function Dashboard() {
   return (
 
     <>
+     
       <Navbar />
 <section className="trust-bar">
   <div className="trust-container">

@@ -26,6 +26,7 @@ import "./CompanyProfile.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 export default function CompanyProfile() {
 
   const [activeTab, setActiveTab] =
@@ -137,6 +138,7 @@ export default function CompanyProfile() {
 
   return (
     <>
+     
       <Navbar />
 
       <div className="profile-container">

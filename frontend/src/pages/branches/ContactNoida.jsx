@@ -12,12 +12,14 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 
+
 const ContactNoida = () => {
   const whatsappFormLink =
     "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20abroad%20from%20Noida.";
 
   return (
     <>
+    
       <Navbar />
 
       <div className="contact-page">

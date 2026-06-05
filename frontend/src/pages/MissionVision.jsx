@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 const MissionVision = () => {
   return (
     <>
+   
     <Navbar />
     <div className="mv-container">
       

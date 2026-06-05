@@ -3,11 +3,14 @@ import './ShortlistUniversities.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 const ShortlistUniversities = () => {
   const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20want%20to%20shortlist%20universities%20based%20on%20my%20profile.%20Please%20guide%20me%20with%20the%20process.";
 
   return (
     <>
+  
+
     <Navbar />
     <div className="visa-page-container">
       

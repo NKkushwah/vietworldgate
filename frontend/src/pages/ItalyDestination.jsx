@@ -20,6 +20,7 @@ export default function ItalyDestination() {
 
   return (
     <>
+       
     <Navbar />
     <div className="global-destination-wrapper">
       

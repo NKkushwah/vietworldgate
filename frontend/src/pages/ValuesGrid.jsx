@@ -100,6 +100,8 @@ const ValuesGrid = () => {
 
   return (
     <>
+    
+
     <Navbar />
     <div className="values-container">
       {/* Upper header segment resembling screenshot layout */}

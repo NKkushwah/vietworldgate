@@ -443,6 +443,8 @@ const Feedback = () => {
   };
 
   return (
+    <>
+     
     <div className="feedback-page-main-layout">
       <Navbar />
 
@@ -546,6 +548,7 @@ const Feedback = () => {
         ▲
       </button>
     </div>
+    </>
   );
 };
 

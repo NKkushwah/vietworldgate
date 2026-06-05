@@ -117,6 +117,7 @@ const OurTeam = () => {
 
   return (
     <>
+     
       <Navbar />
       <div className="team-page">
         

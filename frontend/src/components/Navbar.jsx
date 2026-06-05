@@ -155,6 +155,10 @@ function Navbar() {
                 </Link>
               </li>
 
+                <li onClick={closeMenu}>
+            <Link to="/Certificate">Certiificate</Link>
+          </li>
+
               <li onClick={closeMenu}>
                 <Link to="/ourteam">Our Team</Link>
               </li>

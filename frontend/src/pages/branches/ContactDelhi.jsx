@@ -12,6 +12,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 
+
 const ContactDelhi = () => {
 
   const whatsappFormLink =
@@ -19,6 +20,7 @@ const ContactDelhi = () => {
 
   return (
     <>
+     
       <Navbar />
 
       <div className="contact-page">
