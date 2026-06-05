@@ -7,7 +7,7 @@ import NanduIMG from '../assets/team/nandu.png';
 import PawanImg from '../assets/team/pawan.jpeg';
 import Ritika from '../assets/team/ritika.jpeg';
 import Lakhshyasharma from '../assets/team/lkhsharma.png';
-import Lakhsenior from '../assets/team/lakhsenior.jpeg';
+import Lakhsenior from '../assets/team/lakhsenior.JPEG';
 import Raghav from '../assets/team/raghav.jpeg';
 import Anushka from '../assets/team/anushka.jpeg';
 import Navneet from '../assets/team/navneet.png';
