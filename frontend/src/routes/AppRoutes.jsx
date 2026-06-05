@@ -26,6 +26,8 @@ import ContactLondon from "../pages/branches/ContactLondon";
 import Careers from "../pages/Careers";
 import CoursePortal from "../pages/CoursePortal";
 import UniversityPartners from "../pages/Universitypartner";
+import Certificate from "../pages/Certificate";
+
 
 function AppRoutes() {
   return (
@@ -59,6 +61,8 @@ function AppRoutes() {
         <Route path="/ValuesGrid" element={<ValuesGrid/>} />
         <Route path="/feedback" element={<Feedback/>} />
         <Route path="/universitypartner" element={<UniversityPartners/>} />
+        <Route path="/Certificate" element={<Certificate/>} />
+      
 
       </Routes>
 
