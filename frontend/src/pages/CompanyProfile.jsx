@@ -72,7 +72,7 @@ export default function CompanyProfile() {
     {
       name: "Our Team",
       icon: <FaUsers />,
-      link: "#",
+      link: "/ourteam",
     },
 
     {

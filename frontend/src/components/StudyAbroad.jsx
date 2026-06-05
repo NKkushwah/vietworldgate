@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import "./StudyAbroad.css";
+import { Link } from "react-router-dom";
 
 export default function StudyAbroad() {
   const universities = [
@@ -153,9 +154,11 @@ export default function StudyAbroad() {
           </div>
         </div>
 
+      <Link to="/universitypartner">
         <div className="center-btn-wrapper">
           <button className="btn-secondary">View All</button>
         </div>
+        </Link>
       </section>
 
       {/* Routes Section */}
