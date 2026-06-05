@@ -26,7 +26,7 @@ export default function UKDestination() {
     <div className="global-destination-wrapper">
       
       {/* SECTION 1: Banner Header Component with UK Image Layer */}
-      <header className="dynamic-hero-banner">
+      <header className="dynamic-hero-banners">
         <div className="hero-grid-max">
           <div className="hero-left-content">
             <h1 className="hero-main-title">United Kingdom</h1>

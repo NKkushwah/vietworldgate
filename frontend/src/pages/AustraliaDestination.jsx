@@ -1,8 +1,7 @@
 import React from 'react';
-import './CanadaDestination.css'; // Make sure to rename your CSS file accordingly
+import './AustraliaDestination.css'; // Make sure your CSS file names are updated too
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
 
 export default function CanadaDestination() {
   // WhatsApp Link with a custom pre-filled message for Canada Destination
@@ -10,63 +9,60 @@ export default function CanadaDestination() {
 
   return (
     <>
-     
       <Navbar />
-      <div className="dest-container">
+      <div className="intl-dest-wrapper">
         {/* Top Banner Section with Background Image */}
-        <header className="dest-header">
-          <div className="header-overlay">
-            <div className="header-content">
+        <header className="intl-hero-banner">
+          <div className="intl-banner-overlay">
+            <div className="intl-banner-text">
               <h1>Australia</h1>
-              <nav className="breadcrumbs">
-                <span className="home-icon">🏠</span> 
-                <span className="arrow">→</span> Destinations 
-                <span className="arrow">→</span> Australia
+              <nav className="intl-breadcrumb">
+                <span className="intl-crumb-home">🏠</span> 
+                <span className="intl-crumb-arrow">→</span> Destinations 
+                <span className="intl-crumb-arrow">→</span> Australia
               </nav>
             </div>
-            <div className="header-student-image">
-              <div className="student-wrapper">
-                <div className="canada-flag-badge">🇨🇦</div>
-              </div>
+            <div className="intl-badge-holder">
+              
             </div>
           </div>
         </header>
 
         {/* Main Grid Content */}
-        <div className="dest-layout-grid">
+        <div className="intl-main-grid">
           
           {/* Left Sidebar Content (WhatsApp Card) */}
-          <aside className="dest-sidebar">
-            <div className="call-service-box">
+          <aside className="intl-sidebar-pane">
+            <div className="intl-call-box">
               <p>Our Appointment Service call us</p>
-              <a href="tel:+917982295530" className="phone-link">
-                <span className="phone-icon">📞</span> +91-7982295530
+              <a href="tel:+917982295530" className="intl-phone-link">
+                <span className="intl-phone-icon">📞</span> +91-7982295530
               </a>
             </div>
 
             {/* WhatsApp Chat Card */}
-            <div className="whatsapp-chat-card">
-              <div className="wa-card-header">
-                <div className="wa-header-icon">
+            <div className="intl-whatsapp-card">
+              <div className="intl-wa-header">
+                <div className="intl-wa-icon">
                   <svg viewBox="0 0 448 512" width="24" height="24" fill="#ffffff">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
                   </svg>
                 </div>
-                <div className="wa-header-meta">
+                <div className="intl-wa-meta">
                   <h4>Academic Support</h4>
                   <p>Online • Advisors Ready</p>
                 </div>
               </div>
               
-              <div className="wa-card-body">
-                <p className="wa-welcome-msg">
+              <div className="intl-wa-body">
+                <p className="intl-wa-msg">
                   Confused about DLIs, SDS applications, requirements, or courses in Australia? Connect instantly with our experts for immediate support.
                 </p>
                 <a 
                   href={whatsappFormLink}
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="wa-action-btn"
+                  className="intl-wa-btn"
                 >
                   Start Chat Now
                 </a>
@@ -75,15 +71,15 @@ export default function CanadaDestination() {
           </aside>
 
           {/* Right Info Section */}
-          <main className="dest-main-content">
-            <section className="info-block">
+          <main className="intl-content-pane">
+            <section className="intl-info-section">
               <h2>Study in Australia: Your Pathway to Global Success!</h2>
               <p>
                 Australia is globally recognized for its high-quality education system, offering an array of programs across top-tier universities and colleges. With a strong focus on research, practical learning, and co-op programs, Australia equips students with real-world industry experience. Along with affordable tuition fees compared to other major study destinations, students benefit from a high standard of living, excellent healthcare, and diverse post-graduation work opportunities.
               </p>
             </section>
 
-            <section className="info-block">
+            <section className="intl-info-section">
               <h2>Why study in Australia?</h2>
               <p>
                 As an international student, Australia provides an exceptionally welcoming, safe, and multicultural environment. Educational institutions here hold dynamic campus cultures and robust support networks. Moreover, Australia’s Post-Graduation Work Permit (PGWP) program offers a direct avenue to gain invaluable international work experience, making it one of the most attractive destinations for students worldwide to build long-term careers.
@@ -91,40 +87,46 @@ export default function CanadaDestination() {
             </section>
 
             {/* Core Feature Value Cards */}
-            <section className="features-grid">
-              <div className="feature-card">
-                <div className="icon-circle">🍁</div>
-                <div className="icon-circle">👥</div>
+            <section className="intl-features-container">
+              <div className="intl-feature-item">
+                <div className="intl-icon-wrapper intl-double-icon">
+                  <div className="intl-icon-circle">🍁</div>
+                  <div className="intl-icon-circle">👥</div>
+                </div>
                 <h3>Student-Friendly Cities</h3>
                 <p>Top Australian cities like Sydney, Melbourne, and Brisbane consistently rank among the best student cities globally, offering vibrant cultures and safe environments.</p>
               </div>
 
-              <div className="feature-card">
-                <div className="icon-circle">🎓</div>
+              <div className="intl-feature-item">
+                <div className="intl-icon-wrapper">
+                  <div className="intl-icon-circle">🎓</div>
+                </div>
                 <h3>World-Class Institutions</h3>
                 <p>Australia boasts numerous universities ranking in the global top 100, providing top-notch degrees, advanced research spaces, and exceptional co-op facilities.</p>
               </div>
 
-              <div className="feature-card">
-                <div className="icon-circle">💼</div>
+              <div className="intl-feature-item">
+                <div className="intl-icon-wrapper">
+                  <div className="intl-icon-circle">💼</div>
+                </div>
                 <h3>Post-Study Work Options</h3>
                 <p>The Post-Graduation Work Permit (PGWP) allows eligible international graduates to stay and work in Australia, gaining crucial global industry experience.</p>
               </div>
             </section>
 
             {/* Dynamic Bottom Explorer CTAs */}
-            <section className="explore-footer-cta">
-              <span className="sub-tagline">UNLOCK YOUR FUTURE IN AUSTRALIA</span>
+            <section className="intl-footer-cta">
+              <span className="intl-cta-tagline">UNLOCK YOUR FUTURE IN AUSTRALIA</span>
               <h2>Explore Universities, Colleges, and Scholarships in Australia</h2>
-              <p className="lead-text">Discover the endless opportunities that await you in the Land Down Under.</p>
-              <p className="sub-text">Australia offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
+              <p className="intl-cta-lead">Discover the endless opportunities that await you in the Land Down Under.</p>
+              <p className="intl-cta-sub">Australia offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
               
-              <div className="cta-button-group">
+              <div className="intl-btn-group">
                 <a 
                   href={whatsappFormLink}
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="cta-btn action-purple-link"
+                  className="intl-primary-btn"
                 >
                   EXPLORE UNIVERSITIES
                 </a>
@@ -132,7 +134,7 @@ export default function CanadaDestination() {
                   href={whatsappFormLink}
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="cta-btn action-purple-link"
+                  className="intl-primary-btn"
                 >
                   FIND SCHOLARSHIPS
                 </a>
@@ -142,10 +144,10 @@ export default function CanadaDestination() {
         </div>
 
         {/* Floating WhatsApp Quick Action Widgets */}
-        <div className="floating-action-widgets">
+        <div className="intl-floating-widgets">
           <a 
             href={whatsappFormLink}
-            className="whatsapp-bubble-widget" 
+            className="intl-whatsapp-bubble" 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
@@ -157,7 +159,6 @@ export default function CanadaDestination() {
         </div>
         
       </div>
-
       <Footer />
     </>
   );

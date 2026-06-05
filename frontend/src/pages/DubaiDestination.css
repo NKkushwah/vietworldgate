@@ -1,376 +1,442 @@
-:root {
-  --corporate-purple: #800060;
-  --deep-purple-hover: #600048;
-  --text-dark-slate: #2b3641;
-  --text-body-gray: #515e6d;
-  --ui-border-light: #e2e8f0;
-  --card-bg-subtle: #f8fafc;
-  --white: #ffffff;
-  --wa-green: #25D366;
-  --wa-dark-green: #128C7E;
-}
-
-.global-destination-wrapper {
-  background-color: var(--white);
-  color: var(--text-dark-slate);
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-}
-
 /* ==========================================================================
-   SECTION 1: HERO BANNER DESIGN (Background limited to this element only)
+   DubaiDestination.css
    ========================================================================== */
-.dynamic-hero-banner {
-  min-height: 250px;
+
+/* 1. Global Page Layout & Variables */
+:root {
+  --primary-color: #355E3B;       /* Hunter Green */
+  --primary-hover: #234227;       /* Darker Hunter Green for hover states */
+  --whatsapp-color: #25d366;      /* Official WhatsApp green */
+  --whatsapp-hover: #20ba5a;
+  --text-main: #222222;
+  --text-muted: #555555;
+  --bg-light: #f4f7f5;            /* Light tint with a touch of green warmth */
+  --bg-card: #ffffff;
+  --border-color: #e2e8e4;
+  --transition-smooth: all 0.3s ease;
+  --max-width: 1200px;
+}
+
+.dxb-page-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 2. Hero Banner Section */
+.dxb-hero-banner {
+  background-image:  url('https://images.pexels.com/photos/13884502/pexels-photo-13884502.jpeg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  background-color: #f3f4f6;
+  color: #1c3320;                 /* Deep hunter green tint for text */
+  padding: 140px 6%;
   position: relative;
   overflow: hidden;
+  min-height: 350px;
   display: flex;
   align-items: center;
-  padding: 0 8%;
-  background-image:  url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop');
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
+  width: 100%;
+  box-sizing: border-box;
+  animation: bannerScale 1.5s ease-out forwards;
 }
 
-.hero-grid-max {
+.dxb-hero-inner {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
 }
 
-.hero-left-content {
-  color: var(--white);
-}
-
-.hero-main-title {
-  font-size: 3.25rem;
-  font-weight: 500;
-  margin: 0 0 12px 0;
+.dxb-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
   letter-spacing: -0.5px;
 }
 
-.navigation-breadcrumbs {
-  font-size: 0.95rem;
+.dxb-breadcrumb {
   display: flex;
   align-items: center;
   gap: 8px;
-  opacity: 0.85;
+  font-size: 0.95rem;
+  color: #4a6b51;                 /* High visibility slate-green */
 }
 
-.hero-right-graphic {
-  position: relative;
-  display: flex;
-  align-items: center;
+.dxb-arrow {
+  color: #608067;
 }
 
-.avatar-mask-container {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.dxb-flag-emoji {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
-.country-large-emoji {
-  font-size: 5rem;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-}
-
-/* ==========================================================================
-   SECTION 2: MASTER STRUCTURAL INTERACTION GRID
-   ========================================================================== */
-.master-content-layout-grid {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 60px 4%;
+/* 3. Main Grid Layout */
+.dxb-main-grid {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: 50px;
+  gap: 40px;
+  align-items: start;
+  box-sizing: border-box;
 }
 
-.fixed-width-sidebar {
+/* 4. Sidebar Panels */
+.dxb-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-}
-
-.callback-cta-container {
-  background-color: rgb(3, 34, 3);
-  color: var(--white);
-  padding: 24px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.cta-meta-text {
-  display: block;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-  opacity: 0.9;
-}
-
-.phone-interactive-anchor {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 1.45rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* ==========================================================================
-   WHATSAPP ADVISOR COMPONENT CARD (Replaced the Form structure)
-   ========================================================================== */
-.sidebar-whatsapp-card {
-  border: 1px solid var(--ui-border-light);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-  background: var(--white);
-}
-
-.wa-card-header {
-  background-color: var(--wa-dark-green);
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.wa-icon-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wa-header-text h4 {
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 600;
-}
-
-.wa-header-text p {
-  font-size: 0.8rem;
-  margin: 2px 0 0 0;
-  opacity: 0.85;
-}
-
-.wa-card-body {
-  padding: 24px;
-  background: var(--white);
-}
-
-.wa-card-body p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text-body-gray);
-  margin: 0 0 24px 0;
-}
-
-.wa-action-btn {
-  display: block;
-  background-color: var(--wa-green);
-  color: white;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.wa-action-btn:hover {
-  transform: translateY(-2px);
-  background-color: #22c35e;
-}
-
-/* ==========================================================================
-   RIGHT CONTENT LAYOUT STYLING
-   ========================================================================== */
-.variable-content-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-}
-
-.copywriting-block .section-header-title {
-  font-size: 2.1rem;
-  color: var(--text-dark-slate);
-  margin: 0 0 16px 0;
-  font-weight: 500;
-}
-
-.copywriting-block .section-body-paragraph {
-  font-size: 1.05rem;
-  color: var(--text-body-gray);
-  line-height: 1.75;
-  text-align: justify;
-}
-
-/* Dynamic Triple Column Grid Section */
-.dynamic-triple-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.structural-feature-card {
-  background-color: var(--card-bg-subtle);
-  border-radius: 6px;
-  padding: 40px 24px;
+/* Call Card */
+.dxb-call-card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
   text-align: center;
-  border: 1px solid rgba(226, 232, 240, 0.6);
 }
 
-.purple-icon-globe-badge {
-  width: 64px;
-  height: 64px;
-  background-color: rgb(3, 37, 3);
-  border-radius: 50%;
+.dxb-call-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.dxb-phone-link {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.dxb-phone-link:hover {
+  color: var(--primary-hover);
+}
+
+/* WhatsApp Sidebar Card */
+.dxb-wa-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dxb-wa-header {
+  background-color: var(--whatsapp-color);
+  color: #ffffff;
+  padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px auto;
+  gap: 12px;
 }
 
-.badge-unicode-graphic {
-  font-size: 1.6rem;
-  color: var(--white);
+.dxb-wa-meta h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-.card-headline-title {
-  font-size: 1.35rem;
-  margin: 0 0 12px 0;
-}
-
-.card-descriptive-text {
-  font-size: 0.95rem;
-  color: var(--text-body-gray);
-  line-height: 1.6;
-}
-
-/* Lower End Call To Action Elements */
-.lower-conversion-cta-block {
-  border-top: 1px solid var(--ui-border-light);
-  padding-top: 45px;
-}
-
-.meta-tracking-tagline {
+.dxb-wa-meta p {
+  margin: 2px 0 0 0;
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #94a3b8;
+  opacity: 0.9;
+}
+
+.dxb-wa-body {
+  padding: 20px;
+}
+
+.dxb-wa-body p {
+  margin: 0 0 20px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.dxb-wa-btn {
   display: block;
-  margin-bottom: 12px;
+  background-color: var(--whatsapp-color);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
 }
 
-.cta-block-main-heading {
-  font-size: 2.5rem;
-  color: var(--text-dark-slate);
-  margin: 0 0 24px 0;
+.dxb-wa-btn:hover {
+  background-color: var(--whatsapp-hover);
 }
 
-.cta-block-bold-lead {
-  font-size: 1.25rem;
-  margin: 0 0 12px 0;
-}
-
-.cta-block-subsidiary-text {
-  color: var(--text-body-gray);
-  margin: 0 0 35px 0;
-}
-
-.cta-dual-action-row {
+/* 5. Main Content Styling */
+.dxb-content {
   display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dxb-info-block h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #1c3320;
+}
+
+.dxb-info-block p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Feature Cards Grid */
+.dxb-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.primary-conversion-btn-anchor {
-  display: inline-block;
-  background-color: rgb(3, 34, 3);
-  color: var(--white);
-  padding: 15px 36px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.15s;
+.dxb-feature-card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  transition: var(--transition-smooth);
 }
 
-.primary-conversion-btn-anchor:hover {
-  background-color: var(--deep-purple-hover);
+.dxb-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Float elements settings */
-.fixed-chat-trigger-bubble {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  width: 56px;
-  height: 56px;
-  background-color: #25d366;
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 99;
-  text-decoration: none;
-}
-
-.fixed-scroll-to-top-button {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+.dxb-icon-circle {
   width: 48px;
   height: 48px;
-  background-color: var(--corporate-purple);
-  color: var(--white);
+  background-color: #ffffff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 16px;
+}
+
+.dxb-feature-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #1c3320;
+}
+
+.dxb-feature-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* CTA Lead Magnet Section */
+.dxb-cta-section {
+  background: linear-gradient(135deg, #f2f6f3 0%, #d4dfd6 100%); /* Adjusted to smooth sage/hunter gradients */
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.dxb-cta-tagline {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.dxb-cta-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1c3320;
+  margin: 0 0 12px 0;
+}
+
+.dxb-cta-lead {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2e4d35;
+  margin: 0 0 12px 0;
+}
+
+.dxb-cta-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 24px auto;
+}
+
+.dxb-btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dxb-primary-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(53, 94, 59, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.dxb-primary-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* 6. Sticky Interactive Items */
+
+/* Floating WhatsApp Anchor Button */
+.dxb-wa-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--whatsapp-color);
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 99;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: var(--transition-smooth);
 }
 
-/* Layout Responsiveness Adaptability Rules */
-@media (max-width: 1024px) {
-  .master-content-layout-grid {
+.dxb-wa-bubble:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.08);
+}
+
+/* Scroll To Top Button */
+.dxb-scroll-top {
+  position: fixed;
+  bottom: 96px;
+  right: 32px;
+  background-color: #1c3320;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  z-index: 998;
+  transition: var(--transition-smooth);
+}
+
+.dxb-scroll-top:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Keyframe Animations */
+@keyframes bannerScale {
+  0% {
+    background-size: 105% auto;
+  }
+  100% {
+    background-size: cover;
+  }
+}
+
+/* ==========================================================================
+   7. Media Queries (Responsive Engineering)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .dxb-main-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
-
-  .dynamic-hero-banner {
-    text-align: center;
+  
+  .dxb-sidebar {
+    order: 2;
   }
+  
+  .dxb-content {
+    order: 1;
+  }
+}
 
-  .hero-grid-max {
+@media (max-width: 600px) {
+  .dxb-hero-inner {
     flex-direction: column;
+    text-align: center;
     gap: 20px;
   }
 
-  .hero-right-graphic {
-    display: none;
+  .dxb-hero-title {
+    font-size: 2.2rem;
   }
 
-  .dynamic-triple-feature-grid {
-    grid-template-columns: 1fr;
+  .dxb-breadcrumb {
+    justify-content: center;
   }
 
-  .cta-dual-action-row {
+  .dxb-flag-emoji {
+    font-size: 3.5rem;
+  }
+
+  .dxb-cta-section {
+    padding: 30px 20px;
+  }
+
+  .dxb-btn-row {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .dxb-primary-btn {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .dxb-wa-bubble {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .dxb-scroll-top {
+    bottom: 84px;
+    right: 24px;
   }
 }

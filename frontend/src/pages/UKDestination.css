@@ -26,25 +26,32 @@
 /* ==========================================================================
    SECTION 1: HERO BANNER DESIGN (Fluid & Responsive)
    ========================================================================== */
-.dynamic-hero-banner {
-  min-height: clamp(160px, 25vh, 220px); /* Height tightly optimized so it doesn't overpower content */
+.dynamic-hero-banners {
+
+  padding: 30px 6%; /* Balanced spacing alignment */
+  background-image: url('https://images.pexels.com/photos/7807857/pexels-photo-7807857.jpeg');
+
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  background-color: #f3f4f6;
+  color: #1a202c;
+  padding: 140px 6%;
   position: relative;
   overflow: hidden;
+  min-height: 350px;
   display: flex;
   align-items: center;
-  padding: 30px 6%; /* Balanced spacing alignment */
-  background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad');
-  background-repeat: no-repeat;
-  background-position: center; /* Ensures safe cropping across mobile screens */
-  background-size: cover;
+  width: 100%;
+  animation: bannerScale 1.5s ease-out forwards;
 }
 
 /* Smooth dark overlay added to ensure text is ALWAYS readable on mobile backgrounds */
-.dynamic-hero-banner::before {
+.dynamic-hero-banners::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(90deg, rgba(30, 41, 59, 0.85) 0%, rgba(30, 41, 59, 0.4) 100%);
+ 
   z-index: 1;
 }
 
@@ -65,6 +72,7 @@
   flex-direction: column;
   gap: 10px; /* Precise layout flow gap between components */
   flex: 1;
+ 
 }
 
 .hero-main-title {
