@@ -1437,13 +1437,13 @@ const CURRENCY_MAP = {
 
 const getCurrencySymbol = (country) => CURRENCY_MAP[country] || '$';
 
-// Sidebar fee ranges — no currency symbol, plain number ranges
 const FEE_RANGES = [
-  { label: 'Under 20,000',       value: '0-20000' },
-  { label: '20,001 - 30,000',    value: '20001-30000' },
-  { label: '30,001 - 40,000',    value: '30001-40000' },
-  { label: '40,001 - 50,000',    value: '40001-50000' },
-  { label: 'Above 50,000',       value: '50001+' },
+  { label: 'All',              value: 'all' },
+  { label: 'Under 20,000',     value: '0-20000' },
+  { label: '20,001 - 30,000',  value: '20001-30000' },
+  { label: '30,001 - 40,000',  value: '30001-40000' },
+  { label: '40,001 - 50,000',  value: '40001-50000' },
+  { label: 'Above 50,000',     value: '50001+' },
 ];
 
 const feeInRange = (fee, range) => {
@@ -1512,17 +1512,17 @@ const CoursePortal = () => {
 
   const handleSearchSubmit = () => {
     setSearchQuery(searchInput);
-    setActiveSearchLevel(searchLevel);
-    setActiveCountry(selectedCountry);
+    setActiveSearchLevel(searchLevel);       // '' means All Levels
+    setActiveCountry(selectedCountry);       // '' means All Countries
   };
 
   const handleResetFilters = () => {
     setSearchInput('');
     setSearchLevel('');
-    setSelectedCountry('Australia');
+    setSelectedCountry('');
     setSearchQuery('');
     setActiveSearchLevel('');
-    setActiveCountry('Australia');
+    setActiveCountry('');
     setSelectedFaculty('');
     setSelectedLevels([]);
     setSelectedDurations([]);
@@ -1536,14 +1536,16 @@ const CoursePortal = () => {
       const matchesSearch       = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                                   course.id.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesFaculty      = selectedFaculty ? course.faculty === selectedFaculty : true;
-      const matchesSidebarLevel = selectedLevels.length > 0 ? selectedLevels.includes(course.level) : true;
+      const matchesSidebarLevel = selectedLevels.length > 0
+        ? selectedLevels.includes('All') || selectedLevels.includes(course.level)
+        : true;
       const matchesHeaderLevel  = activeSearchLevel ? course.level === activeSearchLevel : true;
       const matchesCountry      = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
       const matchesDuration     = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
       const matchesIntake       = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
 
       const matchesFee = selectedFees.length > 0
-        ? selectedFees.some(range => feeInRange(course.tuitionFee, range))
+        ? selectedFees.includes('all') || selectedFees.some(range => feeInRange(course.tuitionFee, range))
         : true;
 
       return matchesSearch && matchesFaculty && matchesSidebarLevel &&
@@ -1572,7 +1574,7 @@ const CoursePortal = () => {
               value={searchLevel}
               onChange={(e) => setSearchLevel(e.target.value)}
             >
-              <option value="">Select Level</option>
+              <option value="">All Levels</option>
               <option value="Bachelor">Bachelor</option>
               <option value="Diploma">Diploma</option>
               <option value="Master (coursework)">Master (coursework)</option>
@@ -1585,9 +1587,10 @@ const CoursePortal = () => {
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
             >
+              <option value="">All Countries</option>
               <option value="Australia">Australia</option>
               <option value="Germany">Germany</option>
-              <option value="United kingdom">United Kingdom</option>
+              <option value="United Kingdom">United Kingdom</option>
               <option value="Canada">Canada</option>
               <option value="Russia">Russia</option>
               <option value="New Zealand">New Zealand</option>
@@ -1636,11 +1639,11 @@ const CoursePortal = () => {
             <div className={`filter-group ${openFilter === 'level' ? 'active' : ''}`}>
               <h3 onClick={() => toggleFilter('level')}>Course level</h3>
               <div className="filter-content">
-                {['Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
+                {['All', 'Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
                   <label key={lvl}>
                     <input
                       type="checkbox"
-                      checked={selectedLevels.includes(lvl)}
+                      checked={lvl === 'All' ? selectedLevels.includes('All') : selectedLevels.includes(lvl)}
                       onChange={() => handleLevelChange(lvl)}
                     />
                     {lvl}
