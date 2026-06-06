@@ -25,7 +25,7 @@ const ContactNoida = () => {
       <div className="contact-page">
 
         {/* HERO SECTION */}
-        <section className="contact-hero">
+        <section className="Noida-contact-hero">
           <div className="hero-overlay">
             <h1>Noida</h1>
             

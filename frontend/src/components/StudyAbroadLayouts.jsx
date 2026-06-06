@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./StudyAbroadLayouts.css";
 
 import logo1 from "../assets/story1video.mp4";
@@ -8,53 +8,50 @@ import logo4 from "../assets/story4video.mp4";
 import logo5 from "../assets/story5video.mp4";
 
 export default function StudyAbroadLayouts() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  // State to manage active video popup modal
+  const [currentIndex, setCurrentIndex]     = useState(0);
+  const [storyIndex, setStoryIndex]         = useState(0);
   const [activeVideoUrl, setActiveVideoUrl] = useState(null);
-  
-  // Ref to hold the auto-play timer instance
-  const autoPlayRef = useRef(null);
+  const [windowWidth, setWindowWidth]       = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
 
+  const autoPlayRef   = useRef(null);
+  const storyTimerRef = useRef(null);
 
+  // ── Track window width so counts stay accurate on resize ──
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // ── Responsive card counts ─────────────────────────────────
+  // iPhone (<576): 1  |  iPad Mini/Air/Pro (<1025): 2  |  Desktop: 3
+  const getVisibleStoryCount = useCallback(() => {
+    if (windowWidth < 576)  return 1;   // phones
+    if (windowWidth < 1025) return 2;   // all iPads (768–1024)
+    return 3;                            // desktop
+  }, [windowWidth]);
+
+  const getVisibleVisitCount = useCallback(() => {
+    if (windowWidth < 576)  return 1;   // phones
+    if (windowWidth < 1025) return 2;   // all iPads (768–1024)
+    return 3;                            // desktop
+  }, [windowWidth]);
+
+  // ── Reset index when visible count changes ─────────────────
+  useEffect(() => { setStoryIndex(0);   }, [getVisibleStoryCount]);
+  useEffect(() => { setCurrentIndex(0); }, [getVisibleVisitCount]);
+
+  // ── DATA ───────────────────────────────────────────────────
   const testimonials = [
-   
-    {
-      id: 1,
-      name: "Vibhu Patel",
-      img: logo1, 
-      isVideo: true 
-    },
-     {
-      id: 2,
-      name: "Lakshya Sharma",
-      img: logo2, 
-      isVideo: true 
-    },
-      {
-        id: 3,
-        name: "Ishita Verma",
-        img: logo3, 
-        isVideo: true 
-      },
-      {
-        id: 4,
-        name: "Dharshini",
-        img: logo4, 
-        isVideo: true 
-      },
-      {
-        id: 5,
-        name: "Shafquat",
-        img: logo5, 
-        isVideo: true 
-      }
-
+    { id: 1, name: "Vibhu Patel",    img: logo1, isVideo: true },
+    { id: 2, name: "Lakshya Sharma", img: logo2, isVideo: true },
+    { id: 3, name: "Ishita Verma",   img: logo3, isVideo: true },
+    { id: 4, name: "Dharshini",      img: logo4, isVideo: true },
+    { id: 5, name: "Shafquat",       img: logo5, isVideo: true },
   ];
 
-  // =========================
-  // UNIVERSITY VISITS
-  // =========================
   const universityVisits = [
     {
       id: 1,
@@ -108,7 +105,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Dr. Alan Mercer",
       branch: "VIET WORLDGATE-Delhi (Office)",
       type: "Global Meet",
-      img: "https://images.pexels.com/photos/12167748/pexels-photo-12167748.jpeg"
+      img: "https://images.pexels.com/photos/12167748/pexels-photo-12167748.jpeg",
     },
     {
       id: 7,
@@ -117,7 +114,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Mr. Ryan Reynolds",
       branch: "VIET WORLDGATE-Noida (Office)",
       type: "Admissions Day",
-      img: "https://images.pexels.com/photos/19014974/pexels-photo-19014974.jpeg"
+      img: "https://images.pexels.com/photos/19014974/pexels-photo-19014974.jpeg",
     },
     {
       id: 8,
@@ -126,7 +123,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Ms. Sarah Jenkins",
       branch: "VIET WORLDGATE-Noida",
       type: "University Visits",
-      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400",
     },
     {
       id: 9,
@@ -135,7 +132,7 @@ export default function StudyAbroadLayouts() {
       speaker: "Mr. David Boon",
       branch: "VIET WORLDGATE-Ghaziabad (Office)",
       type: "Scholarship Seminar",
-      img: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&q=80&w=400"
+      img: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&q=80&w=400",
     },
     {
       id: 10,
@@ -144,196 +141,232 @@ export default function StudyAbroadLayouts() {
       speaker: "Ms. Emma Walsh",
       branch: "VIET WORLDGATE-Noida (Office)",
       type: "University Visits",
-      img: "https://images.pexels.com/photos/33770005/pexels-photo-33770005.jpeg"
-    }
+      img: "https://images.pexels.com/photos/33770005/pexels-photo-33770005.jpeg",
+    },
   ];
 
-  const getVisibleCardsCount = () => {
-    if (window.innerWidth < 768) return 1; 
-    if (window.innerWidth < 1024) return 2;
-    return 3; 
-  };
+  // ── University Visits Slider ───────────────────────────────
+  const visibleVisitCount = getVisibleVisitCount();
+  const maxVisitIndex     = universityVisits.length - visibleVisitCount;
 
-  const nextSlide = () => {
-    const visibleCards = getVisibleCardsCount();
-    const maxIndex = universityVisits.length - visibleCards;
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev >= maxVisitIndex ? 0 : prev + 1));
+  }, [maxVisitIndex]);
 
   const prevSlide = () => {
-    const visibleCards = getVisibleCardsCount();
-    const maxIndex = universityVisits.length - visibleCards;
-    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? maxVisitIndex : prev - 1));
   };
 
-  const startAutoPlay = () => {
+  const stopAutoPlay  = () => clearInterval(autoPlayRef.current);
+  const startAutoPlay = useCallback(() => {
     stopAutoPlay();
-    autoPlayRef.current = setInterval(() => {
-      nextSlide();
-    }, 3000);
-  };
-
-  const stopAutoPlay = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-    }
-  };
+    autoPlayRef.current = setInterval(nextSlide, 3000);
+  }, [nextSlide]);
 
   useEffect(() => {
     startAutoPlay();
-    return () => stopAutoPlay();
-  }, [currentIndex]);
+    return stopAutoPlay;
+  }, [startAutoPlay]);
 
-  const visibleCardsCount = getVisibleCardsCount();
-  const slideTranslateX = currentIndex * (100 / visibleCardsCount);
+  // ── Stories Slider ─────────────────────────────────────────
+  const visibleStoryCount = getVisibleStoryCount();
+  const maxStoryIndex     = testimonials.length - visibleStoryCount;
+
+  const nextStory = useCallback(() => {
+    setStoryIndex((prev) => (prev >= maxStoryIndex ? 0 : prev + 1));
+  }, [maxStoryIndex]);
+
+  const prevStory = () => {
+    setStoryIndex((prev) => (prev <= 0 ? maxStoryIndex : prev - 1));
+  };
+
+  const stopStoryPlay  = () => clearInterval(storyTimerRef.current);
+  const startStoryPlay = useCallback(() => {
+    stopStoryPlay();
+    storyTimerRef.current = setInterval(nextStory, 3000);
+  }, [nextStory]);
+
+  useEffect(() => {
+    startStoryPlay();
+    return stopStoryPlay;
+  }, [startStoryPlay]);
+
+  // ── Translate calculations ─────────────────────────────────
+  const slideTranslateX = currentIndex * (100 / visibleVisitCount);
+  const storyTranslateX = storyIndex   * (100 / visibleStoryCount);
 
   return (
     <div className="layouts-container">
 
-      {/* SUCCESS STORIES */}
+      {/* ══════════════════════════════════════════
+          SECTION 1: SUCCESS STORIES — SLIDER
+          ══════════════════════════════════════════ */}
       <section className="success-stories-section">
         <h2 className="section-title-dark">
           Success Stories from <span>Our Students</span>
         </h2>
 
-        <div className="testimonials-grid">
-          {testimonials.map((item) => (
-            <div 
-              key={item.id} 
-              className="testimonial-card"
-              onClick={() => item.isVideo && setActiveVideoUrl(item.img)}
-              style={{ cursor: item.isVideo ? "pointer" : "default" }}
+        <div
+          className="slider-outer-wrapper"
+          onMouseEnter={stopStoryPlay}
+          onMouseLeave={startStoryPlay}
+        >
+          <button
+            className="slider-arrow-btn story-arrow left-arrow"
+            onClick={prevStory}
+            aria-label="Previous story"
+          >
+            &#10094;
+          </button>
+
+          <div className="visits-slider-container">
+            <div
+              className="visits-slider-track"
+              style={{ transform: `translateX(-${storyTranslateX}%)` }}
             >
-              <div className="video-thumbnail-box">
-                <div className="circular-video-frame">
-                  {item.isVideo ? (
-                    <video 
-                      src={item.img} 
-                      muted 
-                      loop 
-                      playsInline 
-                      autoPlay
-                      preload="auto"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  ) : (
-                    <img src={item.img} alt={item.name} />
-                  )}
-
-                  {item.isVideo && (
-                    <div className="play-btn-overlay">
-                      ▶
+              {testimonials.map((item) => (
+                <div
+                  key={item.id}
+                  className="story-card-wrapper"
+                  style={{ flex: `0 0 ${100 / visibleStoryCount}%`, width: `${100 / visibleStoryCount}%` }}
+                >
+                  <div
+                    className="testimonial-card"
+                    onClick={() => item.isVideo && setActiveVideoUrl(item.img)}
+                    style={{ cursor: item.isVideo ? "pointer" : "default" }}
+                  >
+                    <div className="video-thumbnail-box">
+                      <div className="circular-video-frame">
+                        {item.isVideo ? (
+                          <video
+                            src={item.img}
+                            muted
+                            loop
+                            playsInline
+                            autoPlay
+                            preload="auto"
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                          />
+                        ) : (
+                          <img src={item.img} alt={item.name} />
+                        )}
+                        {item.isVideo && <div className="play-btn-overlay">▶</div>}
+                      </div>
                     </div>
-                  )}
+                    <h4 className="student-name">{item.name}</h4>
+                  </div>
                 </div>
-              </div>
-
-              <h4 className="student-name">
-                {item.name}
-              </h4>
+              ))}
             </div>
+          </div>
+
+          <button
+            className="slider-arrow-btn story-arrow right-arrow"
+            onClick={nextStory}
+            aria-label="Next story"
+          >
+            &#10095;
+          </button>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="slider-dots">
+          {Array.from({ length: maxStoryIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              className={`dot ${i === storyIndex ? "dot-active" : ""}`}
+              onClick={() => setStoryIndex(i)}
+              aria-label={`Go to story ${i + 1}`}
+            />
           ))}
         </div>
       </section>
 
-      {/* VIDEO POPUP MODAL */}
+      {/* ══════════════════════════════════════════
+          VIDEO POPUP MODAL
+          ══════════════════════════════════════════ */}
       {activeVideoUrl && (
-        <div 
-          className="video-modal-overlay" 
+        <div
+          className="video-modal-overlay"
           onClick={() => setActiveVideoUrl(null)}
           style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-            zIndex: 9999,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backdropFilter: 'blur(5px)'
+            position: "fixed", top: 0, left: 0,
+            width: "100vw", height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.85)",
+            zIndex: 9999, display: "flex",
+            justifyContent: "center", alignItems: "center",
+            backdropFilter: "blur(5px)",
           }}
         >
-          <div 
+          <div
             className="video-modal-content"
-            onClick={(e) => e.stopPropagation()} 
+            onClick={(e) => e.stopPropagation()}
             style={{
-              position: 'relative',
-              width: '90%',
-              maxWidth: '750px',
-              backgroundColor: '#000',
-              borderRadius: '12px',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+              position: "relative", width: "90%", maxWidth: "750px",
+              backgroundColor: "#000", borderRadius: "12px",
+              overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
             }}
           >
-            {/* Close button */}
-            <button 
+            <button
               onClick={() => setActiveVideoUrl(null)}
               style={{
-                position: 'absolute',
-                top: '15px',
-                right: '15px',
-                background: 'rgba(0, 0, 0, 0.6)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                color: '#fff',
-                fontSize: '20px',
-                cursor: 'pointer',
-                borderRadius: '50%',
-                width: '36px',
-                height: '36px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                position: "absolute", top: "15px", right: "15px",
+                background: "rgba(0,0,0,0.6)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#fff", fontSize: "20px", cursor: "pointer",
+                borderRadius: "50%", width: "36px", height: "36px",
+                display: "flex", alignItems: "center", justifyContent: "center",
                 zIndex: 10000,
-                transition: 'background 0.2s'
               }}
             >
               &times;
             </button>
-
-            {/* Added standard type constraints and explicit keying */}
-            <video 
+            <video
               key={activeVideoUrl}
-              src={activeVideoUrl} 
-              controls 
-              autoPlay 
-              playsInline
-              preload="auto"
-              style={{ width: '100%', maxHeight: '80vh', display: 'block' }}
+              src={activeVideoUrl}
+              controls autoPlay playsInline preload="auto"
+              style={{ width: "100%", maxHeight: "80vh", display: "block" }}
             />
           </div>
         </div>
       )}
 
-      {/* SECTION 2: UPCOMING UNIVERSITY VISITS */}
+      {/* ══════════════════════════════════════════
+          SECTION 2: UPCOMING UNIVERSITY VISITS
+          ══════════════════════════════════════════ */}
       <section className="university-visits-section">
         <h2 className="section-title-dark">
           Upcoming <span>University Visits</span>
         </h2>
 
-        <div 
+        <div
           className="slider-outer-wrapper"
           onMouseEnter={stopAutoPlay}
           onMouseLeave={startAutoPlay}
         >
-          <button className="slider-arrow-btn left-arrow" onClick={prevSlide}>&#10094;</button>
+          <button
+            className="slider-arrow-btn left-arrow"
+            onClick={prevSlide}
+            aria-label="Previous visit"
+          >
+            &#10094;
+          </button>
 
           <div className="visits-slider-container">
             <div
               className="visits-slider-track"
-              style={{
-                transform: `translateX(-${slideTranslateX}%)`,
-              }}
+              style={{ transform: `translateX(-${slideTranslateX}%)` }}
             >
               {universityVisits.map((visit) => (
-                <div key={visit.id} className="visit-card-wrapper">
+                <div
+                  key={visit.id}
+                  className="visit-card-wrapper"
+                  style={{ flex: `0 0 ${100 / visibleVisitCount}%`, width: `${100 / visibleVisitCount}%` }}
+                >
                   <div className="visit-card">
                     <div className="visit-img-banner">
                       <img src={visit.img} alt={visit.title} />
                     </div>
-
                     <div className="visit-info-body">
                       <h3>{visit.title}</h3>
                       <div className="meta-info-row">
@@ -352,7 +385,6 @@ export default function StudyAbroadLayouts() {
                         <span className="icon">🎓</span>
                         <span>{visit.type}</span>
                       </div>
-
                       <button className="btn-read-more-visit">
                         Read More
                         <span className="arrow-circle-visit">➔</span>
@@ -364,14 +396,34 @@ export default function StudyAbroadLayouts() {
             </div>
           </div>
 
-          <button className="slider-arrow-btn right-arrow" onClick={nextSlide}>&#10095;</button>
+          <button
+            className="slider-arrow-btn right-arrow"
+            onClick={nextSlide}
+            aria-label="Next visit"
+          >
+            &#10095;
+          </button>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="slider-dots">
+          {Array.from({ length: maxVisitIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              className={`dot ${i === currentIndex ? "dot-active" : ""}`}
+              onClick={() => setCurrentIndex(i)}
+              aria-label={`Go to visit ${i + 1}`}
+            />
+          ))}
         </div>
       </section>
 
-      {/* SECTION 3: HOW IT WORKS TIMELINE */}
+      {/* ══════════════════════════════════════════
+          SECTION 3: HOW IT WORKS — TIMELINE
+          ══════════════════════════════════════════ */}
       <section className="how-it-works-section">
         <h2 className="section-title-light">
-          How It Works - <span> Your Journey Simplified</span>
+          How It Works - <span>Your Journey Simplified</span>
         </h2>
 
         <div className="timeline-container">
@@ -392,7 +444,7 @@ export default function StudyAbroadLayouts() {
               <div className="step-number-badge">2</div>
             </div>
             <div className="step-content-box">
-              <h4>Planning & Shortlisting</h4>
+              <h4>Planning &amp; Shortlisting</h4>
               <p>We help you shortlist universities and courses.</p>
             </div>
           </div>
@@ -403,7 +455,7 @@ export default function StudyAbroadLayouts() {
               <div className="step-number-badge">3</div>
             </div>
             <div className="step-content-box">
-              <h4>Application & Documentation</h4>
+              <h4>Application &amp; Documentation</h4>
               <p>We assist with SOPs, transcripts and applications.</p>
             </div>
           </div>
@@ -420,6 +472,7 @@ export default function StudyAbroadLayouts() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

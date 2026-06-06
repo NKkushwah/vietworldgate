@@ -11,8 +11,8 @@ const VisaAssistance = () => {
     <div className="visa-page-container">
       
       {/* Hero Banner Section */}
-      <header className="visa-hero-banner">
-        <h2>Visa Assistance Services</h2>
+      <header className="visaAssistance-hero-banner">
+       
         <div className="hero-overlay">
           <div className="hero-content">
           </div>

@@ -30,18 +30,20 @@ body{
 ========================================= */
 
 .contact-hero{
-  width:100%;
-  height:360px;
+  background-image: url('https://images.pexels.com/photos/11163165/pexels-photo-11163165.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-  background: 
-    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")
-    center/cover no-repeat;
-
-  position:relative;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  color: #1a202c;
+  padding: 200px 8%;
+  position:  relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: left;
+  width: 100%;
+  animation: bannerScale 1.5s ease-out forwards;
 }
 .hero-overlay{
   text-align:center;

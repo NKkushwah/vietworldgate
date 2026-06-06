@@ -14,8 +14,8 @@ const CourseAdvice = () => {
     <div className="visa-page-container">
       
       {/* Hero Banner Section */}
-      <header className="visa-hero-banner">
-        <h2>Course Advice & Career Counseling</h2>
+      <header className="CourseAdvice-hero-banner">
+      
         <div className="hero-overlay">
           <div className="hero-content">
           </div>

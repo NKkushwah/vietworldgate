@@ -33,7 +33,7 @@ const Careers = () => {
           <div className="hero-overlay-global">
             <div className="hero-content-global">
               <span className="hero-badge">🌍 Build a Global Career</span>
-              <h1>Shape Futures Across Borders</h1>
+             
               <nav className="breadcrumb">
                
               </nav>

@@ -13,11 +13,10 @@ const PreDeparture = () => {
       <div className="visa-page-container">
         
         {/* Hero Banner Section */}
-        <header className="visa-hero-banner">
+        <header className="PreDeparture-visa-hero-banner">
           <div className="hero-content-left">
-            <h2>Pre-Departure Assistance</h2>
+           
             <div className="breadcrumb-trail">
-              <span className="home-icon">🏠</span> ➔ <span className="current-page">Pre-Departure Assistance</span>
             </div>
           </div>
         </header>

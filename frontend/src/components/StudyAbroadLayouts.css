@@ -1,19 +1,19 @@
 :root {
-  --purple-primary:#012819;
-  --purple-dark:#012819;
-  --purple-bg: #012819;
-  --purple-border-light: #EAD6E6; 
-  --text-main: #2D3748;
-  --text-body: #616E7C;
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --purple-primary:      #012819;
+  --text-main:           #2D3748;
+  --text-body:           #616E7C;
+  --green-primary:       #012819;
+  --green-accent:        #c9f270;
 }
 
-/* Base Global Box-Sizing Fix */
+/* ── Global reset ─────────────────────────────────────── */
 .layouts-container,
 .layouts-container *,
 .layouts-container *::before,
 .layouts-container *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .layouts-container {
@@ -24,183 +24,47 @@
   width: 100%;
 }
 
-/* ===================================================
-   SHARED GLOBAL TYPOGRAPHY UTILITIES
-   =================================================== */
+/* ── Shared Typography ────────────────────────────────── */
 .section-title-dark {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: clamp(1.3rem, 3.5vw, 2.2rem);
   color: #ffffff;
   font-weight: 400;
-  margin-bottom: 45px;
-  padding: 0 10px;
+  margin-bottom: 36px;
+  padding: 0 16px;
+  line-height: 1.35;
 }
-
 .section-title-dark span {
-  color: #03462f; 
+  color: #03462f;
   font-style: italic;
   font-weight: 600;
 }
 
 .section-title-light {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: clamp(1.3rem, 3.5vw, 2.2rem);
   color: var(--text-main);
   font-weight: 400;
-  margin-bottom: 60px;
-  padding: 0 10px;
+  margin-bottom: 48px;
+  padding: 0 16px;
+  line-height: 1.35;
 }
-
 .section-title-light span {
   color: #012819;
   font-style: italic;
   font-weight: 700;
 }
 
-/* ===================================================
-   SECTION 1: SUCCESS STORIES (TESTIMONIALS)
-   =================================================== */
-.success-stories-section {
-  background-color: #012819;
-  padding: 60px 20px;
-  width: 100%;
-}
-
-/* Changed from Flex to an auto-adjusting responsive CSS Grid layout */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-content: center;
-  justify-items: center; 
-  align-items: stretch;  
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.testimonial-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.04); 
-  border: 1px solid #eceaf0e5;
-  padding: 30px 20px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 340px; 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  box-sizing: border-box;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(201, 242, 112, 0.4);
-}
-
-.video-thumbnail-box {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10; 
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-  background-color: #00180f; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circular-video-frame {
-  width: 130px; 
-  height: 130px;
-  border-radius: 50%;
-  border: 3px solid #c9f270; 
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.4s ease;
-  z-index: 2;
-}
-
-
-.circular-video-frame video,
-.circular-video-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.play-btn-overlay {
-  position: absolute;
-  width: 46px;
-  height: 46px;
-  background-color: #012819;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff; 
-  font-size: 0.95rem;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  z-index: 5;
-}
-
-.testimonial-card:hover .circular-video-frame {
-  transform: scale(1.05);
-}
-
-.testimonial-card:hover .play-btn-overlay {
-  transform: scale(1.1);
-  background-color: #ffffff;
-  color: #012819;
-}
-
-.student-name {
-  color: #ffffff; 
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 18px 0 0 0;
-  letter-spacing: 0.02em;
-}
-
-@media screen and (max-width: 480px) {
-  .success-stories-section {
-    padding: 40px 15px;
-  }
-  .testimonial-card {
-    padding: 24px 16px;
-  }
-  .circular-video-frame {
-    width: 115px;
-    height: 115px;
-  }
-}
-
-/* ===================================================
-   SECTION 2: UPCOMING UNIVERSITY VISITS (SLIDER MODE)
-   =================================================== */
-.university-visits-section {
-  background-color: var(--dark-green);
-  padding: 70px 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  position: relative;
-  width: 100%;
-}
-
+/* ══════════════════════════════════════════════════════════
+   SHARED SLIDER STRUCTURE
+   ══════════════════════════════════════════════════════════ */
 .slider-outer-wrapper {
   max-width: 1250px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 50px;
+  padding: 0 54px;
 }
 
 .visits-slider-container {
@@ -212,75 +76,10 @@
   display: flex;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
-  width: 100%;
+  align-items: stretch;
 }
 
-/* Precise Horizontal Fluid Blocks matched with layout counts */
-.visit-card-wrapper {
-  padding: 0 15px;
-  flex: 0 0 33.333%;
-  width: 33.333%;
-}
-
-.visit-card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  height: 100%;
-}
-
-.visit-card:hover {
-  transform: translateY(-8px);
-}
-
-.visit-img-banner {
-  width: 100%;
-  height: 210px;
-  position: relative;
-  overflow: hidden;
-}
-
-.visit-img-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.visit-info-body {
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.visit-info-body h3 {
-  font-size: 1.35rem;
-  color: var(--text-main);
-  margin: 0 0 20px 0;
-  text-align: center;
-  font-weight: 600;
-}
-
-.meta-info-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 12px;
-  color: var(--text-body);
-  font-size: 0.95rem;
-}
-
-.meta-info-row .icon {
-  color: #012819;
-  font-size: 1.1rem;
-  margin-top: 1px;
-}
-
-/* Arrow Navigation Button Overlays */
+/* Arrow Buttons */
 .slider-arrow-btn {
   position: absolute;
   top: 50%;
@@ -288,46 +87,266 @@
   background-color: #ffffff;
   color: #012819;
   border: 2px solid #012819;
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
 }
-
 .slider-arrow-btn:hover {
   background-color: #012819;
   color: #ffffff;
 }
+.left-arrow  { left: 0; }
+.right-arrow { right: 0; }
 
-.left-arrow { left: 0px; }
-.right-arrow { right: 0px; }
+/* Dot indicators */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  padding: 0 16px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.dot-active {
+  background-color: var(--green-accent);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 1: SUCCESS STORIES
+   ══════════════════════════════════════════════════════════ */
+.success-stories-section {
+  background-color: #012819;
+  padding: 60px 20px 50px;
+  width: 100%;
+}
+
+/* Arrow override for dark bg */
+.success-stories-section .slider-arrow-btn {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+.success-stories-section .slider-arrow-btn:hover {
+  background-color: #ffffff;
+  color: #012819;
+  border-color: #ffffff;
+}
+
+/* Story card wrapper — width driven by JS inline style */
+.story-card-wrapper {
+  padding: 0 12px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(236, 234, 240, 0.9);
+  padding: 28px 18px 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 242, 112, 0.4);
+}
+
+.video-thumbnail-box {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  overflow: visible;
+  background-color: #00180f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-video-frame {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid var(--green-accent);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+.circular-video-frame video,
+.circular-video-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-btn-overlay {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background-color: #012819;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 5;
+}
+.testimonial-card:hover .circular-video-frame { transform: scale(1.05); }
+.testimonial-card:hover .play-btn-overlay {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  color: #012819;
+}
+
+.student-name {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 2: UNIVERSITY VISITS
+   ══════════════════════════════════════════════════════════ */
+.university-visits-section {
+  background-color: #f8fafc;
+  padding: 70px 20px 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.university-visits-section .section-title-dark {
+  color: var(--text-main);
+}
+.university-visits-section .section-title-dark span {
+  color: #012819;
+}
+.university-visits-section .dot {
+  background-color: rgba(1, 40, 25, 0.2);
+}
+.university-visits-section .dot-active {
+  background-color: #012819;
+}
+
+/* Visit card wrapper — width driven by JS inline style */
+.visit-card-wrapper {
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+
+.visit-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.visit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.visit-img-banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.visit-img-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.visit-card:hover .visit-img-banner img { transform: scale(1.04); }
+
+.visit-info-body {
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.visit-info-body h3 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.meta-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--text-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.meta-info-row .icon {
+  font-size: 1rem;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
 
 .btn-read-more-visit {
-  margin-top: auto;
+  margin-top: 16px;
   background-color: #f1f5f9;
   color: #334155;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 6px;
+  font-size: 0.88rem;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: all 0.2s ease;
-  width: max-content;
+  transition: all 0.25s ease;
   align-self: center;
 }
-
 .btn-read-more-visit span.arrow-circle-visit {
   background-color: #012819;
   color: #ffffff;
@@ -337,58 +356,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   transition: transform 0.2s ease;
 }
-
 .visit-card:hover .btn-read-more-visit {
   background-color: #012819;
   color: #ffffff;
 }
-
 .visit-card:hover .btn-read-more-visit span.arrow-circle-visit {
   background-color: #ffffff;
   color: #012819;
   transform: translateX(2px);
 }
 
-/* ===================================================
-   SECTION 3: HOW IT WORKS (TIMELINE STEPPER)
-   =================================================== */
+/* ══════════════════════════════════════════════════════════
+   SECTION 3: HOW IT WORKS — TIMELINE
+   ══════════════════════════════════════════════════════════ */
 .how-it-works-section {
   padding: 80px 20px;
   background: #fafbfc;
-  position: relative;
   width: 100%;
 }
 
 .timeline-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-}
-
-@media screen and (min-width: 992px) {
-  .timeline-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 75px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    border-top: 2px dashed #cbd5e1;
-    z-index: 1;
-  }
+  gap: 36px;
 }
 
 .timeline-step {
@@ -401,15 +397,9 @@
   z-index: 2;
 }
 
-@media screen and (min-width: 992px) {
-  .timeline-step:nth-child(even) {
-    margin-top: 40px;
-  }
-}
-
 .icon-circle-wrapper {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: #ffffff;
   border: 2px solid var(--purple-primary);
@@ -417,109 +407,193 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 10px 20px rgba(125,0,104,0.06);
+  box-shadow: 0 8px 20px rgba(1, 40, 25, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.timeline-step.active .icon-circle-wrapper {
-  background: #012819;
-  color: #ffffff;
-}
-
+.timeline-step.active .icon-circle-wrapper { background: #012819; }
 .icon-circle-wrapper .step-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--purple-primary);
   transition: transform 0.4s, color 0.4s;
 }
-
-.timeline-step.active .icon-circle-wrapper .step-icon {
-  color: #ffffff;
-}
+.timeline-step.active .icon-circle-wrapper .step-icon { color: #ffffff; }
 
 .step-number-badge {
   position: absolute;
   top: -2px;
   right: -2px;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background-color: var(--purple-primary);
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #ffffff;
 }
-
-.timeline-step.active .step-number-badge {
-  background-color:#012819;
-}
+.timeline-step.active .step-number-badge { background-color: #012819; }
 
 .timeline-step:hover .icon-circle-wrapper {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(125,0,104,0.15);
-  border-color:#012819;
+  box-shadow: 0 14px 28px rgba(1, 40, 25, 0.18);
+  border-color: #012819;
 }
-
-.timeline-step:hover .icon-circle-wrapper .step-icon {
-  transform: scale(1.1);
-}
+.timeline-step:hover .icon-circle-wrapper .step-icon { transform: scale(1.1); }
 
 .step-content-box {
-  margin-top: 20px;
-  padding: 0 10px;
+  margin-top: 18px;
+  padding: 0 12px;
 }
-
 .step-content-box h4 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: #1e293b;
-  margin: 0 0 10px 0;
+  margin-bottom: 8px;
   font-weight: 600;
 }
-
 .step-content-box p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-body);
   line-height: 1.6;
-  margin: 0;
 }
 
-/* ===================================================
-   RESPONSIVE LAYOUT BREAKPOINTS FOR ALL DEVICES
-   =================================================== */
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS — ALL DEVICES
+   ══════════════════════════════════════════════════════════
 
-/* Laptops & Tablets Landscape (iPad Pro Specific Fix) */
-@media screen and (max-width: 1025px) {
-  .section-title-dark, .section-title-light { font-size: 1.8rem; }
-  
-  .visit-card-wrapper {
-    flex: 0 0 50% !important;
-    width: 50% !important;
+   Device reference:
+   iPhone SE          : 375px
+   iPhone 14          : 390px
+   iPhone 14 Plus     : 430px
+   iPad Mini          : 768px
+   iPad Air           : 820px
+   iPad Pro 11"       : 1024px
+   iPad Pro 12.9"     : 1024px (same, different DPR)
+   Laptop             : 1280px+
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Desktop & iPad Pro landscape (1025px+) ─── */
+@media screen and (min-width: 1025px) {
+  .timeline-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
   }
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 66px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    border-top: 2px dashed #cbd5e1;
+    z-index: 1;
+  }
+  .timeline-step:nth-child(even) { margin-top: 40px; }
 }
 
-/* Mobile Devices & Small Tablets (1 Card View) */
-@media screen and (max-width: 768px) {
-  .section-title-dark, .section-title-light { font-size: 1.5rem; margin-bottom: 30px; }
-  
-  .slider-outer-wrapper {
-    padding: 0 40px; /* Safe space layout for arrows */
+/* ── iPad Pro portrait & landscape (768px – 1024px) ─── */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .success-stories-section   { padding: 50px 16px 40px; }
+  .university-visits-section { padding: 55px 16px 40px; }
+  .how-it-works-section      { padding: 60px 24px; }
+
+  /* Slider arrow spacing */
+  .slider-outer-wrapper { padding: 0 48px; }
+  .slider-arrow-btn     { width: 40px; height: 40px; font-size: 1rem; }
+
+  /* Timeline: 2-column grid on iPad */
+  .timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+    max-width: 700px;
   }
 
-  .visit-card-wrapper {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-  }
+  .visit-img-banner { height: 185px; }
 
-  .slider-arrow-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 0.95rem;
-  }
-  
-  .visit-img-banner {
-    height: 180px;
-  }
+  /* Tighten card body text */
+  .visit-info-body        { padding: 18px 16px 16px; }
+  .visit-info-body h3     { font-size: 1.05rem; margin-bottom: 12px; }
+  .meta-info-row          { font-size: 0.84rem; gap: 8px; }
+
+  /* Story card sizing */
+  .circular-video-frame   { width: 120px; height: 120px; }
+  .testimonial-card       { padding: 24px 14px 20px; max-width: 280px; }
+  .student-name           { font-size: 1rem; }
+}
+
+/* ── iPad Mini only (768px – 810px) ─── */
+@media screen and (min-width: 768px) and (max-width: 810px) {
+  .slider-outer-wrapper { padding: 0 42px; }
+
+  .visit-img-banner { height: 170px; }
+  .visit-info-body h3 { font-size: 1rem; }
+
+  .circular-video-frame { width: 110px; height: 110px; }
+  .testimonial-card { max-width: 260px; }
+}
+
+/* ── Tablet Portrait — small (576px – 767px) ─── */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .success-stories-section   { padding: 44px 14px 36px; }
+  .university-visits-section { padding: 50px 14px 36px; }
+  .how-it-works-section      { padding: 50px 16px; }
+
+  .slider-outer-wrapper { padding: 0 42px; }
+  .slider-arrow-btn     { width: 38px; height: 38px; font-size: 0.95rem; }
+
+  .visit-img-banner     { height: 170px; }
+  .visit-info-body      { padding: 16px 14px 14px; }
+  .meta-info-row        { font-size: 0.83rem; }
+
+  .circular-video-frame { width: 115px; height: 115px; }
+  .testimonial-card     { padding: 22px 14px 18px; }
+}
+
+/* ── Mobile landscape helper ─── */
+@media screen and (max-height: 500px) and (min-width: 576px) {
+  .success-stories-section   { padding: 30px 12px 24px; }
+  .university-visits-section { padding: 30px 12px 24px; }
+  .how-it-works-section      { padding: 30px 12px; }
+  .slider-outer-wrapper      { padding: 0 40px; }
+}
+
+/* ── Mobile (< 576px) ─── */
+@media screen and (max-width: 575px) {
+  .success-stories-section   { padding: 36px 12px 28px; }
+  .university-visits-section { padding: 40px 12px 28px; }
+  .how-it-works-section      { padding: 44px 14px; }
+
+  .slider-outer-wrapper { padding: 0 36px; }
+  .slider-arrow-btn     { width: 34px; height: 34px; font-size: 0.85rem; }
+
+  .visit-img-banner     { height: 165px; }
+  .visit-info-body      { padding: 16px 14px 14px; }
+  .visit-info-body h3   { font-size: 1rem; margin-bottom: 10px; }
+  .meta-info-row        { font-size: 0.82rem; gap: 8px; margin-bottom: 8px; }
+
+  .testimonial-card     { padding: 22px 12px 18px; max-width: 100%; }
+  .circular-video-frame { width: 110px; height: 110px; }
+  .student-name         { font-size: 1rem; margin-top: 14px; }
+
+  .icon-circle-wrapper       { width: 88px; height: 88px; }
+  .icon-circle-wrapper .step-icon { font-size: 1.7rem; }
+  .step-content-box h4  { font-size: 0.98rem; }
+  .step-content-box p   { font-size: 0.87rem; }
+
+  .slider-dots  { gap: 6px; margin-top: 20px; }
+  .dot          { width: 7px; height: 7px; }
+  .dot-active   { width: 20px; }
+}
+
+/* ── Very small phones (< 360px) ─── */
+@media screen and (max-width: 359px) {
+  .slider-outer-wrapper { padding: 0 30px; }
+  .slider-arrow-btn     { width: 28px; height: 28px; font-size: 0.75rem; }
+  .circular-video-frame { width: 95px; height: 95px; }
+  .visit-img-banner     { height: 145px; }
 }

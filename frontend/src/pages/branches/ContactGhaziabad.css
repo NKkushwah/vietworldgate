@@ -29,20 +29,21 @@ body{
    HERO SECTION
 ========================================= */
 
-.contact-hero{
-  width:100%;
-  height:360px;
+.Ghaziabad-contact-hero{
+ background-image: url('https://images.pexels.com/photos/15210314/pexels-photo-15210314.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-  background-image:
-   
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3")
-    center/cover no-repeat;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  position:relative;
+  color: #1a202c;
+  padding: 200px 8%;
+  position:  relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  animation: bannerScale 1.5s ease-out forwards;
 }
 
 .hero-overlay{

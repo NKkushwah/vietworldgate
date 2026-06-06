@@ -29,24 +29,24 @@ body{
    HERO SECTION
 ========================================= */
 
-.contact-hero{
-  width:100%;
-  height:360px;
+.Noida-contact-hero{
 
   background: 
-    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")
+    url("https://images.pexels.com/photos/15059576/pexels-photo-15059576.jpeg")
     center/cover no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-  position:relative;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.hero-overlay{
-  text-align:center;
-  color:#fff;
-  padding:20px;
+  color: #1a202c;
+  padding: 200px 8%;
+  position:  relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  animation: bannerScale 1.5s ease-out forwards;
 }
 
 .hero-overlay h1{

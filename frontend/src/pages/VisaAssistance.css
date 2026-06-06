@@ -23,18 +23,26 @@ body {
 }
 
 /* --- Hero Header Style --- */
-.visa-hero-banner {
-  position: relative; /* IMPORTANT */
-  background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80');
+.visaAssistance-hero-banner {
+   background-image: url('https://images.pexels.com/photos/8061942/pexels-photo-8061942.jpeg');
+  background-repeat: no-repeat;
+  background-position: right center;
   background-size: cover;
-  background-position: center;
-  color: var(--white);
-  padding: 80px 20px; /* thoda spacing better */
+  
+
+  padding: 140px 6%;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  animation: visaAssistance-hero-banner 1.5s ease-out forwards;
 }
 
 .application-form-tag{
   color: var(--white);
-  background-color: rgb(117, 195, 226);
+  background-color: rgb(77, 206, 27);
 }
 /* ADD THIS */
 .hero-overlay {
@@ -85,7 +93,7 @@ body {
 }
 
 .appointment-call-widget {
-  background-color: #012819;
+  background-color: #0a1f0f;
   color: var(--white);
   padding: 20px;
   border-radius: 4px;
@@ -163,7 +171,7 @@ body {
 
 .wa-card-body {
   padding: 20px;
-  background-color: var(--bg-light-blue);
+  background-color: rgb(8, 32, 8);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -242,7 +250,7 @@ body {
 .feature-icon-circle {
   width: 60px;
   height: 60px;
-  background-color: #012819;
+  background-color: #0a2c13;
   color: var(--white);
   border-radius: 50%;
   display: flex;

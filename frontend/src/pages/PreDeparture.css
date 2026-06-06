@@ -13,16 +13,25 @@
   color: var(--text-dark);
   background-color: var(--white);
   line-height: 1.6;
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 /* Hero Section Banner */
-.visa-hero-banner {
-  background-image:  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center/cover;
-  height: 220px;
+.PreDeparture-visa-hero-banner {
+ background-image: url('https://images.pexels.com/photos/10397064/pexels-photo-10397064.jpeg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  background-color: #f3f4f6;
+  color: #1a202c;
+  padding: 1px 6%;
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
   display: flex;
   align-items: center;
-  color: var(--white);
+  width: 100%;
+  animation: bannerScale 1.5s ease-out forwards;
 
 }
 
@@ -38,15 +47,6 @@
   margin: 0 0 8px 0;
   font-weight: 600;
   
-}
-
-.breadcrumb-trail {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  background-color: green;
-  display: inline-block;   /* 🔥 important */
-  padding: 4px 10px;       /* spacing */
-  border-radius: 5px;      /* optional nice look */
 }
 
 .current-page {

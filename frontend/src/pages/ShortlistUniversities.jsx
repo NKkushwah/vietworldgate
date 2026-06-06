@@ -14,7 +14,7 @@ const ShortlistUniversities = () => {
     <Navbar />
     <div className="visa-page-container">
       
-      <header className="visa-hero-banner">
+      <header className="Shortlist-visa-hero-banner">
         <div className="hero-content-left">
           <h2></h2>
           <div className="breadcrumb-trail">
