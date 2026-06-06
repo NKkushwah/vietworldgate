@@ -2,7 +2,7 @@
    COLOR VARIABLES
 =========================== */
 :root {
-  --primary-color: #012819;
+  --primary-color: #012819 !important;
   --text-dark: #333;
   --text-muted: #666;
   --bg-light: #fff;
@@ -32,7 +32,7 @@
 
 .services-header h2 {
   font-size: 2.8rem;
-  color: var(--primary-color);
+  color:#012819 !important;
   margin-bottom: 12px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .services-header p {
-  color: var(--text-muted);
+  color: #012819 !important;
   font-size: 1.05rem;
 }
 
@@ -110,7 +110,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: #012819 !important;
 
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@
 }
 
 .btn-read-more:hover {
-  background: #03472d;
+  background: #012819;
   transform: translateX(5px);
 }
 
