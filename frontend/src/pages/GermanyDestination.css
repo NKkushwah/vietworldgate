@@ -419,7 +419,7 @@
 
 .deu-bullet-list li::before {
   content: "•";
-  color: var(black);
+  color: black;
   font-size: 1.4rem;
   position: absolute;
   left: 4px;
