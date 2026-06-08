@@ -223,7 +223,7 @@ body{
   align-items:center;
   justify-content:center;
 
-  background:#012819;
+  background:#012819 !important;
   color:#ffffff;
 
   padding:16px 38px;
