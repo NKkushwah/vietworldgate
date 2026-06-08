@@ -7,26 +7,31 @@ export default function StudyAbroadFeatures() {
   const studentBannerImg =
     "https://images.pexels.com/photos/35444254/pexels-photo-35444254.jpeg";
 
+  // ✅ Single steps array with both `path` and `img`
   const steps = [
     {
       id: 1,
       title: "Study Destination",
+      path: "/CanadaDestination",
       img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=400"
     },
     {
       id: 2,
       title: "Course Selection",
+      path: "/courseAdvice",
       img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400"
     },
     {
       id: 3,
       title: "Scholarship Guidance",
+      path: "/Scholarships",
       img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=400"
     },
     {
       id: 4,
       title: "VISA Process",
-      img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400"
+      path: "/visaAssistance",
+      img: "https://images.pexels.com/photos/33497885/pexels-photo-33497885.jpeg"
     }
   ];
 
@@ -82,9 +87,9 @@ export default function StudyAbroadFeatures() {
               <p>Shortlist Universities With Our Course Finder</p>
 
               <Link to="/universitypartner">
-              <button className="btn-shortlist">
-                Shortlist Universities
-              </button>
+                <button className="btn-shortlist">
+                  Shortlist Universities
+                </button>
               </Link>
             </div>
           </div>
@@ -152,12 +157,16 @@ export default function StudyAbroadFeatures() {
           </h2>
         </div>
 
+        {/* ✅ Fixed: clean map block with no stray tags outside */}
         <div className="steps-row">
           {steps.map((step) => (
-            <div key={step.id} className="step-circle-card">
-
+            <Link
+              key={step.id}
+              to={step.path}
+              className="step-circle-card"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <div className="circle-animation-wrapper">
-
                 <svg className="animated-ring-svg" viewBox="0 0 100 100">
                   <circle className="bg-ring" cx="50" cy="50" r="47" />
                   <circle className="fill-ring" cx="50" cy="50" r="47" />
@@ -166,14 +175,12 @@ export default function StudyAbroadFeatures() {
                 <div className="circle-image-inner">
                   <img src={step.img} alt={step.title} />
                 </div>
-
               </div>
 
               <h4 className="step-card-title">
                 {step.title}
               </h4>
-
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -193,7 +200,6 @@ export default function StudyAbroadFeatures() {
         </div>
 
         <div className="benefits-grid">
-
           {benefits.map((benefit, idx) => (
             <div key={idx} className="benefit-horizontal-card">
 
@@ -208,7 +214,6 @@ export default function StudyAbroadFeatures() {
 
             </div>
           ))}
-
         </div>
 
       </section>

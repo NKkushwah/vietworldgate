@@ -105,9 +105,9 @@ export default function StudyAbroad() {
     },
 
     { 
-      title: "Upcoming Events", 
+      title: "Book Your Appointment", 
       icon: <Calendar className="route-icon" />,
-      path:"#",
+      path: "https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor",
      },
 
     { 
@@ -139,7 +139,10 @@ export default function StudyAbroad() {
               <span className="purple-highlight">We Can Help!</span>
             </h2>
             <p>Contact us today and our experts will be in touch with you soon.</p>
+            
+            <Link to="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor">
             <button className="btn-primary">Study Abroad?</button>
+            </Link>
           </div>
         </div>
 
