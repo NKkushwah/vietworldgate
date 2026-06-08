@@ -2,6 +2,8 @@ import React from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+
 
 
 import "./Dashboard.css";
@@ -14,6 +16,7 @@ import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
 import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
 import BritishCouncilLogo from "../assets/bclogo.jpg";
+
 
 function Dashboard() {
 
@@ -31,9 +34,9 @@ function Dashboard() {
   src={BritishCouncilLogo}
   alt="British Council"
 />
-
-      <span>Certified by British Council</span>
-
+      <Link to="/Certificate">
+        <span>Certified by British Council</span>
+        </Link>    
     </div>
 
   </div>

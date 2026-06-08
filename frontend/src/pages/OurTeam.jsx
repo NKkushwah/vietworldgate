@@ -7,13 +7,10 @@ import NanduIMG from '../assets/team/nandu.png';
 import PawanImg from '../assets/team/pawan.jpeg';
 import Ritika from '../assets/team/ritika.jpeg';
 import Lakhshyasharma from '../assets/team/lkhsharma.png';
-import Lakhsenior from '../assets/team/lakhsenior.JPEG';
 import Raghav from '../assets/team/raghav.jpeg';
 import Anushka from '../assets/team/anushka.jpeg';
 import Navneet from '../assets/team/navneet.png';
 import Suraj from '../assets/team/surajsir.png';
-
-
 
 const teamMembers = [
   {
@@ -26,12 +23,6 @@ const teamMembers = [
     name: 'Navneet Kaur', 
     role: 'Co-Director', 
     image: Navneet
-   },
-
-  { 
-    name: 'Lakshay Kataria', 
-    role: 'Bussiness Development Manager', 
-    image: Lakhsenior
    },
 
   { 
@@ -149,10 +140,6 @@ const OurTeam = () => {
                   planning to provide accurate, transparent, and result-oriented guidance at every stage of the journey.
                 </p>
               </div>
-
-
-              
-
               {/* Right Column: Premium Geometric Value Card */}
               <div className="hero-badge-right">
                 <p className="badge-tagline">Result-Oriented Global Guidance</p>

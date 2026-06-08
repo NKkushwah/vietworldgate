@@ -365,7 +365,7 @@ body {
 .no-records { text-align: center; padding: 30px; color: #718096; }
 
 /* ==========================================================================
-   6. MEDIUM VIEWPORTS (TABLETS - تبدیل به ۳ دکمه کنار هم)
+   6. MEDIUM VIEWPORTS 
    ========================================================================== */
 @media (min-width: 768px) {
   .portal-container {
