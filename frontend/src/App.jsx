@@ -1,31 +1,37 @@
 import AppRoutes from "./routes/AppRoutes";
-import { 
-  FaRegEnvelopeOpen, 
-  FaArrowRight, 
-  FaFacebookF, 
-  FaInstagram, 
-  FaYoutube, 
-  FaLinkedinIn, 
-  FaWhatsapp, 
-  FaChevronUp,
-  FaRegEnvelope
-} from 'react-icons/fa';
+import { FaChevronUp } from "react-icons/fa";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-   const scrollToTop = (e) => {
+
+  const scrollToTop = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
 
-  return <>
-           <AppRoutes />
-    
-            <a href="#top" className="scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
-              <FaChevronUp />
-            </a>
-        
-  </>
+  return (
+    <>
+      {/* ✅ AUTO SCROLL TOP ON PAGE CHANGE */}
+      <ScrollToTop />
+
+      {/* ✅ ROUTES */}
+      <AppRoutes />
+
+      {/* ✅ SCROLL TO TOP BUTTON */}
+      <a
+        href="#"
+        className="scroll-top"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <FaChevronUp />
+      </a>
+    </>
+  );
 }
 
 export default App;

@@ -27,13 +27,18 @@ import Careers from "../pages/Careers";
 import CoursePortal from "../pages/CoursePortal";
 import UniversityPartners from "../pages/Universitypartner";
 import Certificate from "../pages/Certificate";
+import WhyChooseUs from "../pages/WhyChooseUs";
+import Infrastructure from "../pages/Infrastructure";
+
 
 
 function AppRoutes() {
   return (
-    <BrowserRouter>
+   
 
       <Routes>
+        <Route path="/infrastructure" element={<Infrastructure />} />
+         <Route path = "/WhyChooseUs" element={<WhyChooseUs />} />
          <Route path = "/CoursePortal" element={<CoursePortal />} />
        <Route path = "/Careers" element={<Careers />} />
         <Route path = "/ContactLondon" element={<ContactLondon />} />
@@ -66,7 +71,7 @@ function AppRoutes() {
 
       </Routes>
 
-    </BrowserRouter>
+   
   );
 }
 

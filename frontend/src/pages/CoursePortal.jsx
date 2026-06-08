@@ -3,9 +3,10 @@ import './CoursePortal.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
+// ─────────────────────────────────────────────
+// COURSE DATA  (link field added to every course)
+// ─────────────────────────────────────────────
 const initialCourses = [
-
   {
     id: 'GER001',
     title: 'Bachelor in Business & Social Sciences',
@@ -17,7 +18,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6.5',
-    country: 'Germany'
+    country: 'Germany',
+    link: 'https://www.fu-berlin.de/en/studium/studienangebot/index.html',
   },
   {
     id: 'GER002',
@@ -30,7 +32,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '6.5',
-    country: 'Germany'
+    country: 'Germany',
+    link: 'https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/~b/ingenieurwissenschaften/',
   },
   {
     id: 'UK001',
@@ -43,7 +46,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6.0',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
+    link: 'https://www.sunderland.ac.uk/study/business/',
   },
   {
     id: 'UK002',
@@ -56,7 +60,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6.0',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
+    link: 'https://www.bolton.ac.uk/courses/',
   },
   {
     id: 'CAN001',
@@ -69,7 +74,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.cbu.ca/academics/programs/',
   },
   {
     id: 'CAN002',
@@ -82,7 +88,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.ucanwest.ca/programs/',
   },
   {
     id: 'AUS001',
@@ -95,7 +102,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '6.0',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://federation.edu.au/courses',
   },
   {
     id: 'AUS002',
@@ -108,7 +116,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '12 Months',
     ielts: '6.0',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.cqu.edu.au/courses',
   },
   {
     id: 'NZ001',
@@ -121,7 +130,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6.0',
-    country: 'New Zealand'
+    country: 'New Zealand',
+    link: 'https://www.sit.ac.nz/Courses',
   },
   {
     id: 'RUS001',
@@ -134,8 +144,9 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '60 Months',
     ielts: 'Not Required',
-    country: 'Russia'
-  } ,
+    country: 'Russia',
+    link: 'https://www.rudn.ru/en/education',
+  },
   {
     id: '078172B',
     title: 'Bachelor of Occupational Therapy',
@@ -147,7 +158,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '7',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.acu.edu.au/course/bachelor-of-occupational-therapy',
   },
   {
     id: '071515G',
@@ -160,7 +172,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '7',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.acu.edu.au/course/bachelor-of-physiotherapy',
   },
   {
     id: '084790C',
@@ -173,7 +186,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '7',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.acu.edu.au/course/bachelor-of-social-work',
   },
   {
     id: '078174M',
@@ -186,7 +200,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.acu.edu.au/course/bachelor-of-speech-pathology',
   },
   {
     id: '097207E',
@@ -199,7 +214,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '12 - 24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.acu.edu.au/course/master-of-leadership-and-management-in-health-care',
   },
   {
     id: 'B001',
@@ -212,7 +228,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '7',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.deakin.edu.au/course/bachelor-nursing',
   },
   {
     id: 'B002',
@@ -225,7 +242,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.uts.edu.au/study/find-a-course/bachelor-information-technology',
   },
   {
     id: 'B003',
@@ -238,7 +256,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.griffith.edu.au/business-government/bachelor-business',
   },
   {
     id: 'B004',
@@ -251,7 +270,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.adelaide.edu.au/degree-finder/beng_bengciv.html',
   },
   {
     id: 'D001',
@@ -264,7 +284,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.latrobecollegeaustralia.edu.au/courses',
   },
   {
     id: 'D002',
@@ -277,7 +298,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '1 - 12 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.monashcollege.edu.au/courses',
   },
   {
     id: 'D003',
@@ -290,7 +312,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 18 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.angliss.edu.au/courses/',
   },
   {
     id: 'M001',
@@ -303,7 +326,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 Months',
     ielts: '7',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.sydney.edu.au/courses/courses/pc/master-of-business-administration.html',
   },
   {
     id: 'M002',
@@ -316,7 +340,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters/mc264',
   },
   {
     id: 'M003',
@@ -329,7 +354,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://study.uq.edu.au/study-options/programs/master-public-health-5664',
   },
   {
     id: 'AD001',
@@ -342,7 +368,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '12 - 24 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.canberra.edu.au/courses',
   },
   {
     id: 'AD002',
@@ -355,7 +382,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '1 - 12 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.swinburne.edu.au/courses/',
   },
   {
     id: 'CIV001',
@@ -368,7 +396,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://tafeqld.edu.au/courses/industries/hospitality-tourism',
   },
   {
     id: 'CIV002',
@@ -381,7 +410,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '12 - 24 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.tafensw.edu.au/courses',
   },
   {
     id: 'B005',
@@ -394,7 +424,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.mq.edu.au/study/find-a-course/courses/bachelor-of-psychology',
   },
   {
     id: 'B006',
@@ -407,7 +438,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://study.curtin.edu.au/offering/course-ug--bachelor-of-commerce-in-accounting',
   },
   {
     id: 'M004',
@@ -420,7 +452,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://study.unimelb.edu.au/find/courses/graduate/master-of-engineering-management/',
   },
   {
     id: 'M005',
@@ -433,7 +466,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.unsw.edu.au/study/postgraduate/master-of-finance',
   },
   {
     id: 'D004',
@@ -446,7 +480,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 18 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.vu.edu.au/courses',
   },
   {
     id: 'CIV003',
@@ -459,7 +494,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '24 - 36 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://holmesglen.edu.au/courses/',
   },
   {
     id: 'D101',
@@ -472,7 +508,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 24 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.tafensw.edu.au/courses/information-technology',
   },
   {
     id: 'D102',
@@ -485,7 +522,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.latrobecollegeaustralia.edu.au/courses',
   },
   {
     id: 'D103',
@@ -498,7 +536,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.monashcollege.edu.au/courses',
   },
   {
     id: 'D104',
@@ -511,7 +550,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 18 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.angliss.edu.au/courses/',
   },
   {
     id: 'D105',
@@ -524,7 +564,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 18 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.vu.edu.au/courses',
   },
   {
     id: 'D106',
@@ -537,7 +578,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 Months',
     ielts: '6',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.rmit.edu.au/courses',
   },
   {
     id: 'M201',
@@ -550,7 +592,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://study.unimelb.edu.au/find/courses/graduate/master-of-information-technology/',
   },
   {
     id: 'M202',
@@ -563,7 +606,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 - 24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.monash.edu/business/mba',
   },
   {
     id: 'M203',
@@ -576,7 +620,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.sydney.edu.au/courses/courses/pc/master-of-engineering.html',
   },
   {
     id: 'M204',
@@ -589,7 +634,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 - 24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.deakin.edu.au/course/master-public-health',
   },
   {
     id: 'M205',
@@ -602,7 +648,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters/master-of-data-science-mc271',
   },
   {
     id: 'C401',
@@ -615,7 +662,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://tafeqld.edu.au/courses/industries/information-technology',
   },
   {
     id: 'C402',
@@ -628,7 +676,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.tafensw.edu.au/courses',
   },
   {
     id: 'C403',
@@ -641,7 +690,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.rmit.edu.au/courses',
   },
   {
     id: 'C404',
@@ -654,7 +704,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.angliss.edu.au/courses/',
   },
   {
     id: 'C405',
@@ -667,8 +718,10 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Australia'
+    country: 'Australia',
+    link: 'https://www.vu.edu.au/courses',
   },
+  // ── Canada ──
   {
     id: 'CB101',
     title: 'Bachelor of Computer Science',
@@ -680,7 +733,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: 'Above 48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://web.cs.toronto.edu/undergraduate/programs',
   },
   {
     id: 'CB102',
@@ -693,7 +747,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://schulich.yorku.ca/programs/bba/',
   },
   {
     id: 'CB103',
@@ -706,7 +761,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://engineering.ubc.ca/programs',
   },
   {
     id: 'CB104',
@@ -719,7 +775,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://nursing.mcmaster.ca/programs/undergraduate',
   },
   {
     id: 'CB105',
@@ -732,7 +789,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://uwaterloo.ca/future-students/programs/data-science',
   },
   {
     id: 'CD101',
@@ -745,7 +803,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.senecapolytechnic.ca/programs/fulltime/BAA.html',
   },
   {
     id: 'CD102',
@@ -758,7 +817,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.georgebrown.ca/programs/computer-programmer-program-t177',
   },
   {
     id: 'CD103',
@@ -771,7 +831,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.centennialcollege.ca/programs-courses/full-time/engineering-technology/',
   },
   {
     id: 'CD104',
@@ -784,7 +845,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.fanshawec.ca/programs-and-courses/program/hosp1-hospitality-management/next-year',
   },
   {
     id: 'CD105',
@@ -797,7 +859,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://humber.ca/programs/accounting/',
   },
   {
     id: 'M301',
@@ -810,7 +873,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.rotman.utoronto.ca/Degrees/MBAPrograms',
   },
   {
     id: 'M302',
@@ -823,7 +887,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://masterdatascience.ubc.ca/',
   },
   {
     id: 'M303',
@@ -836,7 +901,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.ualberta.ca/engineering/graduate-studies/index.html',
   },
   {
     id: 'M304',
@@ -849,7 +915,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '24 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.uottawa.ca/faculty-medicine/public-health/programs',
   },
   {
     id: 'M305',
@@ -862,7 +929,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '18 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://schulich.yorku.ca/programs/mf/',
   },
   {
     id: 'A401',
@@ -875,7 +943,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.douglascollege.ca/programs-courses/programs/arts',
   },
   {
     id: 'A402',
@@ -888,7 +957,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://langara.ca/programs-and-courses/programs/science/',
   },
   {
     id: 'A403',
@@ -901,7 +971,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.capilanou.ca/programs--courses/',
   },
   {
     id: 'A404',
@@ -914,7 +985,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.columbiacollege.ca/programs/',
   },
   {
     id: 'A405',
@@ -927,7 +999,8 @@ const initialCourses = [
     level: 'Associate Degree',
     duration: '24 Months',
     ielts: '6',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://camosun.ca/programs-courses',
   },
   {
     id: 'C501',
@@ -940,7 +1013,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '12 Months',
     ielts: '5.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.senecapolytechnic.ca/programs/fulltime/BAA.html',
   },
   {
     id: 'C502',
@@ -953,7 +1027,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '12 Months',
     ielts: '5.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.georgebrown.ca/programs/computer-systems-technology-program-t147',
   },
   {
     id: 'C503',
@@ -966,7 +1041,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '12 Months',
     ielts: '5.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://humber.ca/programs/accounting/',
   },
   {
     id: 'C504',
@@ -979,7 +1055,8 @@ const initialCourses = [
     level: 'Certificate IV',
     duration: '1 - 12 Months',
     ielts: '5.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.fanshawec.ca/programs-and-courses/program/hosp1-hospitality-management/next-year',
   },
   {
     id: 'C505',
@@ -992,7 +1069,8 @@ const initialCourses = [
     level: 'Diploma',
     duration: '12 - 24 Months',
     ielts: '6.0',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://humber.ca/programs/business-management/',
   },
   {
     id: 'C506',
@@ -1005,7 +1083,8 @@ const initialCourses = [
     level: 'Bachelor',
     duration: '36 - 48 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.uwindsor.ca/science/computerscience/',
   },
   {
     id: 'C507',
@@ -1018,7 +1097,8 @@ const initialCourses = [
     level: 'Master (coursework)',
     duration: '12 - 24 Months',
     ielts: '6.5',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://www.torontomu.ca/graduate/programs/data-science-management/',
   },
   {
     id: 'C508',
@@ -1031,570 +1111,136 @@ const initialCourses = [
     level: 'Doctorate',
     duration: 'Above 48 Months',
     ielts: '7.0',
-    country: 'Canada'
+    country: 'Canada',
+    link: 'https://engineering.utoronto.ca/graduate/',
   },
   {
-    id: 'C701',
-    title: 'Bachelor of Business Administration',
-    university: 'University of Windsor',
-    intake: 'January',
-    tuitionFee: 21000,
-    faculty: 'Business',
-    campuses: ['Windsor'],
-    level: 'Bachelor',
-    duration: '36 - 48 Months',
-    ielts: '6.5',
-    country: 'Canada'
+    id: 'C701', title: 'Bachelor of Business Administration', university: 'University of Windsor',
+    intake: 'January', tuitionFee: 21000, faculty: 'Business', campuses: ['Windsor'],
+    level: 'Bachelor', duration: '36 - 48 Months', ielts: '6.5', country: 'Canada',
+    link: 'https://www.uwindsor.ca/odette/',
   },
   {
-    id: 'C702',
-    title: 'Diploma in Business Management',
-    university: 'Humber College',
-    intake: 'February',
-    tuitionFee: 16000,
-    faculty: 'Business',
-    campuses: ['Toronto'],
-    level: 'Diploma',
-    duration: '12 - 24 Months',
-    ielts: '6.0',
-    country: 'Canada'
+    id: 'C702', title: 'Diploma in Business Management', university: 'Humber College',
+    intake: 'February', tuitionFee: 16000, faculty: 'Business', campuses: ['Toronto'],
+    level: 'Diploma', duration: '12 - 24 Months', ielts: '6.0', country: 'Canada',
+    link: 'https://humber.ca/programs/business-management/',
   },
   {
-    id: 'C703',
-    title: 'Master of Information Technology',
-    university: 'Ryerson University',
-    intake: 'March',
-    tuitionFee: 25000,
-    faculty: 'IT',
-    campuses: ['Toronto'],
-    level: 'Master (coursework)',
-    duration: '12 - 24 Months',
-    ielts: '6.5',
-    country: 'Canada'
+    id: 'C703', title: 'Master of Information Technology', university: 'Ryerson University',
+    intake: 'March', tuitionFee: 25000, faculty: 'IT', campuses: ['Toronto'],
+    level: 'Master (coursework)', duration: '12 - 24 Months', ielts: '6.5', country: 'Canada',
+    link: 'https://www.torontomu.ca/graduate/programs/',
   },
   {
-    id: 'C704',
-    title: 'Associate Degree in Arts',
-    university: 'George Brown College',
-    intake: 'April',
-    tuitionFee: 18000,
-    faculty: 'Arts',
-    campuses: ['Toronto'],
-    level: 'Associate Degree',
-    duration: '24 - 36 Months',
-    ielts: '6.0',
-    country: 'Canada'
+    id: 'C704', title: 'Associate Degree in Arts', university: 'George Brown College',
+    intake: 'April', tuitionFee: 18000, faculty: 'Arts', campuses: ['Toronto'],
+    level: 'Associate Degree', duration: '24 - 36 Months', ielts: '6.0', country: 'Canada',
+    link: 'https://www.georgebrown.ca/programs',
   },
   {
-    id: 'C705',
-    title: 'Certificate IV in Hospitality',
-    university: 'Fanshawe College',
-    intake: 'January',
-    tuitionFee: 13500,
-    faculty: 'Hospitality',
-    campuses: ['London'],
-    level: 'Certificate IV',
-    duration: '1 - 12 Months',
-    ielts: '5.5',
-    country: 'Canada'
+    id: 'C705', title: 'Certificate IV in Hospitality', university: 'Fanshawe College',
+    intake: 'January', tuitionFee: 13500, faculty: 'Hospitality', campuses: ['London'],
+    level: 'Certificate IV', duration: '1 - 12 Months', ielts: '5.5', country: 'Canada',
+    link: 'https://www.fanshawec.ca/programs-and-courses/program/hosp1-hospitality-management/next-year',
   },
   {
-    id: 'C706',
-    title: 'Bachelor of Computer Science',
-    university: 'University of Manitoba',
-    intake: 'February',
-    tuitionFee: 22000,
-    faculty: 'IT',
-    campuses: ['Winnipeg'],
-    level: 'Bachelor',
-    duration: '36 - 48 Months',
-    ielts: '6.5',
-    country: 'Canada'
+    id: 'C706', title: 'Bachelor of Computer Science', university: 'University of Manitoba',
+    intake: 'February', tuitionFee: 22000, faculty: 'IT', campuses: ['Winnipeg'],
+    level: 'Bachelor', duration: '36 - 48 Months', ielts: '6.5', country: 'Canada',
+    link: 'https://umanitoba.ca/science/computer-science/',
   },
   {
-    id: 'C707',
-    title: 'Diploma in Hospitality Management',
-    university: 'Seneca College',
-    intake: 'March',
-    tuitionFee: 15500,
-    faculty: 'Hospitality',
-    campuses: ['Toronto'],
-    level: 'Diploma',
-    duration: '12 - 24 Months',
-    ielts: '6.0',
-    country: 'Canada'
+    id: 'C707', title: 'Diploma in Hospitality Management', university: 'Seneca College',
+    intake: 'March', tuitionFee: 15500, faculty: 'Hospitality', campuses: ['Toronto'],
+    level: 'Diploma', duration: '12 - 24 Months', ielts: '6.0', country: 'Canada',
+    link: 'https://www.senecapolytechnic.ca/programs/fulltime/HTM.html',
   },
   {
-    id: 'C708',
-    title: 'Master of Data Science',
-    university: 'University of Toronto',
-    intake: 'April',
-    tuitionFee: 27000,
-    faculty: 'Data Science',
-    campuses: ['Toronto'],
-    level: 'Master (coursework)',
-    duration: '12 - 24 Months',
-    ielts: '6.5',
-    country: 'Canada'
+    id: 'C708', title: 'Master of Data Science', university: 'University of Toronto',
+    intake: 'April', tuitionFee: 27000, faculty: 'Data Science', campuses: ['Toronto'],
+    level: 'Master (coursework)', duration: '12 - 24 Months', ielts: '6.5', country: 'Canada',
+    link: 'https://datasciences.utoronto.ca/',
   },
   {
-    id: 'C709',
-    title: 'Associate Degree in Computer Science',
-    university: 'Douglas College',
-    intake: 'January',
-    tuitionFee: 17000,
-    faculty: 'IT',
-    campuses: ['Vancouver'],
-    level: 'Associate Degree',
-    duration: '24 - 36 Months',
-    ielts: '6.0',
-    country: 'Canada'
+    id: 'C709', title: 'Associate Degree in Computer Science', university: 'Douglas College',
+    intake: 'January', tuitionFee: 17000, faculty: 'IT', campuses: ['Vancouver'],
+    level: 'Associate Degree', duration: '24 - 36 Months', ielts: '6.0', country: 'Canada',
+    link: 'https://www.douglascollege.ca/programs-courses/programs/computing-science',
   },
   {
-    id: 'C710',
-    title: 'Certificate IV in Business',
-    university: 'Centennial College',
-    intake: 'February',
-    tuitionFee: 14000,
-    faculty: 'Business',
-    campuses: ['Toronto'],
-    level: 'Certificate IV',
-    duration: '1 - 12 Months',
-    ielts: '5.5',
-    country: 'Canada'
+    id: 'C710', title: 'Certificate IV in Business', university: 'Centennial College',
+    intake: 'February', tuitionFee: 14000, faculty: 'Business', campuses: ['Toronto'],
+    level: 'Certificate IV', duration: '1 - 12 Months', ielts: '5.5', country: 'Canada',
+    link: 'https://www.centennialcollege.ca/programs-courses/full-time/business/',
   },
-
-  {
-    "id": "DE01",
-    "title": "Business, Social Sciences Program",
-    "university": "Freie Universität Berlin",
-    "intake": "April, October",
-    "tuitionFee": "~500 Semester",
-    "faculty": "Business, Social Sciences",
-    "campuses": ["Berlin"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Germany"
-  },
-  {
-    "id": "DE02",
-    "title": "Science, Business Program",
-    "university": "University of Bonn",
-    "intake": "April, October",
-    "tuitionFee": "300–700",
-    "faculty": "Science, Business",
-    "campuses": ["Bonn"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Germany"
-  },
-  {
-    "id": "DE03",
-    "title": "Engineering Program",
-    "university": "RWTH Aachen University",
-    "intake": "April, October",
-    "tuitionFee": "300–700",
-    "faculty": "Engineering",
-    "campuses": ["Aachen"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Germany"
-  },
-  {
-    "id": "DE04",
-    "title": "Engineering, IT Program",
-    "university": "Technical University of Chemnitz",
-    "intake": "April, October",
-    "tuitionFee": "300–600",
-    "faculty": "Engineering, IT",
-    "campuses": ["Chemnitz"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Germany"
-  },
-  {
-    "id": "DE05",
-    "title": "Engineering, Management Program",
-    "university": "FAU Erlangen-Nürnberg",
-    "intake": "April, October",
-    "tuitionFee": "150–300",
-    "faculty": "Engineering, Management",
-    "campuses": ["Erlangen"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Germany"
-  },
-  {
-    "id": "UK01",
-    "title": "Business, Computing Program",
-    "university": "University of Sunderland",
-    "intake": "January, September",
-    "tuitionFee": "13000–16000",
-    "faculty": "Business, Computing",
-    "campuses": ["Sunderland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "United Kingdom"
-  },
-  {
-    "id": "UK02",
-    "title": "Business, Engineering Program",
-    "university": "University of Bolton",
-    "intake": "January, September",
-    "tuitionFee": "13000–16500",
-    "faculty": "Business, Engineering",
-    "campuses": ["Bolton"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "United Kingdom"
-  },
-  {
-    "id": "UK03",
-    "title": "Health, Business Program",
-    "university": "University of Cumbria",
-    "intake": "January, September",
-    "tuitionFee": "14000–17000",
-    "faculty": "Health, Business",
-    "campuses": ["Carlisle"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "United Kingdom"
-  },
-  {
-    "id": "UK04",
-    "title": "Business, Media Program",
-    "university": "Leeds Trinity University",
-    "intake": "January, September",
-    "tuitionFee": "13500–16500",
-    "faculty": "Business, Media",
-    "campuses": ["Leeds"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "United Kingdom"
-  },
-  {
-    "id": "UK05",
-    "title": "Business, Computing Program",
-    "university": "University of Suffolk",
-    "intake": "January, September",
-    "tuitionFee": "15000–18000",
-    "faculty": "Business, Computing",
-    "campuses": ["Ipswich"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "United Kingdom"
-  },
-  {
-    "id": "CA01",
-    "title": "Business, IT Program",
-    "university": "Cape Breton University",
-    "intake": "January, May, September",
-    "tuitionFee": "18000–22000",
-    "faculty": "Business, IT",
-    "campuses": ["Nova Scotia"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Canada"
-  },
-  {
-    "id": "CA02",
-    "title": "MBA, Commerce Program",
-    "university": "University Canada West",
-    "intake": "Multiple",
-    "tuitionFee": "20000–25000",
-    "faculty": "MBA, Commerce",
-    "campuses": ["British Columbia"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Canada"
-  },
-  {
-    "id": "CA03",
-    "title": "Engineering Program",
-    "university": "Memorial University of Newfoundland",
-    "intake": "January, September",
-    "tuitionFee": "12000–20000",
-    "faculty": "Engineering",
-    "campuses": ["Newfoundland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Canada"
-  },
-  {
-    "id": "CA04",
-    "title": "Business Program",
-    "university": "University of Prince Edward Island",
-    "intake": "January, September",
-    "tuitionFee": "15000–22000",
-    "faculty": "Business",
-    "campuses": ["PEI"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Canada"
-  },
-  {
-    "id": "CA05",
-    "title": "Engineering, Business Program",
-    "university": "University of Regina",
-    "intake": "January, September",
-    "tuitionFee": "18000–24000",
-    "faculty": "Engineering, Business",
-    "campuses": ["Saskatchewan"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.5",
-    "country": "Canada"
-  },
-  {
-    "id": "AU01",
-    "title": "IT, Business Program",
-    "university": "Federation University Australia",
-    "intake": "February, July",
-    "tuitionFee": "24000–30000",
-    "faculty": "IT, Business",
-    "campuses": ["Victoria"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Australia"
-  },
-  {
-    "id": "AU02",
-    "title": "Nursing, Business Program",
-    "university": "Central Queensland University",
-    "intake": "February, July, November",
-    "tuitionFee": "25000–32000",
-    "faculty": "Nursing, Business",
-    "campuses": ["Queensland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Australia"
-  },
-  {
-    "id": "AU03",
-    "title": "Hospitality, Business Program",
-    "university": "Southern Cross University",
-    "intake": "February, July",
-    "tuitionFee": "25000–31000",
-    "faculty": "Hospitality, Business",
-    "campuses": ["NSW"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Australia"
-  },
-  {
-    "id": "AU04",
-    "title": "Engineering, IT Program",
-    "university": "University of Southern Queensland",
-    "intake": "February, July",
-    "tuitionFee": "26000–32000",
-    "faculty": "Engineering, IT",
-    "campuses": ["Queensland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Australia"
-  },
-  {
-    "id": "AU05",
-    "title": "Computing, Business Program",
-    "university": "Edith Cowan University",
-    "intake": "February, July",
-    "tuitionFee": "28000–35000",
-    "faculty": "Computing, Business",
-    "campuses": ["Perth"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "Australia"
-  },
-  {
-    "id": "NZ01",
-    "title": "IT, Business Program",
-    "university": "Southern Institute of Technology",
-    "intake": "February, July",
-    "tuitionFee": "18000–24000",
-    "faculty": "IT, Business",
-    "campuses": ["Invercargill"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "New Zealand"
-  },
-  {
-    "id": "NZ02",
-    "title": "Engineering, IT Program",
-    "university": "Unitec Institute of Technology",
-    "intake": "February, July",
-    "tuitionFee": "22000–28000",
-    "faculty": "Engineering, IT",
-    "campuses": ["Auckland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "New Zealand"
-  },
-  {
-    "id": "NZ03",
-    "title": "Nursing, Hospitality Program",
-    "university": "Ara Institute of Canterbury",
-    "intake": "February, July",
-    "tuitionFee": "21000–28000",
-    "faculty": "Nursing, Hospitality",
-    "campuses": ["Christchurch"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "New Zealand"
-  },
-  {
-    "id": "NZ04",
-    "title": "Applied Management Program",
-    "university": "Otago Polytechnic",
-    "intake": "February, July",
-    "tuitionFee": "20000–27000",
-    "faculty": "Applied Management",
-    "campuses": ["Dunedin"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "New Zealand"
-  },
-  {
-    "id": "NZ05",
-    "title": "Engineering, Business Program",
-    "university": "Manukau Institute of Technology",
-    "intake": "February, July",
-    "tuitionFee": "22000–29000",
-    "faculty": "Engineering, Business",
-    "campuses": ["Auckland"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "6.0",
-    "country": "New Zealand"
-  },
-  {
-    "id": "RU01",
-    "title": "Medicine, Engineering Program",
-    "university": "Peoples' Friendship University of Russia",
-    "intake": "September",
-    "tuitionFee": "3500–6000",
-    "faculty": "Medicine, Engineering",
-    "campuses": ["Moscow"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "Not Mandatory",
-    "country": "Russia"
-  },
-  {
-    "id": "RU02",
-    "title": "Medicine, Business Program",
-    "university": "Kazan Federal University",
-    "intake": "September",
-    "tuitionFee": "3000–5500",
-    "faculty": "Medicine, Business",
-    "campuses": ["Kazan"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "Not Mandatory",
-    "country": "Russia"
-  },
-  {
-    "id": "RU03",
-    "title": "Medicine Program",
-    "university": "Belgodrot State University",
-    "intake": "September",
-    "tuitionFee": "3000–5500",
-    "faculty": "Medicine",
-    "campuses": ["Belgorod"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "Not Mandatory",
-    "country": "Russia"
-  },
-  {
-    "id": "RU04",
-    "title": "Engineering, IT Program",
-    "university": "South Ural State University",
-    "intake": "September",
-    "tuitionFee": "2500–4500",
-    "faculty": "Engineering, IT",
-    "campuses": ["Chelyabinsk"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "Not Mandatory",
-    "country": "Russia"
-  },
-  {
-    "id": "RU05",
-    "title": "Technology, Business Program",
-    "university": "Far Eastern Federal University",
-    "intake": "September",
-    "tuitionFee": "3500–5500",
-    "faculty": "Technology, Business",
-    "campuses": ["Vladivostok"],
-    "level": "Degree/Program",
-    "duration": "N/A",
-    "ielts": "Not Mandatory",
-    "country": "Russia"
-  },
+  // ── Germany extended ──
+  { id: 'DE01', title: 'Business, Social Sciences Program', university: 'Freie Universität Berlin', intake: 'April, October', tuitionFee: '~500 Semester', faculty: 'Business, Social Sciences', campuses: ['Berlin'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Germany', link: 'https://www.fu-berlin.de/en/studium/studienangebot/index.html' },
+  { id: 'DE02', title: 'Science, Business Program', university: 'University of Bonn', intake: 'April, October', tuitionFee: '300–700', faculty: 'Science, Business', campuses: ['Bonn'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Germany', link: 'https://www.uni-bonn.de/en/studying/study-programs' },
+  { id: 'DE03', title: 'Engineering Program', university: 'RWTH Aachen University', intake: 'April, October', tuitionFee: '300–700', faculty: 'Engineering', campuses: ['Aachen'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Germany', link: 'https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/' },
+  { id: 'DE04', title: 'Engineering, IT Program', university: 'Technical University of Chemnitz', intake: 'April, October', tuitionFee: '300–600', faculty: 'Engineering, IT', campuses: ['Chemnitz'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Germany', link: 'https://www.tu-chemnitz.de/studium/studienangebot.php' },
+  { id: 'DE05', title: 'Engineering, Management Program', university: 'FAU Erlangen-Nürnberg', intake: 'April, October', tuitionFee: '150–300', faculty: 'Engineering, Management', campuses: ['Erlangen'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Germany', link: 'https://www.fau.eu/education/academic-programmes/' },
+  // ── UK extended ──
+  { id: 'UK01', title: 'Business, Computing Program', university: 'University of Sunderland', intake: 'January, September', tuitionFee: '13000–16000', faculty: 'Business, Computing', campuses: ['Sunderland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'United Kingdom', link: 'https://www.sunderland.ac.uk/study/' },
+  { id: 'UK02', title: 'Business, Engineering Program', university: 'University of Bolton', intake: 'January, September', tuitionFee: '13000–16500', faculty: 'Business, Engineering', campuses: ['Bolton'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'United Kingdom', link: 'https://www.bolton.ac.uk/courses/' },
+  { id: 'UK03', title: 'Health, Business Program', university: 'University of Cumbria', intake: 'January, September', tuitionFee: '14000–17000', faculty: 'Health, Business', campuses: ['Carlisle'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'United Kingdom', link: 'https://www.cumbria.ac.uk/study/courses/' },
+  { id: 'UK04', title: 'Business, Media Program', university: 'Leeds Trinity University', intake: 'January, September', tuitionFee: '13500–16500', faculty: 'Business, Media', campuses: ['Leeds'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'United Kingdom', link: 'https://www.leedstrinity.ac.uk/courses/' },
+  { id: 'UK05', title: 'Business, Computing Program', university: 'University of Suffolk', intake: 'January, September', tuitionFee: '15000–18000', faculty: 'Business, Computing', campuses: ['Ipswich'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'United Kingdom', link: 'https://www.uos.ac.uk/courses' },
+  // ── Canada extended ──
+  { id: 'CA01', title: 'Business, IT Program', university: 'Cape Breton University', intake: 'January, May, September', tuitionFee: '18000–22000', faculty: 'Business, IT', campuses: ['Nova Scotia'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Canada', link: 'https://www.cbu.ca/academics/programs/' },
+  { id: 'CA02', title: 'MBA, Commerce Program', university: 'University Canada West', intake: 'Multiple', tuitionFee: '20000–25000', faculty: 'MBA, Commerce', campuses: ['British Columbia'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Canada', link: 'https://www.ucanwest.ca/programs/' },
+  { id: 'CA03', title: 'Engineering Program', university: 'Memorial University of Newfoundland', intake: 'January, September', tuitionFee: '12000–20000', faculty: 'Engineering', campuses: ['Newfoundland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Canada', link: 'https://www.mun.ca/engineering/' },
+  { id: 'CA04', title: 'Business Program', university: 'University of Prince Edward Island', intake: 'January, September', tuitionFee: '15000–22000', faculty: 'Business', campuses: ['PEI'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Canada', link: 'https://www.upei.ca/programs' },
+  { id: 'CA05', title: 'Engineering, Business Program', university: 'University of Regina', intake: 'January, September', tuitionFee: '18000–24000', faculty: 'Engineering, Business', campuses: ['Saskatchewan'], level: 'Degree/Program', duration: 'N/A', ielts: '6.5', country: 'Canada', link: 'https://www.uregina.ca/academics/programs/' },
+  // ── Australia extended ──
+  { id: 'AU01', title: 'IT, Business Program', university: 'Federation University Australia', intake: 'February, July', tuitionFee: '24000–30000', faculty: 'IT, Business', campuses: ['Victoria'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Australia', link: 'https://federation.edu.au/courses' },
+  { id: 'AU02', title: 'Nursing, Business Program', university: 'Central Queensland University', intake: 'February, July, November', tuitionFee: '25000–32000', faculty: 'Nursing, Business', campuses: ['Queensland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Australia', link: 'https://www.cqu.edu.au/courses' },
+  { id: 'AU03', title: 'Hospitality, Business Program', university: 'Southern Cross University', intake: 'February, July', tuitionFee: '25000–31000', faculty: 'Hospitality, Business', campuses: ['NSW'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Australia', link: 'https://www.scu.edu.au/study-at-scu/courses/' },
+  { id: 'AU04', title: 'Engineering, IT Program', university: 'University of Southern Queensland', intake: 'February, July', tuitionFee: '26000–32000', faculty: 'Engineering, IT', campuses: ['Queensland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Australia', link: 'https://www.unisq.edu.au/study/courses' },
+  { id: 'AU05', title: 'Computing, Business Program', university: 'Edith Cowan University', intake: 'February, July', tuitionFee: '28000–35000', faculty: 'Computing, Business', campuses: ['Perth'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'Australia', link: 'https://www.ecu.edu.au/degrees' },
+  // ── New Zealand extended ──
+  { id: 'NZ01', title: 'IT, Business Program', university: 'Southern Institute of Technology', intake: 'February, July', tuitionFee: '18000–24000', faculty: 'IT, Business', campuses: ['Invercargill'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'New Zealand', link: 'https://www.sit.ac.nz/Courses' },
+  { id: 'NZ02', title: 'Engineering, IT Program', university: 'Unitec Institute of Technology', intake: 'February, July', tuitionFee: '22000–28000', faculty: 'Engineering, IT', campuses: ['Auckland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'New Zealand', link: 'https://www.unitec.ac.nz/courses' },
+  { id: 'NZ03', title: 'Nursing, Hospitality Program', university: 'Ara Institute of Canterbury', intake: 'February, July', tuitionFee: '21000–28000', faculty: 'Nursing, Hospitality', campuses: ['Christchurch'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'New Zealand', link: 'https://www.ara.ac.nz/study/' },
+  { id: 'NZ04', title: 'Applied Management Program', university: 'Otago Polytechnic', intake: 'February, July', tuitionFee: '20000–27000', faculty: 'Applied Management', campuses: ['Dunedin'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'New Zealand', link: 'https://www.op.ac.nz/study/' },
+  { id: 'NZ05', title: 'Engineering, Business Program', university: 'Manukau Institute of Technology', intake: 'February, July', tuitionFee: '22000–29000', faculty: 'Engineering, Business', campuses: ['Auckland'], level: 'Degree/Program', duration: 'N/A', ielts: '6.0', country: 'New Zealand', link: 'https://www.manukau.ac.nz/study/' },
+  // ── Russia extended ──
+  { id: 'RU01', title: 'Medicine, Engineering Program', university: "Peoples' Friendship University of Russia", intake: 'September', tuitionFee: '3500–6000', faculty: 'Medicine, Engineering', campuses: ['Moscow'], level: 'Degree/Program', duration: 'N/A', ielts: 'Not Mandatory', country: 'Russia', link: 'https://www.rudn.ru/en/education' },
+  { id: 'RU02', title: 'Medicine, Business Program', university: 'Kazan Federal University', intake: 'September', tuitionFee: '3000–5500', faculty: 'Medicine, Business', campuses: ['Kazan'], level: 'Degree/Program', duration: 'N/A', ielts: 'Not Mandatory', country: 'Russia', link: 'https://kpfu.ru/eng' },
+  { id: 'RU03', title: 'Medicine Program', university: 'Belgodrot State University', intake: 'September', tuitionFee: '3000–5500', faculty: 'Medicine', campuses: ['Belgorod'], level: 'Degree/Program', duration: 'N/A', ielts: 'Not Mandatory', country: 'Russia', link: 'https://www.bsu.edu.ru/bsu/' },
+  { id: 'RU04', title: 'Engineering, IT Program', university: 'South Ural State University', intake: 'September', tuitionFee: '2500–4500', faculty: 'Engineering, IT', campuses: ['Chelyabinsk'], level: 'Degree/Program', duration: 'N/A', ielts: 'Not Mandatory', country: 'Russia', link: 'https://www.susu.ru/en' },
+  { id: 'RU05', title: 'Technology, Business Program', university: 'Far Eastern Federal University', intake: 'September', tuitionFee: '3500–5500', faculty: 'Technology, Business', campuses: ['Vladivostok'], level: 'Degree/Program', duration: 'N/A', ielts: 'Not Mandatory', country: 'Russia', link: 'https://www.dvfu.ru/en/' },
 ];
 
-// Currency map by country
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
 const CURRENCY_MAP = {
-  'Australia':      'A$',
-  'Canada':         'CA$',
-  'United Kingdom': '£',
-  'Germany':        '€',
-  'New Zealand':    'NZ$',
-  'Russia':         '₽',
+  Australia: 'A$', Canada: 'CA$', 'United Kingdom': '£',
+  Germany: '€', 'New Zealand': 'NZ$', Russia: '₽',
 };
-
 const getCurrencySymbol = (country) => CURRENCY_MAP[country] || '$';
 
 const FEE_RANGES = [
-  { label: 'All',              value: 'all' },
-  { label: 'Under 20,000',     value: '0-20000' },
-  { label: '20,001 - 30,000',  value: '20001-30000' },
-  { label: '30,001 - 40,000',  value: '30001-40000' },
-  { label: '40,001 - 50,000',  value: '40001-50000' },
-  { label: 'Above 50,000',     value: '50001+' },
+  { label: 'All', value: 'all' },
+  { label: 'Under 20,000', value: '0-20000' },
+  { label: '20,001 – 30,000', value: '20001-30000' },
+  { label: '30,001 – 40,000', value: '30001-40000' },
+  { label: '40,001 – 50,000', value: '40001-50000' },
+  { label: 'Above 50,000', value: '50001+' },
 ];
 
 const feeInRange = (fee, range) => {
   let numFee;
-
   if (typeof fee === 'number') {
     numFee = fee;
   } else if (typeof fee === 'string') {
-    // Extract all numbers from string like "20000–30000" or "18000–24000"
     const nums = fee.match(/\d+/g);
     if (!nums) return false;
-    if (nums.length >= 2) {
-      // Take average of range e.g. (20000 + 30000) / 2 = 25000
-      numFee = (parseInt(nums[0], 10) + parseInt(nums[1], 10)) / 2;
-    } else {
-      numFee = parseInt(nums[0], 10);
-    }
-  } else {
-    return false;
-  }
+    numFee = nums.length >= 2
+      ? (parseInt(nums[0], 10) + parseInt(nums[1], 10)) / 2
+      : parseInt(nums[0], 10);
+  } else return false;
 
   if (range === '0-20000')     return numFee >= 0     && numFee <= 20000;
   if (range === '20001-30000') return numFee >= 20001 && numFee <= 30000;
@@ -1604,154 +1250,131 @@ const feeInRange = (fee, range) => {
   return false;
 };
 
+const CATEGORIES = [
+  'Business','Allied Health','IT','Engineering','Health','Hospitality',
+  'Medical','Arts','Finance','Education','Marketing','Accounting',
+  'Construction','Automotive','Data Science','Science','Environment',
+];
+
+// ─────────────────────────────────────────────
+// COMPONENT
+// ─────────────────────────────────────────────
 const CoursePortal = () => {
-  const WHATSAPP_NUMBER = "7982295530";
+  const WHATSAPP_NUMBER = '7982295530';
 
-  // --- STATE ---
-  const [searchInput, setSearchInput]         = useState('');
-  const [searchLevel, setSearchLevel]         = useState('');
+  const [searchInput,     setSearchInput]     = useState('');
+  const [searchLevel,     setSearchLevel]     = useState('');
   const [selectedCountry, setSelectedCountry] = useState('Australia');
-  const [openFilter, setOpenFilter]           = useState(null);
+  const [openFilter,      setOpenFilter]      = useState(null);
 
-  const [searchQuery, setSearchQuery]               = useState('');
-  const [activeSearchLevel, setActiveSearchLevel]   = useState('');
-  const [activeCountry, setActiveCountry]           = useState('Australia');
+  const [searchQuery,       setSearchQuery]       = useState('');
+  const [activeSearchLevel, setActiveSearchLevel] = useState('');
+  const [activeCountry,     setActiveCountry]     = useState('Australia');
 
-  const [selectedFaculty, setSelectedFaculty]     = useState('Allied Health');
-  const [selectedLevels, setSelectedLevels]       = useState([]);
+  const [selectedFaculty,   setSelectedFaculty]   = useState('');
+  const [selectedLevels,    setSelectedLevels]     = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
-  const [selectedIntakes, setSelectedIntakes]     = useState([]);
-  const [selectedFees, setSelectedFees]           = useState([]);
+  const [selectedIntakes,   setSelectedIntakes]   = useState([]);
+  const [selectedFees,      setSelectedFees]      = useState([]);
 
   const sliderRef = useRef(null);
 
-  // --- HANDLERS ---
+  // ── handlers ──
   const toggleFilter = (name) => setOpenFilter(openFilter === name ? null : name);
 
-  const scrollSlider = (direction) => {
-    if (sliderRef.current) {
-      const firstChild = sliderRef.current.firstElementChild;
-      const scrollAmount = firstChild ? firstChild.offsetWidth * 2 : 200;
-      sliderRef.current.scrollLeft += direction === 'left' ? -scrollAmount : scrollAmount;
-    }
+  const scrollSlider = (dir) => {
+    if (!sliderRef.current) return;
+    const w = sliderRef.current.firstElementChild?.offsetWidth ?? 160;
+    sliderRef.current.scrollLeft += dir === 'left' ? -w * 2 : w * 2;
   };
 
-  const handleLevelChange    = (v) => setSelectedLevels(prev    => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
-  const handleDurationChange = (v) => setSelectedDurations(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
-  const handleIntakeChange   = (v) => setSelectedIntakes(prev   => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
-  const handleFeeChange      = (v) => setSelectedFees(prev      => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
+  const toggle = (setter) => (v) =>
+    setter((prev) => prev.includes(v) ? prev.filter((x) => x !== v) : [...prev, v]);
+
+  const handleLevelChange    = toggle(setSelectedLevels);
+  const handleDurationChange = toggle(setSelectedDurations);
+  const handleIntakeChange   = toggle(setSelectedIntakes);
+  const handleFeeChange      = toggle(setSelectedFees);
 
   const handleSearchSubmit = () => {
     setSearchQuery(searchInput);
-    setActiveSearchLevel(searchLevel);       // '' means All Levels
-    setActiveCountry(selectedCountry);       // '' means All Countries
+    setActiveSearchLevel(searchLevel);
+    setActiveCountry(selectedCountry);
   };
 
   const handleResetFilters = () => {
-    setSearchInput('');
-    setSearchLevel('');
-    setSelectedCountry('');
-    setSearchQuery('');
-    setActiveSearchLevel('');
-    setActiveCountry('');
-    setSelectedFaculty('');
-    setSelectedLevels([]);
-    setSelectedDurations([]);
-    setSelectedIntakes([]);
-    setSelectedFees([]);
+    setSearchInput(''); setSearchLevel(''); setSelectedCountry('');
+    setSearchQuery(''); setActiveSearchLevel(''); setActiveCountry('');
+    setSelectedFaculty(''); setSelectedLevels([]); setSelectedDurations([]);
+    setSelectedIntakes([]); setSelectedFees([]);
   };
 
-  // --- FILTERED COURSES ---
-  const filteredCourses = useMemo(() => {
-    return initialCourses.filter(course => {
-      const matchesSearch       = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                  course.id.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesFaculty      = selectedFaculty ? course.faculty === selectedFaculty : true;
-      const matchesSidebarLevel = selectedLevels.length > 0
-        ? selectedLevels.includes('All') || selectedLevels.includes(course.level)
-        : true;
-      const matchesHeaderLevel  = activeSearchLevel ? course.level === activeSearchLevel : true;
-      const matchesCountry      = activeCountry ? course.country.toLowerCase() === activeCountry.toLowerCase() : true;
-      const matchesDuration     = selectedDurations.length > 0 ? selectedDurations.includes(course.duration) : true;
-      const matchesIntake       = selectedIntakes.length > 0 ? selectedIntakes.includes(course.intake) : true;
+  // ── filtered ──
+  const filteredCourses = useMemo(() => initialCourses.filter((c) => {
+    const q = searchQuery.toLowerCase();
+    const matchSearch   = c.title.toLowerCase().includes(q) || c.id.toLowerCase().includes(q);
+    const matchFaculty  = selectedFaculty ? c.faculty === selectedFaculty : true;
+    const matchSidebarLevel = selectedLevels.length
+      ? selectedLevels.includes('All') || selectedLevels.includes(c.level) : true;
+    const matchHeaderLevel  = activeSearchLevel ? c.level === activeSearchLevel : true;
+    const matchCountry      = activeCountry ? c.country.toLowerCase() === activeCountry.toLowerCase() : true;
+    const matchDuration     = selectedDurations.length ? selectedDurations.includes(c.duration) : true;
+    const matchIntake       = selectedIntakes.length  ? selectedIntakes.includes(c.intake)   : true;
+    const matchFee          = selectedFees.length
+      ? selectedFees.includes('all') || selectedFees.some((r) => feeInRange(c.tuitionFee, r)) : true;
+    return matchSearch && matchFaculty && matchSidebarLevel && matchHeaderLevel &&
+           matchCountry && matchDuration && matchIntake && matchFee;
+  }), [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel,
+       activeCountry, selectedDurations, selectedIntakes, selectedFees]);
 
-      const matchesFee = selectedFees.length > 0
-        ? selectedFees.includes('all') || selectedFees.some(range => feeInRange(course.tuitionFee, range))
-        : true;
-
-      return matchesSearch && matchesFaculty && matchesSidebarLevel &&
-             matchesHeaderLevel && matchesCountry && matchesDuration &&
-             matchesIntake && matchesFee;
-    });
-  }, [searchQuery, selectedFaculty, selectedLevels, activeSearchLevel,
-      activeCountry, selectedDurations, selectedIntakes, selectedFees]);
-
-  const handleWhatsAppContact = (courseTitle, courseId) => {
-    const message = encodeURIComponent(`Hi! I am interested in learning more about the course: ${courseTitle} (${courseId}).`);
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+  const handleWhatsApp = (title, id) => {
+    const msg = encodeURIComponent(`Hi! I am interested in learning more about: ${title} (${id}).`);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
   };
 
+  // ── render ──
   return (
     <>
-     
-      <Navbar />
+    <Navbar />
+      {/* <Navbar /> */}
       <div className="portal-container">
-        {/* Hero Section */}
+
+        {/* ── HERO ── */}
         <header className="Hero-section">
           <h1>4,000+ Best Courses Available Here!</h1>
+
           <div className="search-bar-container">
-            <select
-              className="search-select"
-              value={searchLevel}
-              onChange={(e) => setSearchLevel(e.target.value)}
-            >
+            <select className="search-select" value={searchLevel}
+              onChange={(e) => setSearchLevel(e.target.value)}>
               <option value="">All Levels</option>
-              <option value="Bachelor">Bachelor</option>
-              <option value="Diploma">Diploma</option>
-              <option value="Master (coursework)">Master (coursework)</option>
-              <option value="Associate Degree">Associate Degree</option>
-              <option value="Certificate IV">Certificate IV</option>
+              {['Bachelor','Diploma','Master (coursework)','Associate Degree','Certificate IV'].map(l =>
+                <option key={l} value={l}>{l}</option>)}
             </select>
 
-            <select
-              className="search-select"
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-            >
+            <select className="search-select" value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}>
               <option value="">All Countries</option>
-              <option value="Australia">Australia</option>
-              <option value="Germany">Germany</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="Canada">Canada</option>
-              <option value="Russia">Russia</option>
-              <option value="New Zealand">New Zealand</option>
+              {['Australia','Germany','United Kingdom','Canada','Russia','New Zealand'].map(c =>
+                <option key={c} value={c}>{c}</option>)}
             </select>
 
-            <input
-              type="text"
-              placeholder="Search Courses....."
-              className="search-input"
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-            />
+            <input type="text" placeholder="Search Courses…" className="search-input"
+              value={searchInput} onChange={(e) => setSearchInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearchSubmit()} />
+
             <button className="search-btn" onClick={handleSearchSubmit}>Search Here</button>
           </div>
 
-          {/* Category Slider */}
+          {/* category slider */}
           <div className="category-slider-wrapper">
             <button className="slider-arrow left" onClick={() => scrollSlider('left')}>‹</button>
             <div className="category-slider" ref={sliderRef}>
-              {['Business', 'Allied Health', 'Global Studies And', 'Law And Criminology',
-                'Public Health and', 'Psychology', 'Science and Enviroment', 'Low and Criminology',
-                'Sports and Excercise', 'Teaching', 'youth work and ', 'Nursing, Midwifery And'
-              ].map((fac) => (
-                <label key={fac} className={`cat-chip ${selectedFaculty === fac ? 'active-chip' : ''}`}>
-                  <input
-                    type="checkbox"
-                    style={{ display: 'none' }}
+              {CATEGORIES.map((fac) => (
+                <label key={fac}
+                  className={`cat-chip ${selectedFaculty === fac ? 'active-chip' : ''}`}>
+                  <input type="checkbox" style={{ display: 'none' }}
                     checked={selectedFaculty === fac}
-                    onChange={() => setSelectedFaculty(selectedFaculty === fac ? '' : fac)}
-                  />
+                    onChange={() => setSelectedFaculty(selectedFaculty === fac ? '' : fac)} />
                   {fac}
                 </label>
               ))}
@@ -1760,40 +1383,41 @@ const CoursePortal = () => {
           </div>
         </header>
 
-        {/* Main Layout */}
+        {/* ── MAIN ── */}
         <div className="main-layout">
-          {/* Sidebar */}
+
+          {/* SIDEBAR */}
           <aside className="sidebar">
             <button className="reset-btn" onClick={handleResetFilters}>⟲ Reset Filters</button>
 
             {/* Course Level */}
             <div className={`filter-group ${openFilter === 'level' ? 'active' : ''}`}>
-              <h3 onClick={() => toggleFilter('level')}>Course level</h3>
+              <h3 onClick={() => toggleFilter('level')}>
+                Course Level
+              </h3>
               <div className="filter-content">
-                {['All', 'Bachelor', 'Diploma', 'Master (coursework)', 'Associate Degree', 'Certificate IV'].map(lvl => (
+                {['All','Bachelor','Diploma','Master (coursework)','Associate Degree','Certificate IV'].map(lvl => (
                   <label key={lvl}>
-                    <input
-                      type="checkbox"
-                      checked={lvl === 'All' ? selectedLevels.includes('All') : selectedLevels.includes(lvl)}
-                      onChange={() => handleLevelChange(lvl)}
-                    />
+                    <input type="checkbox"
+                      checked={selectedLevels.includes(lvl)}
+                      onChange={() => handleLevelChange(lvl)} />
                     {lvl}
                   </label>
                 ))}
               </div>
             </div>
 
-            {/* Tuition Fee Filter */}
+            {/* Tuition Fee */}
             <div className={`filter-group ${openFilter === 'fee' ? 'active' : ''}`}>
-              <h3 onClick={() => toggleFilter('fee')}>Tuition Fee</h3>
+              <h3 onClick={() => toggleFilter('fee')}>
+                Tuition Fee 
+              </h3>
               <div className="filter-content">
                 {FEE_RANGES.map(({ label, value }) => (
                   <label key={value}>
-                    <input
-                      type="checkbox"
+                    <input type="checkbox"
                       checked={selectedFees.includes(value)}
-                      onChange={() => handleFeeChange(value)}
-                    />
+                      onChange={() => handleFeeChange(value)} />
                     {label}
                   </label>
                 ))}
@@ -1801,65 +1425,75 @@ const CoursePortal = () => {
             </div>
           </aside>
 
-          {/* Course Listings */}
+          {/* RESULTS */}
           <main className="results-container">
             <div className="results-header">
-              <span>Total No. of Record {filteredCourses.length}</span>
-              <span>Page No. 1</span>
+              <span>Total Records: <strong>{filteredCourses.length}</strong></span>
+              <span>Page 1</span>
             </div>
 
             <div className="course-list">
               {filteredCourses.length === 0 ? (
-                <div className="no-records">No courses match your selected filter options.</div>
-              ) : (
-                filteredCourses.map((course) => (
-                  <div key={course.id} className="course-card">
-                    <div className="country-ribbon">{course.country}</div>
+                <div className="no-records">No courses match your selected filters.</div>
+              ) : filteredCourses.map((course) => (
+                <div key={course.id} className="course-card">
+                  <div className="country-ribbon">{course.country}</div>
 
-                    <div className="card-body">
-                      <div className="card-main-info">
-                        <h2 className="course-title">{course.title} - {course.id}</h2>
-                        <p className="univ-name">🏛️ <strong>University :</strong> {course.university}</p>
+                  <div className="card-body">
+                    <div className="card-main-info">
+                      <h2 className="course-title">{course.title} — {course.id}</h2>
+                      <p className="univ-name">🏛️ <strong>University:</strong> {course.university}</p>
 
-                        <div className="meta-row">
-                          <span>📅 <strong>Intake :</strong> {course.intake}</span>
-                          {/* ✅ Country-specific currency symbol */}
-                          <span>💵 <strong>Tuition Fee :</strong> {getCurrencySymbol(course.country)}{typeof course.tuitionFee === 'number' ? course.tuitionFee.toLocaleString() : course.tuitionFee}</span>
-                        </div>
-
-                        <p className="faculty-info">👤 <strong>Faculty :</strong> {course.faculty}</p>
-
-                        <div className="badge-row">
-                          <span className="badge-pill">📍 Campus : {course.campuses.join(', ')}</span>
-                          <span className="badge-pill">🎓 Course level : {course.level}</span>
-                          <span className="badge-pill">⏱️ Duration : {course.duration}</span>
-                        </div>
+                      <div className="meta-row">
+                        <span>📅 <strong>Intake:</strong> {course.intake}</span>
+                        <span>💵 <strong>Tuition Fee:</strong>&nbsp;
+                          {getCurrencySymbol(course.country)}
+                          {typeof course.tuitionFee === 'number'
+                            ? course.tuitionFee.toLocaleString()
+                            : course.tuitionFee}
+                        </span>
                       </div>
 
-                      <div className="card-right-info">
-                        <span className="ielts-tag">📋 IELTS Band : {course.ielts}</span>
+                      <p className="faculty-info">👤 <strong>Faculty:</strong> {course.faculty}</p>
+
+                      <div className="badge-row">
+                        <span className="badge-pill">📍 Campus: {course.campuses.join(', ')}</span>
+                        <span className="badge-pill">🎓 Level: {course.level}</span>
+                        <span className="badge-pill">⏱️ Duration: {course.duration}</span>
                       </div>
                     </div>
 
-                    <div className="card-footer">
-                      <span className="website-status">🌐 Website : Not Available</span>
-                      <div className="footer-actions">
-                        <button
-                          className="whatsapp-btn"
-                          onClick={() => handleWhatsAppContact(course.title, course.id)}
-                        >
-                          💬 Contact WhatsApp
-                        </button>
-                      </div>
+                    <div className="card-right-info">
+                      <span className="ielts-tag">📋 IELTS Band: {course.ielts}</span>
                     </div>
                   </div>
-                ))
-              )}
+
+                  {/* ── FOOTER with working course link ── */}
+                  <div className="card-footer">
+                    <div className="footer-left">
+                      {course.link ? (
+                        <a className="course-link-btn" href={course.link}
+                          target="_blank" rel="noopener noreferrer">
+                          🌐 View Course
+                        </a>
+                      ) : (
+                        <span className="website-status">🌐 Website: Not Available</span>
+                      )}
+                    </div>
+                    <div className="footer-actions">
+                      <button className="whatsapp-btn"
+                        onClick={() => handleWhatsApp(course.title, course.id)}>
+                        💬 Contact WhatsApp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </main>
         </div>
       </div>
-      <Footer />
+      <Footer /> 
     </>
   );
 };

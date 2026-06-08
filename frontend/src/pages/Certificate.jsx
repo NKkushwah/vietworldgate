@@ -14,7 +14,7 @@ const Certificate = () => {
         {/* HERO SECTION */}
         <header className="cert-hero">
           <div className="cert-hero__content">
-            <h1 className="cert-hero__title">certificate & achievement</h1>
+            <h1 className="cert-hero__title">Certificate & Achievement</h1>
           </div>
         </header>
 

@@ -342,6 +342,19 @@ body {
   align-items: flex-start;
   background-color: #fafbfc;
 }
+.footer-left{
+  background-color: #e2e8f0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+.footer-left:hover {
+  background-color: #cbd5e1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
 .website-status { font-size: 0.8rem; color: #718096; }
 .footer-actions { width: 100%; }

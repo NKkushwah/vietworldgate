@@ -61,13 +61,13 @@ export default function CompanyProfile() {
     {
       name: "Why Choose Us",
       icon: <FaThumbsUp />,
-      link: "/about/why-choose-us",
+      link: "/Whychooseus",
     },
 
     {
       name: "Our Achievements",
       icon: <FaTrophy />,
-      link: "/about/achievements",
+      link: "/Certificate",
     },
 
     {
@@ -148,13 +148,9 @@ export default function CompanyProfile() {
 
           <div className="hero-content">
 
-            <h1>
-              Company Profile
-            </h1>
+            
 
-            <p className="breadcrumbs">
-              Home &gt; Company Profile
-            </p>
+            
 
           </div>
 
@@ -487,26 +483,29 @@ export default function CompanyProfile() {
               </section>
 
               {/* CONTACT CARD */}
-              <div className="get-in-touch-card">
+             <div className="get-in-touch-card">
 
-                <h4>
-                  Get in Touch
-                </h4>
+  <h4>Get in Touch</h4>
 
-                <p>
-                  Have questions or need more
-                  information? We are here to help!
-                </p>
+  <p>
+    Have questions or need more
+    information? We are here to help!
+  </p>
 
-                <button className="contact-btn">
-                  Contact us →
-                </button>
+  <a
+    href="https://wa.me/917982295530"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="contact-btn"
+  >
+    Contact us →
+  </a>
 
-                <div className="headphone-bg-icon">
-                  <FaHeadphones />
-                </div>
+  <div className="headphone-bg-icon">
+    <FaHeadphones />
+  </div>
 
-              </div>
+</div>
 
             </div>
 
