@@ -1,10 +1,9 @@
 import React from 'react';
-import './CanadaDestination.css'; // Make sure to sync your CSS file with these class names
+import './CanadaDestination.css'; 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function CanadaDestination() {
-  // WhatsApp Link with a custom pre-filled message for Canada Destination
   const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20in%20Canada.%20Please%20help%20me%20with%20course%20options,%20universities,%20colleges,%20and%20the%20study%20permit%20process.";
 
   return (
@@ -12,7 +11,6 @@ export default function CanadaDestination() {
       <Navbar />
       <div className="destination-page-container">
         
-        {/* Top Banner Section with Background Image */}
         <header className="destination-hero-header">
           <div className="hero-overlay-flex">
             <div className="hero-text-content">
