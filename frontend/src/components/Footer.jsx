@@ -158,7 +158,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/upcomingevents">
                   Events
                 </Link>
               </li>

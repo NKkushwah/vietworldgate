@@ -31,7 +31,6 @@ import WhyChooseUs from "../pages/Whychooseus";
 import Infrastructure from "../pages/Infrastructure";
 
 
-
 function AppRoutes() {
   return (
    
@@ -67,6 +66,7 @@ function AppRoutes() {
         <Route path="/feedback" element={<Feedback/>} />
         <Route path="/universitypartner" element={<UniversityPartners/>} />
         <Route path="/Certificate" element={<Certificate/>} />
+        
       
 
       </Routes>
