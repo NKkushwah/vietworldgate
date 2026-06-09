@@ -24,17 +24,10 @@ export default function ItalyDestination() {
         {/* SECTION 1: Hero Banner */}
         <header className="ita-hero-banner">
           <div className="ita-hero-inner">
-            <div className="ita-hero-left">
-              <h1 className="ita-hero-title">Italy</h1>
-              <nav className="ita-breadcrumb">
-                <span className="ita-home-glyph">🏠</span>
-                <span className="ita-split-arrow">→</span> Destinations
-                <span className="ita-split-arrow">→</span> Italy
-              </nav>
-            </div>
+           
             <div className="ita-hero-right">
               <div className="ita-flag-wrap">
-                <span className="ita-flag-emoji">🇮🇹</span>
+                <span className="ita-flag-emoji"></span>
               </div>
             </div>
           </div>

@@ -140,13 +140,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <Link to="/">
+                <Link to="/OurServices">
                   Service to Students
                 </Link>
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/universitypartner">
                   Service to institutions
                 </Link>
               </li>
@@ -170,7 +170,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link to="/">
+                <Link to="/Careers">
                   Careers
                 </Link>
               </li>

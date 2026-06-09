@@ -26,17 +26,10 @@ export default function NZDestination() {
       {/* SECTION 1: Banner Header Component with NZ Flag Layer */}
       <header className="dynamic-hero-banner">
         <div className="hero-grid-max">
-          <div className="hero-left-content">
-            <h1 className="hero-main-title">New Zealand</h1>
-            <nav className="navigation-breadcrumbs">
-              <span className="home-glyph">🏠</span> 
-              <span className="split-arrow">→</span> Destinations 
-              <span className="split-arrow">→</span> New Zealand
-            </nav>
-          </div>
+          
           <div className="hero-right-graphic">
             <div className="avatar-mask-container">
-              <span className="country-large-emoji">🇳🇿</span>
+             
             </div>
           </div>
         </div>

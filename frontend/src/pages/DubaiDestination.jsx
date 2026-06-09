@@ -26,14 +26,7 @@ export default function DubaiDestination() {
         {/* HERO BANNER */}
         <header className="dxb-hero-banner">
           <div className="dxb-hero-inner">
-            <div className="dxb-hero-left">
-              <h1 className="dxb-hero-title">Dubai</h1>
-              <nav className="dxb-breadcrumb">
-                <span>🏠</span>
-                <span className="dxb-arrow">→</span> Destinations
-                <span className="dxb-arrow">→</span> Dubai
-              </nav>
-            </div>
+            
             <div className="dxb-hero-right">
               <span className="dxb-flag-emoji"></span>
             </div>

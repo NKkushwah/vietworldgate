@@ -360,7 +360,7 @@
 
 .jpn-primary-btn {
   display: inline-block;
-  background-color: var(--corporate-purple);
+  background-color:rgb(12, 102, 12);
   color: var(--white);
   padding: 15px 36px;
   font-weight: 700;
@@ -371,7 +371,7 @@
 }
 
 .jpn-primary-btn:hover {
-  background-color: var(--deep-purple-hover);
+  background-color:rgb(5, 20, 5);
   transform: translateY(-1px);
 }
 

@@ -14,25 +14,17 @@ export default function CanadaDestination() {
         <header className="destination-hero-header">
           <div className="hero-overlay-flex">
             <div className="hero-text-content">
-              <h1>Canada</h1>
+            
               <nav className="breadcrumb-nav">
-                <span className="breadcrumb-home-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                  </svg>
-                </span> 
+               
                 <span className="breadcrumb-arrow">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                  </svg>
+                 
                 </span> 
-                Destinations 
+             
                 <span className="breadcrumb-arrow">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                  </svg>
+                  
                 </span> 
-                Canada
+                
               </nav>
             </div>
             

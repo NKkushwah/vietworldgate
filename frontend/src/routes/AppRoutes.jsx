@@ -29,13 +29,14 @@ import UniversityPartners from "../pages/Universitypartner";
 import Certificate from "../pages/Certificate";
 import WhyChooseUs from "../pages/Whychooseus";
 import Infrastructure from "../pages/Infrastructure";
-
+import OurServices from "../pages/Ourservices";
 
 function AppRoutes() {
   return (
    
 
       <Routes>
+          <Route path = "/OurServices" element={<OurServices />} />
         <Route path = "/Infrastructure" element={<Infrastructure />} />
          <Route path = "/WhyChooseUs" element={<WhyChooseUs />} />
          <Route path = "/CoursePortal" element={<CoursePortal />} />
