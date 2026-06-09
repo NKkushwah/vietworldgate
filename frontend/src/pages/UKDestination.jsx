@@ -27,12 +27,8 @@ export default function UKDestination() {
       <header className="dynamic-hero-banners">
         <div className="hero-grid-max">
           <div className="hero-left-content">
-            <h1 className="hero-main-title">United Kingdom</h1>
-            <nav className="navigation-breadcrumbs">
-              <span className="home-glyph">🏠</span> 
-              <span className="split-arrow">→</span> Destinations 
-              <span className="split-arrow">→</span> United Kingdom
-            </nav>
+          
+           
           </div>
           <div className="hero-right-graphic">
             <div className="avatar-mask-container">

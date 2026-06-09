@@ -79,7 +79,7 @@ export default function CompanyProfile() {
     {
       name: "Our Infrastructure",
       icon: <FaBuilding />,
-      link: "/about/infrastructure",
+      link: "/Infrastructure",
     },
 
     {
@@ -159,6 +159,7 @@ export default function CompanyProfile() {
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
               alt="Institute"
+              loading="lazy"
               className="hero-building-img"
             />
 

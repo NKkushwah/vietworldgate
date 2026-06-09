@@ -28,15 +28,11 @@ export default function JapanDestination() {
         <header className="jpn-hero-banner">
           <div className="jpn-hero-inner">
             <div className="jpn-hero-left">
-              <h1 className="jpn-hero-title">Japan</h1>
-              <nav className="jpn-breadcrumb">
-                <span>🏠</span> 
-                <span className="jpn-arrow">→</span> Destinations 
-                <span className="jpn-arrow">→</span> Japan
-              </nav>
+              <h1 className="jpn-hero-title"></h1>
+             
             </div>
             <div className="jpn-hero-right">
-              <span className="jpn-flag-emoji">🇯🇵</span>
+              <span className="jpn-flag-emoji"></span>
             </div>
           </div>
         </header>
@@ -164,13 +160,7 @@ export default function JapanDestination() {
           </svg>
         </a>
 
-        {/* SCROLL TO TOP */}
-        {showScrollTop && (
-          <button className="jpn-scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
-            ↑
-          </button>
-        )}
-
+      
       </div>
       <Footer />
     </>

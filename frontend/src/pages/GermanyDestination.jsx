@@ -15,11 +15,11 @@ export default function GermanyDestination() {
         <header className="deu-hero-banner">
           <div className="deu-hero-inner">
             <div className="deu-hero-left">
-              <h1 className="deu-hero-title">Germany</h1>
+              <h1 className="deu-hero-title"></h1>
               <nav className="deu-breadcrumb">
-                <span>🏠</span>
-                <span className="deu-arrow">→</span> Destinations
-                <span className="deu-arrow">→</span> Germany
+                <span></span>
+                <span className="deu-arrow"></span>
+                <span className="deu-arrow"></span> 
               </nav>
             </div>
             <div className="deu-hero-right">
@@ -151,14 +151,7 @@ export default function GermanyDestination() {
           </main>
         </div>
 
-        {/* FLOATING WHATSAPP */}
-        <div className="deu-floating-wrap">
-          <a href={whatsappLink} className="deu-wa-bubble" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-            <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
-              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9z"/>
-            </svg>
-          </a>
-        </div>
+        
 
       </div>
       <Footer />

@@ -15,11 +15,11 @@ export default function CanadaDestination() {
         <header className="intl-hero-banner">
           <div className="intl-banner-overlay">
             <div className="intl-banner-text">
-              <h1>Australia</h1>
+              <h1></h1>
               <nav className="intl-breadcrumb">
-                <span className="intl-crumb-home">🏠</span> 
-                <span className="intl-crumb-arrow">→</span> Destinations 
-                <span className="intl-crumb-arrow">→</span> Australia
+                <span className="intl-crumb-home"></span> 
+                <span className="intl-crumb-arrow"></span>
+                <span className="intl-crumb-arrow"></span> 
               </nav>
             </div>
             <div className="intl-badge-holder">
