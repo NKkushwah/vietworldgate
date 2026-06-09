@@ -3,6 +3,7 @@ import { FaGraduationCap, FaLaptop, FaCalendarAlt, FaPassport, FaAward, FaPenFan
 import './UpcomingEvents.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
 
 // Mock Data for Events
 const INITIAL_EVENTS = [
@@ -181,9 +182,11 @@ export default function EventsPage() {
                 <div className="time-box"><h3>30</h3><p>Secs</p></div>
               </div>
 
+              <Link to="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor">
               <button className="btn-register-yellow">
                 Register For Free →
               </button>
+              </Link>
             </div>
             <div className="featured-image-wrapper">
               <img src="https://images.pexels.com/photos/33524620/pexels-photo-33524620.jpeg" alt="UK Big Ben" />
@@ -261,9 +264,11 @@ export default function EventsPage() {
                       <button className="btn-outline" onClick={() => alert(`Overview of ${event.title}`)}>
                         <FaInfoCircle /> Overview
                       </button>
-                      <button className="btn-card-reg" onClick={() => alert(`Booked spot for ${event.title}`)}>
+                      <Link to="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor">
+                      <button className="btn-card-reg">
                         <FaTicketAlt /> Book Spot
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
