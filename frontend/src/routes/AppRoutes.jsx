@@ -30,6 +30,7 @@ import Certificate from "../pages/Certificate";
 import WhyChooseUs from "../pages/Whychooseus";
 import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
+import UpcomingEvents from "../pages/UpcomingEvents";
 
 function AppRoutes() {
   return (
@@ -67,9 +68,9 @@ function AppRoutes() {
         <Route path="/feedback" element={<Feedback/>} />
         <Route path="/universitypartner" element={<UniversityPartners/>} />
         <Route path="/Certificate" element={<Certificate/>} />
+        <Route path="/upcomingevents" element={<UpcomingEvents/>} />
         
       
-
       </Routes>
 
    
