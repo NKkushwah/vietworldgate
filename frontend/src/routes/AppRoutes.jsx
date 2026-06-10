@@ -31,6 +31,7 @@ import WhyChooseUs from "../pages/Whychooseus";
 import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
 import UpcomingEvents from "../pages/UpcomingEvents";
+import OurPresence from "../pages/OurPresence";
 
 import Seminar from "../pages/Seminar";
 
@@ -39,6 +40,7 @@ function AppRoutes() {
    
 
       <Routes>
+          <Route path = "/OurPresence" element={<OurPresence />} />
           <Route path = "/OurServices" element={<OurServices />} />
         <Route path = "/Infrastructure" element={<Infrastructure />} />
          <Route path = "/WhyChooseUs" element={<WhyChooseUs />} />
