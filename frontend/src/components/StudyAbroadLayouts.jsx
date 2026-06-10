@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 import "./StudyAbroadLayouts.css";
 
 import logo1 from "../assets/story1video.mp4";
@@ -55,7 +56,7 @@ export default function StudyAbroadLayouts() {
   const universityVisits = [
     {
       id: 1,
-      title: "Navitas Canada",
+      title: "Coventry University",
       date: "18th May 2026, 03:30 PM to 04:30 PM",
       speaker: "Mr. Gaurav Singh",
       branch: "VIET WORLDGATE-Amritsar (Office)",
@@ -385,10 +386,13 @@ export default function StudyAbroadLayouts() {
                         <span className="icon">🎓</span>
                         <span>{visit.type}</span>
                       </div>
+
+                      <Link to="/universitypartner">
                       <button className="btn-read-more-visit">
                         Read More
                         <span className="arrow-circle-visit">➔</span>
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

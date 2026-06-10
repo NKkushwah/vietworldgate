@@ -179,8 +179,6 @@
 /* =========================================
     RESPONSIVE MEDIA BREAKPOINTS (ALL DEVICES)
 ========================================= */
-
-/* TABLET VIEWPORT (2 Cards Layout) */
 @media (max-width: 1024px) {
   .section-title { font-size: 1.8rem; }
   
@@ -234,4 +232,24 @@
 
 .read-more-text{
   font-weight:600;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

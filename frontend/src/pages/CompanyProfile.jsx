@@ -91,7 +91,7 @@ export default function CompanyProfile() {
     {
       name: "Our Presence",
       icon: <FaGlobe />,
-      link: "/about/presence",
+      link: "/OurPresence",
     },
 
     {

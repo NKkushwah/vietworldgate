@@ -28,7 +28,7 @@
 .hero-content-global {
   padding-left: 8%;
   max-width: 800px;
-  color: #083f0f;
+  color: #012819;
 }
 
 .hero-badge {
@@ -53,7 +53,7 @@
 .hero-subtitle {
   font-size: 1.25rem;
   margin: 0 0 25px 0;
-  color: #09310d;
+  color: #012819;
   line-height: 1.6;
  
 }
@@ -68,7 +68,7 @@
 
 .careers-main h2 {
   font-size: 2.4rem;
-  color: #69ce69;
+  color: #012819;
   margin-bottom: 25px;
 }
 
@@ -79,9 +79,9 @@
   background: white;
   padding: 35px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(6, 36, 15, 0.692);
+  box-shadow:#012819;
   text-align: left;
-  border-top: 4px solid #092715; /* Trust blue line */
+  border-top: 4px solid #012819; /* Trust blue line */
 }
 
 .badge-icon-global {
@@ -106,7 +106,7 @@
 
 .visa-perks-section h3, .divisions-section h3 {
   font-size: 2rem;
-  color: #082913;
+  color: #012819;
   margin-bottom: 40px;
 }
 
@@ -121,7 +121,7 @@
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02);
-  border: 1px solid #0c3513;
+  border: 1px solid #012819;
   text-align: left;
 }
 
@@ -133,11 +133,11 @@
 .perk-card h4 {
   font-size: 1.25rem;
   margin: 10px 0;
-  color: #0c3a1a;
+  color: #012819;
 }
 
 .perk-card p {
-  color: #1d4130;
+  color: #012819;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -177,7 +177,7 @@
 .div-card h5 {
   font-size: 1.2rem;
   margin: 15px 0 10px 0;
-  color: #064d11; /* Soft blue accent */
+  color: #012819; /* Soft blue accent */
 }
 
 .div-card p {
@@ -217,7 +217,7 @@
 }
 
 .apply-btn-global:hover {
-  background-color: #1d4ed8;
+  background-color: #012819;
 }
 
 .tag.dept {

@@ -32,6 +32,8 @@ import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
 import UpcomingEvents from "../pages/UpcomingEvents";
 
+import Seminar from "../pages/Seminar";
+
 function AppRoutes() {
   return (
    
@@ -69,6 +71,7 @@ function AppRoutes() {
         <Route path="/universitypartner" element={<UniversityPartners/>} />
         <Route path="/Certificate" element={<Certificate/>} />
         <Route path="/upcomingevents" element={<UpcomingEvents/>} />
+        <Route path="/seminar" element={<Seminar/>} />
         
       
       </Routes>
