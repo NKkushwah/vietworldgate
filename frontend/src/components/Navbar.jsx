@@ -325,7 +325,7 @@ function Navbar() {
             <ul className="dropdown-menu">
 
               <Link to="/upcomingevents"><li onClick={closeMenu}>Upcoming Events</li></Link>
-              <li onClick={closeMenu}>Seminars</li>
+              <Link to="/seminar"><li onClick={closeMenu}>Seminars</li></Link>
               <li onClick={closeMenu}>Education Fair</li>
             </ul>
           </li>
