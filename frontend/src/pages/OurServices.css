@@ -43,7 +43,7 @@ body {
 .services-heros__title {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #08310a;
+  color: #012819 !important;
   margin-bottom: 10px;
 }
 
@@ -52,13 +52,13 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
-  color: #0e741f;
+  color: #012819 !important;
 }
 
 .services-heros__breadcrumb svg {
   width: 50px;
   height: 30px;
-  fill: #0d4114;
+  fill: #012819;
 }
 
 .breadcrumb-arrow {
@@ -80,7 +80,7 @@ body {
 }
 
 .servicess-section__heading span {
-  color: #08240f;
+  color: #012819;
   font-style: italic;
   font-weight: 600;
 }
@@ -148,7 +148,7 @@ body {
 .services-card__btn {
   display: inline-block;
   padding: 11px 32px;
-  background: #073318;
+  background: #012819;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
@@ -162,7 +162,7 @@ body {
 }
 
 .services-card__btn:hover {
-  background: #0d9e19;
+  background: #012819;
 }
 
 /* ── Responsive ── */

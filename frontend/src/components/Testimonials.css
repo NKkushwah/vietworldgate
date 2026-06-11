@@ -65,7 +65,8 @@
 }
 
 .italic-lime {
-  color: #b8d935;
+  color: #012819;
+  text-align: center !important;
   font-style: italic;
   font-weight: 500;
 }

@@ -2,12 +2,12 @@
 
 /* ─── TOKENS ─────────────────────────────────────────────── */
 :root {
-  /* Hunter Green Palette - Optimized for Premium Trust Brand */
-  --green-900: #132A20;   /* deepest bg */
-  --green-800: #1B3A2D;   /* hero dark  */
-  --green-700: #234D3A;   /* hunter green primary */
-  --green-600: #2D6A4F;   /* mid green  */
-  --green-500: #409A6E;   /* bright accent */
+  /* Hunter Green Palette - Updated with #012819 */
+  --green-900: #012819;   /* deepest bg */
+  --green-800: #012819;   /* hero dark  */
+  --green-700: #012819;   /* hunter green primary */
+  --green-600: #012819;   /* mid green  */
+  --green-500: #012819;   /* bright accent */
   --green-100: #D8F3DC;   /* light tint  */
   --green-50:  #f4faf7e0;   /* surface     */
 
@@ -17,7 +17,7 @@
 
   /* Neutrals */
   --ink:       #0A1410;
-  --slate:     #35473E;
+  --slate:     #012819;
   --mist:      #869F92;
   --fog:       #E3ECE7;
   --white:     #FFFFFF;
@@ -226,7 +226,7 @@
 
 .hstat-inner-icon {
   width: 48px; height: 48px;
-  background:white;
+  background: white;
   border-radius: var(--r-sm);
   display: flex; align-items: center; justify-content: center;
   font-size: 22px;
@@ -302,13 +302,11 @@
 .svc-card.highlight::after { transform: scaleX(1); }
 
 .svc-icon {
-  width: 56px;
- height: 56px;
+  width: 56px; height: 56px;
   background: transparent;
   border-radius: var(--r-sm);
   display: flex; 
-  align-items: center;
- justify-content: center;
+  align-items: center; justify-content: center;
   font-size: 26px;
   margin-bottom: 22px;
   border: 1px solid var(--fog);
@@ -382,7 +380,7 @@
 }
 .dest-card:hover {
   background: rgba(255,255,255,0.07);
-  border-color: rgba(64,154,110,0.4);
+  border-color: rgba(1,40,25,0.4); /* Optimized to hex value match */
   transform: translateY(-4px);
 }
 .dest-card.popular {
@@ -456,18 +454,12 @@
 .process-head { text-align: center; margin-bottom: 64px; }
 .process-head .sec-desc { margin: 16px auto 0; }
 
-/* =========================
-   STEPS ROW (GRID)
-========================= */
 .steps-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
 
-/* =========================
-   STEP CARD
-========================= */
 .step {
   background: #ffffff;
   border: 1px solid #e6ece8;
@@ -476,33 +468,27 @@
   text-align: center;
   position: relative;
   cursor: pointer;
-
   transition: all 0.35s ease;
 }
 
-/* Hover Effect */
 .step:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   border-color: #d4af37;
 }
 
-/* Active (on hover via React state) */
 .step.active {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   border-color: #d4af37;
 }
 
-/* =========================
-   STEP NUMBER (TOP BADGE)
-========================= */
 .step-num {
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #1f4d3a, #2e7d5a);
+  background: linear-gradient(135deg, #012819, #02472d); /* Updated custom green to match core */
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -510,25 +496,18 @@
   border-radius: 20px;
 }
 
-/* =========================
-   ICON
-========================= */
 .step-icon {
   font-size: 32px;
   margin-bottom: 14px;
-  color: #1f4d3a;
+  color: #012819; /* Updated */
   transition: 0.3s;
 }
 
-/* Icon animation on hover */
 .step:hover .step-icon {
   transform: scale(1.15) rotate(5deg);
   color: #d4af37;
 }
 
-/* =========================
-   TITLE
-========================= */
 .step-title {
   font-size: 18px;
   font-weight: 600;
@@ -536,46 +515,36 @@
   margin-bottom: 10px;
 }
 
-/* =========================
-   DESCRIPTION
-========================= */
 .step-desc {
   font-size: 13px;
   color: #5f6f67;
   line-height: 1.6;
 }
+
 .btn-services {
   display: inline-block;
   margin-top: 14px;
   padding: 10px 18px;
   border-radius: 8px;
-
-  background: #082906; /* hunter green */
+  background: #012819; /* Updated to requested hunter green */
   color: #fff;
-
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-
   transition: all 0.3s ease;
   border: 1px solid transparent;
 }
 
-/* Hover Effect */
 .btn-services:hover {
   background: transparent;
-  color: #1f7a63;
-  border: 1px solid #1f7a63;
+  color: #012819; /* Updated text color match */
+  border: 1px solid #012819;
 }
 
-/* Active Click */
 .btn-services:active {
   transform: scale(0.96);
 }
 
-/* =========================
-   HOVER GLOW EFFECT (OPTIONAL PREMIUM)
-========================= */
 .step::before {
   content: "";
   position: absolute;
@@ -586,15 +555,13 @@
   transition: 0.3s;
 }
 
-.step:hover::before {
-  opacity: 1;
-}
+.step:hover::before { opacity: 1; }
+
 .contact-link {
   color: var(--text-b);
   text-decoration: none;
   transition: 0.3s;
 }
-
 .contact-link:hover {
   color: var(--gold);
   text-decoration: underline;
@@ -614,9 +581,7 @@
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--mist); margin-bottom: 24px;
 }
-.logo-strip {
-  overflow: hidden; white-space: nowrap; width: 100%;
-}
+.logo-strip { overflow: hidden; white-space: nowrap; width: 100%; }
 .logo-track {
   display: inline-flex; gap: 60px;
   animation: scrollLogos 35s linear infinite;
@@ -695,42 +660,26 @@
 }
 
 .show-more-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  position: relative;
-  z-index: 10; /* 🔥 important */
+  display: flex; justify-content: center;
+  margin-top: 40px; position: relative; z-index: 10;
 }
 
 .show-more-btn {
-  display: inline-block;
-  text-decoration: none;
-  background: #012819;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer; /* 🔥 important */
-  z-index: 10;
-  position: relative;
+  display: inline-block; text-decoration: none;
+  background: #012819; /* Confirmed match */
+  color: #fff; padding: 12px 28px; border-radius: 30px;
+  font-size: 16px; font-weight: 600; transition: all 0.3s ease;
+  cursor: pointer; z-index: 10; position: relative;
 }
 
 .show-more-btn:hover {
-  background: #014d33;
+  background: #014d33; /* Slightly lighter tone for distinct dark green hover interaction */
   transform: translateY(-3px);
 }
 
-
-
 .testi-stars {
-  color: var(--gold);
-  font-size: 24px;
-  margin-bottom: 14px;
-  display: flex;
-  justify-content: center;  /* 🔥 perfect center */
-  align-items: center;
+  color: var(--gold); font-size: 24px; margin-bottom: 14px;
+  display: flex; justify-content: center; align-items: center;
 }
 .testi-quote { font-size: 15px; color: var(--text-b); font-style: italic; line-height: 1.7; margin-bottom: 24px; }
 
@@ -744,204 +693,78 @@
 .testi-visa { font-size: 12px; color: var(--green-600); font-weight: 500; }
 
 /* ════════════════════════════════════════════════════════════
-   GLOBAL LIAISON DESKS (OFFICES)
-══/* =========================
    OFFICES SECTION
-========================= */
+═══════════════════════════════════════════════════════════ */
 .offices-section {
-  padding: 100px 0;
-  background: var(--white);
+  padding: 100px 0; background: var(--white);
 }
 
-/* =========================
-   GRID (RESPONSIVE FIX)
-========================= */
 .offices-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
 }
 
-/* =========================
-   CARD (FIXED STRUCTURE)
-========================= */
 .office-card {
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 28px 22px;
-  position: relative;
-  background: var(--card);
-  transition: var(--ease);
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 28px 22px; position: relative; background: var(--card);
+  transition: var(--ease); display: flex; flex-direction: column; height: 100%;
 }
 
 .office-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sh-md);
+  transform: translateY(-4px); box-shadow: var(--sh-md);
 }
 
-/* HQ CARD */
 .office-card.hq {
-  border-color: var(--gold);
-  background: var(--green-50);
+  border-color: var(--gold); background: var(--green-50);
 }
 
-/* =========================
-   HQ BADGE
-========================= */
 .hq-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 10px;
-  font-weight: 700;
-  background: var(--gold);
-  color: var(--ink);
-  padding: 4px 10px;
-  border-radius: 12px;
+  position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 700;
+  background: var(--gold); color: var(--ink); padding: 4px 10px; border-radius: 12px;
 }
 
-/* =========================
-   CONTENT
-========================= */
-.office-flag {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 10px;
-}
+.office-flag { font-size: 28px; display: block; margin-bottom: 10px; }
+.office-city { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--text-h); }
+.office-country { font-size: 12px; color: var(--text-s); text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
 
-.office-city {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-h);
-}
-
-.office-country {
-  font-size: 12px;
-  color: var(--text-s);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-/* =========================
-   INFO LIST
-========================= */
 .office-info {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  margin-bottom: auto; /* pushes button to bottom */
+  list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: auto;
 }
+.office-info li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-b); }
+.office-info .ic { display: flex; align-items: center; justify-content: center; }
 
-.office-info li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-b);
-}
-
-.office-info .ic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* =========================
-   BUTTON (FIXED + PREMIUM)
-========================= */
 .read-more-btn {
-  margin-top: 18px;
-  text-align: center;
-  padding: 10px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  color: var(--white);
-
+  margin-top: 18px; text-align: center; padding: 10px 18px; font-size: 12px; font-weight: 600;
+  border-radius: 30px; text-decoration: none; color: var(--white);
   background: linear-gradient(135deg, var(--green-700), var(--green-500));
-  border: none;
-  transition: 0.3s ease;
+  border: none; transition: 0.3s ease;
 }
 
 .read-more-btn:hover {
-
-  color: var(--green-900);
+  color: var(--white); /* Prevent dark contrast text issues over gradient */
+  background: var(--green-900);
   transform: translateY(-2px);
 }
-/* HQ BUTTON */
-.office-card.hq .office-btn {
-  border-color: var(--gold);
-  color: var(--gold);
-}
 
-.office-card.hq .office-btn:hover {
-  background: var(--gold);
-  color: var(--ink);
-}
-.cta-btns a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+.office-card.hq .office-btn { border-color: var(--gold); color: var(--gold); }
+.office-card.hq .office-btn:hover { background: var(--gold); color: var(--ink); }
 
-/* =========================
-   RESPONSIVE BREAKPOINTS
-========================= */
+.cta-btns a { display: inline-flex; align-items: center; gap: 6px; }
 
-/* Tablet */
+/* ─── RESPONSIVE BREAKPOINTS (OFFICES) ─── */
 @media (max-width: 992px) {
-  .offices-section {
-    padding: 80px 0;
-  }
-
-  .office-card {
-    padding: 24px 18px;
-  }
-
-  .office-city {
-    font-size: 17px;
-  }
+  .offices-section { padding: 80px 0; }
+  .office-card { padding: 24px 18px; }
+  .office-city { font-size: 17px; }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-  .offices-section {
-    padding: 60px 0;
-  }
-
-  .offices-grid {
-    gap: 16px;
-  }
-
-  .office-card {
-    padding: 20px 16px;
-  }
-
-  .office-city {
-    font-size: 16px;
-  }
-
-  .office-country {
-    font-size: 11px;
-  }
-
-  .office-info li {
-    font-size: 12px;
-  }
-
-  .office-btn {
-    font-size: 11px;
-    padding: 9px 14px;
-  }
+  .offices-section { padding: 60px 0; }
+  .offices-grid { gap: 16px; }
+  .office-card { padding: 20px 16px; }
+  .office-city { font-size: 16px; }
+  .office-country { font-size: 11px; }
+  .office-info li { font-size: 12px; }
+  .office-btn { font-size: 11px; padding: 9px 14px; }
 }
 
 /* ════════════════════════════════════════════════════════════
