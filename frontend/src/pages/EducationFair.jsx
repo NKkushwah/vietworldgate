@@ -276,7 +276,7 @@ const prevFlags = () => {
 
           <div className="courses-grid">
             {visibleCourses.map((course, idx) => (
-                 <a href = "/CoursePortals">
+                 <a href = "/CoursePortal">
               <div className="courses-card" key={idx} >
               
                 <FaGraduationCap className="courses-icon" />
