@@ -18,26 +18,7 @@ import {
 } from 'lucide-react';
 
 const EventPage = () => {
-  const speakers = [
-    {
-      name: "Mr. Amrit Pal Singh",
-      role: "Senior Global Education Consultant",
-      company: "Ex-Visa Officer / Study Abroad Expert",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&auto=format&fit=crop"
-    },
-    {
-      name: "Ms. Shalini Sharma",
-      role: "Head of International Admissions",
-      company: "Global Career Pathways",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop"
-    },
-    {
-      name: "Dr. David Vance",
-      role: "International University Representative",
-      company: "Global Education Alliance",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop"
-    }
-  ];
+  
 
   return (
     <div className="event-wrapper">
@@ -130,34 +111,6 @@ const EventPage = () => {
               </div>
             </div>
 
-            {/* Speakers / Consultants Section */}
-            <div className="speakers-section">
-              <div className="speakers-header">
-                <h2 className="section-title">Meet Our Overseas Experts</h2>
-                <a href="#all-consultants" className="view-all-link">
-                  View All Experts <ArrowUpRight size={16} style={{ marginLeft: '4px' }} />
-                </a>
-              </div>
-
-              <div className="speakers-grid">
-                {speakers.map((speaker, index) => (
-                  <div className="speaker-card" key={index}>
-                    <img src={speaker.image} alt={speaker.name} className="speaker-img" />
-                    <div className="speaker-info">
-                      <h4 className="speaker-name">{speaker.name}</h4>
-                      <p className="speaker-role">{speaker.role}</p>
-                      <p className="speaker-company">{speaker.company}</p>
-                      <div className="linkedin-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#0077b5">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
 
           {/* RIGHT SECTION: Event Details Side Panel */}
@@ -211,6 +164,8 @@ const EventPage = () => {
               </div>
             </div>
           </div>
+
+          
 
         </div>
       </div>

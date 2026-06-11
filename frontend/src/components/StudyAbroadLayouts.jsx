@@ -27,17 +27,16 @@ export default function StudyAbroadLayouts() {
   }, []);
 
   // ── Responsive card counts ─────────────────────────────────
-  // iPhone (<576): 1  |  iPad Mini/Air/Pro (<1025): 2  |  Desktop: 3
   const getVisibleStoryCount = useCallback(() => {
-    if (windowWidth < 576)  return 1;   // phones
-    if (windowWidth < 1025) return 2;   // all iPads (768–1024)
-    return 3;                            // desktop
+    if (windowWidth < 576)  return 1;   
+    if (windowWidth < 1025) return 2;   
+    return 3;                            
   }, [windowWidth]);
 
   const getVisibleVisitCount = useCallback(() => {
-    if (windowWidth < 576)  return 1;   // phones
-    if (windowWidth < 1025) return 2;   // all iPads (768–1024)
-    return 3;                            // desktop
+    if (windowWidth < 576)  return 1;   
+    if (windowWidth < 1025) return 2;   
+    return 3;                            
   }, [windowWidth]);
 
   // ── Reset index when visible count changes ─────────────────

@@ -419,6 +419,7 @@ body {
   transform: translateY(-2px);
 }
 
+
 /* --- RESPONSIVE ADJUSTMENTS (BREAKS BACK GRACEFULLY) --- */
 @media (max-width: 1200px) {
   .main-layout {
