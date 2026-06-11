@@ -168,102 +168,186 @@ body {
   cursor: not-allowed;
 }
 
-/* SLIDER ENGINE */
+/* Core container wrapper */
 .sliders-container {
-  overflow: hidden;
-  padding: 10px 5px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-.sliders-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+/* ==========================================================================
+   Desktop Grid Configuration (Default Style)
+   Creates exactly 3 equal columns. Excess cards automatically flow downward.
+   ========================================================================== */
+.universities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; /* Professional spacing between items */
+  margin-bottom: 50px;
 }
 
+/* Card Structure */
 .customs-card {
-  background: #fff;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  min-width: 290px;
-  max-width: 290px;
-  transition: 0.3s;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Interactive card hover */
 .customs-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Card Banner Image */
 .customs-card img {
   width: 100%;
-  height: 170px;
+  height: 200px;
   object-fit: cover;
 }
 
+/* Internal padding and item layout */
 .cards-body {
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 14px;
+  flex-grow: 1; /* Automatically stretches cards to be equal height */
 }
 
 .cards-body h3 {
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  color: #1e293b;
-  min-height: 44px;
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .locations {
-  font-size: 13px;
-  color: #64748b;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666666;
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 0 15px 0;
 }
 
+/* Metadata Bar (Programs and Fees) */
 .infos {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
-  margin-bottom: 12px;
-  padding-top: 10px;
-  border-top: 1px dashed #e2e8f0;
+  font-size: 0.9rem;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 12px 0;
+  margin: 4px 0;
 }
 
-.visas-badge {
-  background: #f0fdf4;
-  color: #16a34a;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 6px;
+.infos span {
+  color: #555555;
   font-weight: 500;
-  margin-bottom: 15px;
-  display: inline-flex;
+}
+
+.infos strong {
+  color: #1b5e20; /* Deep professional green */
+  font-weight: 700;
+}
+
+/* Premium Visa Tag */
+.visas-badge {
+  font-size: 0.85rem;
+  background-color: #edf5fe;
+  color: #1a73e8;
+  padding: 6px 14px;
+  border-radius: 50px;
+  width: fit-content;
+  display: flex;
   align-items: center;
   gap: 6px;
+  font-weight: 600;
 }
-.shows-more-wrapper {
+
+/* Standardized WhatsApp Button */
+.applys-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #25d366; /* Official brand colors */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: auto; /* Aligns all buttons at the bottom regardless of text lengths */
+  transition: background-color 0.2s ease;
+}
+
+.applys-btn:hover {
+  background-color: #128c7e;
+}
+
+/* Footer Control Elements */
+.buttons-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
 }
 
-.shows-more-btn {
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #00c853, #009688);
-  color: #fff;
-  border-radius: 30px;
-  font-size: 15px;
-  font-weight: 500;
+.buttons-container a {
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
+.tops-college-button {
+  padding: 14px 40px;
+  background-color: #0f172a; /* Slate 900 for a polished look */
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.tops-college-button:hover {
+  background-color: #334155;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablets & Small Monitors (Handles middle transition cleanly) */
+@media (max-width: 992px) {
+  .universities-grid {
+    grid-template-columns: repeat(2, 1fr); /* Automatically slips into 2 columns */
+    gap: 20px;
+  }
+}
+
+/* Mobile Devices (Width up to 600px) */
+@media (max-width: 600px) {
+  .sliders-container {
+    padding: 20px 15px;
+  }
+
+  .universities-grid {
+    grid-template-columns: 1fr; /* Forces exactly 1 card row by row */
+    gap: 24px;
+  }
+
+  .customs-card img {
+    height: 180px; /* Scales image down slightly on small phone viewport layouts */
+  }
+}
 .shows-more-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 200, 83, 0.3);

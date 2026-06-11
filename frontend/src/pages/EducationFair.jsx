@@ -7,6 +7,7 @@ import { FaMoneyBillWave, FaUniversity, FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
+
 const countriesDataList = [
   { name: "United Kingdom", visaType: "Tier 4 Student Visa", speed: "15 Days Processing", flag: "🇬🇧" },
   { name: "Canada", visaType: "Study Permit (SDS)", speed: "20 Days Processing", flag: "🇨🇦" },
@@ -119,6 +120,7 @@ const [showMoreCountries, setShowMoreCountries] = useState(false);
   const phoneNumber = "917982295530"; 
   const message = "Hi, I am looking to study abroad and want assistance with admission and student visas.";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
 
   // Top Colleges Slider Logic
   const nextTop = () => {
@@ -232,31 +234,37 @@ const prevFlags = () => {
              
             </div>
           </div>
-
-          <div className="sliders-container">
-            <div className="sliders-track" style={{ transform: `translateX(-${topIndex * 310}px)` }}>
-              {globalUniversities.map((college, idx) => (
-                <div className="customs-card" key={idx}>
-                  <img src={college.img} alt={college.name} />
-                  <div className="cards-body">
-                    <h3>{college.name}</h3>
-                    <p className="locations"><FaMapMarkerAlt /> {college.location}</p>
-                    <div className="infos">
-                      <span>{college.programs}</span>
-                      <strong>{college.fees}</strong>
-                    </div>
-                    <div className="visas-badge"><FaPassport /> {college.visaSuccess}</div>
-                    <button onClick={() => window.open(whatsappLink, '_blank')} className="applys-btn">Apply & Process Visa</button>
-                  </div>
-                </div>
-              ))}
+   
+   
+         <div className="sliders-container">
+    {/* Clean responsive grid wrapper */}
+    <div className="universities-grid">
+      {globalUniversities.map((college, idx) => (
+        <div className="customs-card" key={idx}>
+          <img src={college.img} alt={college.name} />
+          <div className="cards-body">
+            <h3>{college.name}</h3>
+            <p className="locations"><FaMapMarkerAlt /> {college.location}</p>
+            <div className="infos">
+              <span>{college.programs}</span>
+              <strong>{college.fees}</strong>
             </div>
-            <div className="buttons-container">
-                <a href = '/CoursePortal'>
-                <button className="tops-college-button">Show More</button>
-                </a>
-            </div>
+            <div className="visas-badge"><FaPassport /> {college.visaSuccess}</div>
+            <button onClick={() => window.open(whatsappLink, '_blank')} className="applys-btn">
+              Apply & Process Visa
+            </button>
           </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Center aligned "Show More" Button */}
+    <div className="buttons-container">
+      <a href='/CoursePortal'>
+        <button className="tops-college-button">Show More</button>
+      </a>
+    </div>
+  </div>
         </div>
       </section>
 
@@ -396,60 +404,7 @@ const prevFlags = () => {
 </section>
       <Footer />
       {/* COUNTRY FLAGS SLIDER & GRID SECTION */}
-    <section className="countrys-flags-section">
-      <div className="containers">
-        
-        {/* HEADER */}
-        <div className="headers">
-          <div>
-            <h2>Destinations & Visa Tracks</h2>
-            <p>Select your target country to explore streamlined immigration channels</p>
-          </div>
-          <div className="arrowss">
-            <button onClick={prevFlags} disabled={flagIndex === 0}><FaArrowLeft /></button>
-            <button onClick={nextFlags} disabled={flagIndex >= 1}><FaArrowRight /></button>
-          </div>
-        </div>
-
-        {/* WORKING SLIDER TRACK */}
-        <div className="flags-slider-container">
-          <div className="flags-slider-track" style={{ transform: `translateX(-${flagIndex * 295}px)` }}>
-            {countriesDataList.slice(0, 5).map((country, idx) => (
-              <div className="flags-card" key={idx}>
-                <span className="countrys-emoji">{country.flag}</span>
-                <h3>{country.name}</h3>
-                <div className="visas-info-tag">{country.visaType}</div>
-                <p className="processings-speed">⚡ {country.speed}</p>
-                <button onClick={() => window.open(whatsappLink, '_blank')} className="flags-check-btn">Check Eligibility</button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* HIDDEN DROPDOWN CONTENT (SHOW MORE) */}
-        {showMoreCountries && (
-          <div className="expandeds-countries-grid">
-            {countriesDataList.slice(5).map((country, idx) => (
-              <div className="flags-card expanded-card" key={idx}>
-                <span className="countrys-emoji">{country.flag}</span>
-                <h3>{country.name}</h3>
-                <div className="visas-info-tag">{country.visaType}</div>
-                <p className="processings-speed">⚡ {country.speed}</p>
-                <button onClick={() => window.open(whatsappLink, '_blank')} className="flags-check-btn">Check Eligibility</button>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* SHOW MORE BUTTON DOWN */}
-        <div className="shows-more-countries-btn-wrap">
-          <button className="toggles-countries-btn" onClick={() => setShowMoreCountries(!showMoreCountries)}>
-            {showMoreCountries ? "Show Fewer Countries ▲" : "Explore More Countries ▼"}
-          </button>
-        </div>
-
-      </div>
-    </section>
+   
     </>
   );
 };
