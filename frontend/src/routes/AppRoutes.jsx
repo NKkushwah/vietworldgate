@@ -35,6 +35,8 @@ import OurPresence from "../pages/OurPresence";
 
 import Seminar from "../pages/Seminar";
 import TermsConditions from "../pages/TermsConditions";
+import EducationFair from '../pages/EducationFair';
+import VideoGallery from "../pages/VideoGallery";
 
 function AppRoutes() {
   return (
