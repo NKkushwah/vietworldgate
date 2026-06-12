@@ -304,7 +304,7 @@ function Navbar() {
 
           {/* GALLERY */}
           <li onClick={closeMenu}>
-            <Link to="/gallery">Gallery</Link>
+            <Link to="/gallary">Gallery</Link>
           </li>
 
           {/* EVENTS */}

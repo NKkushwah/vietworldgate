@@ -32,8 +32,11 @@ import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
 import UpcomingEvents from "../pages/UpcomingEvents";
 import OurPresence from "../pages/OurPresence";
-import EducationFair from  "../pages/EducationFair";
+
 import Seminar from "../pages/Seminar";
+import TermsConditions from "../pages/TermsConditions";
+import EducationFair from '../pages/EducationFair';
+import VideoGallery from "../pages/VideoGallery";
 
 
 
@@ -78,6 +81,8 @@ function AppRoutes() {
         <Route path="/Certificate" element={<Certificate/>} />
         <Route path="/upcomingevents" element={<UpcomingEvents/>} />
         <Route path="/seminar" element={<Seminar/>} />
+        <Route path="/gallary" element={<VideoGallery/>} />
+        <Route path="/termsandconditions" element={<TermsConditions/>} />
         
       
          <Route path="/Accrediations" element={<Accreditations/>} />
