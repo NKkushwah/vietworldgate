@@ -85,7 +85,7 @@ export default function CompanyProfile() {
     {
       name: "Accreditations",
       icon: <FaAward />,
-      link: "/about/accreditations",
+      link: "/Accrediations",
     },
 
     {

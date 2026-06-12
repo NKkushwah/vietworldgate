@@ -35,6 +35,9 @@ import OurPresence from "../pages/OurPresence";
 import EducationFair from  "../pages/EducationFair";
 import Seminar from "../pages/Seminar";
 
+
+
+import Accreditations from "../pages/Accreditations";
 function AppRoutes() {
   return (
    
@@ -77,6 +80,7 @@ function AppRoutes() {
         <Route path="/seminar" element={<Seminar/>} />
         
       
+         <Route path="/Accrediations" element={<Accreditations/>} />
       </Routes>
 
    
