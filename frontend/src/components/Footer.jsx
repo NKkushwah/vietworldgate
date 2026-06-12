@@ -91,7 +91,7 @@ const Footer = () => {
                 <FaInstagram />
               </a>
 
-              <a href="#youtube" aria-label="YouTube">
+              <a href="https://www.youtube.com/@viet.worldgate" aria-label="YouTube">
                 <FaYoutube />
               </a>
 
@@ -283,7 +283,7 @@ const Footer = () => {
               Contact Us
             </Link>
 
-            <Link to="/privacy-policy" onClick={scrollToTop}>
+            <Link to="/termsandconditions" onClick={scrollToTop}>
               Privacy Policy
             </Link>
 
