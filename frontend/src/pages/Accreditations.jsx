@@ -508,7 +508,7 @@ const DESTINATIONS = [
   { id: 6,  flag: "🇩🇪", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
   { id: 12, flag: "🇨🇭", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
   { id: 10, flag: "🇦🇪", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
-  { id: 9,  flag: "It", country: "Italy",          visas: ["Business", "Tourist", "Medical"],        style: { top: "48%", left: "72%" } },
+    { id: 9,  flag: "🇮🇹", country: "Italy",        visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
   { id: 7,  flag: "🇸🇬", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
   { id: 11, flag: "🇲🇾", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
   { id: 8,  flag: "🇯🇵", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
