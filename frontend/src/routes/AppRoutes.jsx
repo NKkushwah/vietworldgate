@@ -32,7 +32,7 @@ import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
 import UpcomingEvents from "../pages/UpcomingEvents";
 import OurPresence from "../pages/OurPresence";
-import VideoGallery from "../pages/VideoGallery";
+
 import Seminar from "../pages/Seminar";
 import TermsConditions from "../pages/TermsConditions";
 
@@ -41,6 +41,7 @@ function AppRoutes() {
    
 
       <Routes>
+        <Route path="/EducationFair" element={<EducationFair/>} />
           <Route path = "/OurPresence" element={<OurPresence />} />
           <Route path = "/OurServices" element={<OurServices />} />
         <Route path = "/Infrastructure" element={<Infrastructure />} />
