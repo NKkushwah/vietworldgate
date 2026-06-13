@@ -7,36 +7,36 @@ const videos = [
   
   {
     id: 1,
-    title: "Study Abroad Experience",
+    title: "Coming Soon...",
     url: "",
   },
   {
     id: 2,
-    title: "University Admission Guide",
+    title: "Coming Soon...",
     url: "",
   },
 
   {
     id: 3,
-    title: "University Admission Guide",
+    title: "Coming Soon...",
     url: "",
   },
 
   {
     id: 4,
-    title: "University Admission Guide",
+    title: "Coming Soon...",
     url: "",
   },
 
   {
     id:5,
-    title:"University Admission Guide",
+    title:"Coming Soon...",
     url: "",
   },
 
   {
     id:6,
-    title:"University Admission Guide",
+    title:"Coming Soon...",
     url:"",
   }
 ]
