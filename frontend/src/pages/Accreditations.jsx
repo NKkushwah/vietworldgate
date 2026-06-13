@@ -367,6 +367,23 @@ function Partners() {
 ───────────────────────────────────────── */
 
 
+
+// Precise operational tracking coordinate matrices matching premium cartography layout
+const DESTINATIONS = [
+  { id: 3,  flag: "🇨🇦", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
+  { id: 4,  flag: "🇺🇸", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
+  { id: 1,  flag: "🇬🇧", country: "United Kingdom", visas: ["Student", "Work", "Visitor"],           style: { top: "26%", left: "47%" } },
+  { id: 6,  flag: "🇩🇪", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
+  { id: 12, flag: "🇨🇭", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
+  { id: 10, flag: "🇦🇪", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
+  { id: 9,  flag: "🇮🇹", country: "Italy",          visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
+  { id: 7,  flag: "🇸🇬", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
+  { id: 11, flag: "🇲🇾", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
+  { id: 8,  flag: "🇯🇵", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
+  { id: 2,  flag: "🇦🇺", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
+  { id: 5,  flag: "🇳🇿", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
+];
+
  function WorldMap() {
   const [active, setActive] = useState(null);
   const mapRef = useRef(null);
@@ -387,7 +404,7 @@ function Partners() {
     <section className="worldmap" id="countries" ref={mapRef}>
       <div className="worldmap__header">
         <span className="worldmap__eyebrow">Where We Operate</span>
-        <h2 className="worldmap__title">We Serve Clients Across the Globel</h2>
+        <h2 className="worldmap__title">We Serve Clients Across the Globe</h2>
         <p className="worldmap__desc">
           From Asia to Europe, the Americas to Oceania — VietWorldGate helps you navigate
           visa requirements for every major destination country.
@@ -420,7 +437,7 @@ function Partners() {
             </g>
           </svg>
 
-          {/* Precision Pins mapped precisely to image_a107c0.jpg geometry */}
+          {/* Precision Pins mapped precisely to geometry */}
           {DESTINATIONS.map((d) => {
             const isActive = active === d.id;
             return (
@@ -449,8 +466,7 @@ function Partners() {
                     <ul className="worldmap__tooltip-list">
                       {d.visas.map((v) => <li key={v}>• {v} Visa</li>)}
                     </ul>
-                    <a href= "https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
- className="worldmap__tooltip-action">Apply Now &rarr;</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" className="worldmap__tooltip-action">Apply Now &rarr;</a>
                   </div>
                 )}
               </div>
@@ -474,8 +490,7 @@ function Partners() {
                   <span key={v} className="worldmap__drawer-chip">{v} Visa</span>
                 ))}
               </div>
-              <a  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
-   className="worldmap__drawer-btn">Apply Online &rarr;</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" className="worldmap__drawer-btn">Apply Online &rarr;</a>
             </div>
           </div>
         )}
@@ -499,23 +514,6 @@ function Partners() {
     </section>
   );
 }
-
-// Precise operational tracking coordinate matrices matching premium cartography layout
-const DESTINATIONS = [
-  { id: 3,  flag: "🇨🇦", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
-  { id: 4,  flag: "🇺🇸", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
-  { id: 1,  flag: "🇬🇧", country: "United Kingdom", visas: ["Student", "Work", "Visitor"],           style: { top: "26%", left: "47%" } },
-  { id: 6,  flag: "🇩🇪", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
-  { id: 12, flag: "🇨🇭", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
-  { id: 10, flag: "🇦🇪", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
-    { id: 9,  flag: "🇮🇹", country: "Italy",        visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
-  { id: 7,  flag: "🇸🇬", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
-  { id: 11, flag: "🇲🇾", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
-  { id: 8,  flag: "🇯🇵", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
-  { id: 2,  flag: "🇦🇺", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
-  { id: 5,  flag: "🇳🇿", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
-];
-
 /* ─────────────────────────────────────────
    ADVANTAGES
 ───────────────────────────────────────── */
