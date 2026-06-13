@@ -2,20 +2,20 @@
    DESIGN TOKENS — Italy Theme (hero only changed)
    ========================================================================= */
 :root {
-  --ita-green:        #009246;   /* Italian flag green */
-  --ita-green-dark:   #006d33;
-  --ita-red:          #CE2B37;   /* Italian flag red */
-  --ita-red-dark:     #a82029;
+  --ita-green:        #012819;   /* Italian flag green */
+  --ita-green-dark:   #012819;
+  --ita-red:          #012819;   /* Italian flag red */
+  --ita-red-dark:     #012819;
   --ita-white:        #ffffff;
 
   /* Below vars kept same as original values */
-  --ita-corporate-purple:   #800060;
-  --ita-deep-purple-hover:  #600048;
+  --ita-corporate-purple:   #012819;
+  --ita-deep-purple-hover:  #012819;
   --ita-text-dark-slate:    #2b3641;
   --ita-text-body-gray:     #515e6d;
   --ita-ui-border-light:    #e2e8f0;
   --ita-card-bg-subtle:     #f8fafc;
-  --ita-wa-green:           #25D366;
+  --ita-wa-green:           #012819;
   --ita-wa-dark-green:      #128C7E;
 
   --ita-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

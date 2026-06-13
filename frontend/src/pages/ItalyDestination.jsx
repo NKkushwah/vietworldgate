@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ItalyDestination.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function ItalyDestination() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -42,7 +43,11 @@ export default function ItalyDestination() {
             <div className="ita-call-card">
               <span className="ita-call-label">Our Appointment Service call us</span>
               <a href="tel:+917982295530" className="ita-phone-link">
-                <span>📞</span> +91-7982295530
+                <div className='contact-item'>
+                                  <FaPhoneAlt className="contact-icon"/>
+                                  <span>+91 7982295530</span>
+                
+                                </div>
               </a>
             </div>
 

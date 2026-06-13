@@ -5,12 +5,12 @@
 :root {
   --corporate-purple: #800060;
   --deep-purple-hover: #600048;
-  --text-dark-slate: #2b3641;
-  --text-body-gray: #515e6d;
+  --text-dark-slate: #012819;
+  --text-body-gray: #012819;
   --ui-border-light: #e2e8f0;
   --card-bg-subtle: #f8fafc;
   --white: #ffffff;
-  --wa-green: #25D366;
+  --wa-green: #012819;
   --wa-dark-green: #128C7E;
 }
 
@@ -135,7 +135,7 @@
 
 /* Top Callback Anchor Panel */
 .jpn-call-card {
-  background-color: var(--text-dark-slate);
+  background-color:#012819;
   color: var(--white);
   padding: 24px;
   border-radius: 8px;
@@ -360,7 +360,7 @@
 
 .jpn-primary-btn {
   display: inline-block;
-  background-color:rgb(12, 102, 12);
+  background-color:#012819;
   color: var(--white);
   padding: 15px 36px;
   font-weight: 700;
@@ -371,7 +371,7 @@
 }
 
 .jpn-primary-btn:hover {
-  background-color:rgb(5, 20, 5);
+  background-color:rgb(7, 6, 22);
   transform: translateY(-1px);
 }
 
@@ -399,7 +399,7 @@
 
 .jpn-wa-bubble:hover {
   transform: scale(1.08);
-  background-color: #20ba5a;
+  background-color: #329f5c;
 }
 
 .jpn-scroll-top {

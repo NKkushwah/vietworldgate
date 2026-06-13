@@ -1,19 +1,101 @@
 import { useState, useEffect } from "react";
 import { FiChevronDown, FiSearch } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate import
 
 import "./Navbar.css";
 
 // IMPORT LOGO
 import logo from "../assets/vietworldgate.png";
 
+// ==========================================
+// SEARCHBOX COMPONENT (Extracted cleanly)
+// ==========================================
+const SearchBox = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const query = searchTerm.toLowerCase().trim();
+
+    const routes = {
+     
+  "education fair": "/EducationFair",
+  "our presence": "/OurPresence",
+  "our services": "/OurServices",
+  infrastructure: "/Infrastructure",
+  "why choose us": "/WhyChooseUs",
+  "course portal": "/CoursePortal",
+  careers: "/Careers",
+
+  "contact london": "/ContactLondon",
+  "contact ghaziabad": "/ContactGhaziabad",
+  "contact noida": "/ContactNoida",
+  "contact delhi": "/ContactDelhi",
+
+  scholarships: "/Scholarships",
+
+  italy: "/ItalyDestination",
+  japan: "/JapanDestination",
+  "new zealand": "/NZDestination",
+  nz: "/NZDestination",
+  uk: "/UKDestination",
+  dubai: "/DubaiDestination",
+  germany: "/GermanyDestination",
+  canada: "/CanadaDestination",
+  australia: "/AustraliaDestination",
+
+  "pre departure": "/PreDeparture",
+  "shortlist universities": "/ShortlistUniversities",
+  "course advice": "/courseAdvice",
+  "visa assistance": "/visaAssistance",
+
+  "our team": "/ourteam",
+  "mission vision": "/MissionVision",
+  "contact us": "/contact-us",
+  "company profile": "/companyprofile",
+  values: "/ValuesGrid",
+  feedback: "/feedback",
+  "university partners": "/universitypartner",
+  certificate: "/Certificate",
+  "upcoming events": "/upcomingevents",
+  seminar: "/seminar",
+  gallery: "/gallary",
+  video: "/gallary",
+  "terms and conditions": "/termsandconditions",
+  accreditations: "/Accrediations"
+    };
+
+    if (routes[query]) {
+      navigate(routes[query]);
+      setSearchTerm("");
+    } 
+     
+  };
+
+  return (
+    <div className="search-box">
+     <input
+  type="text"
+  placeholder="Search here..."
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+/>
+      <button type="button" onClick={handleSearch}>
+        <FiSearch />
+      </button>
+    </div>
+  );
+};
+
+// ==========================================
+// MAIN NAVBAR COMPONENT
+// ==========================================
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // =========================
-  // BODY SCROLL LOCK
-  // =========================
+  // Body scroll lock on mobile menu open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add("menu-open");
@@ -26,32 +108,24 @@ function Navbar() {
     };
   }, [isMenuOpen]);
 
-  // =========================
-  // TOGGLE MOBILE MENU
-  // =========================
+  // Toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-
     if (!isMenuOpen) {
       setActiveDropdown(null);
     }
   };
 
-  // =========================
-  // HANDLE DROPDOWN
-  // =========================
+  // Handle dropdown toggle on mobile/tablet view
   const handleDropdownClick = (e, index) => {
     if (window.innerWidth <= 1024) {
       e.preventDefault();
       e.stopPropagation();
-
       setActiveDropdown(activeDropdown === index ? null : index);
     }
   };
 
-  // =========================
-  // CLOSE MENU
-  // =========================
+  // Close all menus
   const closeMenu = () => {
     setIsMenuOpen(false);
     setActiveDropdown(null);
@@ -63,7 +137,6 @@ function Navbar() {
           TOP HEADER
       ========================= */}
       <div className="top-header">
-        {/* LEFT SCROLL LINKS */}
         <div className="top-scroll">
           <div className="top-left">
             <span className="branch-heading">
@@ -79,7 +152,6 @@ function Navbar() {
               <span className="branch-heading">
                 International Branch –
               </span>
-
               <span className="london-text">
                 OXFORD STREET, LONDON
               </span>
@@ -87,14 +159,8 @@ function Navbar() {
           </div>
         </div>
 
-        {/* SEARCH */}
-        <div className="search-box">
-          <input type="text" placeholder="Search here..." />
-
-          <button type="button">
-            <FiSearch />
-          </button>
-        </div>
+        {/* Render SearchBox inside top-header layout safely */}
+        <SearchBox />
       </div>
 
       {/* =========================
@@ -108,14 +174,13 @@ function Navbar() {
             alt="Viet World Gate Logo"
             className="logo-img"
           />
-
           <div className="logo-text">
             <h2>VIET WORLDGATE</h2>
             <p>Your Gateway to Global Opportunities</p>
           </div>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU HAMBURGER */}
         <div
           className={`mobile-menu ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}
@@ -127,22 +192,19 @@ function Navbar() {
 
         {/* NAV LINKS */}
         <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
-
+          
           {/* HOME */}
           <li onClick={closeMenu}>
             <Link to="/">Home</Link>
           </li>
 
-          {/* ABOUT */}
+          {/* ABOUT DROPDOWN */}
           <li
-            className={`dropdown ${
-              activeDropdown === 1 ? "drop-active" : ""
-            }`}
+            className={`dropdown ${activeDropdown === 1 ? "drop-active" : ""}`}
             onClick={(e) => handleDropdownClick(e, 1)}
           >
             <span className="nav-item">
               About Us
-
               <span className="arrow">
                 <FiChevronDown />
               </span>
@@ -150,43 +212,30 @@ function Navbar() {
 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>
-                <Link to="/companyprofile">
-                  Company Profile
-                </Link>
+                <Link to="/companyprofile">Company Profile</Link>
               </li>
-
-                <li onClick={closeMenu}>
-            <Link to="/Certificate">Certiificate</Link>
-          </li>
-
+              <li onClick={closeMenu}>
+                <Link to="/Certificate">Certificate</Link>
+              </li>
               <li onClick={closeMenu}>
                 <Link to="/ourteam">Our Team</Link>
               </li>
-
               <li onClick={closeMenu}>
-                <Link to="/MissionVision">
-                  Mission & Vision
-                </Link>
+                <Link to="/MissionVision">Mission & Vision</Link>
               </li>
-
               <li onClick={closeMenu}>
-                <Link to="/feedback">
-                  Success Stories
-                </Link>
+                <Link to="/feedback">Success Stories</Link>
               </li>
             </ul>
           </li>
 
-          {/* SERVICES */}
+          {/* SERVICES DROPDOWN */}
           <li
-            className={`dropdown ${
-              activeDropdown === 2 ? "drop-active" : ""
-            }`}
+            className={`dropdown ${activeDropdown === 2 ? "drop-active" : ""}`}
             onClick={(e) => handleDropdownClick(e, 2)}
           >
             <span className="nav-item">
               Services
-
               <span className="arrow">
                 <FiChevronDown />
               </span>
@@ -194,51 +243,37 @@ function Navbar() {
 
             <ul className="dropdown-menu">
               <li onClick={closeMenu}>
-                <Link to="/PreDeparture">
-                  Pre-Departure Guidelines
-                </Link>
+                <Link to="/PreDeparture">Pre-Departure Guidelines</Link>
               </li>
-
               <li onClick={closeMenu}>
-                <Link to="/VisaAssistance">
-                  Visa Assistance
-                </Link>
+                <Link to="/VisaAssistance">Visa Assistance</Link>
               </li>
-
               <li onClick={closeMenu}>
-                <Link to="/ShortlistUniversities">
-                  Shortlist University
-                </Link>
+                <Link to="/ShortlistUniversities">Shortlist University</Link>
               </li>
-
               <li onClick={closeMenu}>
-                <Link to="/CourseAdvice">
-                  Course Advice
-                </Link>
+                <Link to="/CourseAdvice">Course Advice</Link>
               </li>
             </ul>
           </li>
 
-          {/* DESTINATIONS */}
+          {/* DESTINATIONS DROPDOWN */}
           <li
-            className={`dropdown ${
-              activeDropdown === 3 ? "drop-active" : ""
-            }`}
+            className={`dropdown ${activeDropdown === 3 ? "drop-active" : ""}`}
             onClick={(e) => handleDropdownClick(e, 3)}
           >
             <span className="nav-item">
               Destinations
-
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
 
             <ul className="dropdown-menu">
-             <li onClick={closeMenu}>
+              <li onClick={closeMenu}>
                 <Link to="/CanadaDestination">Canada</Link>
               </li>
-            <li onClick={closeMenu}>
+              <li onClick={closeMenu}>
                 <Link to="/AustraliaDestination">Australia</Link>
               </li>
               <li onClick={closeMenu}>
@@ -259,7 +294,6 @@ function Navbar() {
               <li onClick={closeMenu}>
                 <Link to="/UKDestination">UK</Link>
               </li>
-             
             </ul>
           </li>
 
@@ -268,37 +302,31 @@ function Navbar() {
             <Link to="/scholarships">Scholarships</Link>
           </li>
 
-          {/* BRANCHES */}
+          {/* BRANCHES DROPDOWN */}
           <li
-            className={`dropdown ${
-              activeDropdown === 4 ? "drop-active" : ""
-            }`}
+            className={`dropdown ${activeDropdown === 4 ? "drop-active" : ""}`}
             onClick={(e) => handleDropdownClick(e, 4)}
           >
             <span className="nav-item">
               Branches
-
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
 
             <ul className="dropdown-menu">
-             <li onClick={closeMenu}>
-            <Link to="/ContactDelhi">Delhi</Link>
-          </li>
-
-            <li onClick={closeMenu}>
-            <Link to="/ContactNoida">Noida</Link>
-          </li>
-
               <li onClick={closeMenu}>
-            <Link to="/ContactGhaziabad">Ghaziabad</Link>
-          </li>
+                <Link to="/ContactDelhi">Delhi</Link>
+              </li>
               <li onClick={closeMenu}>
-            <Link to="/ContactLondon">International Branch London</Link>
-          </li>
-
+                <Link to="/ContactNoida">Noida</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/ContactGhaziabad">Ghaziabad</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/ContactLondon">International Branch London</Link>
+              </li>
             </ul>
           </li>
 
@@ -307,26 +335,28 @@ function Navbar() {
             <Link to="/gallary">Gallery</Link>
           </li>
 
-          {/* EVENTS */}
+          {/* EVENTS DROPDOWN */}
           <li
-            className={`dropdown ${
-              activeDropdown === 5 ? "drop-active" : ""
-            }`}
+            className={`dropdown ${activeDropdown === 5 ? "drop-active" : ""}`}
             onClick={(e) => handleDropdownClick(e, 5)}
           >
             <span className="nav-item">
               Events
-
               <span className="arrow">
                 <FiChevronDown />
               </span>
             </span>
 
             <ul className="dropdown-menu">
-
-              <Link to="/upcomingevents"><li onClick={closeMenu}>Upcoming Events</li></Link>
-              <Link to="/seminar"><li onClick={closeMenu}>Seminars</li></Link>
-              <Link to="/EducationFair"><li onClick={closeMenu}>Education Fair</li></Link>
+              <li onClick={closeMenu}>
+                <Link to="/upcomingevents">Upcoming Events</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/seminar">Seminars</Link>
+              </li>
+              <li onClick={closeMenu}>
+                <Link to="/EducationFair">Education Fair</Link>
+              </li>
             </ul>
           </li>
 
