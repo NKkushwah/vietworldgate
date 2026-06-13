@@ -3,8 +3,8 @@
    German Flag Colors: Black (#1a1a1a), Red (#DD0000), Gold (#FFCC00)
    ========================================================================= */
 :root {
-  --deu-black:       #1C1C1C;   /* German flag black */
-  --deu-black-soft:  #2e2e2e;
+  --deu-black:       #012819;   /* German flag black */
+  --deu-black-soft:  #012819;
   --deu-red:         #CC0000;   /* German flag red */
   --deu-red-dark:    #aa0000;
   --deu-gold:        #FFCC00;   /* German flag gold */
@@ -14,7 +14,7 @@
   --deu-steel-light: #eef1f5;
 
   /* Text */
-  --deu-txt-dark:    #1a1a2a;
+  --deu-txt-dark:    #012819;
   --deu-txt-muted:   #56606d;
 
   /* UI */
@@ -22,7 +22,7 @@
   --deu-white:       #ffffff;
 
   /* WhatsApp */
-  --deu-wa-green:    #25D366;
+  --deu-wa-green:    #012819;
   --deu-wa-dark:     #128C7E;
 
   --deu-transition:  all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -232,7 +232,7 @@
 }
 
 .deu-phone-link {
-  color: Red;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 700;
@@ -553,7 +553,7 @@
 
 .deu-primary-btn {
   display: inline-block;
-  background: rgb(38, 138, 38);
+  background: #012819;
   color: var(--deu-white);
   text-decoration: none;
   padding: 14px 32px;

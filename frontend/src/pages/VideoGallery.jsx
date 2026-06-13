@@ -8,13 +8,37 @@ const videos = [
   {
     id: 1,
     title: "Study Abroad Experience",
-    url: "#",
+    url: "",
   },
   {
     id: 2,
     title: "University Admission Guide",
-    url: "#",
+    url: "",
   },
+
+  {
+    id: 3,
+    title: "University Admission Guide",
+    url: "",
+  },
+
+  {
+    id: 4,
+    title: "University Admission Guide",
+    url: "",
+  },
+
+  {
+    id:5,
+    title:"University Admission Guide",
+    url: "",
+  },
+
+  {
+    id:6,
+    title:"University Admission Guide",
+    url:"",
+  }
 ]
 
 const VideoGallery = () => {
@@ -27,20 +51,21 @@ const VideoGallery = () => {
         <p>Watch real students sharing their study abroad journey.</p>
 
         <div className="video-grid">
-          {videos.map((video) => (
-            <div className="video-card" key={video.id}>
-              <iframe
-                src={video.url}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+  {videos.map((video) => (
+    <div className="video-card" key={video.id}>
+      <iframe
+        src={video.url}
+        title={video.title}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
 
-              <h3>{video.title}</h3>
-            </div>
-          ))}
-        </div>
+      <h3>{video.title}</h3>
+    </div>
+  ))}
+</div>
+         
       </div>
     </section>
     <Footer/>

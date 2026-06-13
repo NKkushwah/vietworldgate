@@ -2,6 +2,7 @@ import React from 'react';
 import './GermanyDestination.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function GermanyDestination() {
   const whatsappLink = "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20in%20Germany.%20Please%20guide%20me%20about%20public%20universities%20and%20the%20visa%20process.";
@@ -37,7 +38,11 @@ export default function GermanyDestination() {
             <div className="deu-call-card">
               <p>Our Appointment Service call us</p>
               <a href="tel:+917982295530" className="deu-phone-link">
-                <span>📞</span> +91-7982295530
+                <div className='contact-item'>
+                  <FaPhoneAlt className="contact-icon"/>
+                  <span>+91 7982295530</span>
+
+                </div>
               </a>
             </div>
 
