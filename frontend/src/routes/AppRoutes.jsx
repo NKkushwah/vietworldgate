@@ -41,6 +41,7 @@ import VideoGallery from "../pages/VideoGallery";
 
 
 import Accreditations from "../pages/Accreditations";
+import CompanyHistory from "../pages/CompanyHistory";
 function AppRoutes() {
   return (
    
@@ -83,7 +84,7 @@ function AppRoutes() {
         <Route path="/seminar" element={<Seminar/>} />
         <Route path="/gallary" element={<VideoGallery/>} />
         <Route path="/termsandconditions" element={<TermsConditions/>} />
-        
+          <Route path="/CompanyHistory" element={<CompanyHistory/>} />
       
          <Route path="/Accrediations" element={<Accreditations/>} />
       </Routes>

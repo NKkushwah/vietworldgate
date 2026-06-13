@@ -369,22 +369,22 @@ function Partners() {
 
 
 // Precise operational tracking coordinate matrices matching premium cartography layout
+// Humne flag string ko CDN image links se replace kiya hai jo har browser me color me dikhenge.
 const DESTINATIONS = [
-  { id: 3,  flag: "🇨🇦", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
-  { id: 4,  flag: "🇺🇸", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
-  { id: 1,  flag: "🇬🇧", country: "United Kingdom", visas: ["Student", "Work", "Visitor"],           style: { top: "26%", left: "47%" } },
-  { id: 6,  flag: "🇩🇪", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
-  { id: 12, flag: "🇨🇭", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
-  { id: 10, flag: "🇦🇪", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
-  { id: 9,  flag: "🇮🇹", country: "Italy",          visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
-  { id: 7,  flag: "🇸🇬", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
-  { id: 11, flag: "🇲🇾", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
-  { id: 8,  flag: "🇯🇵", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
-  { id: 2,  flag: "🇦🇺", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
-  { id: 5,  flag: "🇳🇿", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
+  { id: 3,  flag: "https://flagcdn.com/w40/ca.png", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
+  { id: 4,  flag: "https://flagcdn.com/w40/us.png", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
+  { id: 1,  flag: "https://flagcdn.com/w40/gb.png", country: "United Kingdom", visas: ["Student", "Work", "Visitor"],           style: { top: "26%", left: "47%" } },
+  { id: 6,  flag: "https://flagcdn.com/w40/de.png", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
+  { id: 12, flag: "https://flagcdn.com/w40/ch.png", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
+  { id: 10, flag: "https://flagcdn.com/w40/ae.png", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
+  { id: 9,  flag: "https://flagcdn.com/w40/it.png", country: "Italy",          visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
+  { id: 7,  flag: "https://flagcdn.com/w40/sg.png", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
+  { id: 11, flag: "https://flagcdn.com/w40/my.png", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
+  { id: 8,  flag: "https://flagcdn.com/w40/jp.png", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
+  { id: 2,  flag: "https://flagcdn.com/w40/au.png", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
+  { id: 5,  flag: "https://flagcdn.com/w40/nz.png", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
 ];
-
- function WorldMap() {
+function WorldMap() {
   const [active, setActive] = useState(null);
   const mapRef = useRef(null);
 
@@ -447,12 +447,14 @@ const DESTINATIONS = [
                   onClick={() => setActive(isActive ? null : d.id)}
                   aria-expanded={isActive}
                 >
-                  {/* Clean SVG pin shape matching standard vector map icons */}
                   <svg className="worldmap__pin-svg" viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12,0 C5.37,0 0,5.37 0,12 C0,21 12,30 12,30 C12,30 24,21 24,12 C24,5.37 18.63,0 12,0 Z" fill="currentColor" />
                     <circle cx="12" cy="11" r="8" fill="#ffffff" />
                   </svg>
-                  <span className="worldmap__pin-flag-render">{d.flag}</span>
+                  {/* CHANGED: Emoji string ki jagah safe Image tag render kiya gaya hai */}
+                  <span className="worldmap__pin-flag-render">
+                    <img src={d.flag} alt={d.country} className="worldmap__flag-img" />
+                  </span>
                   <div className="worldmap__pin-pulse"></div>
                 </button>
 
@@ -460,7 +462,7 @@ const DESTINATIONS = [
                 {isActive && (
                   <div className="worldmap__desktop-tooltip">
                     <div className="worldmap__tooltip-header">
-                      <span>{d.flag}</span>
+                      <span><img src={d.flag} alt={d.country} className="worldmap__flag-img-small" /></span>
                       <strong>{d.country}</strong>
                     </div>
                     <ul className="worldmap__tooltip-list">
@@ -481,7 +483,9 @@ const DESTINATIONS = [
             <div className="worldmap__drawer-body">
               <div className="worldmap__drawer-handle" onClick={() => setActive(null)}></div>
               <div className="worldmap__drawer-header">
-                <span className="worldmap__drawer-flag">{activeData.flag}</span>
+                <span className="worldmap__drawer-flag">
+                  <img src={activeData.flag} alt={activeData.country} className="worldmap__flag-img-drawer" />
+                </span>
                 <h3>{activeData.country}</h3>
               </div>
               <p className="worldmap__drawer-label">Available Visas:</p>
@@ -505,7 +509,7 @@ const DESTINATIONS = [
                 className={`worldmap__filter-chip ${active === d.id ? "worldmap__filter-chip--active" : ""}`}
                 onClick={() => setActive(active === d.id ? null : d.id)}
               >
-                <span>{d.flag}</span> {d.country}
+                <span><img src={d.flag} alt={d.country} className="worldmap__flag-img-chip" /></span> {d.country}
               </button>
             ))}
           </div>

@@ -97,7 +97,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   gap: 0.5rem;
   background: #012819;
-  color: var(--teal-dark);
+  color:var(--white);
   padding: 0.45rem 1rem;
   border-radius: 100px;
   font-family: var(--font-display);
@@ -477,13 +477,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ========================================================================== */
 
 :root {
-  --map-primary: #009696;        /* Teal color matching layout */
+  --map-primary: #009696;
   --map-primary-dark: #007373;
   --map-navy: #0b1a30;
   --map-slate: #556173;
   --map-bg: #ffffff;
   --map-border: #e6ecf0;
-  --map-pin-color: #657786;      /* Cool dark pin shade from image reference */
+  --map-pin-color: #657786;
 }
 
 .worldmap {
@@ -530,12 +530,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin: 0 auto;
 }
 
-/* Map Canvas Layout Wrapper */
 .worldmap__map-wrap {
   position: relative;
   width: 100%;
   background-color: var(--map-bg);
-  aspect-ratio: 1008 / 651; /* True geographical container box scaling */
+  aspect-ratio: 1008 / 651;
 }
 
 .worldmap__svg {
@@ -549,10 +548,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: fill 0.3s ease;
 }
 
-/* Vector Pin Systems Core */
 .worldmap__marker-node {
   position: absolute;
-  transform: translate(-50%, -85%); /* Anchors exact pinpoint bottom vertices to geography location */
+  transform: translate(-50%, -85%);
   z-index: 10;
 }
 
@@ -582,19 +580,51 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
 }
 
-/* FIX: Absolute layering optimization for both PC & Mobile Viewports */
+/* Updated Flag Render Container */
 .worldmap__pin-flag-render {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -65%); /* Perfect central locking system inside standard map markers */
-  font-size: 1.1rem;
-  z-index: 15; /* Forces the flag layer above the absolute button render engine in PC browsers */
+  transform: translate(-50%, -68%);
+  z-index: 15;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  pointer-events: none; /* Prevents element overlap breaking click events on pins */
+  pointer-events: none;
+}
+
+/* Style for Flag images inside Pins */
+.worldmap__flag-img {
+  width: 13px;
+  height: 10px;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Tooltip & Chips Flag styles */
+.worldmap__flag-img-small {
+  width: 18px;
+  height: 13px;
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.worldmap__flag-img-chip {
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.worldmap__flag-img-drawer {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .worldmap__pin-pulse {
@@ -609,14 +639,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all 0.2s ease;
 }
 
-/* Active Highlight States */
 .worldmap__marker-btn:hover,
 .worldmap__marker-node--active .worldmap__marker-btn {
   color: var(--map-navy);
   transform: translateY(-4px) scale(1.1);
 }
 
-/* Premium Desktop Tooltips */
 .worldmap__desktop-tooltip {
   position: absolute;
   bottom: 48px;
@@ -688,7 +716,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background-color: var(--map-primary-dark);
 }
 
-/* Quick Filter System chips styling */
 .worldmap__filter-zone {
   margin-top: 3.5rem;
   text-align: center;
@@ -745,12 +772,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   
   .worldmap__marker-btn { width: 22px; height: 28px; }
   
-  /* Retains relative alignment structure even under intensive media query downscaling */
   .worldmap__pin-flag-render { 
-    font-size: 0.75rem; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -68%);
+  }
+
+  .worldmap__flag-img {
+    width: 9px;
+    height: 7px;
   }
   
   .worldmap__desktop-tooltip {
@@ -808,7 +838,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     margin-bottom: 1rem;
   }
 
-  .worldmap__drawer-flag { font-size: 1.6rem; }
   .worldmap__drawer-header h3 {
     font-size: 1.25rem;
     font-weight: 800;
@@ -857,7 +886,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 
-
+   
 /* ===========================
    ADVANTAGES
    =========================== */

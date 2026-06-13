@@ -43,7 +43,7 @@ export default function CompanyProfile() {
     {
       name: "Our History",
       icon: <FaHistory />,
-      link: "/about/history",
+      link: "/companyHistory",
     },
 
     {
