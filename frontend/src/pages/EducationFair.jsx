@@ -358,7 +358,7 @@ const prevFlags = () => {
         <div className="reviews-footer">
           <div className="reviewers-info">
             <h4>Vikas Yadav</h4>
-            <span>MSc Data Science,Canada</span>
+            <span>MSc Data Science,UK</span>
           </div>
           <div className="ratings">⭐⭐⭐⭐⭐</div>
         </div>
@@ -374,8 +374,8 @@ const prevFlags = () => {
         </p>
         <div className="reviews-footer">
           <div className="reviewers-info">
-            <h4>Pooja Sharma</h4>
-            <span>MBA Graduate, Australia</span>
+            <h4>Rahul Singh</h4>
+            <span>MBA Graduate, Canada</span>
           </div>
           <div className="ratings">⭐⭐⭐⭐⭐</div>
         </div>
@@ -392,7 +392,7 @@ const prevFlags = () => {
         <div className="reviews-footer">
           <div className="reviewers-info">
             <h4>Arjun Mehra</h4>
-            <span>B.Eng Student, United Kingdom</span>
+            <span>B.Eng Student, Australia</span>
           </div>
           <div className="ratings">⭐⭐⭐⭐⭐</div>
         </div>

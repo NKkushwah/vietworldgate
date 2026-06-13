@@ -38,6 +38,9 @@ import TermsConditions from "../pages/TermsConditions";
 import EducationFair from '../pages/EducationFair';
 import VideoGallery from "../pages/VideoGallery";
 
+
+
+import Accreditations from "../pages/Accreditations";
 function AppRoutes() {
   return (
    
@@ -82,6 +85,7 @@ function AppRoutes() {
         <Route path="/termsandconditions" element={<TermsConditions/>} />
         
       
+         <Route path="/Accrediations" element={<Accreditations/>} />
       </Routes>
 
    
