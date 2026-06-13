@@ -8,12 +8,12 @@ const videos = [
   {
     id: 1,
     title: "Study Abroad Experience",
-    url: "https://www.youtube.com/embed/jNQXAC9IVRw",
+    url: "#",
   },
   {
     id: 2,
     title: "University Admission Guide",
-    url: "https://www.youtube.com/embed/M7lc1UVf-VE",
+    url: "#",
   },
 ]
 
