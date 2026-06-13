@@ -477,7 +477,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ========================================================================== */
 
 :root {
-  --map-primary: #009696;        /* Teal color matching image_a107c0.jpg */
+  --map-primary: #009696;        /* Teal color matching layout */
   --map-primary-dark: #007373;
   --map-navy: #0b1a30;
   --map-slate: #556173;
@@ -582,13 +582,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
 }
 
+/* FIX: Absolute layering optimization for both PC & Mobile Viewports */
 .worldmap__pin-flag-render {
   position: absolute;
-  top: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%); /* Perfect central locking system inside standard map markers */
   font-size: 1.1rem;
-  z-index: 5;
-  display: block;
+  z-index: 15; /* Forces the flag layer above the absolute button render engine in PC browsers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  pointer-events: none; /* Prevents element overlap breaking click events on pins */
 }
 
 .worldmap__pin-pulse {
@@ -737,16 +743,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 768px) {
   .worldmap { padding: 3.5rem 1rem; }
   
-  /* Scale the pins down slightly on smaller mobile viewports so they don't overlap */
   .worldmap__marker-btn { width: 22px; height: 28px; }
-  .worldmap__pin-flag-render { font-size: 0.75rem; top: 4px; }
   
-  /* Disable desktop hovering popup modules to preserve safe UI grid areas */
+  /* Retains relative alignment structure even under intensive media query downscaling */
+  .worldmap__pin-flag-render { 
+    font-size: 0.75rem; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
+  
   .worldmap__desktop-tooltip {
     display: none !important;
   }
 
-  /* Trigger the premium native smartphone operating sheet style drawer */
   .worldmap__mobile-drawer {
     display: block;
     position: fixed;
@@ -843,6 +853,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: 0.95rem;
   }
 }
+
+
+
+
+
 /* ===========================
    ADVANTAGES
    =========================== */
