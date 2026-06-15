@@ -103,7 +103,7 @@ export default function CompanyProfile() {
     {
       name: "Gallery",
       icon: <FaImages />,
-      link: "/about/gallery",
+      link: "/gallary",
     },
 
   ];
