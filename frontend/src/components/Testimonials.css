@@ -213,7 +213,7 @@
 /* Large Tablets & Small Laptops (e.g., iPad Pro, Small Screens) */
 @media (max-width: 1024px) {
   .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   

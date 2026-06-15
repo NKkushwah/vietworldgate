@@ -350,7 +350,7 @@ const prevFlags = () => {
       {/* CARD 1 */}
       <div className="reviews-card">
         <div className="reviewers-avatar">
-          <img src="https://cdn.prod.website-files.com/6600e1eab90de089c2d9c9cd/669726e7b6388b54f9aa2769_66553f0390479b8e5a3fc524_image_CMEex1C1_1716770910814_raw.jpeg" alt="Student" />
+          {/* <img src="https://cdn.prod.website-files.com/6600e1eab90de089c2d9c9cd/669726e7b6388b54f9aa2769_66553f0390479b8e5a3fc524_image_CMEex1C1_1716770910814_raw.jpeg" alt="Student" /> */}
         </div>
         <p className="reviews-text">
           "The admission team mapped my profile perfectly to top UK universities, and the visa desk got my Tier-4 student visa approved in just 10 days with minimum effort on my end!"
@@ -367,7 +367,7 @@ const prevFlags = () => {
       {/* CARD 2 */}
       <div className="reviews-card">
         <div className="reviewers-avatar">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Student" />
+          {/* <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Student" /> */}
         </div>
         <p className="review-text">
           "Highly professional services. From SOP documentation to visa interview mock prep, their consultants guided me every step of the way for my Canadian student permit."
@@ -384,7 +384,7 @@ const prevFlags = () => {
       {/* CARD 3 */}
       <div className="reviews-card">
         <div className="reviewers-avatar">
-          <img src="https://miro.medium.com/1*LqClB-Wa__W9WrNqP74I3Q.jpeg" alt="Student" />
+          {/* <img src="https://miro.medium.com/1*LqClB-Wa__W9WrNqP74I3Q.jpeg" alt="Student" /> */}
         </div>
         <p className="reviews-text">
           "I was worried about my gap years, but their specialized immigration legal desk structured my file flawlessly. Got my Australian subclass 500 visa without a single hitch!"

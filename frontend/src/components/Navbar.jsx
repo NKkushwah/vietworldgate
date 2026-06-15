@@ -19,7 +19,7 @@ const SearchBox = () => {
 
     const routes = {
      
-  "education fair": "/EducationFair",
+  "education fair": "/EducationFair", Eeducation ,
   "our presence": "/OurPresence",
   "our services": "/OurServices",
   infrastructure: "/Infrastructure",
