@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 
 // ── LUCIDE ICONS IMPORT ─────────────────────────────────────
-// Tum inko apni marzi se kisi bhi doosri library (like FontAwesome) se replace kar sakte ho
 import { 
   GraduationCap, 
   Globe, 
@@ -33,65 +32,60 @@ const services = [
     icon: <GraduationCap size={24} />,
     name: "Student Visa Solutions",
     desc: "Comprehensive university admissions support, premium SOP review, strategic financial documentation guidance, and error-free visa filing for elite institutions.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
   {
     icon: <Globe size={24} />,
     name: "PR & Settle Abroad",
     desc: "Permanent residency pathways, skilled migration profiles, and tailored consulting for long-term global settlement and career security.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
   {
     icon: <Briefcase size={24} />,
     name: "Global Work Permits",
     desc: "Employer-sponsored visas, skilled worker pathways, LMIA processing assistance, and complete executive relocation management.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
   {
     icon: <Plane size={24} />,
     name: "Tourist & Visitor Permits",
     desc: "Fast-track travel and visit visa applications featuring precise document mapping, appointment coordination, and strict legal verification.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
   {
     icon: <Users size={24} />,
     name: "Family Reunification",
     desc: "Spouse visas, dependent child additions, and family settlement applications managed with deep legal care to keep your loved ones together.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
   {
     icon: <Building2 size={24} />,
     name: "Business & Investor Visas",
     desc: "Short-stay corporate permits and long-term residency-by-investment programs for entrepreneurs seeking dynamic international footprints.",
-    countries: ["Canada", "Australia" ,
-"Dubai" ,"Germany" ,"Italy" ,"Japan" ,"New Zealand","UK"],
+    countries: ["Canada", "Australia", "Dubai", "Germany", "Italy", "Japan", "New Zealand", "UK"],
     highlight: false,
   },
 ];
 
+// FIXED: Text flags converted to standard Flag Image URLs
 const destinations = [
-  { flag: "USA", name: "United States", types: "Ivy League · Stem · Tech Work", popular: true },
-  { flag: "UK", name: "United Kingdom", types: "Master's Pathways · Skilled Work", popular: true },
-  { flag: "CAN", name: "Canada", types: "Express Entry · Study · PNP", popular: true },
-  { flag: "AUS", name: "Australia", types: "Higher Ed · Regional PR · Subclass", popular: true },
-  { flag: "GER", name: "Germany", types: "Free Education · Technical Fields", popular: false },
-  { flag: "UAE", name: "UAE / Dubai", types: "Corporate Hub · Investor Pass", popular: false },
-  { flag: "SGP", name: "Singapore", types: "Global Tech · Business Executive", popular: false },
-  { flag: "JPN", name: "Japan", types: "Advanced Research · Global Work", popular: false },
-  { flag: "NZL", name: "New Zealand", types: "Green List Careers · Pathways", popular: false },
-  { flag: "PRT", name: "Portugal", types: "D7 Visa · Cultural Immersion", popular: false },
-  { flag: "IRL", name: "Ireland", types: "Silicon Docks Careers · Post-Study", popular: false },
-  { flag: "NLD", name: "Netherlands", types: "Highly Skilled Migrant · Tech", popular: false },
+  { flag: "https://flagcdn.com/us.svg", name: "United States", types: "Ivy League · Stem · Tech Work", popular: true },
+  { flag: "https://flagcdn.com/gb.svg", name: "United Kingdom", types: "Master's Pathways · Skilled Work", popular: true },
+  { flag: "https://flagcdn.com/ca.svg", name: "Canada", types: "Express Entry · Study · PNP", popular: true },
+  { flag: "https://flagcdn.com/au.svg", name: "Australia", types: "Higher Ed · Regional PR · Subclass", popular: true },
+  { flag: "https://flagcdn.com/de.svg", name: "Germany", types: "Free Education · Technical Fields", popular: false },
+  { flag: "https://flagcdn.com/ae.svg", name: "UAE / Dubai", types: "Corporate Hub · Investor Pass", popular: false },
+  { flag: "https://flagcdn.com/sg.svg", name: "Singapore", types: "Global Tech · Business Executive", popular: false },
+  { flag: "https://flagcdn.com/jp.svg", name: "Japan", types: "Advanced Research · Global Work", popular: false },
+  { flag: "https://flagcdn.com/nz.svg", name: "New Zealand", types: "Green List Careers · Pathways", popular: false },
+  { flag: "https://flagcdn.com/pt.svg", name: "Portugal", types: "D7 Visa · Cultural Immersion", popular: false },
+  { flag: "https://flagcdn.com/ie.svg", name: "Ireland", types: "Silicon Docks Careers · Post-Study", popular: false },
+  { flag: "https://flagcdn.com/nl.svg", name: "Netherlands", types: "Highly Skilled Migrant · Tech", popular: false },
 ];
 
 const steps = [
@@ -102,15 +96,16 @@ const steps = [
   { num: "5", icon: <Award size={22} />, title: "Worldgate Cleared", desc: "Collect your visa stamp, receive pre-departure checklists, and embark on life-changing international journey." },
 ];
 
+// FIXED: Text flags converted to standard Flag Image URLs for the visual bar section
 const approvalRates = [
-  { flag: "USA", country: "United States", rate: 93 },
-  { flag: "CAN", country: "Canada", rate: 98 },
-  { flag: "UK", country: "United Kingdom", rate: 96 },
-  { flag: "AUS", country: "Australia", rate: 97 },
-  { flag: "GER", country: "Germany", rate: 95 },
-  { flag: "UAE", country: "UAE / Dubai", rate: 96 },
-  { flag: "JPN", country: "Japan", rate: 99 },
-  { flag: "NZL", country: "New Zealand", rate: 95 },
+  { flag: "https://flagcdn.com/us.svg", country: "United States", rate: 93 },
+  { flag: "https://flagcdn.com/ca.svg", country: "Canada", rate: 98 },
+  { flag: "https://flagcdn.com/gb.svg", country: "United Kingdom", rate: 96 },
+  { flag: "https://flagcdn.com/au.svg", country: "Australia", rate: 97 },
+  { flag: "https://flagcdn.com/de.svg", country: "Germany", rate: 95 },
+  { flag: "https://flagcdn.com/ae.svg", country: "UAE / Dubai", rate: 96 },
+  { flag: "https://flagcdn.com/jp.svg", country: "Japan", rate: 99 },
+  { flag: "https://flagcdn.com/nz.svg", country: "New Zealand", rate: 95 },
 ];
 
 const corePillars = [
@@ -144,11 +139,45 @@ const testimonials = [
   },
 ];
 
+// FIXED: Cleaned array structure, added custom SVG flag images, separated addresses properly
 const globalDesks = [
-  { flag: <Globe size={20} />, city: "A Oxford Street London United Kingdom", country: "London", phone: "+91 79822 95530", email: "info@vietworldgate.com", url:'ContactLondon' , hq: true },
-  { flag: <MapPin size={20} />, city: "Ghaziabad", country: "India", phone:  "+91 79822 95530", email: "info@vietworldgate.com" , url:'ContactGhaziabad'  },
-  { flag: <MapPin size={20} />, city: "Noida", country: "India", phone:  "+91 79822 95530", email: "info@vietworldgate.com" , url:'ContactNoida' },
-  { flag: <MapPin size={20} />, city: "Delhi", country: "India", phone: "+91 79822 95530", email: "info@vietworldgate.com" , url:'ContactDelhi'  },
+  { 
+    flag: "https://flagcdn.com/gb.svg", 
+    city: "London", 
+    address: "A Oxford Street, London",
+    country: "United Kingdom", 
+    phone: "+91 79822 95530", 
+    email: "info@vietworldgate.com", 
+    url: "ContactLondon", 
+    hq: true 
+  },
+  { 
+    flag: "https://flagcdn.com/in.svg", 
+    city: "Ghaziabad", 
+    address: "Ghaziabad ",
+    country: "India", 
+    phone: "+91 79822 95530", 
+    email: "info@vietworldgate.com", 
+    url: "ContactGhaziabad" 
+  },
+  { 
+    flag: "https://flagcdn.com/in.svg", 
+    city: "Noida", 
+    address: "Noida ",
+    country: "India", 
+    phone: "+91 79822 95530", 
+    email: "info@vietworldgate.com", 
+    url: "ContactNoida" 
+  },
+  { 
+    flag: "https://flagcdn.com/in.svg", 
+    city: "Delhi", 
+    address: "Delhi ",
+    country: "India", 
+    phone: "+91 79822 95530", 
+    email: "info@vietworldgate.com", 
+    url: "ContactDelhi" 
+  },
 ];
 
 const heroStats = [
@@ -196,9 +225,7 @@ export default function OurPresence() {
                 </p>
                 <div className="hero-btns">
                   <a href = "/contact-us" className="btn-gold">Begin Profile Evaluation →</a>
-                  <a  href="https://wa.me/917982295530"
-    target="_blank"
-    rel="noopener noreferrer" className="btn-ghost">Connect with Our Consultants</a>
+                  <a  href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-ghost">Connect with Our Consultants</a>
                 </div>
               </div>
 
@@ -242,23 +269,14 @@ export default function OurPresence() {
                       <span key={j} className="ctag">{c}</span>
                     ))}
                   </div>
-                   <a
-    href="https://wa.me/917982295530"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn-services"
-  >
-     Contact via WhatsApp
-  </a>
+                  <a href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-services">
+                    Contact via WhatsApp
+                  </a>
                 </div>
-                
               ))}
             </div>
           </div>
         </section>
-
-       
-            
 
         {/* ── HOW IT WORKS ── */}
         <section className="process-section">
@@ -316,7 +334,10 @@ export default function OurPresence() {
                   {approvalRates.map((a, i) => (
                     <div key={i} className="abar-row">
                       <div className="abar-country">
-                        <span className="abar-flag-text">{a.flag}</span>
+                        {/* FIXED: Replaced standard string format with custom Flag Image rendering */}
+                        <span className="abar-flag-text">
+                          <img src={a.flag} alt={a.country} style={{ width: "24px", height: "auto", borderRadius: "2px", display: "inline-block", verticalAlign: "middle" }} />
+                        </span>
                         <span>{a.country}</span>
                       </div>
                       <div className="abar-wrap">
@@ -332,40 +353,37 @@ export default function OurPresence() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-     <section className="testimonials-section">
-  <div className="container">
-    <div className="testimonials-head">
-      <span className="eyebrow">Transformations</span>
-      <h2 className="sec-title">Real Success Stories, Real Impacts</h2>
-    </div>
+        <section className="testimonials-section">
+          <div className="container">
+            <div className="testimonials-head">
+              <span className="eyebrow">Transformations</span>
+              <h2 className="sec-title">Real Success Stories, Real Impacts</h2>
+            </div>
 
-    <div className="testi-grid">
-      {testimonials.map((t, i) => (
-        <div key={i} className="testi-card">
-          <div className="testi-stars">{t.stars}</div>
-          <p className="testi-quote">"{t.quote}"</p>
-          <div className="testi-author">
-            <div className="testi-avatar">{t.initials}</div>
-            <div>
-              <div className="testi-name">{t.name}</div>
-              <div className="testi-visa">{t.visa}</div>
+            <div className="testi-grid">
+              {testimonials.map((t, i) => (
+                <div key={i} className="testi-card">
+                  <div className="testi-stars">{t.stars}</div>
+                  <p className="testi-quote">"{t.quote}"</p>
+                  <div className="testi-author">
+                    <div className="testi-avatar">{t.initials}</div>
+                    <div>
+                      <div className="testi-name">{t.name}</div>
+                      <div className="testi-visa">{t.visa}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="show-more-wrapper">
+              <a href="/feedback" className="show-more-btn">
+                Show More
+              </a>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-
-    {/* FIXED BUTTON */}
-    <div className="show-more-wrapper">
-      <Link to="/feedback" className="show-more-btn">
-        Show More
-      </Link>
-    </div>
-
-  </div>
-</section>
+        </section>
     
- 
         {/* ── GLOBAL DESKS ── */}
         <section className="offices-section" id="desks">
           <div className="container">
@@ -381,44 +399,51 @@ export default function OurPresence() {
 
             <div className="offices-grid">
               {globalDesks.map((o, i) => (
-  <div key={i} className={`office-card${o.hq ? " hq" : ""}`}>
-    
-    {o.hq && <span className="hq-badge">Primary Hub</span>}
+                <div key={i} className={`office-card${o.hq ? " hq" : ""}`}>
+                  
+                  {o.hq && <span className="hq-badge">Primary Hub</span>}
 
-    <span className="office-flag">{o.flag}</span>
+                  {/* FIXED: Render structured SVG images instead of static icons */}
+                  <div className="office-flag" style={{ marginBottom: "12px", display: "block" }}>
+                    <img 
+                      src={o.flag} 
+                      alt={`${o.country} Flag`} 
+                      style={{ width: "35px", height: "24px", objectFit: "cover", borderRadius: "3px", boxShadow: "0 1px 3px rgba(0,0,0,0.15)" }} 
+                    />
+                  </div>
 
-    <div className="office-city">{o.city}</div>
-    <div className="office-country">{o.country}</div>
+                  {/* FIXED: Re-aligned cleanly using Lucide MapPin globally inside layout */}
+                  <div className="office-city" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <MapPin size={16} style={{ color: "var(--gold, #d4af37)" }} /> {o.city}
+                  </div>
+                  <div className="office-country">{o.country}</div>
+                  <p style={{ fontSize: "12px", color: "#8c8c8c", marginTop: "2px", marginBottom: "12px" }}>{o.address}</p>
 
-   <ul className="office-info">
-  
-  {/* 📞 Phone Click */}
-  <li>
-    <span className="ic"><Phone size={14} /></span>
-    <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="contact-link">
-      {o.phone}
-    </a>
-  </li>
+                  <ul className="office-info">
+                    {/* 📞 Phone Click */}
+                    <li>
+                      <span className="ic"><Phone size={14} /></span>
+                      <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="contact-link">
+                        {o.phone}
+                      </a>
+                    </li>
 
-  {/* ✉️ Email Click */}
-  <li>
-    <span className="ic"><Mail size={14} /></span>
-    <a    href={`https://mail.google.com/mail/?view=cm&to=${o.email}`}
-    target="_blank"
-    rel="noopener noreferrer" className="contact-link">
-      {o.email}
-    </a>
-  </li>
+                    {/* ✉️ Email Click */}
+                    <li>
+                      <span className="ic"><Mail size={14} /></span>
+                      <a href={`https://mail.google.com/mail/?view=cm&to=${o.email}`} target="_blank" rel="noopener noreferrer" className="contact-link">
+                        {o.email}
+                      </a>
+                    </li>
+                  </ul>
 
-</ul>
+                  {/* ✅ Read More Button */}
+                  <a href={o.url} className="read-more-btn">
+                    Read More →
+                  </a>
 
-    {/* ✅ Read More Button */}
-    <a href={o.url} className="read-more-btn">
-      Read More →
-    </a>
-
-  </div>
-))}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -436,24 +461,17 @@ export default function OurPresence() {
                 Schedule a focused consultation with a qualified global migration coordinator. 
                 Gain absolute strategic clarity with no hidden liabilities or commitments.
               </p>
+            </div>
             <div className="cta-btns">
-  
-  {/* 📞 Call Button */}
-  <a href="tel:+917982295530" className="btn-gold">
-    📞 Schedule Free Advisory Call →
-  </a>
+              {/* 📞 Call Button */}
+              <a href="tel:+917982295530" className="btn-gold">
+                📞 Schedule Free Advisory Call →
+              </a>
 
-  {/* 💬 WhatsApp Button */}
-  <a
-    href="https://wa.me/917982295530"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn-ghost"
-  >
-     Contact via WhatsApp
-  </a>
-
-</div>
+              {/* 💬 WhatsApp Button */}
+              <a href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                 Contact via WhatsApp
+              </a>
             </div>
           </div>
         </section>

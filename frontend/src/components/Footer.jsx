@@ -189,77 +189,90 @@ const Footer = () => {
             <h4>GET IN TOUCH</h4>
 
             {/* Domestic Address */}
-            <div className="contact-item">
-              <FaLocationDot className="contact-icon" />
+         <div className="contact-item">
+  <a
+    href="https://www.google.com/maps?q=28.6293590,77.3788000"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaLocationDot className="contact-icon" />
+  </a>
 
-              <div className="contact-info">
-                <strong>Domestic Address</strong>
+  <div className="contact-info">
+    <strong>Domestic Address</strong>
 
-                <span>
-                  36, Block H, Sector 63,
-                  <br />
-                  Uttar Pradesh 201301, Noida
-                  <br />
-                  Delhi, India
-                </span>
-              </div>
-            </div>
-
+    <a
+      href="https://www.google.com/maps?q=28.6293590,77.3788000"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-link"
+    >
+      36, Block H, Sector 63, <br />
+      Noida, Uttar Pradesh 201301 <br />
+      India
+    </a>
+  </div>
+</div>
             {/* Domestic Phone */}
-            <div className="contact-item">
-              <FaMobileScreenButton className="contact-icon" />
+          <div className="contact-item">
+  <FaMobileScreenButton className="contact-icon" />
 
-              <div className="contact-info">
-                <strong>Phone</strong>
+  <div className="contact-info">
+    <strong>Phone</strong>
 
-                <span>
-                  +91 79822 95530
-                </span>
-              </div>
-            </div>
+    <a href="tel:+917982295530" className="contact-link">
+      +91 79822 95530
+    </a>
+  </div>
+</div>
 
             {/* International Address */}
-            <div className="contact-item">
-              <FaLocationDot className="contact-icon" />
+           <div className="contact-item">
+  <FaLocationDot className="contact-icon" />
 
-              <div className="contact-info">
-                <strong>International Address</strong>
+  <div className="contact-info">
+    <strong>International Address</strong>
 
-                <span>
-                  401, A Oxford Street
-                  <br />
-                  London
-                  <br />
-                  United Kingdom
-                </span>
-              </div>
-            </div>
+    <a
+      href="https://www.google.com/maps?q=401+A+Oxford+Street+London+United+Kingdom"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-link"
+    >
+      401, A Oxford Street <br />
+      London <br />
+      United Kingdom
+    </a>
+  </div>
+</div>
 
             {/* International Phone */}
             <div className="contact-item">
-              <FaMobileScreenButton className="contact-icon" />
+  <FaMobileScreenButton className="contact-icon" />
 
-              <div className="contact-info">
-                <strong>Phone</strong>
+  <div className="contact-info">
+    <strong>Phone</strong>
 
-                <span>
-                  +44 7500 494401
-                </span>
-              </div>
-            </div>
-
+    <a href="tel:+447500494401" className="contact-link">
+      +44 7500 494401
+    </a>
+  </div>
+</div>
             {/* Email */}
-            <div className="contact-item">
-              <FaRegEnvelope className="contact-icon" />
+           <div className="contact-item">
+  <FaRegEnvelope className="contact-icon" />
 
-              <div className="contact-info">
-                <strong>Email Address</strong>
+  <div className="contact-info">
+    <strong>Email Address</strong>
 
-                <a href="mailto:info@vietworldgate.com">
-                  info@vietworldgate.com
-                </a>
-              </div>
-            </div>
+    <a 
+      href="mailto:info@vietworldgate.com" 
+      className="contact-link"
+    >
+      info@vietworldgate.com
+    </a>
+  </div>
+</div>
           </div>
         </div>
 

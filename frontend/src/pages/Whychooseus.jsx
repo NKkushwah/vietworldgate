@@ -3,9 +3,11 @@ import "./Whychooseus.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import logo from "../assets/vietworldgate.png";
+import { MessageCircle, Phone } from "lucide-react"; 
 
 const WhyChooseUs = () => {
-  const whatsappNumber = "917982295530"; // change this
+  const whatsappNumber = "917982295530";
+  const phoneNumber = "+917982295530";
 
   const openWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}`, "_blank");
@@ -47,62 +49,65 @@ const WhyChooseUs = () => {
   return (
     <>
       <Navbar />
+      
       {/* HERO SECTION */}
       <section className="heros">
         <div className="heros-left">
-
-
           <h1>
-            Study Abroad with
-
-            <span className="brand"> <img src={logo} className="heros-logo" /> VietWorldGate</span>
+            Study Abroad with <br />
+            <span className="brand">
+              <img src={logo} className="heros-logo" alt="VietWorldGate Logo" /> 
+              VietWorldGate
+            </span>
           </h1>
 
-          <button className="whatsapp-btn" onClick={openWhatsApp}>
-            Chat on WhatsApp
-          </button>
+          <div className="hero-action-btns">
+            <button className="whatsapp-btn" onClick={openWhatsApp}>
+              <MessageCircle size={18} /> Chat on WhatsApp
+            </button>
+            <a href={`tel:${phoneNumber}`} className="phone-btn-animated">
+              <Phone size={18} /> Schedule Call
+            </a>
+          </div>
         </div>
+
+        {/* FIXED UNIFORM RESPONSIVE GRID */}
         <div className="heros-right">
           <div className="card">
             <img src="https://flagcdn.com/w320/ca.png" alt="Canada" />
-            Canada
+            <span>Canada</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/au.png" alt="Australia" />
-            Australia
+            <span>Australia</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/gb.png" alt="UK" />
-            UK
+            <span>UK</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/jp.png" alt="Japan" />
-            Japan
+            <span>Japan</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/it.png" alt="Italy" />
-            Italy
+            <span>Italy</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/ae.png" alt="Dubai" />
-            Dubai
+            <span>Dubai</span>
           </div>
-
           <div className="card">
             <img src="https://flagcdn.com/w320/de.png" alt="Germany" />
-            Germany
+            <span>Germany</span>
           </div>
         </div>
       </section>
+
+      {/* WHY CHOOSE US GRID SECTION */}
       <div className="whys-container">
         <h2>Why Choose Us</h2>
         <div className="why-container">
-
           {features.map((item, index) => (
             <div className="why-card" key={index}>
               <img src={item.img} alt={item.title} className="why-icon" />
@@ -112,6 +117,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
+      
       <Footer />
     </>
   );
