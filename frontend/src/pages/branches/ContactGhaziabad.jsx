@@ -83,19 +83,27 @@ const ContactGhaziabad = () => {
           <div className="info-grid">
 
             {/* ADDRESS */}
-            <div className="info-card">
+           <div className="info-card">
+  <div className="info-icon">
+    <FaMapMarkerAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaMapMarkerAlt />
-              </div>
+  <h4>Address</h4>
 
-              <h4>Address</h4>
-
-              <p>
-                A-112, First Floor, Shyam Park Extension, Sahibabad, Ghaziabad, Ghaziabad, India, 201005
-              </p>
-
-            </div>
+  <p>
+    <a
+      href="https://www.google.com/maps?q=A-112,+First+Floor,+Shyam+Park+Extension,+Sahibabad,+Ghaziabad,+Uttar+Pradesh,+201005"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      A-112, First Floor,<br />
+      Shyam Park Extension,<br />
+      Sahibabad, Ghaziabad,<br />
+      Uttar Pradesh 201005, India
+    </a>
+  </p>
+</div>
 
             {/* NAME */}
             <div className="info-card">
@@ -124,17 +132,22 @@ const ContactGhaziabad = () => {
             </div>
 
             {/* PHONE */}
-            <div className="info-card">
+           <div className="info-card">
+  <div className="info-icon">
+    <FaPhoneAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaPhoneAlt />
-              </div>
+  <h4>Phone</h4>
 
-              <h4>Phone</h4>
-
-              <p>+91 7982549603</p>
-
-            </div>
+  <p>
+    <a
+      href="tel:+917982549603"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      +91 7982549603
+    </a>
+  </p>
+</div>
 
           </div>
 

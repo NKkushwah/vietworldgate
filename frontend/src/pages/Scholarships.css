@@ -45,8 +45,15 @@
 
 .whatsapp-btn img {
   width: 20px;
+   animation: moveBtn 2s infinite;
 }
-
+@keyframes moveBtn {
+  0%   { transform: translateX(-5); }
+  25%  { transform: translateX(-10px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(5); }
+}
 .whatsapp-btn:hover {
   transform: scale(1.05);
 }
@@ -68,6 +75,8 @@
 @media (max-width: 480px) {
   .whatsapp-top {
     justify-content: center;
+    width:60%;
+    margin-left: 85px;
   }
 
   .whatsapp-btn span {
@@ -105,7 +114,19 @@
   font-weight: 600;
  
 }
+.whatsapp-top {
+ 
+  color: white;
+ 
 
+}
+@keyframes moveBtn {
+  0%   { transform: translateX(-5); }
+  25%  { transform: translateX(-10px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(5); }
+}
 .breadcrumb {
   font-size: 0.95rem;
   opacity: 0.9;

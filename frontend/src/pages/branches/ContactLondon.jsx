@@ -82,21 +82,27 @@ const ContactLondon = () => {
           <div className="info-grid">
 
             {/* ADDRESS */}
-            <div className="info-card">
+        
+<div className="info-card">
+  <div className="info-icon">
+    <FaMapMarkerAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaMapMarkerAlt />
-              </div>
+  <h4>Address</h4>
 
-              <h4>Address</h4>
-
-              <p>
-    401, A Oxford Street
-London
-United Kingdom
-              </p>
-
-            </div>
+  <p>
+    <a
+      href="https://www.google.com/maps?q=401A+Oxford+Rd,+Reading+RG30+1HA,+United+Kingdom"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      401A Oxford Rd,<br />
+      Reading RG30 1HA,<br />
+      United Kingdom
+    </a>
+  </p>
+</div>
 
             {/* NAME */}
             <div className="info-card">
@@ -125,17 +131,22 @@ United Kingdom
             </div>
 
             {/* PHONE */}
-            <div className="info-card">
+         <div className="info-card">
+  <div className="info-icon">
+    <FaPhoneAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaPhoneAlt />
-              </div>
+  <h4>Phone</h4>
 
-              <h4>Phone</h4>
-
-              <p>+91 79822 95530</p>
-
-            </div>
+  <p>
+    <a
+      href="tel:+917982295530"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      +91 79822 95530
+    </a>
+  </p>
+</div>
 
           </div>
 

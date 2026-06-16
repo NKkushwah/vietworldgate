@@ -955,6 +955,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius-sm);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+
+      margin-left: 95px;
 }
 .advantages__icon { font-size: 1.6rem; }
 .advantages__card-title {

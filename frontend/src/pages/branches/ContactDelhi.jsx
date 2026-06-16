@@ -85,19 +85,23 @@ const ContactDelhi = () => {
           <div className="info-grid">
 
             {/* ADDRESS */}
-            <div className="info-card">
+           <a
+  href="https://www.google.com/maps?q=Block+B+Lajpat+Nagar+3+New+Delhi+110024"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="info-card"
+>
+  <div className="info-icon">
+    <FaMapMarkerAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaMapMarkerAlt />
-              </div>
+  <h4>Address</h4>
 
-              <h4>Address</h4>
-
-              <p>
-                06 B block, Lajpat nagar Delhi
-              </p>
-
-            </div>
+  <p>
+    06 B Block, Lajpat Nagar <br />
+    New Delhi - 110024
+  </p>
+</a>
 
             {/* NAME */}
             <div className="info-card">
@@ -126,17 +130,15 @@ const ContactDelhi = () => {
             </div>
 
             {/* PHONE */}
-            <div className="info-card">
+        <a href="tel:+917982549603" className="info-card">
+  <div className="info-icon">
+    <FaPhoneAlt />
+  </div>
 
-              <div className="info-icon">
-                <FaPhoneAlt />
-              </div>
+  <h4>Phone</h4>
 
-              <h4>Phone</h4>
-
-              <p>+91 7982549603</p>
-
-            </div>
+  <p>+91 79825 49603</p>
+</a>
 
           </div>
 
