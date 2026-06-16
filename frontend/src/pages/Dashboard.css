@@ -392,12 +392,12 @@ body{
   }
 
   .appointment-box{
-    width:100%;
+    width:100% ;
     justify-content:flex-end;
   }
 
   .whatsapp-contact{
-    max-width:50%;
+    max-width:100%;
   }
 
 }
