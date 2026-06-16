@@ -204,7 +204,7 @@
 
 /* Call Card */
 .deu-call-card {
-  background: rgb(7, 31, 7);
+  background: #012819 !important;
   color: var(--deu-white);
   padding: 26px 22px;
   border-radius: 10px;

@@ -393,11 +393,11 @@ body{
 
   .appointment-box{
     width:100%;
-    justify-content:flex-start;
+    justify-content:flex-end;
   }
 
   .whatsapp-contact{
-    max-width:100%;
+    max-width:50%;
   }
 
 }

@@ -68,7 +68,7 @@
 
 .careers-main h2 {
   font-size: 2.4rem;
-  color: #012819;
+  color: #012819 !important;
   margin-bottom: 25px;
 }
 
@@ -79,9 +79,9 @@
   background: white;
   padding: 35px;
   border-radius: 16px;
-  box-shadow:#012819;
+  box-shadow:#012819 !important;
   text-align: left;
-  border-top: 4px solid #012819; /* Trust blue line */
+  border-top: 4px solid #012819 !important; /* Trust blue line */
 }
 
 .badge-icon-global {
@@ -106,7 +106,7 @@
 
 .visa-perks-section h3, .divisions-section h3 {
   font-size: 2rem;
-  color: #012819;
+  color: #012819 !important;
   margin-bottom: 40px;
 }
 

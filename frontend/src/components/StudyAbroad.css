@@ -102,6 +102,7 @@
 .btn-secondary {
   background-color: #012819;
   color: var(--white);
+  margin-bottom: 35px;
   font-weight: 500;
   padding: 12px 36px;
   border: none;

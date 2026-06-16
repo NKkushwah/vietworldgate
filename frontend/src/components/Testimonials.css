@@ -87,7 +87,7 @@
   position: relative;
   background: #ffffff;
   border-radius: 18px;
-  padding: 35px 28px 35px 65px; /* Enhanced left padding to offset layout beautifully */
+  padding: 35px 28px 35px 65px; 
   min-height: 290px;
   display: flex;
   flex-direction: column;
@@ -221,7 +221,6 @@
     font-size: 36px;
   }
 }
-
 /* iPad Mini & Standard Portrait Tablets (768px - 850px) */
 @media (max-width: 850px) {
   .testimonials-section {
@@ -234,7 +233,7 @@
   }
 
   .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 

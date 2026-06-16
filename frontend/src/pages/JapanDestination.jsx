@@ -160,7 +160,6 @@ export default function JapanDestination() {
           </svg>
         </a>
 
-      
       </div>
       <Footer />
     </>

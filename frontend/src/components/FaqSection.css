@@ -47,28 +47,6 @@
   overflow: hidden;
 }
 
-/* Layered circular rings background */
-.circle-bg-layer {
-  position: absolute;
-  border-radius: 50%;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.circle-bg-layer.layer-1 {
-  width: 420px;
-  height: 420px;
-  background-color: #f1f0f5;
-  z-index: 1;
-}
-
-.circle-bg-layer.layer-2 {
-  width: 330px;
-  height: 330px;
-  background-color: #4b4453; /* Darker circle backdrop matching screen */
-  z-index: 2;
-}
 
 .faq-student-img {
   position: relative;
@@ -154,6 +132,14 @@
   border-top: 1px solid #f3eff6;
 }
 
+.faq-item {
+    padding: 18px 24px;
+    display: inline !important;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
 .faq-answer {
   color: #666666;
   font-size: 15px;
