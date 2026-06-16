@@ -314,6 +314,7 @@
   margin-bottom: 22px;
   border: 1px solid var(--fog);
   margin-left: 0; /* FIXED: Removed 100px pushing it out of borders */
+  margin-left: 75px;
 }
 .svc-card.highlight .svc-icon {
   background: rgba(255,255,255,0.1);
@@ -517,7 +518,7 @@
   flex-grow: 1; height: 8px; background: var(--fog); border-radius: 4px; overflow: hidden;
 }
 .abar-fill {
-  height: 100%; background: linear-gradient(90deg, #d4af37, #C5A244);
+  height: 100%; background:#012819;
   border-radius: 4px;
 }
 .abar-val { font-size: 12px; font-weight: 700; color: var(--text-h); width: 35px; text-align: right; }

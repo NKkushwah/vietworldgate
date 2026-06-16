@@ -10,6 +10,7 @@
   background-image: url('https://i0.wp.com/mymeadowreport.com/wp-content/uploads/2018/01/DP_sport-success-on-sunset-background_1125x2000_2018-01-08.jpg?resize=2000%2C1125');
   background-size: cover;
   background-position: top center;
+
   background-repeat: no-repeat;
   color: #ffffff;
   height: 45vh;
@@ -18,8 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
- padding-right: 700px;
- padding-top:200px;
+
 }
 
 .cert-hero__content {

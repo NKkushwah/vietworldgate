@@ -12,7 +12,7 @@ function App() {
     // 2 seconds baad loading ko false kar dega
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 1000); 
 
     return () => clearTimeout(timer); // Cleanup timer
   }, []);

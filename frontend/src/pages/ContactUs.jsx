@@ -42,7 +42,7 @@ export default function ContactUs() {
 
   return (
     <>
-     
+      
       <Navbar />
 
       <div className="contact-container">
@@ -53,12 +53,12 @@ export default function ContactUs() {
           style={{ backgroundImage: `url(${logo})` }}
         >
           <div className="hero-content">
-            <h1 className="hero-title">Contact Us</h1>
+            <h1 className="hero-title"></h1>
 
             <div className="breadcrumb">
-              <span>🏠</span>
-              <span>➔</span>
-              <span>Contact</span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
         </div>
@@ -111,10 +111,15 @@ export default function ContactUs() {
 
                   <strong className="phone-label">
                     {phone.label}
-                  </strong>
+                  </strong> 
 
                   <p className="card-text">
-                    {phone.number}
+                    <a 
+                      href={`tel:${phone.number.replace(/[^+\d]/g, "")}`} 
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {phone.number}
+                    </a>
                   </p>
 
                 </div>
@@ -144,7 +149,12 @@ export default function ContactUs() {
                   marginTop: "4px",
                 }}
               >
-                info@vietworldgate.com
+                <a 
+                  href="mailto:info@vietworldgate.com" 
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  info@vietworldgate.com
+                </a>
               </p>
 
             </div>
@@ -159,7 +169,7 @@ export default function ContactUs() {
 
               <iframe
                 title="Location Map"
-                src="https://www.google.com/maps?q=28.6293590,77.3788000&z=15&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562141595166!2d77.31388547631557!3d28.597920175684534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4f62ca934f5%3A0x6ec0c55fde0787e9!2sBlock%20H%2C%20Sector%205%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

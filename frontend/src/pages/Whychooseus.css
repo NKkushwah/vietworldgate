@@ -123,13 +123,13 @@
   align-items: center;
   justify-content: center;
   padding: 18px 12px;
-  background: #ffffff;
+  background:transparent;
   border-radius: 14px;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 14px;
   color: var(--green-core);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+
   border: 1px solid #eef3f0;
   transition: all 0.3s ease;
   text-align: center;
@@ -192,6 +192,7 @@
   width: 55px;
   height: 55px;
   margin-bottom: 18px;
+  margin-left: 95px;
 }
 
 .why-card h3 {

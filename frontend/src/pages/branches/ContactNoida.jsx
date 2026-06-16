@@ -73,20 +73,26 @@ const ContactNoida = () => {
 
           {/* INFO CARDS */}
           <div className="info-grid">
+<div className="info-card">
+  <div className="info-icon">
+    <FaMapMarkerAlt />
+  </div>
 
-            <div className="info-card">
-              <div className="info-icon">
-                <FaMapMarkerAlt />
-              </div>
+  <h4>Address</h4>
 
-              <h4>Address</h4>
-
-              <p>
-               36, Block H, Sector 63,
-Uttar Pradesh 201301, Noida
-Delhi, India
-              </p>
-            </div>
+  <p>
+    <a
+      href="https://www.google.com/maps?q=28.6293590,77.3788000"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      36, Block H, Sector 63,<br />
+      Noida, Uttar Pradesh 201301,<br />
+      India
+    </a>
+  </p>
+</div>
 
             <div className="info-card">
               <div className="info-icon">
@@ -108,15 +114,22 @@ Delhi, India
               <p>Noida Regional Admissions Director</p>
             </div>
 
-            <div className="info-card">
-              <div className="info-icon">
-                <FaPhoneAlt />
-              </div>
+          <div className="info-card">
+  <div className="info-icon">
+    <FaPhoneAlt />
+  </div>
 
-              <h4>Phone</h4>
+  <h4>Phone</h4>
 
-              <p>+91 79822 95530</p>
-            </div>
+  <p>
+    <a
+      href="tel:+917982295530"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      +91 79822 95530
+    </a>
+  </p>
+</div>
 
           </div>
 
