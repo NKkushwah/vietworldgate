@@ -42,6 +42,7 @@ import VideoGallery from "../pages/VideoGallery";
 
 import Accreditations from "../pages/Accreditations";
 import CompanyHistory from "../pages/CompanyHistory";
+import SocialResponsibility from "../pages/Socialresponsibility";
 function AppRoutes() {
   return (
    
@@ -87,6 +88,7 @@ function AppRoutes() {
           <Route path="/CompanyHistory" element={<CompanyHistory/>} />
       
          <Route path="/Accrediations" element={<Accreditations/>} />
+         <Route path="/SocialResponsibility" element={<SocialResponsibility/>} />
       </Routes>
 
    

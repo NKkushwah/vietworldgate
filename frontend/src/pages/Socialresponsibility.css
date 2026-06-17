@@ -1,0 +1,459 @@
+:root {
+  --vwg-bg-main: #F8F9FC;       /* App Main Background Requested */
+  --vwg-navy-deep: #0f172a;     /* Deep slate for structural headings */
+  --vwg-text-dark: #1e293b;     /* High contrast text color over pastel cards */
+  --vwg-card-bg: #e6d3d1; 
+  --vwg-radius: 16px;
+  --vwg-max-width: 1200px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--vwg-bg-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.vwg-page {
+  width: 100%;
+}
+
+/* --- Hero Frame --- */
+.vwg-hero-bg-container {
+     background-image: linear-gradient(135deg, rgb(79 95 137 / 92%) 0%, rgb(8 101 67 / 88%) 100%), url("https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg");
+  padding: 12rem 0; /* Top/bottom padding for content spacing */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 440px; 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  
+  margin-bottom: 4rem;
+}
+
+.vwg-hero-bg-content {
+  max-width: var(--vwg-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.vwg-eyebrow-light {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.vwg-hero-title-light {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.25;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0;
+}
+
+.vwg-hero-title-accent-light {
+  color: #f1f5f9;
+}
+
+.vwg-hero-sub-light {
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* Base layouts symmetry blocks */
+.vwg-board, .vwg-journey, .vwg-videos, .vwg-posts, .vwg-social-strip {
+  max-width: var(--vwg-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* --- Impact Counter Board --- */
+.vwg-board {
+  margin-bottom: 4rem;
+}
+
+.vwg-board-header {
+  background: #012819;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  border-top-left-radius: var(--vwg-radius);
+  border-top-right-radius: var(--vwg-radius);
+}
+
+.vwg-board-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #ffffff;
+  border-bottom-left-radius: var(--vwg-radius);
+  border-bottom-right-radius: var(--vwg-radius);
+  border: 1px solid #e2e8f0;
+}
+
+.vwg-board-cell {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid #e2e8f0;
+}
+
+.vwg-board-cell:last-child {
+  border-right: none;
+}
+
+.vwg-board-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--vwg-navy-deep);
+}
+
+.vwg-board-caption {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* --- Timelines Steps --- */
+.vwg-section-title {
+  font-size: 1.8rem;
+  color: var(--vwg-navy-deep);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.vwg-center-title {
+  text-align: center;
+}
+
+.vwg-journey-track {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+}
+
+.vwg-journey-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.vwg-journey-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.vwg-journey-title {
+  font-size: 0.95rem;
+  color: var(--vwg-navy-deep);
+  font-weight: 600;
+}
+
+.vwg-journey-line {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+/* --- Playable Video Framework --- */
+.vwg-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 5rem;
+}
+
+.vwg-video-card {
+  background: #ffffff;
+  border-radius: var(--vwg-radius);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.vwg-video-thumb {
+  position: relative;
+  aspect-ratio: 9/14;
+  background: #000;
+}
+
+.vwg-native-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vwg-video-badge-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  pointer-events: none; /* Video control layout ko block nahi karega */
+}
+
+.vwg-video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Default overlay play marker hides when native controller engages */
+.vwg-video-play-btn {
+  display: none; 
+}
+
+.vwg-video-info {
+  padding: 1rem;
+}
+
+.vwg-video-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.vwg-video-card-title {
+  font-size: 0.9rem;
+  color: var(--vwg-navy-deep);
+  margin: 0.5rem 0 1rem;
+  font-weight: 600;
+}
+
+.vwg-video-action-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--vwg-navy-deep);
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  background-color: #012819;
+  color: #D6E4FF;
+  
+}
+
+
+.vwg-video-action-link .vwg-social-icon {
+  width: 14px;
+  height: 14px;
+  color: rgb(163, 29, 29);
+}
+
+/* --- Feed Posts --- */
+.vwg-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.vwg-post-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.vwg-post-card:hover {
+  transform: scale(1.05);
+}
+.vwg-post-card {
+      transition: transform 0.3s ease;
+  background: #ffffff;
+  border-radius: var(--vwg-radius);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.vwg-post-img-container {
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.vwg-post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vwg-feed-icon-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vwg-feed-icon-badge .vwg-social-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.badge-instagram .vwg-social-icon { color: #e1306c; }
+.badge-linkedin .vwg-social-icon { color: #0077b5; }
+
+.vwg-post-details {
+  padding: 1rem;
+}
+
+.vwg-post-header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vwg-post-desc {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vwg-inline-icon .vwg-social-icon {
+  width: 16px;
+  height: 16px;
+  color: #2d3e55;
+}
+
+.vwg-post-subtext {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* --- Footer Follow Strip Custom Pastel Colors Framework --- */
+.vwg-social-strip {
+  margin-bottom: 5rem;
+}
+
+.vwg-social-strip-text {
+  margin-bottom: 1.5rem;
+}
+
+.vwg-social-strip-text h2 {
+  font-size: 1.6rem;
+  color: var(--vwg-navy-deep);
+  margin: 0;
+  font-weight: 700;
+}
+
+.vwg-social-strip-text p {
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+.vwg-social-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.vwg-bottom-card {
+  padding: 1.5rem;
+  border-radius: var(--vwg-radius);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.vwg-bottom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.vwg-bottom-card .vwg-social-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--vwg-text-dark); /* Dark Slate color for clear look */
+}
+
+.vwg-bottom-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--vwg-text-dark);
+  font-weight: 700;
+}
+
+.vwg-bottom-card span {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Custom Light Background Maps integration */
+.card-insta { background-color: #FFD6E0 !important; }
+.card-fb    { background-color: #D6E4FF !important; }
+.card-yt    { background-color: #FFE5D6 !important; }
+.card-li    { background-color: #D6FFF5 !important; }
+
+/* --- Responsive Layout Rules --- */
+@media (max-width: 1024px) {
+  .vwg-videos-grid { grid-template-columns: repeat(3, 1fr); }
+  .vwg-posts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .vwg-board-grid { grid-template-columns: repeat(2, 1fr); }
+  .vwg-board-cell { border-bottom: 1px solid #e2e8f0; }
+  .vwg-board-cell:nth-child(2), .vwg-board-cell:last-child { border-right: none; }
+  .vwg-journey-track { flex-direction: column; gap: 2rem; }
+  .vwg-journey-line { display: none; }
+  .vwg-videos-grid { grid-template-columns: repeat(2, 1fr); }
+  .vwg-social-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .vwg-board-grid { grid-template-columns: 1fr; }
+  .vwg-board-cell { border-right: none !important; }
+  .vwg-videos-grid { grid-template-columns: 1fr; }
+  .vwg-posts-grid { grid-template-columns: 1fr; }
+  .vwg-social-cards { grid-template-columns: 1fr; }
+  .desktop-br { display: none; }
+}

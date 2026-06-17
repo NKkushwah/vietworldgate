@@ -97,7 +97,7 @@ export default function CompanyProfile() {
     {
       name: "Social Responsibility",
       icon: <FaHeart />,
-      link: "/about/social-responsibility",
+      link: "/Socialresponsibility",
     },
 
     {
