@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
           </h1>
 
           <div className="hero-action-btns">
-            <button className="whatsapp-btn" onClick={openWhatsApp}>
+            <button className="whatsapp-btn2" onClick={openWhatsApp}>
               <MessageCircle size={18} /> Chat on WhatsApp
             </button>
             <a href={`tel:${phoneNumber}`} className="phone-btn-animated">

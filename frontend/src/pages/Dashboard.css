@@ -547,8 +547,6 @@ body{
 
 }
 
-
-
 /* TRUST BAR */
 
 .trust-bar{
@@ -603,8 +601,6 @@ body{
     justify-content:flex-end;
     padding-right:12px;
   }
-
-
 
   .trust-right{
     width:auto;

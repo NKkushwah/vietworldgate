@@ -818,10 +818,6 @@ const handleWhatsAppShare = (sch, institution) => {
         {/* Hero Banner Section */}
         <div className="hero-banner">
           <div className="hero-content">
-
-            <div className="breadcrumb">
-              <span className="home-icon">🏠</span> ➔ <span className="current-page">Scholarships</span>
-            </div>
           </div>
         </div>
 

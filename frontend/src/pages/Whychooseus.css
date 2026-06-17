@@ -63,7 +63,7 @@
   flex-wrap: wrap;
 }
 
-.whatsapp-btn, .phone-btn-animated {
+.whatsapp-btn2, .phone-btn-animated {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -79,11 +79,11 @@
   border: none;
 }
 
-.whatsapp-btn {
+.whatsapp-btn2 {
   background: #25D366;
   color: white;
 }
-.whatsapp-btn:hover {
+.whatsapp-btn2:hover {
   background: #1ebd54;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
@@ -256,7 +256,7 @@
     width: 100%;
     gap: 12px;
   }
-  .whatsapp-btn, .phone-btn-animated { width: 100%; }
+  .whatsapp-btn2, .phone-btn-animated { width: 100%; }
 
   /* 👇 FIXED: Flags will now explicitly stay 3 in a row on mobile screen boundaries */
   .heros-right {
