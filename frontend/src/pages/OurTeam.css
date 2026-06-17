@@ -25,7 +25,7 @@
     radial-gradient(circle at 80% 20%, #0d533a 0%, transparent 50%);
   background-size: 40px 40px, 40px 40px, auto;
   color: #ffffff;
-  padding: 7rem 0 !important; 
+  padding: 10rem 0 !important; 
   position: relative;
   overflow: hidden;
 }
