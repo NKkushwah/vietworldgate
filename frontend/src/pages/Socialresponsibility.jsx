@@ -59,10 +59,10 @@ const VIDEOS = [
 ];
 
 const SOCIAL_POSTS = [
-  { platform: "instagram", image: post1Img, title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.instagram },
-  { platform: "instagram", image: post2Img, title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.instagram },
-  { platform: "linkedin", image: post3Img, title: "Candidate testimonial from South Korea",  url: SOCIAL_LINKS.linkedin },
-  { platform: "linkedin", image: post4Img, title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.linkedin },
+  { platform: "instagram", image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=1200", title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.instagram },
+  { platform: "instagram", image: "https://images.pexels.com/photos/37836828/pexels-photo-37836828.jpeg", title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.instagram },
+  { platform: "linkedin", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9iSxMX6tupr7g5kCpLIfz6PGlF-tyimjS6HEefS2qyQ&s", title: "Candidate testimonial from South Korea",  url: SOCIAL_LINKS.linkedin },
+  { platform: "linkedin", image: "https://images.pexels.com/photos/35555620/pexels-photo-35555620.jpeg", title: "Candidate testimonial from South Korea", url: SOCIAL_LINKS.linkedin },
 ];
 
 const IMPACT_STATS = [
@@ -103,48 +103,48 @@ export default function SocialResponsibility() {
   return (
     <>
       <Navbar />
-      <main className="vwg-page">
+      <main className="sr-page">
         
         {/* Fixed Hero Background Image & Gradient Overlays */}
-        <section className="vwg-hero-bg-container">
-          <div className="vwg-hero-bg-content">
-            <p className="vwg-eyebrow-light">VietWorldGate &middot; Social responsibility</p>
-            <h1 className="vwg-hero-title-light">
+        <section className="sr-hero-container">
+          <div className="sr-hero-content">
+            <p className="sr-hero-eyebrow">VietWorldGate &middot; Social responsibility</p>
+            <h1 className="sr-hero-title">
               Every visa we issue carries <br className="desktop-br"/>someone's future. 
-              <span className="vwg-hero-title-accent-light"> We don't treat that lightly.</span>
+              <span className="sr-hero-title-accent"> We don't treat that lightly.</span>
             </h1>
-            <p className="vwg-hero-sub-light">We help people leave home to build a better one...</p>
+            <p className="sr-hero-subtitle">We help people leave home to build a better one...</p>
           </div>
         </section>
 
         {/* Impact Board */}
-        <section className="vwg-board">
-          <div className="vwg-board-header">Our impact</div>
-          <div className="vwg-board-grid">
+        <section className="sr-board">
+          <div className="sr-board-header">Our impact</div>
+          <div className="sr-board-grid">
             {IMPACT_STATS.map((stat, idx) => (
-              <div className="vwg-board-cell" key={idx}>
-                <div className="vwg-board-value">{stat.value}</div>
-                <div className="vwg-board-caption">{stat.label}</div>
+              <div className="sr-board-cell" key={idx}>
+                <div className="sr-board-value">{stat.value}</div>
+                <div className="sr-board-caption">{stat.label}</div>
               </div>
             ))}
           </div>
         </section>
 
         {/* Journey Timeline */}
-        <section className="vwg-journey">
-          <h2 className="vwg-section-title vwg-center-title">How we take responsibility, step by step</h2>
-          <div className="vwg-journey-track">
+        <section className="sr-journey">
+          <h2 className="sr-section-title sr-center-title">How we take responsibility, step by step</h2>
+          <div className="sr-journey-track">
             {JOURNEY.map((item, idx) => {
               const JourneyIcon = item.icon;
               return (
-                <div className="vwg-journey-item" key={idx}>
-                  <div className="vwg-journey-icon-wrap">
-                    <span className="vwg-step-icon">
-                      <JourneyIcon size={24} className="vwg-social-icon" />
+                <div className="sr-journey-item" key={idx}>
+                  <div className="sr-journey-icon-wrap">
+                    <span className="sr-step-icon">
+                      <JourneyIcon size={24} className="sr-social-icon" />
                     </span>
                   </div>
-                  <h3 className="vwg-journey-title">{item.title}</h3>
-                  {idx < JOURNEY.length - 1 && <div className="vwg-journey-line" />}
+                  <h3 className="sr-journey-title">{item.title}</h3>
+                  {idx < JOURNEY.length - 1 && <div className="sr-journey-line" />}
                 </div>
               );
             })}
@@ -152,52 +152,44 @@ export default function SocialResponsibility() {
         </section>
 
         {/* Video Gallery with Native Playable Fixed State */}
-        <section className="vwg-videos">
-          <h2 className="vwg-section-title">See it for yourself</h2>
-          <div className="vwg-videos-grid">
+        <section className="sr-videos">
+          <h2 className="sr-section-title">See it for yourself</h2>
+          <div className="sr-videos-grid">
             {VIDEOS.map((video, idx) => (
-              <div className="vwg-video-card" key={idx}>
+              <div className="sr-video-card" key={idx}>
                 <div 
-                  className="vwg-video-thumb" 
+                  className="sr-clip-frame" 
                   onClick={() => handleVideoClick(idx)}
-                  style={{ cursor: "pointer" }}
                 >
                   <video 
                     ref={(el) => (videoRefs.current[idx] = el)}
                     src={video.src} 
                     preload="metadata" 
-                    controls 
+                    controls={currentlyPlaying === idx}
                     playsInline
-                    className="vwg-native-video"
+                    className="sr-clip-player"
                     onPlay={() => setCurrentlyPlaying(idx)}
                     onPause={() => {
                       if (currentlyPlaying === idx) setCurrentlyPlaying(-1);
                     }}
                   />
-                  <div className="vwg-video-badge-top">video{idx+1}</div>
-                  <div className="vwg-video-duration">{video.duration}</div>
-                  
-                  <div style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    background: "rgba(15, 23, 42, 0.65)",
-                    borderRadius: "50%",
-                    padding: "12px",
-                    display: currentlyPlaying === idx ? "none" : "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    pointerEvents: "none"
-                  }}>
-                    <Play size={20} color="#fff" fill="#fff" />
-                  </div>
+                  <div className="sr-clip-badge-top">video{idx+1}</div>
+
+                  {currentlyPlaying !== idx && (
+                    <div className="sr-clip-duration">{video.duration}</div>
+                  )}
+
+                  {currentlyPlaying !== idx && (
+                    <div className="sr-clip-play-overlay">
+                      <Play size={20} color="#fff" fill="#fff" />
+                    </div>
+                  )}
                 </div>
-                <div className="vwg-video-info">
-                  <span className="vwg-video-tag">{video.tag}</span>
-                  <h4 className="vwg-video-card-title">{video.title}</h4>
-                  <a href={video.platform === "youtube" ? SOCIAL_LINKS.youtube : SOCIAL_LINKS.instagram} className="vwg-video-action-link" target="_blank" rel="noreferrer">
-                    {video.platform === "youtube" ? <YoutubeIcon size={18} className="vwg-social-icon" /> : <InstagramIcon size={18} className="vwg-social-icon" />}
+                <div className="sr-video-info">
+                  <span className="sr-video-tag">{video.tag}</span>
+                  <h4 className="sr-video-card-title">{video.title}</h4>
+                  <a href={video.platform === "youtube" ? SOCIAL_LINKS.youtube : SOCIAL_LINKS.instagram} className="sr-video-action-link" target="_blank" rel="noreferrer">
+                    {video.platform === "youtube" ? <YoutubeIcon size={18} className="sr-social-icon" /> : <InstagramIcon size={18} className="sr-social-icon" />}
                     <span>Show more on {video.platform === "youtube" ? "YouTube" : "Instagram"}</span>
                   </a>
                 </div>
@@ -207,30 +199,30 @@ export default function SocialResponsibility() {
         </section>
 
         {/* Dynamic Clickable Feed Grid Section */}
-        <section className="vwg-posts">
-          <h2 className="vwg-section-title">From our feed</h2>
-          <div className="vwg-posts-grid">
+        <section className="sr-posts">
+          <h2 className="sr-section-title">From our feed</h2>
+          <div className="sr-posts-grid">
             {SOCIAL_POSTS.map((post, idx) => (
               <a 
                 href={post.url} 
-                className="vwg-post-card-link" 
+                className="sr-post-card-link" 
                 target="_blank" 
                 rel="noreferrer" 
                 key={idx}
               >
-                <div className="vwg-post-card">
-                  <div className="vwg-post-img-container">
-                    <img src={post.image} alt="Feed content" className="vwg-post-img" />
-                    <div className={`vwg-feed-icon-badge badge-${post.platform}`}>
-                      {post.platform === "instagram" ? <InstagramIcon size={16} className="vwg-social-icon" /> : <LinkedinIcon size={16} className="vwg-social-icon" />}
+                <div className="sr-post-card">
+                  <div className="sr-post-img-container">
+                    <img src={post.image} alt="Feed content" className="sr-post-img" />
+                    <div className={`sr-feed-icon-badge sr-badge-${post.platform}`}>
+                      {post.platform === "instagram" ? <InstagramIcon size={16} className="sr-social-icon" /> : <LinkedinIcon size={16} className="sr-social-icon" />}
                     </div>
                   </div>
-                  <div className="vwg-post-details">
-                    <div className="vwg-post-header-row">
-                      <span className="vwg-post-desc">{post.title}</span>
-                      <span className="vwg-inline-icon">{post.platform === "instagram" ? <InstagramIcon size={14} className="vwg-social-icon" /> : <LinkedinIcon size={14} className="vwg-social-icon" />}</span>
+                  <div className="sr-post-details">
+                    <div className="sr-post-header-row">
+                      <span className="sr-post-desc">{post.title}</span>
+                      <span className="sr-inline-icon">{post.platform === "instagram" ? <InstagramIcon size={14} className="sr-social-icon" /> : <LinkedinIcon size={14} className="sr-social-icon" />}</span>
                     </div>
-                    {post.subTitle && <p className="vwg-post-subtext">{post.subTitle}</p>}
+                    {post.subTitle && <p className="sr-post-subtext">{post.subTitle}</p>}
                   </div>
                 </div>
               </a>
@@ -239,29 +231,29 @@ export default function SocialResponsibility() {
         </section>
 
         {/* Dynamic Follow Strip Block */}
-        <section className="vwg-social-strip">
-          <div className="vwg-social-strip-text">
+        <section className="sr-social-strip">
+          <div className="sr-social-strip-text">
             <h2>Follow along</h2>
             <p>We share the journeys, not just the paperwork</p>
           </div>
-          <div className="vwg-social-cards">
-            <a href={SOCIAL_LINKS.instagram} className="vwg-bottom-card card-insta" target="_blank" rel="noreferrer">
-              <InstagramIcon size={28} className="vwg-social-icon" />
+          <div className="sr-social-cards">
+            <a href={SOCIAL_LINKS.instagram} className="sr-bottom-card sr-card-insta" target="_blank" rel="noreferrer">
+              <InstagramIcon size={28} className="sr-social-icon" />
               <h4>Instagram</h4>
               <span>Daily stories & reels</span>
             </a>
-            <a href={SOCIAL_LINKS.facebook} className="vwg-bottom-card card-fb" target="_blank" rel="noreferrer">
-              <FacebookIcon size={28} className="vwg-social-icon" />
+            <a href={SOCIAL_LINKS.facebook} className="sr-bottom-card sr-card-fb" target="_blank" rel="noreferrer">
+              <FacebookIcon size={28} className="sr-social-icon" />
               <h4>Facebook</h4>
               <span>Community & news</span>
             </a>
-            <a href={SOCIAL_LINKS.youtube} className="vwg-bottom-card card-yt" target="_blank" rel="noreferrer">
-              <YoutubeIcon size={28} className="vwg-social-icon" />
+            <a href={SOCIAL_LINKS.youtube} className="sr-bottom-card sr-card-yt" target="_blank" rel="noreferrer">
+              <YoutubeIcon size={28} className="sr-social-icon" />
               <h4>YouTube</h4>
               <span>Full candidate journeys</span>
             </a>
-            <a href={SOCIAL_LINKS.linkedin} className="vwg-bottom-card card-li" target="_blank" rel="noreferrer">
-              <LinkedinIcon size={28} className="vwg-social-icon" />
+            <a href={SOCIAL_LINKS.linkedin} className="sr-bottom-card sr-card-li" target="_blank" rel="noreferrer">
+              <LinkedinIcon size={28} className="sr-social-icon" />
               <h4>LinkedIn</h4>
               <span>Company updates</span>
             </a>
