@@ -30,6 +30,8 @@
   --shadow-btn:  0 8px 24px rgba(26,155,140,0.30);
 }
 
+
+
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -80,6 +82,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   bottom: 100px; left: -100px;
 }
 
+.hero__circle-text {
+  color: white;
+  padding-top: 20px;
+}
+
 /* Main layout */
 .hero__container {
   max-width: 1280px;
@@ -125,11 +132,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1.12;
-  color: var(--navy);
+  color: black;
   margin-bottom: 1.25rem;
 }
 .hero__headline-accent {
-  color: var(--teal-mid);
+  color: #012819;
   display: inline;
 }
 
@@ -218,12 +225,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   animation: spin-slow 30s linear infinite reverse;
   box-shadow: 0 20px 60px rgba(26,155,140,0.35);
 }
-.hero__passport-icon { font-size: 4rem; margin-bottom: 0.5rem; }
-.hero__circle-text {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
+.hero__passport-icon {
+  font-size: 80px;   /* Adjust size */
+  color: #fff;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__passport-icon svg {
+  color: white;
+  fill: white;
 }
 
 /* Floating cards */
@@ -270,7 +282,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
-  color: #012819;
+  color: black;
   line-height: 1.1;
 }
 .hero__stat-label {
@@ -291,7 +303,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero__circle-outer { width: 260px; height: 260px; }
   .hero__circle-inner { width: 200px; height: 200px; }
   .hero__passport-icon { font-size: 3rem; }
-  .hero__circle-text { font-size: 0.9rem; }
+  .hero__circle-text { font-size: 0.9rem; color:white}
   .hero__card--tl { top: 10px; left: 0; }
   .hero__card--br { bottom: 10px; right: 0; }
 }
@@ -335,6 +347,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .logos-track.reverse {
   animation: scrollReverse 60s linear infinite;
+}
+
+.hero__circle-outer {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 3px dashed #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin-slow 30s linear infinite;
 }
 
 .logos-track.reverse:hover {
@@ -501,7 +524,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .worldmap__eyebrow {
   display: inline-block;
   background-color: #e6f6f6;
-  color: var(--map-primary-dark);
+  color: black;
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
@@ -882,10 +905,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: 0.95rem;
   }
 }
-
-
-
-
    
 /* ===========================
    ADVANTAGES
@@ -903,8 +922,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .advantages__eyebrow {
   display: inline-block;
-  background: #a8c2b8;
-  color: var(--teal-dark);
+  background: #012819;
+  color: white;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.8rem;
@@ -1080,7 +1099,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer__cta-sub { opacity: 0.85; font-size: 0.95rem; }
 .footer__cta-btn {
   background: var(--white);
-  color: var(--teal-dark);
+  color: black;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
