@@ -13,12 +13,13 @@ import StudyDestinations from "../components/StudyDestinations";
 import BritishCouncilLogo from "../assets/bclogo.jpg";
 import { motion } from "framer-motion";
 
+// 1. Updated FadeUp with a lower y-offset and "some" viewport threshold
 const FadeUp = ({ children, delay = 0 }) => (
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7, delay: delay }}
-    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, delay: delay }}
+    viewport={{ once: true, amount: "some" }} // Triggers as soon as the element enters the viewport
   >
     {children}
   </motion.div>
@@ -79,7 +80,7 @@ function Dashboard() {
           {/* HERO LEFT */}
           <motion.div
             className="hero-left"
-            initial={{ opacity: 0, x: -80 }}
+            initial={{ opacity: 0, x: -50 }} // Slightly reduced x-offset for better mobile scaling
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -100,7 +101,7 @@ function Dashboard() {
           {/* WHATSAPP BOX */}
           <motion.div
             className="appointment-box"
-            initial={{ opacity: 0, x: 80 }}
+            initial={{ opacity: 0, x: 50 }} // Slightly reduced x-offset
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
@@ -131,10 +132,10 @@ function Dashboard() {
               <motion.div
                 key={i}
                 className="stat-card"
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }} // Reduced y-offset from 40 to 20
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true, amount: "some" }} // Changed from 0.3 to "some"
               >
                 <h2>{stat.num}</h2>
                 <p>{stat.label}</p>
