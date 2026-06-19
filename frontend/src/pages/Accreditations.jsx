@@ -1,7 +1,8 @@
-import React, { useState, useEffect,useRef  } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Accreditations.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FaPassport } from "react-icons/fa";
 
 /* ─────────────────────────────────────────
    DATA
@@ -9,11 +10,10 @@ import Footer from "../components/Footer";
 const NAV_LINKS = ["Home", "Services", "Countries", "About Us", "Contact"];
 
 const STATS = [
-  { value: "50+",  label: "Countries" },
+  { value: "50+", label: "Countries" },
   { value: "12K+", label: "Visas Approved" },
-  { value: "98%",  label: "Success Rate" },
+  { value: "98%", label: "Success Rate" },
 ];
-
 
 const UNIVERSITIES = {
   Germany: [
@@ -148,7 +148,7 @@ const UNIVERSITIES = {
     },
 
   ],
-   Russia: [
+  Russia: [
     {
       id: 1,
       name: "Peoples' Friendship University of Russia (RUDN University)",
@@ -183,8 +183,6 @@ const UNIVERSITIES = {
   ]
 };
 
-
-
 const ADVANTAGES = [
   {
     icon: "🎯", bg: "#FFE4E4",
@@ -209,16 +207,11 @@ const ADVANTAGES = [
 ];
 
 const STEPS = [
-  { num: "01", label: "Initial Consultation",  desc: "Share your goals with our experts and receive a tailored visa pathway recommendation." },
-  { num: "02", label: "Document Preparation",  desc: "We audit and guide you through every document required for a complete application." },
+  { num: "01", label: "Initial Consultation", desc: "Share your goals with our experts and receive a tailored visa pathway recommendation." },
+  { num: "02", label: "Document Preparation", desc: "We audit and guide you through every document required for a complete application." },
   { num: "03", label: "Application Submission", desc: "We submit to the embassy / consulate and manage follow-ups on your behalf." },
-  { num: "04", label: "Visa Approved!",         desc: "Receive your visa and get ready-to-travel support including pre-departure orientation." },
+  { num: "04", label: "Visa Approved!", desc: "Receive your visa and get ready-to-travel support including pre-departure orientation." },
 ];
-
-/* ─────────────────────────────────────────
-   NAVBAR
-───────────────────────────────────────── */
-
 
 /* ─────────────────────────────────────────
    HERO
@@ -247,15 +240,15 @@ function Hero() {
           </p>
 
           <div className="hero__actions">
-            <a  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
-  
- className="hero__btn hero__btn--primary">Apply for Visa <span>→</span></a>
-           
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
+
+              className="hero__btn hero__btn--primary">Apply for Visa <span>→</span></a>
+
           </div>
 
           <div className="hero__social-proof">
             <div className="hero__avatars">
-              {["A","R","S","M"].map((l, i) => (
+              {["A", "R", "S", "M"].map((l, i) => (
                 <div key={i} className="hero__avatar"
                   style={{ background: `hsl(${170 + i * 20},55%,${45 + i * 5}%)` }}>{l}</div>
               ))}
@@ -268,23 +261,16 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero__visual">
-          <div className="hero__circle-outer">
-            <div className="hero__circle-inner">
-              <div className="hero__passport-icon">🛂</div>
-              <p className="hero__circle-text">Visa Approved!</p>
-            </div>
-          </div>
-          <div className="hero__card hero__card--tl">
-            <div className="hero__card-icon">✈️</div>
-            <div><strong>50+ Countries</strong><p>We Cover Worldwide</p></div>
-          </div>
-          <div className="hero__card hero__card--br">
-            <div className="hero__card-icon">📋</div>
-            <div><strong>Free Assessment</strong><p>Talk to Our Experts</p></div>
-          </div>
-        </div>
+      <div className="hero__visual">
+  <div className="hero__circle-outer">
+    <div className="hero__circle-inner">
+      <div className="hero__passport-icon">
+        <FaPassport />
       </div>
+      <p className="hero__circle-text">Visa Approved!</p>
+    </div>
+  </div>
+</div>
 
       <div className="hero__stats">
         {STATS.map((s, i) => (
@@ -297,17 +283,11 @@ function Hero() {
           </React.Fragment>
         ))}
       </div>
+      </div>
     </section>
+    
   );
 }
-
-
-
-
- 
-
-  
-
 
 const ALL_UNIVERSITIES = Object.values(UNIVERSITIES).flat();
 
@@ -324,35 +304,32 @@ function Partners() {
         {/* Row 1 */}
         <div className="logos-track">
           {row1.map((uni, i) => (
-           <a
-  key={i}
-  href={uni.website}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="logo-card"
->
-  <img src={uni.logo} alt={uni.name} />
-  
-
-  
-</a>
+            <a
+              key={i}
+              href={uni.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="logo-card"
+            >
+              <img src={uni.logo} alt={uni.name} />
+            </a>
           ))}
         </div>
 
         {/* Row 2 */}
         <div className="logos-track reverse">
           {row2.map((uni, i) => (
-           <a
-  key={i}
-  href={uni.website}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="logo-card"
->
-  <img src={uni.logo} alt={uni.name} />
-  
- 
-</a>
+            <a
+              key={i}
+              href={uni.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="logo-card"
+            >
+              <img src={uni.logo} alt={uni.name} />
+
+
+            </a>
           ))}
         </div>
 
@@ -360,29 +337,24 @@ function Partners() {
     </section>
   );
 }
-
-
 /* ─────────────────────────────────────────
    WORLD MAP
 ───────────────────────────────────────── */
-
-
-
 // Precise operational tracking coordinate matrices matching premium cartography layout
 // Humne flag string ko CDN image links se replace kiya hai jo har browser me color me dikhenge.
 const DESTINATIONS = [
-  { id: 3,  flag: "https://flagcdn.com/w40/ca.png", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
-  { id: 4,  flag: "https://flagcdn.com/w40/us.png", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
-  { id: 1,  flag: "https://flagcdn.com/w40/gb.png", country: "United Kingdom", visas: ["Student", "Work", "Visitor"],           style: { top: "26%", left: "47%" } },
-  { id: 6,  flag: "https://flagcdn.com/w40/de.png", country: "Germany",        visas: ["Student", "Job Seeker", "Work"],         style: { top: "26%", left: "52%" } },
-  { id: 12, flag: "https://flagcdn.com/w40/ch.png", country: "Switzerland",    visas: ["Student", "Work", "Schengen"],           style: { top: "31%", left: "51%" } },
-  { id: 10, flag: "https://flagcdn.com/w40/ae.png", country: "UAE",            visas: ["Work Permit", "Investor", "Tourist"],    style: { top: "43%", left: "63%" } },
-  { id: 9,  flag: "https://flagcdn.com/w40/it.png", country: "Italy",          visas: ["Business", "Tourist", "Medical"],          style: { top: "48%", left: "72%" } },
-  { id: 7,  flag: "https://flagcdn.com/w40/sg.png", country: "Singapore",      visas: ["Employment Pass", "Student"],            style: { top: "58%", left: "79%" } },
-  { id: 11, flag: "https://flagcdn.com/w40/my.png", country: "Malaysia",       visas: ["MM2H", "Student", "Work"],               style: { top: "55%", left: "80%" } },
-  { id: 8,  flag: "https://flagcdn.com/w40/jp.png", country: "Japan",          visas: ["Student", "Work", "Tourist"],            style: { top: "33%", left: "91%" } },
-  { id: 2,  flag: "https://flagcdn.com/w40/au.png", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
-  { id: 5,  flag: "https://flagcdn.com/w40/nz.png", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
+  { id: 3, flag: "https://flagcdn.com/w40/ca.png", country: "Canada", visas: ["Student", "PR", "Work Permit"], style: { top: "25%", left: "15%" } },
+  { id: 4, flag: "https://flagcdn.com/w40/us.png", country: "United States", visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
+  { id: 1, flag: "https://flagcdn.com/w40/gb.png", country: "United Kingdom", visas: ["Student", "Work", "Visitor"], style: { top: "26%", left: "47%" } },
+  { id: 6, flag: "https://flagcdn.com/w40/de.png", country: "Germany", visas: ["Student", "Job Seeker", "Work"], style: { top: "26%", left: "52%" } },
+  { id: 12, flag: "https://flagcdn.com/w40/ch.png", country: "Switzerland", visas: ["Student", "Work", "Schengen"], style: { top: "31%", left: "51%" } },
+  { id: 10, flag: "https://flagcdn.com/w40/ae.png", country: "UAE", visas: ["Work Permit", "Investor", "Tourist"], style: { top: "43%", left: "63%" } },
+  { id: 9, flag: "https://flagcdn.com/w40/it.png", country: "Italy", visas: ["Business", "Tourist", "Medical"], style: { top: "48%", left: "72%" } },
+  { id: 7, flag: "https://flagcdn.com/w40/sg.png", country: "Singapore", visas: ["Employment Pass", "Student"], style: { top: "58%", left: "79%" } },
+  { id: 11, flag: "https://flagcdn.com/w40/my.png", country: "Malaysia", visas: ["MM2H", "Student", "Work"], style: { top: "55%", left: "80%" } },
+  { id: 8, flag: "https://flagcdn.com/w40/jp.png", country: "Japan", visas: ["Student", "Work", "Tourist"], style: { top: "33%", left: "91%" } },
+  { id: 2, flag: "https://flagcdn.com/w40/au.png", country: "Australia", visas: ["Student", "Skilled", "Tourist"], style: { top: "74%", left: "88%" } },
+  { id: 5, flag: "https://flagcdn.com/w40/nz.png", country: "New Zealand", visas: ["Student", "Work", "Tourist"], style: { top: "85%", left: "96%" } },
 ];
 function WorldMap() {
   const [active, setActive] = useState(null);
@@ -442,8 +414,8 @@ function WorldMap() {
             const isActive = active === d.id;
             return (
               <div key={d.id} className={`worldmap__marker-node ${isActive ? "worldmap__marker-node--active" : ""}`} style={d.style}>
-                <button 
-                  className="worldmap__marker-btn" 
+                <button
+                  className="worldmap__marker-btn"
                   onClick={() => setActive(isActive ? null : d.id)}
                   aria-expanded={isActive}
                 >
@@ -541,7 +513,7 @@ function Advantages() {
             </div>
             <h3 className="advantages__card-title">{a.title}</h3>
             <p className="advantages__card-desc">{a.desc}</p>
-           
+
           </div>
         ))}
       </div>
@@ -576,12 +548,9 @@ function Footerup() {
             <h2 className="footer__cta-title">Ready to Start Your Visa Journey?</h2>
             <p className="footer__cta-sub">Book a free 30-minute consultation with our experts today.</p>
           </div>
-          <a  href = "https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"  className="footer__cta-btn">Get Free Consultation →</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" className="footer__cta-btn">Get Free Consultation →</a>
         </div>
       </div>
-
-
-     
     </footer>
   );
 }
