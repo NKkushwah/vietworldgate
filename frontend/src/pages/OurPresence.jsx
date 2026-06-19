@@ -3,7 +3,7 @@ import "./OurPresence.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 
 // ── LUCIDE ICONS IMPORT ─────────────────────────────────────
 import { 
@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 
 // ── DATA ────────────────────────────────────────────────────
-
 const services = [
   {
     icon: <GraduationCap size={24} />,
@@ -72,22 +71,6 @@ const services = [
   },
 ];
 
-// FIXED: Text flags converted to standard Flag Image URLs
-const destinations = [
-  { flag: "https://flagcdn.com/us.svg", name: "United States", types: "Ivy League · Stem · Tech Work", popular: true },
-  { flag: "https://flagcdn.com/gb.svg", name: "United Kingdom", types: "Master's Pathways · Skilled Work", popular: true },
-  { flag: "https://flagcdn.com/ca.svg", name: "Canada", types: "Express Entry · Study · PNP", popular: true },
-  { flag: "https://flagcdn.com/au.svg", name: "Australia", types: "Higher Ed · Regional PR · Subclass", popular: true },
-  { flag: "https://flagcdn.com/de.svg", name: "Germany", types: "Free Education · Technical Fields", popular: false },
-  { flag: "https://flagcdn.com/ae.svg", name: "UAE / Dubai", types: "Corporate Hub · Investor Pass", popular: false },
-  { flag: "https://flagcdn.com/sg.svg", name: "Singapore", types: "Global Tech · Business Executive", popular: false },
-  { flag: "https://flagcdn.com/jp.svg", name: "Japan", types: "Advanced Research · Global Work", popular: false },
-  { flag: "https://flagcdn.com/nz.svg", name: "New Zealand", types: "Green List Careers · Pathways", popular: false },
-  { flag: "https://flagcdn.com/pt.svg", name: "Portugal", types: "D7 Visa · Cultural Immersion", popular: false },
-  { flag: "https://flagcdn.com/ie.svg", name: "Ireland", types: "Silicon Docks Careers · Post-Study", popular: false },
-  { flag: "https://flagcdn.com/nl.svg", name: "Netherlands", types: "Highly Skilled Migrant · Tech", popular: false },
-];
-
 const steps = [
   { num: "1", icon: <Search size={22} />, title: "Profile Mapping", desc: "We evaluate your academic goals and professional history to choose ideal destinations within 24 hours." },
   { num: "2", icon: "🤝", title: "Institutional Matching", desc: "Securing admissions, verifying course criteria, and polishing your SOP to stand out to selection boards." },
@@ -96,7 +79,6 @@ const steps = [
   { num: "5", icon: <Award size={22} />, title: "Worldgate Cleared", desc: "Collect your visa stamp, receive pre-departure checklists, and embark on life-changing international journey." },
 ];
 
-// FIXED: Text flags converted to standard Flag Image URLs for the visual bar section
 const approvalRates = [
   { flag: "https://flagcdn.com/us.svg", country: "United States", rate: 93 },
   { flag: "https://flagcdn.com/ca.svg", country: "Canada", rate: 98 },
@@ -139,7 +121,6 @@ const testimonials = [
   },
 ];
 
-// FIXED: Cleaned array structure, added custom SVG flag images, separated addresses properly
 const globalDesks = [
   { 
     flag: "https://flagcdn.com/gb.svg", 
@@ -187,17 +168,30 @@ const heroStats = [
   { icon: <Globe size={24} />, num: "40+", label: "Destinations Covered" },
 ];
 
-const presenceNumbers = [
-  { val: "40", suf: "+", label: "Countries Served" },
-  { val: "100", suf: "%", label: "Vetted Opportunities" },
-  { val: "1", suf: <ShieldCheck size={20} style={{ display: 'inline', marginLeft: '4px' }} />, label: "Trusted Platform" },
-  { val: "Thousands", suf: "", label: "Success Stories" },
-];
-
-// ── COMPONENT ────────────────────────────────────────────────
-
 export default function OurPresence() {
   const [activeStep, setActiveStep] = useState(null);
+
+  // ── PR LEVEL STAGGER ANIMATION PATHS ───────────────────────
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.05,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
+  };
+
+  const viewportConfig = { once: true, amount: 0.15 };
 
   return (
     <>
@@ -208,59 +202,83 @@ export default function OurPresence() {
         {/* ── HERO ── */}
         <section className="vw-hero">
           <div className="container">
-            <div className="hero-inner">
+            <motion.div 
+              className="hero-inner"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <div>
-                <div className="hero-badge">
+                <motion.div className="hero-badge" variants={itemVariants}>
                   <span className="live-dot" />
                   Intakes & Applications Active
-                </div>
-                <h1 className="hero-title">
+                </motion.div>
+                
+                <motion.h1 className="hero-title" variants={itemVariants}>
                   Opening Doors to Global Success.<br />
                   <span className="gold-text">Empowering Futures.</span>
-                </h1>
-                <p className="hero-sub">
+                </motion.h1>
+                
+                <motion.p className="hero-sub" variants={itemVariants}>
                   VIET Worldgate is a premier global education and immigration consultancy. 
                   We turn international ambitions into life-changing realities through high-quality counseling, 
                   absolute transparency, and a relentless commitment to professional outcomes.
-                </p>
-                <div className="hero-btns">
-                  <a href = "/contact-us" className="btn-gold">Begin Profile Evaluation →</a>
-                  <a  href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-ghost">Connect with Our Consultants</a>
-                </div>
+                </motion.p>
+                
+                <motion.div className="hero-btns" variants={itemVariants}>
+                  <a href="/contact-us" className="btn-gold">Begin Profile Evaluation →</a>
+                  <a href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-ghost">Connect with Our Consultants</a>
+                </motion.div>
               </div>
 
               <div className="hero-stats-col">
                 {heroStats.map((s, i) => (
-                  <div key={i} className="hstat-card">
+                  <motion.div key={i} className="hstat-card" variants={itemVariants}>
                     <div className="hstat-inner-icon">{s.icon}</div>
                     <div>
                       <div className="hstat-num">{s.num}</div>
                       <div className="hstat-label">{s.label}</div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* ── SERVICES ── */}
         <section className="services-section" id="services">
           <div className="container">
-            <div className="sec-header">
+            <motion.div 
+              className="sec-header"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               <div>
-                <span className="eyebrow">Our Specialisations</span>
-                <h2 className="sec-title">Delivering Service Excellence</h2>
+                <motion.span className="eyebrow" variants={itemVariants}>Our Specialisations</motion.span>
+                <motion.h2 className="sec-title" variants={itemVariants}>Delivering Service Excellence</motion.h2>
               </div>
-              <p className="sec-desc">
+              <motion.p className="sec-desc" variants={itemVariants}>
                 From premium university applications and visa filing to complete legal pathways 
                 for families and professionals, we protect your dream at every milestone.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            <div className="services-grid">
+            <motion.div 
+              className="services-grid"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {services.map((s, i) => (
-                <div key={i} className={`svc-card${s.highlight ? " highlight" : ""}`}>
+                <motion.div 
+                  key={i} 
+                  className={`svc-card${s.highlight ? " highlight" : ""}`}
+                  variants={itemVariants}
+                >
                   <div className="svc-icon">{s.icon}</div>
                   <h3 className="svc-name">{s.name}</h3>
                   <p className="svc-desc">{s.desc}</p>
@@ -272,39 +290,52 @@ export default function OurPresence() {
                   <a href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-services">
                     Contact via WhatsApp
                   </a>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* ── HOW IT WORKS ── */}
         <section className="process-section">
           <div className="container">
-            <div className="process-head">
-              <span className="eyebrow">Strategic Workflow</span>
-              <h2 className="sec-title">The Path to International Success</h2>
-              <p className="sec-desc">
+            <motion.div 
+              className="process-head"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
+              <motion.span className="eyebrow" variants={itemVariants}>Strategic Workflow</motion.span>
+              <motion.h2 className="sec-title" variants={itemVariants}>The Path to International Success</motion.h2>
+              <motion.p className="sec-desc" variants={itemVariants}>
                 Our systematic approach provides absolute structural clarity from profile analysis 
                 to finding your new international horizon.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            <div className="steps-row">
+            <motion.div 
+              className="steps-row"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {steps.map((s, i) => (
-                <div
+                <motion.div
                   key={i}
                   className={`step ${activeStep === i ? "active" : ""}`}
                   onMouseEnter={() => setActiveStep(i)}
                   onMouseLeave={() => setActiveStep(null)}
+                  variants={itemVariants}
                 >
                   <div className="step-num">{s.num}</div>
                   <div className="step-icon">{s.icon}</div>
                   <div className="step-title">{s.title}</div>
                   <p className="step-desc">{s.desc}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -312,29 +343,43 @@ export default function OurPresence() {
         <section className="why-section">
           <div className="container">
             <div className="why-grid">
-              <div>
-                <span className="eyebrow">Our Guiding Vision</span>
-                <h2 className="sec-title">Building Lifelong Global Relationships</h2>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+              >
+                <motion.span className="eyebrow" variants={itemVariants}>Our Guiding Vision</motion.span>
+                <motion.h2 className="sec-title" variants={itemVariants}>Building Lifelong Global Relationships</motion.h2>
+                
                 <ul className="why-features">
                   {corePillars.map((w, i) => (
-                    <li key={i} className="wf-item">
+                    <motion.li key={i} className="wf-item" variants={itemVariants}>
                       <div className="wf-icon">{w.icon}</div>
                       <div className="wf-text">
                         <h4>{w.title}</h4>
                         <p>{w.desc}</p>
                       </div>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              <div className="why-visual">
-                <div className="why-visual-title">Verified Visa Approvals By Destination</div>
+              <motion.div 
+                className="why-visual"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+              >
+                <motion.div className="why-visual-title" variants={itemVariants}>
+                  Verified Visa Approvals By Destination
+                </motion.div>
+                
                 <div className="approval-bars">
                   {approvalRates.map((a, i) => (
-                    <div key={i} className="abar-row">
+                    <motion.div key={i} className="abar-row" variants={itemVariants}>
                       <div className="abar-country">
-                        {/* FIXED: Replaced standard string format with custom Flag Image rendering */}
                         <span className="abar-flag-text">
                           <img src={a.flag} alt={a.country} style={{ width: "24px", height: "auto", borderRadius: "2px", display: "inline-block", verticalAlign: "middle" }} />
                         </span>
@@ -344,10 +389,10 @@ export default function OurPresence() {
                         <div className="abar-fill" style={{ width: `${a.rate}%` }} />
                       </div>
                       <div className="abar-val">{a.rate}%</div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -355,14 +400,26 @@ export default function OurPresence() {
         {/* ── TESTIMONIALS ── */}
         <section className="testimonials-section">
           <div className="container">
-            <div className="testimonials-head">
-              <span className="eyebrow">Transformations</span>
-              <h2 className="sec-title">Real Success Stories, Real Impacts</h2>
-            </div>
+            <motion.div 
+              className="testimonials-head"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
+              <motion.span className="eyebrow" variants={itemVariants}>Transformations</motion.span>
+              <motion.h2 className="sec-title" variants={itemVariants}>Real Success Stories, Real Impacts</motion.h2>
+            </motion.div>
 
-            <div className="testi-grid">
+            <motion.div 
+              className="testi-grid"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {testimonials.map((t, i) => (
-                <div key={i} className="testi-card">
+                <motion.div key={i} className="testi-card" variants={itemVariants}>
                   <div className="testi-stars">{t.stars}</div>
                   <p className="testi-quote">"{t.quote}"</p>
                   <div className="testi-author">
@@ -372,9 +429,9 @@ export default function OurPresence() {
                       <div className="testi-visa">{t.visa}</div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="show-more-wrapper">
               <a href="/feedback" className="show-more-btn">
@@ -387,23 +444,37 @@ export default function OurPresence() {
         {/* ── GLOBAL DESKS ── */}
         <section className="offices-section" id="desks">
           <div className="container">
-            <div className="sec-header">
+            <motion.div 
+              className="sec-header"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               <div>
-                <span className="eyebrow">Global Support Gateway</span>
-                <h2 className="sec-title">Connect with VIET Worldgate</h2>
+                <motion.span className="eyebrow" variants={itemVariants}>Global Support Gateway</motion.span>
+                <motion.h2 className="sec-title" variants={itemVariants}>Connect with VIET Worldgate</motion.h2>
               </div>
-              <p className="sec-desc">
+              <motion.p className="sec-desc" variants={itemVariants}>
                 Reach out to our specialized consulting teams across our international liaison desks for smooth management of your file.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            <div className="offices-grid">
+            <motion.div 
+              className="offices-grid"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {globalDesks.map((o, i) => (
-                <div key={i} className={`office-card${o.hq ? " hq" : ""}`}>
-                  
+                <motion.div 
+                  key={i} 
+                  className={`office-card${o.hq ? " hq" : ""}`}
+                  variants={itemVariants}
+                >
                   {o.hq && <span className="hq-badge">Primary Hub</span>}
 
-                  {/* FIXED: Render structured SVG images instead of static icons */}
                   <div className="office-flag" style={{ marginBottom: "12px", display: "block" }}>
                     <img 
                       src={o.flag} 
@@ -412,7 +483,6 @@ export default function OurPresence() {
                     />
                   </div>
 
-                  {/* FIXED: Re-aligned cleanly using Lucide MapPin globally inside layout */}
                   <div className="office-city" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                     <MapPin size={16} style={{ color: "var(--gold, #d4af37)" }} /> {o.city}
                   </div>
@@ -420,55 +490,47 @@ export default function OurPresence() {
                   <p style={{ fontSize: "12px", color: "#8c8c8c", marginTop: "2px", marginBottom: "12px" }}>{o.address}</p>
 
                   <ul className="office-info">
-                    {/* 📞 Phone Click */}
                     <li>
                       <span className="ic"><Phone size={14} /></span>
-                      <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="contact-link">
-                        {o.phone}
-                      </a>
+                      <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="contact-link">{o.phone}</a>
                     </li>
-
-                    {/* ✉️ Email Click */}
                     <li>
                       <span className="ic"><Mail size={14} /></span>
-                      <a href={`https://mail.google.com/mail/?view=cm&to=${o.email}`} target="_blank" rel="noopener noreferrer" className="contact-link">
-                        {o.email}
-                      </a>
+                      <a href={`https://mail.google.com/mail/?view=cm&to=${o.email}`} target="_blank" rel="noopener noreferrer" className="contact-link">{o.email}</a>
                     </li>
                   </ul>
 
-                  {/* ✅ Read More Button */}
-                  <a href={o.url} className="read-more-btn">
-                    Read More →
-                  </a>
-
-                </div>
+                  <a href={o.url} className="read-more-btn">Read More →</a>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* ── CTA ── */}
         <section className="cta-section">
           <div className="container">
-            <div className="cta-inner">
-              <span className="eyebrow">Ignite Your Potential</span>
-              <h2 className="cta-title">
+            <motion.div 
+              className="cta-inner"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
+              <motion.span className="eyebrow" variants={itemVariants}>Ignite Your Potential</motion.span>
+              <motion.h2 className="cta-title" variants={itemVariants}>
                 Your Gateway to International Success<br />
                 <span className="gold-text">Starts with an Expert Session.</span>
-              </h2>
-              <p className="cta-sub">
+              </motion.h2>
+              <motion.p className="cta-sub" variants={itemVariants}>
                 Schedule a focused consultation with a qualified global migration coordinator. 
                 Gain absolute strategic clarity with no hidden liabilities or commitments.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             <div className="cta-btns">
-              {/* 📞 Call Button */}
               <a href="tel:+917982295530" className="btn-gold">
                 📞 Schedule Free Advisory Call →
               </a>
-
-              {/* 💬 WhatsApp Button */}
               <a href="https://wa.me/917982295530" target="_blank" rel="noopener noreferrer" className="btn-ghost">
                  Contact via WhatsApp
               </a>
@@ -478,7 +540,6 @@ export default function OurPresence() {
 
       </div>
       <Footer />
-   
     </>
   );
 }

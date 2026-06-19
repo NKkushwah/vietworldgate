@@ -2,6 +2,29 @@ import React, { useState, useEffect } from 'react';
 import './UKDestination.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { motion } from 'framer-motion';
+
+// --- Production-Grade Scroll Transition Presets ---
+const slideUpScroll = {
+  hidden: { opacity: 0, y: 35 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.7, 
+      ease: [0.16, 1, 0.3, 1] // Elegant bezier timing
+    } 
+  }
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function UKDestination() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -19,22 +42,30 @@ export default function UKDestination() {
 
   return (
     <>
-    
     <Navbar />
     <div className="global-destination-wrapper">
       
-      {/* SECTION 1: Banner Header Component with UK Image Layer */}
+      {/* SECTION 1: Banner Header Component (Triggers on Load) */}
       <header className="dynamic-hero-banners">
         <div className="hero-grid-max">
-          <div className="hero-left-content">
-          
-           
-          </div>
-          <div className="hero-right-graphic">
+          <motion.div 
+            className="hero-left-content"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {/* Left side content placeholder remains untouched */}
+          </motion.div>
+          <motion.div 
+            className="hero-right-graphic"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          >
             <div className="avatar-mask-container">
               <span className="country-large-emoji"></span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </header>
 
@@ -42,8 +73,13 @@ export default function UKDestination() {
       <div className="master-content-layout-grid">
         
         {/* Left Hand Sidebar Widget Stack */}
-        <aside className="fixed-width-sidebar">
-          
+        <motion.aside 
+          className="fixed-width-sidebar"
+          variants={slideUpScroll}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {/* Top Embedded Callback Banner */}
           <div className="callback-cta-container">
             <span className="cta-meta-text">Our Appointment Service call us</span>
@@ -78,33 +114,50 @@ export default function UKDestination() {
               </a>
             </div>
           </div>
-        </aside>
+        </motion.aside>
 
         {/* Right Hand Informative Content Panel */}
         <main className="variable-content-panel">
           
-          <section className="copywriting-block">
+          <motion.section 
+            className="copywriting-block"
+            variants={slideUpScroll}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             <h2 className="section-header-title">Study in UK: It's easier than you think!</h2>
             <p className="section-body-paragraph">
               The United Kingdom houses some of the world's oldest and most prestigious academic institutions. With highly 
               efficient 1-year Masters modules and globally recognized research standards, it offers international students a fast-paced, 
               intense, and incredibly rewarding academic journey.
             </p>
-          </section>
+          </motion.section>
 
-          <section className="copywriting-block">
+          <motion.section 
+            className="copywriting-block"
+            variants={slideUpScroll}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             <h2 className="section-header-title">Why study in UK?</h2>
             <p className="section-body-paragraph">
               UK degrees are intensely valued across business sectors globally. Under the current post-study framework, international graduates 
               can transition effortlessly into the European job sector through the Graduate Route visa, providing up to 2 years of unrestricted 
               professional work rights right after graduation.
             </p>
-          </section>
+          </motion.section>
 
           {/* SECTION 3: Explicit Triple Feature Cards Grid Row */}
-          <section className="dynamic-triple-feature-grid">
-            
-            <div className="structural-feature-card">
+          <motion.section 
+            className="dynamic-triple-feature-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
+            <motion.div className="structural-feature-card" variants={slideUpScroll}>
               <div className="purple-icon-globe-badge">
                 <span className="badge-unicode-graphic">👥</span>
               </div>
@@ -112,9 +165,9 @@ export default function UKDestination() {
               <p className="card-descriptive-text">
                 The UK boast historic student cities with rich cultural heritage, dynamic student unions, and highly inclusive multicultural networks.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="structural-feature-card">
+            <motion.div className="structural-feature-card" variants={slideUpScroll}>
               <div className="purple-icon-globe-badge">
                 <span className="badge-unicode-graphic">💬</span>
               </div>
@@ -122,9 +175,9 @@ export default function UKDestination() {
               <p className="card-descriptive-text">
                 Home to globally benchmarked educational standards that consistently lead global research indexes and corporate job market demands.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="structural-feature-card">
+            <motion.div className="structural-feature-card" variants={slideUpScroll}>
               <div className="purple-icon-globe-badge">
                 <span className="badge-unicode-graphic">📜</span>
               </div>
@@ -132,12 +185,17 @@ export default function UKDestination() {
               <p className="card-descriptive-text">
                 Universities offer comprehensive student support, rolling scholarship blocks, and dynamic workspaces for international candidates.
               </p>
-            </div>
-
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* SECTION 4: Lower End Institutional Conversion Box */}
-          <section className="lower-conversion-cta-block">
+          <motion.section 
+            className="lower-conversion-cta-block"
+            variants={slideUpScroll}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             <span className="meta-tracking-tagline">UNLOCK YOUR FUTURE IN UNITED KINGDOM</span>
             <h2 className="cta-block-main-heading">Explore Universities and Scholarships in UK</h2>
             
@@ -154,7 +212,7 @@ export default function UKDestination() {
                 FIND SCHOLARSHIPS
               </a>
             </div>
-          </section>
+          </motion.section>
 
         </main>
       </div>

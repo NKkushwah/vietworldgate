@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import "./Socialresponsibility.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
-// Lucide Icons Import (Sirf safe utility icons ko rkha hai, no social brands to avoid Vite crash)
+// Lucide Icons Import
 import { 
   UserCheck, 
   GraduationCap, 
@@ -13,7 +14,7 @@ import {
   Pause
 } from "lucide-react";
 
-// Inline Standard SVG Wrappers for Social Brands (Safe, fast, and crash-proof)
+// Inline Standard SVG Wrappers for Social Brands
 const InstagramIcon = ({ size = 24, className }) => (
   <svg width={size} height={size} className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 );
@@ -79,6 +80,33 @@ const JOURNEY = [
   { icon: Home, title: "Support after departure" },
 ];
 
+// Animation presets
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  },
+  viewport: { once: true, margin: "-100px" }
+};
+
+const childFadeIn = {
+  initial: { opacity: 0, y: 25 },
+  whileInView: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  }
+};
+
 export default function SocialResponsibility() {
   const videoRefs = useRef([]);
   const [currentlyPlaying, setCurrentlyPlaying] = useState(-1);
@@ -107,37 +135,67 @@ export default function SocialResponsibility() {
         
         {/* Fixed Hero Background Image & Gradient Overlays */}
         <section className="sr-hero-container">
-          <div className="sr-hero-content">
+          <motion.div 
+            className="sr-hero-content"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <p className="sr-hero-eyebrow">VietWorldGate &middot; Social responsibility</p>
             <h1 className="sr-hero-title">
               Every visa we issue carries <br className="desktop-br"/>someone's future. 
               <span className="sr-hero-title-accent"> We don't treat that lightly.</span>
             </h1>
             <p className="sr-hero-subtitle">We help people leave home to build a better one...</p>
-          </div>
+          </motion.div>
         </section>
 
         {/* Impact Board */}
-        <section className="sr-board">
+        <motion.section 
+          className="sr-board"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="sr-board-header">Our impact</div>
           <div className="sr-board-grid">
             {IMPACT_STATS.map((stat, idx) => (
-              <div className="sr-board-cell" key={idx}>
+              <motion.div 
+                className="sr-board-cell" 
+                key={idx}
+                variants={childFadeIn}
+              >
                 <div className="sr-board-value">{stat.value}</div>
                 <div className="sr-board-caption">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Journey Timeline */}
         <section className="sr-journey">
-          <h2 className="sr-section-title sr-center-title">How we take responsibility, step by step</h2>
-          <div className="sr-journey-track">
+          <motion.h2 
+            className="sr-section-title sr-center-title"
+            {...fadeInUp}
+          >
+            How we take responsibility, step by step
+          </motion.h2>
+          <motion.div 
+            className="sr-journey-track"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {JOURNEY.map((item, idx) => {
               const JourneyIcon = item.icon;
               return (
-                <div className="sr-journey-item" key={idx}>
+                <motion.div 
+                  className="sr-journey-item" 
+                  key={idx}
+                  variants={childFadeIn}
+                >
                   <div className="sr-journey-icon-wrap">
                     <span className="sr-step-icon">
                       <JourneyIcon size={24} className="sr-social-icon" />
@@ -145,18 +203,33 @@ export default function SocialResponsibility() {
                   </div>
                   <h3 className="sr-journey-title">{item.title}</h3>
                   {idx < JOURNEY.length - 1 && <div className="sr-journey-line" />}
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </section>
 
         {/* Video Gallery with Native Playable Fixed State */}
         <section className="sr-videos">
-          <h2 className="sr-section-title">See it for yourself</h2>
-          <div className="sr-videos-grid">
+          <motion.h2 
+            className="sr-section-title"
+            {...fadeInUp}
+          >
+            See it for yourself
+          </motion.h2>
+          <motion.div 
+            className="sr-videos-grid"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {VIDEOS.map((video, idx) => (
-              <div className="sr-video-card" key={idx}>
+              <motion.div 
+                className="sr-video-card" 
+                key={idx}
+                variants={childFadeIn}
+              >
                 <div 
                   className="sr-clip-frame" 
                   onClick={() => handleVideoClick(idx)}
@@ -193,22 +266,34 @@ export default function SocialResponsibility() {
                     <span>Show more on {video.platform === "youtube" ? "YouTube" : "Instagram"}</span>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Dynamic Clickable Feed Grid Section */}
         <section className="sr-posts">
-          <h2 className="sr-section-title">From our feed</h2>
-          <div className="sr-posts-grid">
+          <motion.h2 
+            className="sr-section-title"
+            {...fadeInUp}
+          >
+            From our feed
+          </motion.h2>
+          <motion.div 
+            className="sr-posts-grid"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {SOCIAL_POSTS.map((post, idx) => (
-              <a 
+              <motion.a 
                 href={post.url} 
                 className="sr-post-card-link" 
                 target="_blank" 
                 rel="noreferrer" 
                 key={idx}
+                variants={childFadeIn}
               >
                 <div className="sr-post-card">
                   <div className="sr-post-img-container">
@@ -225,13 +310,16 @@ export default function SocialResponsibility() {
                     {post.subTitle && <p className="sr-post-subtext">{post.subTitle}</p>}
                   </div>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Dynamic Follow Strip Block */}
-        <section className="sr-social-strip">
+        <motion.section 
+          className="sr-social-strip"
+          {...fadeInUp}
+        >
           <div className="sr-social-strip-text">
             <h2>Follow along</h2>
             <p>We share the journeys, not just the paperwork</p>
@@ -258,7 +346,7 @@ export default function SocialResponsibility() {
               <span>Company updates</span>
             </a>
           </div>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </>

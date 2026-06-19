@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { FaGraduationCap, FaLaptop, FaCalendarAlt, FaPassport, FaAward, FaPenFancy, FaFilter, FaClock, FaMapMarkerAlt, FaInfoCircle, FaTicketAlt } from "react-icons/fa";
+import { 
+  FaGraduationCap, FaLaptop, FaCalendarAlt, FaPassport, FaAward, 
+  FaPenFancy, FaFilter, FaClock, FaMapMarkerAlt, FaInfoCircle, FaTicketAlt 
+} from "react-icons/fa";
 import './UpcomingEvents.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // Mock Data for Events
 const INITIAL_EVENTS = [
@@ -21,7 +25,6 @@ const INITIAL_EVENTS = [
     totalSeats: 100, 
     img: "https://images.pexels.com/photos/6147016/pexels-photo-6147016.jpeg" 
   },
-
   { 
     id: 2, 
     title: "Australia Education Fair 🇦🇺", 
@@ -36,7 +39,6 @@ const INITIAL_EVENTS = [
     totalSeats: 120, 
     img: "https://images.pexels.com/photos/10513247/pexels-photo-10513247.jpeg"
    },
-
   { 
     id: 3, 
     title: "USA University Webinar 🇺🇸", 
@@ -51,7 +53,6 @@ const INITIAL_EVENTS = [
     totalSeats: 150, 
     img: "https://images.pexels.com/photos/14495769/pexels-photo-14495769.jpeg" 
   },
-
   { 
     id: 4, 
     title: "Study in Singapore Fair 🇸🇬", 
@@ -66,7 +67,6 @@ const INITIAL_EVENTS = [
     totalSeats: 100, 
     img: "https://images.pexels.com/photos/36672131/pexels-photo-36672131.jpeg"
    },
-
   { 
     id: 5, 
     title: "UK Visa & Scholarship Seminar 🇬🇧", 
@@ -82,6 +82,60 @@ const INITIAL_EVENTS = [
     img: "https://images.pexels.com/photos/34397465/pexels-photo-34397465.jpeg" 
   }
 ];
+
+// Static configuration lists for DRY implementation
+const CATEGORIES = [
+  { id: "fair", label: "Education Fair", icon: FaGraduationCap, filterVal: "Education Fair" },
+  { id: "webinar", label: "University Webinar", icon: FaLaptop, filterVal: "Webinar" },
+  { id: "visa", label: "Visa Seminar", icon: FaPassport, filterVal: "Visa Seminar" },
+  { id: "scholarship", label: "Scholarship Session", icon: FaAward },
+  { id: "ielts", label: "IELTS Workshop", icon: FaPenFancy },
+  { id: "clear", label: "Clear Filter", icon: FaFilter, filterVal: "All Categories" }
+];
+
+const PARTICIPATING_UNIVERSITIES = [
+  "🏛️ University of Melbourne",
+  "🏫 University of Toronto",
+  "🎓 King's College London",
+  "🌐 NUS Singapore",
+  "⭐ University of Sydney"
+];
+
+const PROCESS_STEPS = [
+  "Select Event",
+  "Fill Form",
+  "Get Invite",
+  "Attend Live"
+];
+
+const FAQS = [
+  { q: "Are the global events completely free to attend?", a: "Yes! All educational fairs, counseling sessions, and webinars hosted by EduWorld are entirely free for students." },
+  { q: "Will I get a verified structural certificate for joining?", a: "Webinars and intensive structural workshops provide participation certificates over email post-event validation." },
+  { q: "Can I directly bring transcripts to evaluate profile data?", a: "Absolutely. For offline events, carrying physical or digital copies of grade cards allows immediate profiling with experts." },
+  { q: "How do I instantly cancellation my registered token?", a: "You can click on the cancellation hyperlink directly provided within your registered automated email confirmation dashboard." }
+];
+
+// --- Premium Enterprise Animations ---
+const slideUpScroll = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.65, 
+      ease: [0.16, 1, 0.3, 1] // Elegant bezier timing curve
+    } 
+  }
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08
+    }
+  }
+};
 
 export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -110,10 +164,20 @@ export default function EventsPage() {
       {/* --- NAVBAR --- */}
       <Navbar />
 
-      <div className="eduworld-container fade-in-up">
+      <motion.div 
+        className="eduworld-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         
         {/* --- FILTER BAR --- */}
-        <div className="filter-bar">
+        <motion.div 
+          className="filter-bar"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="search-wrapper">
             <svg className="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             <input 
@@ -150,11 +214,17 @@ export default function EventsPage() {
           <button className="btn-search" onClick={() => { setSearchQuery(''); setSelectedCategory('All Categories'); setSelectedCountry('All Countries'); setSelectedMode('All Modes'); }}>
             Reset
           </button>
-        </div>
+        </motion.div>
 
         {/* --- FEATURED EVENT & CALENDAR --- */}
-        <section className="featured-section">
-          <div className="featured-card">
+        <motion.section 
+          className="featured-section"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <motion.div className="featured-card" variants={slideUpScroll}>
             <div className="featured-details">
               <span className="badge-featured">🌟 FEATURED EVENT</span>
               <h2>UK Education Fair 2026 🇬🇧</h2>
@@ -183,19 +253,18 @@ export default function EventsPage() {
               </div>
 
               <Link to="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor">
-              <button className="btn-register-yellow">
-                Register For Free →
-              </button>
+                <button className="btn-register-yellow">
+                  Register For Free →
+                </button>
               </Link>
             </div>
             <div className="featured-image-wrapper">
               <img src="https://images.pexels.com/photos/33524620/pexels-photo-33524620.jpeg" alt="UK Big Ben" />
-              
             </div>
-          </div>
+          </motion.div>
 
           {/* Mini Calendar */}
-          <div className="mini-calendar">
+          <motion.div className="mini-calendar" variants={slideUpScroll}>
             <div className="calendar-header">
               <button className="cal-btn">&lt;</button>
               <h4>June 2026</h4>
@@ -214,20 +283,31 @@ export default function EventsPage() {
               })}
             </div>
             <a href="#full-calendar" className="view-full-cal">View Full Calendar →</a>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* --- DYNAMIC EVENTS LIST SECTION --- */}
-        <section className="upcoming-section">
-          <div className="section-header">
+        <motion.section 
+          className="upcoming-section"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <motion.div className="section-header" variants={slideUpScroll}>
             <h2>Upcoming Events ({filteredEvents.length})</h2>
-          </div>
-          <div className="events-grid">
+          </motion.div>
+          
+          <motion.div className="events-grid" variants={staggerContainer}>
             {filteredEvents.map(event => {
               const fillPercentage = ((event.totalSeats - event.seatsLeft) / event.totalSeats) * 100;
 
               return (
-                <div className="event-grid-card animate-card" key={event.id}>
+                <motion.div 
+                  className="event-grid-card animate-card" 
+                  key={event.id}
+                  variants={slideUpScroll}
+                >
                   <div className="card-img-container">
                     <img src={event.img} alt={event.title} />
                     <span className={`badge-mode ${event.mode.toLowerCase()}`}>{event.mode}</span>
@@ -265,99 +345,96 @@ export default function EventsPage() {
                         <FaInfoCircle /> Overview
                       </button>
                       <Link to="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor">
-                      <button className="btn-card-reg">
-                        <FaTicketAlt /> Book Spot
-                      </button>
+                        <button className="btn-card-reg">
+                          <FaTicketAlt /> Book Spot
+                        </button>
                       </Link>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
             {filteredEvents.length === 0 && (
-              <p className="no-events">No events found matching the filters.</p>
+              <motion.p className="no-events" variants={slideUpScroll}>
+                No events found matching the filters.
+              </motion.p>
             )}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* --- CATEGORIES --- */}
-        <section className="categories-section">
-          <h2>Explore Event Categories</h2>
-          <div className="categories-grid">
-            <div className="cat-item" onClick={() => setSelectedCategory("Education Fair")}>
-              <FaGraduationCap className="cat-icon" />
-              <p>Education Fair</p>
-            </div>
-
-            <div className="cat-item" onClick={() => setSelectedCategory("Webinar")}>
-              <FaLaptop className="cat-icon" />
-              <p>University Webinar</p>
-            </div>
-
-            <div className="cat-item" onClick={() => setSelectedCategory("Visa Seminar")}>
-              <FaPassport className="cat-icon" />
-              <p>Visa Seminar</p>
-            </div>
-
-            <div className="cat-item">
-              <FaAward className="cat-icon" />
-              <p>Scholarship Session</p>
-            </div>
-
-            <div className="cat-item">
-              <FaPenFancy className="cat-icon" />
-              <p>IELTS Workshop</p>
-            </div>
-
-            <div className="cat-item" onClick={() => setSelectedCategory("All Categories")}>
-              <FaFilter className="cat-icon" />
-              <p>Clear Filter</p>
-            </div>
-          </div>
-        </section>
+        <motion.section 
+          className="categories-section"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <motion.h2 variants={slideUpScroll}>Explore Event Categories</motion.h2>
+          <motion.div className="categories-grid" variants={staggerContainer}>
+            {CATEGORIES.map((cat) => {
+              const CatIcon = cat.icon;
+              return (
+                <motion.div 
+                  className="cat-item" 
+                  key={cat.id}
+                  variants={slideUpScroll}
+                  onClick={() => cat.filterVal && setSelectedCategory(cat.filterVal)}
+                >
+                  <CatIcon className="cat-icon" />
+                  <p>{cat.label}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </motion.section>
 
         {/* --- UNIVERSITIES & PROCESS --- */}
-        <section className="uni-process-section">
+        <motion.section 
+          className="uni-process-section"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <div className="uni-logos-container">
-            <h3>Participating Global Universities</h3>
-            <div className="logos-flex">
-              <div className="uni-chip">🏛️ University of Melbourne</div>
-              <div className="uni-chip"> University of Toronto</div>
-              <div className="uni-chip"> King's College London</div>
-              <div className="uni-chip"> NUS Singapore</div>
-              <div className="uni-chip"> University of Sydney</div>
-            </div>
+            <motion.h3 variants={slideUpScroll}>Participating Global Universities</motion.h3>
+            <motion.div className="logos-flex" variants={staggerContainer}>
+              {PARTICIPATING_UNIVERSITIES.map((uni, idx) => (
+                <motion.div className="uni-chip" key={idx} variants={slideUpScroll}>
+                  {uni}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           <div className="process-container">
-            <h3>Smooth Application Process</h3>
-            <div className="process-steps">
-              <div className="step-node">
-                <div className="step-circle">1</div>
-                <p>Select Event</p>
-              </div>
-              <div className="step-connector"></div>
-              <div className="step-node">
-                <div className="step-circle">2</div>
-                <p>Fill Form</p>
-              </div>
-              <div className="step-connector"></div>
-              <div className="step-node">
-                <div className="step-circle">3</div>
-                <p>Get Invite</p>
-              </div>
-              <div className="step-connector"></div>
-              <div className="step-node">
-                <div className="step-circle">4</div>
-                <p>Attend Live</p>
-              </div>
-            </div>
+            <motion.h3 variants={slideUpScroll}>Smooth Application Process</motion.h3>
+            <motion.div className="process-steps" variants={staggerContainer}>
+              {PROCESS_STEPS.map((step, idx) => (
+                <React.Fragment key={idx}>
+                  <motion.div className="step-node" variants={slideUpScroll}>
+                    <div className="step-circle">{idx + 1}</div>
+                    <p>{step}</p>
+                  </motion.div>
+                  {idx < PROCESS_STEPS.length - 1 && (
+                    <motion.div className="step-connector" variants={slideUpScroll} />
+                  )}
+                </React.Fragment>
+              ))}
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* --- TESTIMONIALS & FAQ --- */}
-        <section className="testimonial-faq-section">
-          <div className="testimonial-card-box">
+        <motion.section 
+          className="testimonial-faq-section"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <motion.div className="testimonial-card-box" variants={slideUpScroll}>
             <h3>What Students Say</h3>
             <div className="t-box">
               <div className="stars">⭐⭐⭐⭐⭐</div>
@@ -370,29 +447,32 @@ export default function EventsPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="faq-box">
+          <motion.div className="faq-box" variants={slideUpScroll}>
             <h3>Frequently Asked Questions</h3>
-            {[
-              { q: "Are the global events completely free to attend?", a: "Yes! All educational fairs, counseling sessions, and webinars hosted by EduWorld are entirely free for students." },
-              { q: "Will I get a verified structural certificate for joining?", a: "Webinars and intensive structural workshops provide participation certificates over email post-event validation." },
-              { q: "Can I directly bring transcripts to evaluate profile data?", a: "Absolutely. For offline events, carrying physical or digital copies of grade cards allows immediate profiling with experts." },
-              { q: "How do I instantly cancellation my registered token?", a: "You can click on the cancellation hyperlink directly provided within your registered automated email confirmation dashboard." }
-            ].map((faq, index) => (
-              <div className={`faq-item-wrapper ${activeFaq === index ? 'active' : ''}`} key={index} onClick={() => toggleFaq(index)}>
-                <div className="faq-item">
-                  <span>{faq.q}</span> 
-                  <span className="faq-toggle-icon">{activeFaq === index ? '−' : '+'}</span>
-                </div>
-                <div className="faq-answer-container">
-                  <div className="faq-answer">{faq.a}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+            <motion.div variants={staggerContainer}>
+              {FAQS.map((faq, index) => (
+                <motion.div 
+                  className={`faq-item-wrapper ${activeFaq === index ? 'active' : ''}`} 
+                  key={index} 
+                  onClick={() => toggleFaq(index)}
+                  variants={slideUpScroll}
+                >
+                  <div className="faq-item">
+                    <span>{faq.q}</span> 
+                    <span className="faq-toggle-icon">{activeFaq === index ? '−' : '+'}</span>
+                  </div>
+                  <div className="faq-answer-container">
+                    <div className="faq-answer">{faq.a}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.section>
+      </motion.div>
+
       {/* --- FOOTER --- */}
       <Footer />
     </>

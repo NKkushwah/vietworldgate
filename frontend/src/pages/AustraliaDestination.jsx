@@ -1,38 +1,63 @@
 import React from 'react';
-import './AustraliaDestination.css'; // Make sure your CSS file names are updated too
+import './AustraliaDestination.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
+
+const FadeUp = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: delay }}
+    viewport={{ once: true, amount: 0.15 }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function CanadaDestination() {
-  // WhatsApp Link with a custom pre-filled message for Canada Destination
   const whatsappFormLink = "https://wa.me/917982295530?text=Hi,%20I%20am%20interested%20in%20studying%20in%20Canada.%20Please%20help%20me%20with%20course%20options,%20universities,%20colleges,%20and%20the%20study%20permit%20process.";
 
   return (
     <>
       <Navbar />
       <div className="intl-dest-wrapper">
-        {/* Top Banner Section with Background Image */}
-        <header className="intl-hero-banner">
+
+        {/* HERO BANNER */}
+        <motion.header
+          className="intl-hero-banner"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="intl-banner-overlay">
-            <div className="intl-banner-text">
+            <motion.div
+              className="intl-banner-text"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
               <h1></h1>
               <nav className="intl-breadcrumb">
-                <span className="intl-crumb-home"></span> 
+                <span className="intl-crumb-home"></span>
                 <span className="intl-crumb-arrow"></span>
-                <span className="intl-crumb-arrow"></span> 
+                <span className="intl-crumb-arrow"></span>
               </nav>
-            </div>
-            <div className="intl-badge-holder">
-              
-            </div>
+            </motion.div>
+            <div className="intl-badge-holder"></div>
           </div>
-        </header>
+        </motion.header>
 
-        {/* Main Grid Content */}
+        {/* MAIN GRID */}
         <div className="intl-main-grid">
-          
-          {/* Left Sidebar Content (WhatsApp Card) */}
-          <aside className="intl-sidebar-pane">
+
+          {/* LEFT SIDEBAR */}
+          <motion.aside
+            className="intl-sidebar-pane"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
             <div className="intl-call-box">
               <p>Our Appointment Service call us</p>
               <a href="tel:+917982295530" className="intl-phone-link">
@@ -40,7 +65,6 @@ export default function CanadaDestination() {
               </a>
             </div>
 
-            {/* WhatsApp Chat Card */}
             <div className="intl-whatsapp-card">
               <div className="intl-wa-header">
                 <div className="intl-wa-icon">
@@ -53,102 +77,111 @@ export default function CanadaDestination() {
                   <p>Online • Advisors Ready</p>
                 </div>
               </div>
-              
               <div className="intl-wa-body">
                 <p className="intl-wa-msg">
                   Confused about DLIs, SDS applications, requirements, or courses in Australia? Connect instantly with our experts for immediate support.
                 </p>
-                <a 
+                <a
                   href={whatsappFormLink}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="intl-wa-btn"
                 >
                   Start Chat Now
                 </a>
               </div>
             </div>
-          </aside>
+          </motion.aside>
 
-          {/* Right Info Section */}
+          {/* RIGHT CONTENT */}
           <main className="intl-content-pane">
-            <section className="intl-info-section">
-              <h2>Study in Australia: Your Pathway to Global Success!</h2>
-              <p>
-                Australia is globally recognized for its high-quality education system, offering an array of programs across top-tier universities and colleges. With a strong focus on research, practical learning, and co-op programs, Australia equips students with real-world industry experience. Along with affordable tuition fees compared to other major study destinations, students benefit from a high standard of living, excellent healthcare, and diverse post-graduation work opportunities.
-              </p>
-            </section>
 
-            <section className="intl-info-section">
-              <h2>Why study in Australia?</h2>
-              <p>
-                As an international student, Australia provides an exceptionally welcoming, safe, and multicultural environment. Educational institutions here hold dynamic campus cultures and robust support networks. Moreover, Australia’s Post-Graduation Work Permit (PGWP) program offers a direct avenue to gain invaluable international work experience, making it one of the most attractive destinations for students worldwide to build long-term careers.
-              </p>
-            </section>
+            <FadeUp>
+              <section className="intl-info-section">
+                <h2>Study in Australia: Your Pathway to Global Success!</h2>
+                <p>
+                  Australia is globally recognized for its high-quality education system, offering an array of programs across top-tier universities and colleges. With a strong focus on research, practical learning, and co-op programs, Australia equips students with real-world industry experience. Along with affordable tuition fees compared to other major study destinations, students benefit from a high standard of living, excellent healthcare, and diverse post-graduation work opportunities.
+                </p>
+              </section>
+            </FadeUp>
 
-            {/* Core Feature Value Cards */}
+            <FadeUp delay={0.1}>
+              <section className="intl-info-section">
+                <h2>Why study in Australia?</h2>
+                <p>
+                  As an international student, Australia provides an exceptionally welcoming, safe, and multicultural environment. Educational institutions here hold dynamic campus cultures and robust support networks. Moreover, Australia's Post-Graduation Work Permit (PGWP) program offers a direct avenue to gain invaluable international work experience, making it one of the most attractive destinations for students worldwide to build long-term careers.
+                </p>
+              </section>
+            </FadeUp>
+
+            {/* FEATURE CARDS */}
             <section className="intl-features-container">
-              <div className="intl-feature-item">
-                <div className="intl-icon-wrapper intl-double-icon">
-                  <div className="intl-icon-circle">🍁</div>
-                  <div className="intl-icon-circle">👥</div>
-                </div>
-                <h3>Student-Friendly Cities</h3>
-                <p>Top Australian cities like Sydney, Melbourne, and Brisbane consistently rank among the best student cities globally, offering vibrant cultures and safe environments.</p>
-              </div>
-
-              <div className="intl-feature-item">
-                <div className="intl-icon-wrapper">
-                  <div className="intl-icon-circle">🎓</div>
-                </div>
-                <h3>World-Class Institutions</h3>
-                <p>Australia boasts numerous universities ranking in the global top 100, providing top-notch degrees, advanced research spaces, and exceptional co-op facilities.</p>
-              </div>
-
-              <div className="intl-feature-item">
-                <div className="intl-icon-wrapper">
-                  <div className="intl-icon-circle">💼</div>
-                </div>
-                <h3>Post-Study Work Options</h3>
-                <p>The Post-Graduation Work Permit (PGWP) allows eligible international graduates to stay and work in Australia, gaining crucial global industry experience.</p>
-              </div>
+              {[
+                {
+                  icons: ["🍁", "👥"],
+                  double: true,
+                  title: "Student-Friendly Cities",
+                  desc: "Top Australian cities like Sydney, Melbourne, and Brisbane consistently rank among the best student cities globally, offering vibrant cultures and safe environments.",
+                },
+                {
+                  icons: ["🎓"],
+                  title: "World-Class Institutions",
+                  desc: "Australia boasts numerous universities ranking in the global top 100, providing top-notch degrees, advanced research spaces, and exceptional co-op facilities.",
+                },
+                {
+                  icons: ["💼"],
+                  title: "Post-Study Work Options",
+                  desc: "The Post-Graduation Work Permit (PGWP) allows eligible international graduates to stay and work in Australia, gaining crucial global industry experience.",
+                },
+              ].map(function(card, i) {
+                return (
+                  <motion.div
+                    key={i}
+                    className="intl-feature-item"
+                    initial={{ opacity: 0, y: 35 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.55, delay: i * 0.15 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                  >
+                    <div className={"intl-icon-wrapper" + (card.double ? " intl-double-icon" : "")}>
+                      {card.icons.map(function(icon, j) {
+                        return <div key={j} className="intl-icon-circle">{icon}</div>;
+                      })}
+                    </div>
+                    <h3>{card.title}</h3>
+                    <p>{card.desc}</p>
+                  </motion.div>
+                );
+              })}
             </section>
 
-            {/* Dynamic Bottom Explorer CTAs */}
-            <section className="intl-footer-cta">
-              <span className="intl-cta-tagline">UNLOCK YOUR FUTURE IN AUSTRALIA</span>
-              <h2>Explore Universities, Colleges, and Scholarships in Australia</h2>
-              <p className="intl-cta-lead">Discover the endless opportunities that await you in the Land Down Under.</p>
-              <p className="intl-cta-sub">Australia offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
-              
-              <div className="intl-btn-group">
-                <a 
-                  href={whatsappFormLink}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="intl-primary-btn"
-                >
-                  EXPLORE UNIVERSITIES
-                </a>
-                <a 
-                  href={whatsappFormLink}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="intl-primary-btn"
-                >
-                  FIND SCHOLARSHIPS
-                </a>
-              </div>
-            </section>
+            {/* FOOTER CTA */}
+            <FadeUp delay={0.1}>
+              <section className="intl-footer-cta">
+                <span className="intl-cta-tagline">UNLOCK YOUR FUTURE IN AUSTRALIA</span>
+                <h2>Explore Universities, Colleges, and Scholarships in Australia</h2>
+                <p className="intl-cta-lead">Discover the endless opportunities that await you in the Land Down Under.</p>
+                <p className="intl-cta-sub">Australia offers a world-class education alongside a diverse, inclusive, and breathtaking community experience. Are you ready to take your first step toward your academic journey?</p>
+                <div className="intl-btn-group">
+                  <a href={whatsappFormLink} target="_blank" rel="noopener noreferrer" className="intl-primary-btn">
+                    EXPLORE UNIVERSITIES
+                  </a>
+                  <a href={whatsappFormLink} target="_blank" rel="noopener noreferrer" className="intl-primary-btn">
+                    FIND SCHOLARSHIPS
+                  </a>
+                </div>
+              </section>
+            </FadeUp>
+
           </main>
         </div>
 
-        {/* Floating WhatsApp Quick Action Widgets */}
+        {/* FLOATING WHATSAPP */}
         <div className="intl-floating-widgets">
-          <a 
+          <a
             href={whatsappFormLink}
-            className="intl-whatsapp-bubble" 
-            target="_blank" 
+            className="intl-whatsapp-bubble"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
           >
@@ -157,7 +190,7 @@ export default function CanadaDestination() {
             </svg>
           </a>
         </div>
-        
+
       </div>
       <Footer />
     </>

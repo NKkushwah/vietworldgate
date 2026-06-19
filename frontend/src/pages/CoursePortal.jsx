@@ -2,6 +2,7 @@ import React, { useState, useMemo, useRef } from 'react';
 import './CoursePortal.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { motion } from 'framer-motion';
 
 // ─────────────────────────────────────────────
 // COURSE DATA  (link field added to every course)
@@ -1335,12 +1336,17 @@ const CoursePortal = () => {
   // ── render ──
   return (
     <>
-    <Navbar />
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="portal-container">
 
         {/* ── HERO ── */}
-        <header className="Hero-section">
+        <motion.header 
+          className="Hero-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1>4,000+ Best Courses Available Here!</h1>
 
           <div className="search-bar-container">
@@ -1381,13 +1387,19 @@ const CoursePortal = () => {
             </div>
             <button className="slider-arrow right" onClick={() => scrollSlider('right')}>›</button>
           </div>
-        </header>
+        </motion.header>
 
         {/* ── MAIN ── */}
         <div className="main-layout">
 
           {/* SIDEBAR */}
-          <aside className="sidebar">
+          <motion.aside 
+            className="sidebar"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <button className="reset-btn" onClick={handleResetFilters}>⟲ Reset Filters</button>
 
             {/* Course Level */}
@@ -1423,7 +1435,7 @@ const CoursePortal = () => {
                 ))}
               </div>
             </div>
-          </aside>
+          </motion.aside>
 
           {/* RESULTS */}
           <main className="results-container">
@@ -1436,7 +1448,14 @@ const CoursePortal = () => {
               {filteredCourses.length === 0 ? (
                 <div className="no-records">No courses match your selected filters.</div>
               ) : filteredCourses.map((course) => (
-                <div key={course.id} className="course-card">
+                <motion.div 
+                  key={course.id} 
+                  className="course-card"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
                   <div className="country-ribbon">{course.country}</div>
 
                   <div className="card-body">
@@ -1487,7 +1506,7 @@ const CoursePortal = () => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </main>

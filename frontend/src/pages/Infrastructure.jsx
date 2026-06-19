@@ -3,6 +3,7 @@ import "./Infrastructure.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import logo from "../assets/vietworldgate1.png";
+import { motion } from "framer-motion"; // 1. Framer motion import kiya
 
 const Infrastructure = () => {
   const facilities = [
@@ -38,23 +39,66 @@ const Infrastructure = () => {
     },
   ];
 
+  // --- PREMIUM ANIMATION CONFIGURATIONS (VARIANTS) ---
+  
+  // Grid container ke liye stagger delay configuration
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12, // Har card 0.12s ke gap par aayega
+      }
+    }
+  };
+
+  // Fade-in Up effect headings aur small text ke liye
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: [0.215, 0.610, 0.355, 1] } 
+    }
+  };
+
+  // Facilities individual card animation with micro-bounce
+  const cardVariant = {
+    hidden: { opacity: 0, y: 45, scale: 0.96 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { type: "spring", stiffness: 65, damping: 13 } 
+    }
+  };
+
   return (
     <>
       <Navbar />
 
-      {/* ===== HERO SECTION ===== */}
+      {/* ===== HERO SECTION WITH ENERGETIC ENTRANCE ===== */}
       <section className="infra-hero">
         <div className="hero-overlay"></div>
 
         <div className="hero-container-box">
 
-          {/* Left Side */}
-          <div className="hero-text-wrapper">
-            
+          {/* Left Side (Text & Logo) */}
+          <motion.div 
+            className="hero-text-wrapper"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <div className="hero-heading-inline">
-              <div className="hero-badge-inline">
+              <motion.div 
+                className="hero-badge-inline"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+              >
                 <img src={logo} alt="VietWorldGate Logo" />
-              </div>
+              </motion.div>
               <h1>
                 VIET-WORLDGATE <span>Infrastructure</span>
               </h1>
@@ -64,37 +108,62 @@ const Infrastructure = () => {
               Our infrastructure is designed to support students at every step 
               of their study abroad journey — from career counseling to visa approval.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Right Side Stats */}
-          <div className="hero-stats-side">
-            <div className="stat-item">
+          {/* Right Side Stats (Staggered Loading) */}
+          <motion.div 
+            className="hero-stats-side"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div className="stat-item" variants={fadeInUp}>
               <h3>99%</h3>
               <p>Visa Success</p>
-            </div>
-            <div className="stat-item">
+            </motion.div>
+            <motion.div className="stat-item" variants={fadeInUp}>
               <h3>500+</h3>
               <p>Universities</p>
-            </div>
-            <div className="stat-item">
+            </motion.div>
+            <motion.div className="stat-item" variants={fadeInUp}>
               <h3>10k+</h3>
               <p>Students Guided</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
         </div>
       </section>
 
-      {/* ===== FACILITIES SECTION ===== */}
+      {/* ===== FACILITIES SECTION WITH SCROLL TRIGGER ===== */}
       <section className="infra-section">
-        <div className="section-header">
+        
+        {/* Section Header */}
+        <motion.div 
+          className="section-header"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <span>Our Facilities</span>
           <h2>Everything You Need for Study Abroad</h2>
-        </div>
+        </motion.div>
 
-        <div className="infra-grid">
+        {/* 6 Facilities Cards Grid */}
+        <motion.div 
+          className="infra-grid"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }} // 15% section dikhte hi flow shuru ho jayega
+        >
           {facilities.map((item, index) => (
-            <div className="infra-card" key={index}>
+            <motion.div 
+              className="infra-card" 
+              key={index}
+              variants={cardVariant}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }} // Hover interactive effect
+            >
               <div className="card-img-wrapper">
                 <img src={item.img} alt={item.title} loading="lazy" />
               </div>
@@ -102,9 +171,9 @@ const Infrastructure = () => {
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <Footer />

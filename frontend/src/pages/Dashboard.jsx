@@ -1,13 +1,8 @@
 import React from "react";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-
-
-
 import "./Dashboard.css";
-
 import Testimonials from "../components/Testimonials";
 import FaqSection from "../components/FaqSection";
 import StudyAbroad from "../components/StudyAbroad";
@@ -16,212 +11,151 @@ import StudyAbroadFeatures from "../components/StudyAbroadFeatures";
 import StudyAbroadLayouts from "../components/StudyAbroadLayouts";
 import StudyDestinations from "../components/StudyDestinations";
 import BritishCouncilLogo from "../assets/bclogo.jpg";
+import { motion } from "framer-motion";
 
+const FadeUp = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay: delay }}
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
+
+const stats = [
+  { num: "200+", label: "Institutions Worldwide" },
+  { num: "7+", label: "Branches" },
+  { num: "2600+", label: "Students Placed" },
+  { num: "6+", label: "Years Experience" },
+];
 
 function Dashboard() {
-
   return (
-
     <>
-     
       <Navbar />
-<section className="trust-bar">
-  <div className="trust-container">
 
-    <div className="trust-right">
+      {/* TRUST BAR */}
+      <motion.section
+        className="trust-bar"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="trust-container">
+          <div className="trust-right">
+            <img src={BritishCouncilLogo} alt="British Council" />
+            <Link to="/Certificate">
+              <span>Certified by British Council</span>
+            </Link>
+          </div>
+        </div>
+      </motion.section>
 
-     <img
-  src={BritishCouncilLogo}
-  alt="British Council"
-/>
-      <Link to="/Certificate">
-        <span>Certified by British Council</span>
-        </Link>    
-    </div>
-
-  </div>
-</section>
       {/* HERO SECTION */}
       <section className="hero-section">
-
-        {/* SLIDER */}
         <div className="hero-slider">
-
           <img
             src="https://images.pexels.com/photos/7018490/pexels-photo-7018490.jpeg"
             alt="Study Abroad"
             className="slide"
           />
-
           <img
             src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2070"
             alt="University"
             className="slide"
           />
-
           <img
             src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
             alt="Students"
             className="slide"
           />
-
         </div>
 
-        {/* OVERLAY */}
         <div className="hero-overlay"></div>
 
-        {/* HERO CONTENT */}
         <div className="hero-content">
-
-          {/* LEFT CONTENT */}
-          <div className="hero-left">
-
+          {/* HERO LEFT */}
+          <motion.div
+            className="hero-left"
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             <span className="tag">
-
-              POST STUDY WORK RIGHT
-              – AUSTRALIA, UK, NEW ZEALAND, JAPAN, RUSSIA
-
+              POST STUDY WORK RIGHT – AUSTRALIA, UK, NEW ZEALAND, JAPAN, RUSSIA
             </span>
-
             <h1>
-
               Extend your stay and work
-
               <br />
-
               after Graduation
-
             </h1>
-
             <p>
-
-              Explore world-class universities
-              and build your future with
+              Explore world-class universities and build your future with
               global education opportunities.
-
             </p>
+          </motion.div>
 
-          </div>
-
-          {/* RIGHT WHATSAPP BOX */}
-          <div className="appointment-box">
-
+          {/* WHATSAPP BOX */}
+          <motion.div
+            className="appointment-box"
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             <div className="whatsapp-contact">
-
-              <h3>
-
-                Talk With Our Expert
-
-              </h3>
-
+              <h3>Talk With Our Expert</h3>
               <p>
-
-                Get free counselling for study abroad,
-                visa guidance, admission process,
-                and career opportunities abroad.
-
+                Get free counselling for study abroad, visa guidance,
+                admission process, and career opportunities abroad.
               </p>
-
               <a
-
                 href="https://wa.me/7982295530?text=Hello%20I%20want%20to%20know%20about%20study%20abroad"
-
                 target="_blank"
-
                 rel="noreferrer"
-
                 className="whatsapp-btn"
-
               >
-
                 CONTACT NOW
-
               </a>
-
             </div>
-
-          </div>
-
+          </motion.div>
         </div>
-
       </section>
 
       {/* STATS */}
       <section className="stats-section">
-
         <div className="stats-container">
-
-          <div className="stat-card">
-
-            <h2>200+</h2>
-
-            <p>
-
-              Institutions Worldwide
-
-            </p>
-
-          </div>
-
-          <div className="stat-card">
-
-            <h2>7+</h2>
-
-            <p>
-
-              Branches
-
-            </p>
-
-          </div>
-
-          <div className="stat-card">
-
-            <h2>2600+</h2>
-
-            <p>
-
-              Students Placed
-
-            </p>
-
-          </div>
-
-          <div className="stat-card">
-
-            <h2>6+</h2>
-
-            <p>
-
-              Years Experience
-
-            </p>
-
-          </div>
-
+          {stats.map(function(stat, i) {
+            return (
+              <motion.div
+                key={i}
+                className="stat-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h2>{stat.num}</h2>
+                <p>{stat.label}</p>
+              </motion.div>
+            );
+          })}
         </div>
-
       </section>
 
-      <StudyDestinations />
-
-      <StudyAbroadLayouts />
-
-      <StudyAbroadFeatures />
-
-      <OurServices />
-
-      <StudyAbroad />
-
-      <Testimonials />
-
-      <FaqSection />
+      {/* BAAKI SECTIONS */}
+      <FadeUp><StudyDestinations /></FadeUp>
+      <FadeUp delay={0.1}><StudyAbroadLayouts /></FadeUp>
+      <FadeUp delay={0.1}><StudyAbroadFeatures /></FadeUp>
+      <FadeUp delay={0.1}><OurServices /></FadeUp>
+      <FadeUp delay={0.1}><StudyAbroad /></FadeUp>
+      <FadeUp delay={0.1}><Testimonials /></FadeUp>
+      <FadeUp delay={0.1}><FaqSection /></FadeUp>
 
       <Footer />
     </>
-
   );
-
 }
 
 export default Dashboard;
