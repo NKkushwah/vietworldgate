@@ -186,8 +186,9 @@ function Hero() {
             </React.Fragment>
           );
         })}
+      
       </div>
-      </div>
+      
     </section>
     
   );
