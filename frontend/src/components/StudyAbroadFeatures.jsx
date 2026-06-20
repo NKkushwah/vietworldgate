@@ -1,13 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './StudyAbroadFeatures.css';
+// 1. Import motion from framer-motion
+import { motion } from 'framer-motion';
+
+// 2. Variants for the parent container to trigger staggered animations on children
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12, // Delay gap between each inner element
+      delayChildren: 0.05    // Delay before the first element begins animating
+    }
+  }
+};
+
+// 3. Slide-up animation for text elements (h1, h2, h3, h4, p, span, button)
+const textVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
+// 4. Zoom-in/scale-in animation for images and SVG circles
+const scaleVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 export default function StudyAbroadFeatures() {
 
   const studentBannerImg =
     "https://images.pexels.com/photos/35444254/pexels-photo-35444254.jpeg";
 
-  // ✅ Single steps array with both `path` and `img`
   const steps = [
     {
       id: 1,
@@ -76,120 +109,167 @@ export default function StudyAbroadFeatures() {
 
         <div className="finder-flex-row">
 
-          {/* Left Card */}
-          <div className="finder-left-card">
-            <div className="finder-img-wrap">
+          {/* Left Card content (Staggered image and text reveal) */}
+          <motion.div 
+            className="finder-left-card"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: "some" }}
+          >
+            <motion.div className="finder-img-wrap" variants={scaleVariants}>
               <img src={studentBannerImg} alt="Student holding books" />
-            </div>
+            </motion.div>
 
-            <div className="finder-text-wrap">
-              <h2>Find My Dream University</h2>
-              <p>Shortlist Universities With Our Course Finder</p>
+            <motion.div className="finder-text-wrap" variants={containerVariants}>
+              <motion.h2 variants={textVariants}>Find My Dream University</motion.h2>
+              <motion.p variants={textVariants}>Shortlist Universities With Our Course Finder</motion.p>
 
-              <Link to="/universitypartner">
-                <button className="btn-shortlist">
-                  Shortlist Universities
-                </button>
-              </Link>
-            </div>
-          </div>
+              <motion.div variants={textVariants}>
+                <Link to="/universitypartner">
+                  <button className="btn-shortlist">
+                    Shortlist Universities
+                  </button>
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Content */}
-          <div className="finder-right-content">
-
-            <span className="sub-title">
+          {/* Right Content (h1, span, course finder box and button animate separately) */}
+          <motion.div 
+            className="finder-right-content"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: "some" }}
+          >
+            <motion.span className="sub-title" variants={textVariants}>
               📖 FIND MY DREAM UNIVERSITY
-            </span>
+            </motion.span>
 
-            <h1>
+            <motion.h1 variants={textVariants}>
               Shortlist Universities With Our <br />
               <span>Course Finder</span>
-            </h1>
+            </motion.h1>
 
-            <div className="course-finder-box">
+            <motion.div className="course-finder-box" variants={textVariants}>
               <p>
                 Explore our advanced Course Finder to look for the course
                 that is the right fit for you.
               </p>
 
-              <span className="bg-number">99</span>
-            </div>
+              <motion.span className="bg-number" variants={scaleVariants}>99</motion.span>
+            </motion.div>
 
-            <Link to="/universitypartner">
-              <button className="btn-click-here">
-                CLICK HERE ➔
-              </button>
-            </Link>
-
-          </div>
+            <motion.div variants={textVariants}>
+              <Link to="/universitypartner">
+                <button className="btn-click-here">
+                  CLICK HERE ➔
+                </button>
+              </Link>
+            </motion.div>
+          </motion.div>
 
         </div>
 
-        {/* Bottom Banner */}
-        <div className="location-consultant-banner">
-          <h3>
+        {/* Bottom Banner (Fades up with inner text sequence) */}
+        <motion.div 
+          className="location-consultant-banner"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
+          <motion.h3 variants={textVariants}>
             Find a <span>Study Abroad Consultant</span> Near Me
-          </h3>
+          </motion.h3>
 
-          <p>
+          <motion.p variants={textVariants}>
             If you're searching for a study abroad consultant near me,
             locate your city branch on our website and book an appointment.
             Our local presence ensures you get in-person counselling and
             trusted guidance.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
       </section>
 
       {/* Steps Section */}
       <section className="steps-section">
 
-        <div className="section-header-center">
-          <span className="sub-tag">
+        {/* Header Animation */}
+        <motion.div 
+          className="section-header-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
+          <motion.span className="sub-tag" variants={textVariants}>
             VIET WORLDGATE EXPERTISE
-          </span>
+          </motion.span>
 
-          <h2>
+          <motion.h2 variants={textVariants}>
             Easy Steps to{" "}
             <span className="purple-highlight italic-bold">
               Study Abroad
             </span>
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        {/* ✅ Fixed: clean map block with no stray tags outside */}
-        <div className="steps-row">
+        {/* Steps Grid: Each card fades up individually */}
+        <motion.div 
+          className="steps-row"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
           {steps.map((step) => (
-            <Link
+            <motion.div
               key={step.id}
-              to={step.path}
-              className="step-circle-card"
-              style={{ textDecoration: "none", color: "inherit" }}
+              variants={textVariants} // Each card slides up
+              whileHover={{ y: -5, scale: 1.02 }} // Gentle hover effect
+              style={{ display: "flex" }} 
             >
-              <div className="circle-animation-wrapper">
-                <svg className="animated-ring-svg" viewBox="0 0 100 100">
-                  <circle className="bg-ring" cx="50" cy="50" r="47" />
-                  <circle className="fill-ring" cx="50" cy="50" r="47" />
-                </svg>
+              <Link
+                to={step.path}
+                className="step-circle-card"
+                style={{ textDecoration: "none", color: "inherit", width: "100%" }}
+              >
+                <div className="circle-animation-wrapper">
+                  <svg className="animated-ring-svg" viewBox="0 0 100 100">
+                    <circle className="bg-ring" cx="50" cy="50" r="47" />
+                    <circle className="fill-ring" cx="50" cy="50" r="47" />
+                  </svg>
 
-                <div className="circle-image-inner">
-                  <img src={step.img} alt={step.title} />
+                  {/* Inside image zoom-in effect */}
+                  <motion.div className="circle-image-inner" variants={scaleVariants}>
+                    <img src={step.img} alt={step.title} />
+                  </motion.div>
                 </div>
-              </div>
 
-              <h4 className="step-card-title">
-                {step.title}
-              </h4>
-            </Link>
+                <motion.h4 className="step-card-title" variants={textVariants}>
+                  {step.title}
+                </motion.h4>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </section>
 
       {/* Benefits Section */}
       <section className="why-choose-section">
 
-        <div className="section-header-center">
+        {/* Header Animation */}
+        <motion.div 
+          className="section-header-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>
             Why Choose Us as Your{" "}
             <span className="purple-highlight italic-bold">
@@ -197,22 +277,32 @@ export default function StudyAbroadFeatures() {
             </span>{" "}
             Consultant
           </h2>
-        </div>
+        </motion.div>
 
+        {/* Benefits Grid: Animating cards on scroll */}
         <div className="benefits-grid">
           {benefits.map((benefit, idx) => (
-            <div key={idx} className="benefit-horizontal-card">
-
-              <div className="benefit-img-side">
+            <motion.div 
+              key={idx} 
+              className="benefit-horizontal-card"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: "some" }}
+              whileHover={{ scale: 1.01 }} // Subtle hover scale
+            >
+              {/* Image side slide-in */}
+              <motion.div className="benefit-img-side" variants={scaleVariants}>
                 <img src={benefit.img} alt={benefit.title} />
-              </div>
+              </motion.div>
 
-              <div className="benefit-text-side">
-                <h3>{benefit.title}</h3>
-                <p>{benefit.desc}</p>
-              </div>
+              {/* Text elements (h3, p) slide up sequentially */}
+              <motion.div className="benefit-text-side" variants={containerVariants}>
+                <motion.h3 variants={textVariants}>{benefit.title}</motion.h3>
+                <motion.p variants={textVariants}>{benefit.desc}</motion.p>
+              </motion.div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

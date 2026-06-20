@@ -254,6 +254,9 @@ function Navbar() {
               <li onClick={closeMenu}>
                 <Link to="/CourseAdvice">Course Advice</Link>
               </li>
+              <li onClick={closeMenu}>
+                <Link to="/CompareUniversity">Compare tool</Link>
+              </li>
             </ul>
           </li>
 

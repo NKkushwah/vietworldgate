@@ -2,6 +2,57 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Accreditations.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+// Import motion from framer-motion
+import { motion } from "framer-motion";
+
+/* ─────────────────────────────────────────
+   REUSABLE MOTION ANIMATION CONFIGURATIONS
+───────────────────────────────────────── */
+
+// 1. Mobile-friendly FadeUp component (Fixed the ReferenceError)
+const FadeUp = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: delay }}
+    viewport={{ once: true, amount: "some" }} // Ensures high performance on both mobile and desktop
+  >
+    {children}
+  </motion.div>
+);
+
+// 2. Parent container variants to stagger animation on nested children elements
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05
+    }
+  }
+};
+
+// 3. Smooth slide-up transition for headers, subtitles, and standard copy
+const textRevealVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
+// 4. Smooth scale-in transition for icons and badges
+const scaleInVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.55, ease: "easeOut" }
+  }
+};
+
 
 /* ─────────────────────────────────────────
    DATA
@@ -41,7 +92,7 @@ const UNIVERSITIES = {
     { id: 4, name: "Otago Polytechnic", website: "https://www.op.ac.nz", logo: "https://tse3.mm.bing.net/th/id/OIP.yQcA_EIJMmdFVmNKf7GEaQAAAA?pid=Api&h=220&P=0" },
     { id: 5, name: "Manukau Institute of Technology", website: "https://www.manukau.ac.nz", logo: "https://tse4.mm.bing.net/th/id/OIP.jr2CWC5EJ7-emFkBuy9YFgAAAA?pid=Api&h=220&P=0" },
   ],
-   Russia: [
+  Russia: [
     {
       id: 1,
       name: "Peoples' Friendship University of Russia (RUDN University)",
@@ -72,7 +123,6 @@ const UNIVERSITIES = {
       website: "https://www.dvfu.ru/en",
       logo: "https://tse2.mm.bing.net/th/id/OIP.RgOZjbiwWLZNzcZ2CICfiQHaHa?pid=Api&h=220&P=0"
     },
-
   ]
 };
 
@@ -90,13 +140,9 @@ const STEPS = [
   { num: "04", label: "Visa Approved!",         desc: "Receive your visa and get ready-to-travel support including pre-departure orientation." },
 ];
 
-/* ─────────────────────────────────────────
-   NAVBAR
-───────────────────────────────────────── */
-
 
 /* ─────────────────────────────────────────
-   HERO
+   HERO COMPONENT
 ───────────────────────────────────────── */
 function Hero() {
   return (
@@ -106,36 +152,35 @@ function Hero() {
 
       <div className="hero__container">
 
-        {/* LEFT CONTENT */}
+        {/* LEFT CONTENT with nested stagger transitions */}
         <motion.div
           className="hero__content"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <div className="hero__badge">
+          <motion.div className="hero__badge" variants={textRevealVariants}>
             <span className="hero__badge-dot" />
             Trusted Visa Consultancy Since 2020
-          </div>
+          </motion.div>
 
-          <h1 className="hero__headline">
+          <motion.h1 className="hero__headline" variants={textRevealVariants}>
             Your Gateway to
             <span className="hero__headline-accent"> Global Opportunities</span>
-          </h1>
+          </motion.h1>
 
-          <p className="hero__sub">
+          <motion.p className="hero__sub" variants={textRevealVariants}>
             VietWorldGate simplifies your visa journey — from student visas and work permits
             to permanent residency and tourist approvals. Expert guidance, zero stress.
-          </p>
+          </motion.p>
 
-          <div className="hero__actions">
-            <a  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
-  
- className="hero__btn hero__btn--primary">Apply for Visa <span>→</span></a>
-           
-          </div>
+          <motion.div className="hero__actions" variants={textRevealVariants}>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" className="hero__btn hero__btn--primary">
+              Apply for Visa <span>→</span>
+            </a>
+          </motion.div>
 
-          <div className="hero__social-proof">
+          <motion.div className="hero__social-proof" variants={textRevealVariants}>
             <div className="hero__avatars">
               {["A","R","S","M"].map((l, i) => (
                 <div key={i} className="hero__avatar"
@@ -147,9 +192,10 @@ function Hero() {
               <div className="hero__stars">★★★★★ <span>4.9</span></div>
               <div className="hero__reviews">1,200+ Happy Clients</div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
+        {/* HERO VISUAL DESIGN */}
         <div className="hero__visual">
           <div className="hero__circle-outer">
             <div className="hero__circle-inner">
@@ -168,7 +214,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* STATS */}
+      {/* HERO STATS */}
       <div className="hero__stats">
         {STATS.map(function(s, i) {
           return (
@@ -186,22 +232,15 @@ function Hero() {
             </React.Fragment>
           );
         })}
-      
       </div>
-      
     </section>
-    
   );
 }
 
 
-
-
- 
-
-  
-
-
+/* ─────────────────────────────────────────
+   PARTNERS COMPONENT
+───────────────────────────────────────── */
 const ALL_UNIVERSITIES = Object.values(UNIVERSITIES).flat();
 
 function Partners() {
@@ -210,59 +249,62 @@ function Partners() {
 
   return (
     <section className="partners">
-      <h2 className="title">Our Partner Universities</h2>
+      {/* Title Scroll Transition */}
+      <motion.h2 
+        className="title"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: "some" }}
+        transition={{ duration: 0.6 }}
+      >
+        Our Partner Universities
+      </motion.h2>
 
-      <div className="logos-slider">
-
+      <motion.div 
+        className="logos-slider"
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: "some" }}
+        transition={{ duration: 0.7 }}
+      >
         {/* Row 1 */}
         <div className="logos-track">
           {row1.map((uni, i) => (
-           <a
-  key={i}
-  href={uni.website}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="logo-card"
->
-  <img src={uni.logo} alt={uni.name} />
-  
-
-  
-</a>
+            <a
+              key={i}
+              href={uni.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="logo-card"
+            >
+              <img src={uni.logo} alt={uni.name} />
+            </a>
           ))}
         </div>
 
         {/* Row 2 */}
         <div className="logos-track reverse">
           {row2.map((uni, i) => (
-           <a
-  key={i}
-  href={uni.website}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="logo-card"
->
-  <img src={uni.logo} alt={uni.name} />
-  
- 
-</a>
+            <a
+              key={i}
+              href={uni.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="logo-card"
+            >
+              <img src={uni.logo} alt={uni.name} />
+            </a>
           ))}
         </div>
-
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 
 /* ─────────────────────────────────────────
-   WORLD MAP
+   WORLD MAP COMPONENT
 ───────────────────────────────────────── */
-
-
-
-// Precise operational tracking coordinate matrices matching premium cartography layout
-// Humne flag string ko CDN image links se replace kiya hai jo har browser me color me dikhenge.
 const DESTINATIONS = [
   { id: 3,  flag: "https://flagcdn.com/w40/ca.png", country: "Canada",         visas: ["Student", "PR", "Work Permit"],          style: { top: "25%", left: "15%" } },
   { id: 4,  flag: "https://flagcdn.com/w40/us.png", country: "United States",  visas: ["F-1 Student", "B-1/B-2 Tourist", "H-1B"], style: { top: "37%", left: "19%" } },
@@ -277,6 +319,7 @@ const DESTINATIONS = [
   { id: 2,  flag: "https://flagcdn.com/w40/au.png", country: "Australia",      visas: ["Student", "Skilled", "Tourist"],         style: { top: "74%", left: "88%" } },
   { id: 5,  flag: "https://flagcdn.com/w40/nz.png", country: "New Zealand",    visas: ["Student", "Work", "Tourist"],            style: { top: "85%", left: "96%" } },
 ];
+
 function WorldMap() {
   const [active, setActive] = useState(null);
   const mapRef = useRef(null);
@@ -297,14 +340,21 @@ function WorldMap() {
     <FadeUp>
       <section className="worldmap" id="countries" ref={mapRef}>
         <FadeUp>
-          <div className="worldmap__header">
-            <span className="worldmap__eyebrow">Where We Operate</span>
-            <h2 className="worldmap__title">We Serve Clients Across the Globe</h2>
-            <p className="worldmap__desc">
+          {/* Header text content animation */}
+          <motion.div 
+            className="worldmap__header"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: "some" }}
+          >
+            <motion.span className="worldmap__eyebrow" variants={textRevealVariants}>Where We Operate</motion.span>
+            <motion.h2 className="worldmap__title" variants={textRevealVariants}>We Serve Clients Across the Globe</motion.h2>
+            <motion.p className="worldmap__desc" variants={textRevealVariants}>
               From Asia to Europe, the Americas to Oceania — VietWorldGate helps you navigate
               visa requirements for every major destination country.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </FadeUp>
 
         <div className="worldmap__container">
@@ -323,26 +373,25 @@ function WorldMap() {
               </g>
             </svg>
 
-          {/* Precision Pins mapped precisely to geometry */}
-          {DESTINATIONS.map((d) => {
-            const isActive = active === d.id;
-            return (
-              <div key={d.id} className={`worldmap__marker-node ${isActive ? "worldmap__marker-node--active" : ""}`} style={d.style}>
-                <button 
-                  className="worldmap__marker-btn" 
-                  onClick={() => setActive(isActive ? null : d.id)}
-                  aria-expanded={isActive}
-                >
-                  <svg className="worldmap__pin-svg" viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12,0 C5.37,0 0,5.37 0,12 C0,21 12,30 12,30 C12,30 24,21 24,12 C24,5.37 18.63,0 12,0 Z" fill="currentColor" />
-                    <circle cx="12" cy="11" r="8" fill="#ffffff" />
-                  </svg>
-                  {/* CHANGED: Emoji string ki jagah safe Image tag render kiya gaya hai */}
-                  <span className="worldmap__pin-flag-render">
-                    <img src={d.flag} alt={d.country} className="worldmap__flag-img" />
-                  </span>
-                  <div className="worldmap__pin-pulse"></div>
-                </button>
+            {/* Precision Pins mapped precisely to geometry */}
+            {DESTINATIONS.map((d) => {
+              const isActive = active === d.id;
+              return (
+                <div key={d.id} className={`worldmap__marker-node ${isActive ? "worldmap__marker-node--active" : ""}`} style={d.style}>
+                  <button 
+                    className="worldmap__marker-btn" 
+                    onClick={() => setActive(isActive ? null : d.id)}
+                    aria-expanded={isActive}
+                  >
+                    <svg className="worldmap__pin-svg" viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12,0 C5.37,0 0,5.37 0,12 C0,21 12,30 12,30 C12,30 24,21 24,12 C24,5.37 18.63,0 12,0 Z" fill="currentColor" />
+                      <circle cx="12" cy="11" r="8" fill="#ffffff" />
+                    </svg>
+                    <span className="worldmap__pin-flag-render">
+                      <img src={d.flag} alt={d.country} className="worldmap__flag-img" />
+                    </span>
+                    <div className="worldmap__pin-pulse"></div>
+                  </button>
 
                   {isActive && (
                     <div className="worldmap__desktop-tooltip">
@@ -405,35 +454,55 @@ function WorldMap() {
   );
 }
 
+
 /* ─────────────────────────────────────────
-   ADVANTAGES
+   ADVANTAGES COMPONENT
 ───────────────────────────────────────── */
 function Advantages() {
   return (
     <section className="advantages" id="services">
       <FadeUp>
-        <div className="advantages__header">
-          <span className="advantages__eyebrow">Why Choose Us</span>
-          <h2 className="advantages__title">The VietWorldGate Difference</h2>
-          <p className="advantages__desc">
+        {/* Header content staggered sequence */}
+        <motion.div 
+          className="advantages__header"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
+          <motion.span className="advantages__eyebrow" variants={textRevealVariants}>Why Choose Us</motion.span>
+          <motion.h2 className="advantages__title" variants={textRevealVariants}>The VietWorldGate Difference</motion.h2>
+          <motion.p className="advantages__desc" variants={textRevealVariants}>
             We guarantee three things every time: expert support, accurate documentation,
             and complete transparency throughout your visa journey.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </FadeUp>
 
-      <div className="advantages__grid">
+      {/* Grid mapping loaded using Framer Motion containers */}
+      <motion.div 
+        className="advantages__grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: "some" }}
+      >
         {ADVANTAGES.map((a) => (
-          <div key={a.title} className="advantages__card">
-            <div className="advantages__icon-wrap" style={{ background: a.bg }}>
+          <motion.div 
+            key={a.title} 
+            className="advantages__card"
+            variants={textRevealVariants}
+            whileHover={{ y: -4, scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 350, damping: 25 }}
+          >
+            <motion.div className="advantages__icon-wrap" style={{ background: a.bg }} variants={scaleInVariants}>
               <span className="advantages__icon">{a.icon}</span>
-            </div>
+            </motion.div>
             <h3 className="advantages__card-title">{a.title}</h3>
             <p className="advantages__card-desc">{a.desc}</p>
-           
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <FadeUp delay={0.1}>
         <div className="process">
@@ -448,7 +517,7 @@ function Advantages() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: "some" }}
                 >
                   <div className="process__num">{s.num}</div>
                   {i < STEPS.length - 1 && <div className="process__connector" />}
@@ -464,8 +533,9 @@ function Advantages() {
   );
 }
 
+
 /* ─────────────────────────────────────────
-   FOOTER
+   FOOTER SECTION COMPONENT
 ───────────────────────────────────────── */
 function Footerup() {
   return (
@@ -476,18 +546,16 @@ function Footerup() {
             <h2 className="footer__cta-title">Ready to Start Your Visa Journey?</h2>
             <p className="footer__cta-sub">Book a free 30-minute consultation with our experts today.</p>
           </div>
-          <a  href = "https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"  className="footer__cta-btn">Get Free Consultation →</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" className="footer__cta-btn">Get Free Consultation →</a>
         </div>
       </div>
-
-
-     
     </footer>
   );
 }
 
+
 /* ─────────────────────────────────────────
-   PAGE
+   MAIN PAGE EXPORT
 ───────────────────────────────────────── */
 export default function Accreditations() {
   return (

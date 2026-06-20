@@ -43,11 +43,14 @@ import VideoGallery from "../pages/VideoGallery";
 import Accreditations from "../pages/Accreditations";
 import CompanyHistory from "../pages/CompanyHistory";
 import SocialResponsibility from "../pages/Socialresponsibility";
+
+import ComparisonPage from "../pages/CompareUniversity";
 function AppRoutes() {
   return (
    
 
       <Routes>
+         <Route path="/CompareUniversity" element={<ComparisonPage />} />
         <Route path="/EducationFair" element={<EducationFair/>} />
           <Route path = "/OurPresence" element={<OurPresence />} />
           <Route path = "/OurServices" element={<OurServices />} />

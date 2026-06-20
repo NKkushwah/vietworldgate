@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './StudyDestinations.css';
+// 1. Import motion from framer-motion
+import { motion } from 'framer-motion';
 
 import AusImg from '../assets/studydestination/austraila.jpg';
 import Canada from '../assets/studydestination/canada.jpg';
@@ -13,193 +15,76 @@ import Italy from '../assets/studydestination/italy.jpg';
 
 // Study destinations data
 const destinations = [
-  { 
-    id: 1, 
-    name: 'Italy', 
-    path: '/ItalyDestination', 
-    image: Italy 
-  },
-
-  { 
-    id: 2, 
-    name: 'Australia', 
-    path: '/AustraliaDestination', 
-    image: AusImg 
-  },
-  { 
-    id: 3, 
-    name: 'Canada', 
-    path: '/CanadaDestination', 
-    image: Canada 
-  },
-
-  { 
-    id: 4, 
-    name: 'UK', 
-    path: '/UKDestination', 
-    image: Uk 
-  },
-
-  { 
-    id: 5, 
-    name: 'Germany', 
-    path: '/GermanyDestination', 
-    image: Germany 
-  },
-
-  { 
-    id: 6, 
-    name: 'New Zealand', 
-    path: '/NZDestination', 
-    image: Newszeland 
-  },
-
-  { 
-    id: 7, 
-    name: 'Dubai', 
-    path: '/DubaiDestination', 
-    image: Dubai 
-  },
-
-  { 
-    id: 8, 
-    name: 'Japan', 
-    path: '/JapanDestination', 
-    image: Japan 
-  }
+  { id: 1, name: 'Italy', path: '/ItalyDestination', image: Italy },
+  { id: 2, name: 'Australia', path: '/AustraliaDestination', image: AusImg },
+  { id: 3, name: 'Canada', path: '/CanadaDestination', image: Canada },
+  { id: 4, name: 'UK', path: '/UKDestination', image: Uk },
+  { id: 5, name: 'Germany', path: '/GermanyDestination', image: Germany },
+  { id: 6, name: 'New Zealand', path: '/NZDestination', image: Newszeland },
+  { id: 7, name: 'Dubai', path: '/DubaiDestination', image: Dubai },
+  { id: 8, name: 'Japan', path: '/JapanDestination', image: Japan }
 ];
 
 // University Partners data
 const universities = [
-  { 
-    main: "University of West London", 
-    logo: "/logos/uwl.jpg", 
-    website: "https://www.uwl.ac.uk" 
-  },
-
-  { 
-    main: "ETH Zurich", 
-    logo: "/logos/OlP.jpg", 
-    website: "https://ethz.ch" 
-  },
-
-  { 
-    main: "Technical University of Munich", 
-    logo: "/logos/Tum.jpg", 
-    website: "https://www.tum.de" 
-  },
-
-  { 
-    main: "Delft University of Technology", 
-    logo: "/logos/Tud.jpg", 
-    website: "https://www.tudelft.nl" 
-  },
-
-  { 
-    main: "University of Bologna", 
-    logo: "/logos/bologna.jpg", 
-    website: "https://www.unibo.it"
-   },
-
-  { 
-    main: "PSL University", 
-    logo: "/logos/psl.jpg", 
-    website: "https://psl.eu" 
-  },
-
-  { 
-    main: "University of British Columbia", 
-    logo: "/logos/ubc.jpg", 
-    website: "https://www.ubc.ca" 
-  },
-
-  {
-     main: "University of Waterloo", 
-     logo: "/logos/waterloo.jpg", 
-     website: "https://uwaterloo.ca" 
-    },
-
-  { 
-    main: "McGill University", 
-    logo: "/logos/mcgill.jpg", 
-    website: "https://www.mcgill.ca" 
-  },
-
-  { 
-    main: "University of Melbourne", 
-    logo: "/logos/mlb.jpg", 
-    website: "https://www.unimelb.edu.au" 
-  },
-
-  { 
-    main: "Australian National University", 
-    logo: "/logos/Anu.jpg", 
-    website: "https://www.anu.edu.au" 
-  },
-
-  {  
-    main: "University of Sydney", 
-    logo: "/logos/sydney.png", 
-    website: "https://www.sydney.edu.au" 
-  },
-
-  { 
-    main: "Monash University", 
-    logo: "/logos/monas.png", 
-    website: "https://www.monash.edu" 
-  },
-
-  { 
-    main: "Coventry University", 
-    logo: "/logos/coventry.jpeg", 
-    website: "https://www.coventry.ac.uk/" 
-  }
+  { main: "University of West London", logo: "/logos/uwl.jpg", website: "https://www.uwl.ac.uk" },
+  { main: "ETH Zurich", logo: "/logos/OlP.jpg", website: "https://ethz.ch" },
+  { main: "Technical University of Munich", logo: "/logos/Tum.jpg", website: "https://www.tum.de" },
+  { main: "Delft University of Technology", logo: "/logos/Tud.jpg", website: "https://www.tudelft.nl" },
+  { main: "University of Bologna", logo: "/logos/bologna.jpg", website: "https://www.unibo.it" },
+  { main: "PSL University", logo: "/logos/psl.jpg", website: "https://psl.eu" },
+  { main: "University of British Columbia", logo: "/logos/ubc.jpg", website: "https://www.ubc.ca" },
+  { main: "University of Waterloo", logo: "/logos/waterloo.jpg", website: "https://uwaterloo.ca" },
+  { main: "McGill University", logo: "/logos/mcgill.jpg", website: "https://www.mcgill.ca" },
+  { main: "University of Melbourne", logo: "/logos/mlb.jpg", website: "https://www.unimelb.edu.au" },
+  { main: "Australian National University", logo: "/logos/Anu.jpg", website: "https://www.anu.edu.au" },
+  { main: "University of Sydney", logo: "/logos/sydney.png", website: "https://www.sydney.edu.au" },
+  { main: "Monash University", logo: "/logos/monas.png", website: "https://www.monash.edu" },
+  { main: "Coventry University", logo: "/logos/coventry.jpeg", website: "https://www.coventry.ac.uk/" }
 ];
 
 // Work destinations data
 const workDestinations = [
-  { 
-    id: 1, 
-    name: 'Dubai', 
-    image: Dubai 
-  },
-
-  { 
-    id: 2, 
-    name: 'Canada', 
-    image: Canada 
-  },
-
-  { 
-    id: 3, 
-    name: 'Germany', 
-    image: Germany 
-  },
-
-  { 
-    id: 4, 
-    name: 'Italy', 
-    image: Italy 
-  },
-
-  { 
-    id: 5, 
-    name: 'New Zealand', 
-    image: Newszeland 
-  },
-
-  { 
-    id: 6, 
-    name: 'Australia', 
-    image: AusImg 
-  },
-
-  { 
-    id: 7, 
-    name: 'UK', 
-    image: Uk 
-  }
+  { id: 1, name: 'Dubai', image: Dubai },
+  { id: 2, name: 'Canada', image: Canada },
+  { id: 3, name: 'Germany', image: Germany },
+  { id: 4, name: 'Italy', image: Italy },
+  { id: 5, name: 'New Zealand', image: Newszeland },
+  { id: 6, name: 'Australia', image: AusImg },
+  { id: 7, name: 'UK', image: Uk }
 ];
+
+// 2. Parent container variants to trigger staggered transitions on direct children
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.05
+    }
+  }
+};
+
+// 3. Subtle slide-up transitions for text layers and standard descriptive content
+const textRevealVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
+// 4. Smooth scale-in transition for logos and grid card boundaries
+const scaleInVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 export default function StudyDestinations() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -254,34 +139,65 @@ export default function StudyDestinations() {
 
   return (
     <div className="study-container">
-      {/* Header Info Banner Section */}
-      <section className="who-we-are">
-        <h2>Who <span>We Are</span></h2>
-        <p>
+      {/* --- WHO WE ARE SECTION --- */}
+      <motion.section 
+        className="who-we-are"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: "some" }}
+      >
+        <motion.h2 variants={textRevealVariants}>Who <span>We Are</span></motion.h2>
+        
+        <motion.p variants={textRevealVariants}>
           We are a passionate team of education consultants, career advisors, visa experts, and support professionals who believe in transforming ambitions into achievements. Our company was founded with the vision of simplifying the overseas education process and making international opportunities accessible to students from all backgrounds.
-        </p>
-        <p>
+        </motion.p>
+        
+        <motion.p variants={textRevealVariants}>
           Over the years, we have built a strong reputation for providing honest advice, professional services, and end-to-end support to students who want to pursue higher education abroad. We help students identify the right career pathways based on their academic profile, interests, budget, and future goals.
-        </p>
-        <p>
+        </motion.p>
+        
+        <motion.p variants={textRevealVariants}>
           Our team remains updated with the latest university requirements, scholarship programs, visa regulations, and global education trends to ensure students receive accurate and up-to-date guidance.
-        </p>
-      </section>
+        </motion.p>
+      </motion.section>
 
       {/* --- 1. STUDY DESTINATION SLIDER --- */}
       <section className="destination-slider-section">
-        <h2 className="section-title">Choose your <span>Study Destination</span></h2>
-        <p className="section-subtitle">
-          As a leading study abroad consultant in India, we help you explore a wide range of destinations.
-        </p>
+        {/* Animated main section header */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
+          <motion.h2 className="section-title" variants={textRevealVariants}>
+            Choose your <span>Study Destination</span>
+          </motion.h2>
+          <motion.p className="section-subtitle" variants={textRevealVariants}>
+            As a leading study abroad consultant in India, we help you explore a wide range of destinations.
+          </motion.p>
+        </motion.div>
 
-        <div className="slider-view-window">
+        {/* Dynamic sliding container reveals smoothly as one block to prevent scroll-snap clipping */}
+        <motion.div 
+          className="slider-view-window"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.7 }}
+        >
           <div 
             className="card-track" 
             style={{ transform: `translateX(-${getTranslateX(currentIndex)}%)` }} 
           >
             {destinations.map((dest) => (
-              <div className="destination-card" key={dest.id}>
+              <motion.div 
+                className="destination-card" 
+                key={dest.id}
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              >
                 <div className="card-image-wrapper">
                   <img src={dest.image} alt={dest.name} />
                 </div>
@@ -298,21 +214,35 @@ export default function StudyDestinations() {
                     <span className="read-more-text">Read More</span>
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* --- 2. UNIVERSITY PARTNERS INFINITE AUTO-SCROLLER --- */}
       <section className="university-partners-section">
-        <div className="section-title-center">
+        {/* Partner section title */}
+        <motion.div 
+          className="section-title-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.6 }}
+        >
           <h3>
             University <span className="purple-highlight italic-bold">Partners</span>
           </h3>
-        </div>
+        </motion.div>
 
-        <div className="slider-wrapper">
+        {/* Scroller container reveals seamlessly */}
+        <motion.div 
+          className="slider-wrapper"
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="slider-track">
             {/* First Loop */}
             {universities.map((uni, idx) => (
@@ -323,9 +253,13 @@ export default function StudyDestinations() {
                 rel="noopener noreferrer"
                 className="logo-card"
               >
-                <div className="logo-image-wrapper">
+                <motion.div 
+                  className="logo-image-wrapper"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
                   <img src={uni.logo} alt={uni.main} className="university-logo" />
-                </div>
+                </motion.div>
               </a>
             ))}
             {/* Second Loop (For seamless infinite transition) */}
@@ -337,36 +271,69 @@ export default function StudyDestinations() {
                 rel="noopener noreferrer"
                 className="logo-card"
               >
-                <div className="logo-image-wrapper">
+                <motion.div 
+                  className="logo-image-wrapper"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
                   <img src={uni.logo} alt={uni.main} className="university-logo" />
-                </div>
+                </motion.div>
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* View All Button */}
-        <Link to="/universitypartner">
-          <div className="center-btn-wrapper">
-            <button className="btn-secondary">View All</button>
-          </div>
-        </Link>
+        {/* View All Action Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Link to="/universitypartner">
+            <div className="center-btn-wrapper">
+              <button className="btn-secondary">View All</button>
+            </div>
+          </Link>
+        </motion.div>
       </section>
 
       {/* --- 3. WORK DESTINATION SLIDER --- */}
       <section className="destination-slider-section work-slider-section">
-        <h2 className="section-title">Choose your <span>Work Destination</span></h2>
-        <p className="section-subtitle">
-          Expand your career horizons with incredible global work opportunities in top countries.
-        </p>
+        {/* Work slider header */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: "some" }}
+        >
+          <motion.h2 className="section-title" variants={textRevealVariants}>
+            Choose your <span>Work Destination</span>
+          </motion.h2>
+          <motion.p className="section-subtitle" variants={textRevealVariants}>
+            Expand your career horizons with incredible global work opportunities in top countries.
+          </motion.p>
+        </motion.div>
 
-        <div className="slider-view-window">
+        {/* Sliding card wrapper reveals together */}
+        <motion.div 
+          className="slider-view-window"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.7 }}
+        >
           <div 
             className="card-track" 
             style={{ transform: `translateX(-${getTranslateX(currentWorkIndex)}%)` }} 
           >
             {workDestinations.map((dest) => (
-              <div className="destination-card" key={dest.id}>
+              <motion.div 
+                className="destination-card" 
+                key={dest.id}
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              >
                 <div className="card-image-wrapper">
                   <img src={dest.image} alt={dest.name} />
                 </div>
@@ -382,10 +349,10 @@ export default function StudyDestinations() {
                     <span className="read-more-text">Read More</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
     </div>

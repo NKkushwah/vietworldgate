@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, GraduationCap, FileCheck } from 'lucide-react';
 import './OurServices.css';
+// 1. Import motion from framer-motion
+import { motion } from 'framer-motion';
 
 export default function OurServices() {
 
@@ -44,8 +46,14 @@ export default function OurServices() {
     <section className="services-section">
       <div className="services-container">
 
-        {/* Header */}
-        <div className="services-header">
+        {/* 2. Animate the Header (Fades down smoothly) */}
+        <motion.div 
+          className="services-header"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>
             Our <span className="italic-title">Services</span>
           </h2>
@@ -54,47 +62,58 @@ export default function OurServices() {
             As your dedicated study abroad consultant,
             we offer the following tailored services
           </p>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
+        {/* Cards Grid */}
         <div className="services-grid">
 
-          {services.map((service) => (
-            <Link
+          {services.map((service, index) => (
+            /* 3. Wrap each card link inside motion.div for staggered slide-up animation */
+            <motion.div
               key={service.id}
-              to={service.path}
-              className="service-card-link"
+              className="service-card-wrapper"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: "some" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }} // Delays each card for a cascade effect
+              style={{ display: 'flex', width: '100%' }} // Maintains CSS flex/grid layout
             >
-              <div className="service-card">
+              <Link
+                to={service.path}
+                className="service-card-link"
+                style={{ width: '100%' }}
+              >
+                <div className="service-card">
 
-                <div className="service-image-wrapper">
-                  <img
-                    src={service.imageUrl}
-                    alt={service.title}
-                    className="service-img"
-                  />
+                  <div className="service-image-wrapper">
+                    <img
+                      src={service.imageUrl}
+                      alt={service.title}
+                      className="service-img"
+                    />
 
-                  <div className="service-icon-badge">
-                    {service.icon}
+                    <div className="service-icon-badge">
+                      {service.icon}
+                    </div>
                   </div>
+
+                  <div className="service-content">
+                    <h3 className="service-title">
+                      {service.title}
+                    </h3>
+
+                    <p className="service-description">
+                      {service.description}
+                    </p>
+
+                    <button className="btn-read-more">
+                      Read More →
+                    </button>
+                  </div>
+
                 </div>
-
-                <div className="service-content">
-                  <h3 className="service-title">
-                    {service.title}
-                  </h3>
-
-                  <p className="service-description">
-                    {service.description}
-                  </p>
-
-                  <button className="btn-read-more">
-                    Read More →
-                  </button>
-                </div>
-
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
 
         </div>
