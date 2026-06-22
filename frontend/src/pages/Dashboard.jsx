@@ -99,7 +99,7 @@ function Dashboard() {
             </p>
 
              <div class="button-container">
-                <button class="compare-btn">Comparison Tool</button>
+                <button class="compare-btn">  <Link to="/CompareUniversity">Compare tool</Link></button>
               </div>
           </motion.div>
 
