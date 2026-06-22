@@ -28,6 +28,89 @@ body{
   background:#ffffff;
 }
 
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;   /* Center button */
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Compare Button */
+.compare-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 260px;
+
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+
+    background: #012819;
+    color: #fff;
+
+    transition: all 0.3s ease;
+}
+
+.compare-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* Large Tablet */
+@media (max-width: 992px) {
+    .compare-btn {
+        max-width: 240px;
+        font-size: 15px;
+        padding: 11px 22px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .button-container {
+        padding: 15px;
+    }
+
+    .compare-btn {
+        max-width: 220px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .button-container {
+        padding: 12px;
+    }
+
+    .compare-btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .compare-btn {
+        max-width: 100%;
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+}
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -345,9 +428,7 @@ body{
     grid-template-columns:repeat(2,1fr);
   }
 
-
 }
-
 
 /* =========================================
    TABLET

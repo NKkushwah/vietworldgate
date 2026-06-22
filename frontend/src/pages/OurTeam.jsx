@@ -10,7 +10,7 @@ import Lakhshyasharma from '../assets/team/lkhsharma.png';
 import Raghav from '../assets/team/raghav.jpeg';
 import Anushka from '../assets/team/anushka.jpeg';
 import Navneet from '../assets/team/navneet.png';
-import Suraj from '../assets/team/surajsir.png';
+import Suraj from '../assets/team/newsurajsir.jpeg';
 
 const teamMembers = [
   {

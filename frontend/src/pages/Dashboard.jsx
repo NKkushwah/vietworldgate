@@ -98,7 +98,10 @@ function Dashboard() {
               Explore world-class universities
               and build your future with
               global education opportunities.
-
+              <div class="button-container">
+                <button class="compare-btn">Comparison Tool</button>
+              </div>
+              
             </p>
 
           </div>
