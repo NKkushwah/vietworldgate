@@ -2,6 +2,29 @@ import React from 'react';
 import './ValuesGrid.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { motion } from 'framer-motion';
+
+// --- Production-Grade Scroll Transition Presets ---
+const slideUpScroll = {
+  hidden: { opacity: 0, y: 35 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.7, 
+      ease: [0.16, 1, 0.3, 1] // Elegant bezier timing
+    } 
+  }
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08
+    }
+  }
+};
 
 const ValuesGrid = () => {
   // Your text broken down cleanly into exactly 8 strategic highlight items
@@ -100,34 +123,47 @@ const ValuesGrid = () => {
 
   return (
     <>
-    
+      <Navbar />
+      <div className="values-container">
+        {/* Upper header segment (Triggers on load) */}
+        <motion.div 
+          className="values-header"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="values-company-subtitle">VIET Worldgate Private Limited</p>
+          <h1 className="values-main-title">Our services & core values</h1>
+        </motion.div>
 
-    <Navbar />
-    <div className="values-container">
-      {/* Upper header segment resembling screenshot layout */}
-      <div className="values-header">
-        <p className="values-company-subtitle">VIET Worldgate Private Limited</p>
-        <h1 className="values-main-title">Our services & core values</h1>
+        {/* Grid wrapper (Triggers on scroll) */}
+        <motion.div 
+          className="values-grid"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {valuesData.map((item) => (
+            <motion.div 
+              key={item.id} 
+              className="value-card"
+              variants={slideUpScroll}
+            >
+              <div className="value-icon-circle">
+                {item.icon}
+              </div>
+              <div className="value-text-block">
+                <h2 className="value-card-title">{item.title}</h2>
+                <p className="value-card-desc">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-
-      {/* Grid wrapper containing the 8 calculated cards */}
-      <div className="values-grid">
-        {valuesData.map((item) => (
-          <div key={item.id} className="value-card">
-            <div className="value-icon-circle">
-              {item.icon}
-            </div>
-            <div className="value-text-block">
-              <h2 className="value-card-title">{item.title}</h2>
-              <p className="value-card-desc">{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
 
-export default ValuesGrid; 
+export default ValuesGrid;

@@ -1,7 +1,10 @@
 // OurServices.jsx
+import React from "react";
 import "./OurServices.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+
 const services = [
   {
     id: 1,
@@ -41,68 +44,131 @@ const services = [
   },
 ];
 
-// Simple house SVG icon for breadcrumb
-function HomeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </svg>
-  );
-}
-
 export default function OurServices() {
+  
+  // ── PR LEVEL STAGGER CONFIGURATION (FOR SECTION & CARD WRAPPERS) ──
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.05,
+      }
+    }
+  };
+
+  // Card items and standalone section headings animation
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
+  };
+
+  // ── CARD INNER CONTENT STAGGER (FOR HEADINGS, PARAGRAPHS, BUTTONS) ──
+  const cardContentContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1, // Controls delay between heading -> paragraph -> button
+      }
+    }
+  };
+
+  const cardContentItem = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: "easeOut" }
+    }
+  };
+
+  const viewportConfig = { once: true, amount: 0.15 };
+
   return (
     <> 
-  
-    <Navbar />
-    <main>
-      {/* ── Hero Banner ── */}
-      <section className="services-heros" aria-label="Our Services banner">
-        <img
-          className="services-heros__img"
-          src="https://images.pexels.com/photos/4977346/pexels-photo-4977346.jpeg"
-          alt="Happy diverse group of students"
-        />
-        <div className="services-heros__overlay" />
-        <div className="services-heros__content">
-        
-          <nav className="services-heros__breadcrumb" aria-label="Breadcrumb">
-           
-           
-          </nav>
-        </div>
-      </section>
+      <Navbar />
+      <main>
+        {/* ── Hero Banner ── */}
+        <section className="services-heros" aria-label="Our Services banner">
+          <img
+            className="services-heros__img"
+            src="https://images.pexels.com/photos/4977346/pexels-photo-4977346.jpeg"
+            alt="Happy diverse group of students"
+          />
+          <div className="services-heros__overlay" />
+          <div className="services-heros__content">
+            <nav className="services-heros__breadcrumb" aria-label="Breadcrumb">
+              {/* Optional Breadcrumb items */}
+            </nav>
+          </div>
+        </section>
 
-      {/* ── Services Section ── */}
-      <section className="servicess-section">
-        <h2 className="servicess-section__heading">
-          Our <span>Services</span>
-        </h2>
+        {/* ── Services Section ── */}
+        <section className="servicess-section">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
+            <motion.h2 className="servicess-section__heading" variants={itemVariants}>
+              Our <span>Services</span>
+            </motion.h2>
+          </motion.div>
 
-        <div className="servicess-grid">
-          {services.map((svc) => (
-            <article className="services-card" key={svc.id}>
-              <div className="services-card__img-wrapper">
-                <img
-                  className="services-card__img"
-                  src={svc.img}
-                  alt={svc.alt}
-                  loading="lazy"
-                />
-              </div>
-              <div className="services-card__body">
-                <h3 className="services-card__title">{svc.title}</h3>
-                <p className="services-card__desc">{svc.description}</p>
-                <a href={svc.link} className="services-card__btn">
-                  Read More
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
-    <Footer />
-     </>
+          <motion.div 
+            className="servicess-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
+            {services.map((svc) => (
+              <motion.article 
+                className="services-card" 
+                key={svc.id}
+                variants={itemVariants}
+              >
+                {/* Image Wrapper */}
+                <div className="services-card__img-wrapper">
+                  <img
+                    className="services-card__img"
+                    src={svc.img}
+                    alt={svc.alt}
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Card Body - Injected Stagger for Inner Content fixed successfully */}
+                <motion.div 
+                  className="services-card__body"
+                  variants={cardContentContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  <motion.h3 className="services-card__title" variants={cardContentItem}>
+                    {svc.title}
+                  </motion.h3>
+                  
+                  <motion.p className="services-card__desc" variants={cardContentItem}>
+                    {svc.description}
+                  </motion.p>
+                  
+                  <motion.a href={svc.link} className="services-card__btn" variants={cardContentItem}>
+                    Read More
+                  </motion.a>
+                </motion.div>
+              </motion.article>
+            ))}
+          </motion.div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

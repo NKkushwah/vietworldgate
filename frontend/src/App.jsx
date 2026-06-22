@@ -37,6 +37,7 @@ function App() {
   // Jaise hi loading false hogi, aapki puri website load ho jayegi
   return (
     <>
+    
       {/* ✅ AUTO SCROLL TOP ON PAGE CHANGE */}
       <ScrollToTop />
 

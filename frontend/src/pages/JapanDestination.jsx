@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './JapanDestination.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function JapanDestination() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -17,48 +18,123 @@ export default function JapanDestination() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  // ==========================================
+  // REUSABLE UNIFIED ANIMATION CONFIGS
+  // ==========================================
+  
+  const parentStagger = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const smoothRevealUp = {
+    hidden: { opacity: 0, y: 35 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.65, ease: [0.215, 0.610, 0.355, 1] } 
+    }
+  };
+
+  const dynamicSidebar = {
+    hidden: { opacity: 0, x: -35 },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { duration: 0.65, ease: "easeOut" } 
+    }
+  };
+
+  const premiumCardHover = {
+    y: -8,
+    scale: 1.015,
+    boxShadow: "0px 15px 35px rgba(0, 0, 0, 0.1)",
+    transition: { duration: 0.3, ease: "easeInOut" }
+  };
+
+  const adaptiveButton = {
+    hover: { scale: 1.03, transition: { duration: 0.2, ease: "easeInOut" } },
+    tap: { scale: 0.97 }
+  };
 
   return (
     <>
       <Navbar />
       <div className="jpn-page-wrapper">
         
-        {/* HERO BANNER */}
-        <header className="jpn-hero-banner">
+        {/* ==========================================
+            HERO BANNER SECTION
+           ========================================== */}
+        <motion.header 
+          className="jpn-hero-banner"
+          initial={{ opacity: 0, scale: 0.99 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
+        >
           <div className="jpn-hero-inner">
             <div className="jpn-hero-left">
               <h1 className="jpn-hero-title"></h1>
-             
             </div>
             <div className="jpn-hero-right">
-              <span className="jpn-flag-emoji"></span>
+              <motion.div 
+                className="jpn-flag-wrap"
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 95, damping: 13, delay: 0.35 }}
+              >
+                <span className="jpn-flag-emoji"></span>
+              </motion.div>
             </div>
           </div>
-        </header>
+        </motion.header>
 
-        {/* MAIN GRID */}
+        {/* ==========================================
+            MAIN CORE LAYOUT GRID
+           ========================================== */}
         <div className="jpn-main-grid">
           
-          {/* SIDEBAR */}
-          <aside className="jpn-sidebar">
-            
+          {/* SIDEBAR BLOCK */}
+          <motion.aside 
+            className="jpn-sidebar"
+            variants={dynamicSidebar}
+            initial="hidden"
+            animate="visible"
+          >
             {/* Call Card */}
-            <div className="jpn-call-card">
+            <motion.div 
+              className="jpn-call-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
               <span className="jpn-call-label">Our Appointment Service call us</span>
               <a href="tel:+917982295530" className="jpn-phone-link">
                 <span>📞</span> +91-7982295530
               </a>
-            </div>
+            </motion.div>
 
             {/* WhatsApp Card */}
-            <div className="jpn-wa-card">
+            <motion.div 
+              className="jpn-wa-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
               <div className="jpn-wa-header">
-                <div className="jpn-wa-icon">
+                <motion.div 
+                  className="jpn-wa-icon"
+                  animate={{ scale: [1, 1.06, 1] }}
+                  transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+                >
                   <svg viewBox="0 0 448 512" width="24" height="24" fill="#ffffff">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
                   </svg>
-                </div>
+                </motion.div>
                 <div className="jpn-wa-meta">
                   <h4>Japan Support</h4>
                   <p>Online • Advisors Ready</p>
@@ -67,39 +143,62 @@ export default function JapanDestination() {
               
               <div className="jpn-wa-body">
                 <p>Connect with our expert Japan advisors for personalized guidance on MEXT scholarships, Japanese language proficiency (JLPT), part-time work rights, and technical internships.</p>
-                <a 
+                <motion.a 
                   href={whatsappLink} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="jpn-wa-btn"
+                  variants={adaptiveButton}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   START CHAT NOW
-                </a>
+                </motion.a>
               </div>
-            </div>
-          </aside>
+            </motion.div>
+          </motion.aside>
 
-          {/* MAIN CONTENT */}
+          {/* MAIN INFORMATION CONTENT */}
           <main className="jpn-content">
             
-            <section className="jpn-info-block">
+            {/* Intro Block */}
+            <motion.section 
+              className="jpn-info-block"
+              variants={smoothRevealUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <h2>Study in Japan: It's easier than you think!</h2>
               <p>
                 Japan is an emerging powerhouse for international students, blending cutting-edge technological innovation with deeply rooted cultural traditions. With the "300,000 International Students Plan," Japan has simplified its visa processes and increased English-taught programs across its top-tier national and private universities.
               </p>
-            </section>
+            </motion.section>
 
-            <section className="jpn-info-block">
+            {/* Core Why Study Block */}
+            <motion.section 
+              className="jpn-info-block"
+              variants={smoothRevealUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <h2>Why study in Japan?</h2>
               <p>
                 Beyond its high academic standards, Japan offers one of the safest environments in the world. International students are permitted to work up to 28 hours per week, providing ample opportunity to support living costs. Moreover, the Japanese government offers the prestigious MEXT scholarship, covering full tuition, travel, and providing a monthly stipend for meritorious candidates.
               </p>
-            </section>
+            </motion.section>
 
-            {/* FEATURE CARDS */}
-            <section className="jpn-features-grid">
-              
-              <div className="jpn-feature-card">
+            {/* FEATURE SHUTTLE CARDS (Staggered Scroll Reveals) */}
+            <motion.section 
+              className="jpn-features-grid"
+              variants={parentStagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {/* Card 1 */}
+              <motion.div className="jpn-feature-card" variants={smoothRevealUp} whileHover={premiumCardHover}>
                 <div className="jpn-icon-circle">
                   <span>👥</span>
                 </div>
@@ -107,9 +206,10 @@ export default function JapanDestination() {
                 <p>
                   Consistently ranked among the top 10 safest countries globally, Japan offers peace of mind for students and their families.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="jpn-feature-card">
+              {/* Card 2 */}
+              <motion.div className="jpn-feature-card" variants={smoothRevealUp} whileHover={premiumCardHover}>
                 <div className="jpn-icon-circle">
                   <span>💬</span>
                 </div>
@@ -117,9 +217,10 @@ export default function JapanDestination() {
                 <p>
                   Learn at the heart of robotics, automotive engineering, and electronics in world-class research facilities and laboratories.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="jpn-feature-card">
+              {/* Card 3 */}
+              <motion.div className="jpn-feature-card" variants={smoothRevealUp} whileHover={premiumCardHover}>
                 <div className="jpn-icon-circle">
                   <span>📜</span>
                 </div>
@@ -127,12 +228,17 @@ export default function JapanDestination() {
                 <p>
                   Japan actively seeks global talent to join its workforce, offering clear pathways for long-term career growth in local industries.
                 </p>
-              </div>
+              </motion.div>
+            </motion.section>
 
-            </section>
-
-            {/* CTA SECTION */}
-            <section className="jpn-cta-section">
+            {/* MASTER CTA CONVERSION BLOCK */}
+            <motion.section 
+              className="jpn-cta-section"
+              variants={smoothRevealUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <span className="jpn-cta-tagline">UNLOCK YOUR FUTURE IN THE LAND OF THE RISING SUN</span>
               <h2 className="jpn-cta-heading">Explore Universities and Scholarships in Japan</h2>
               <p className="jpn-cta-lead">Discover the endless opportunities that await you across Japanese cities.</p>
@@ -141,24 +247,44 @@ export default function JapanDestination() {
               </p>
 
               <div className="jpn-btn-row">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="jpn-primary-btn">
+                <motion.a 
+                  href={whatsappLink} target="_blank" rel="noopener noreferrer" className="jpn-primary-btn"
+                  variants={adaptiveButton} whileHover="hover" whileTap="tap"
+                >
                   EXPLORE UNIVERSITIES
-                </a>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="jpn-primary-btn">
+                </motion.a>
+                <motion.a 
+                  href={whatsappLink} target="_blank" rel="noopener noreferrer" className="jpn-primary-btn"
+                  variants={adaptiveButton} whileHover="hover" whileTap="tap"
+                >
                   FIND SCHOLARSHIPS
-                </a>
+                </motion.a>
               </div>
-            </section>
+            </motion.section>
 
           </main>
         </div>
 
-        {/* FLOATING WHATSAPP */}
-        <a href={whatsappLink} className="jpn-wa-bubble" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-          <svg viewBox="0 0 448 512" width="26" height="26" fill="currentColor">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
-          </svg>
-        </a>
+        {/* FLOATING ACTION INTERACTION SYSTEM */}
+        <AnimatePresence>
+          <motion.a 
+            href={whatsappLink} 
+            className="jpn-wa-bubble" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Chat on WhatsApp"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 21, delay: 0.4 }}
+            whileHover={{ scale: 1.12, y: -4 }}
+            whileTap={{ scale: 0.92 }}
+          >
+            <svg viewBox="0 0 448 512" width="26" height="26" fill="currentColor">
+              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
+            </svg>
+          </motion.a>
+        </AnimatePresence>
 
       </div>
       <Footer />
