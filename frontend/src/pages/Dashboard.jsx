@@ -97,6 +97,10 @@ function Dashboard() {
               global education opportunities.
 
             </p>
+
+             <div class="button-container">
+                <button class="compare-btn">Comparison Tool</button>
+              </div>
           </motion.div>
 
           {/* WHATSAPP BOX */}
