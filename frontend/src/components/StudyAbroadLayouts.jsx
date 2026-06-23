@@ -306,7 +306,9 @@ export default function StudyAbroadLayouts() {
                         {item.isVideo && <div className="play-btn-overlay">▶</div>}
                       </motion.div>
                     </div>
-                    <h4 className="student-name">{item.name}</h4>
+                    <div className="testimonial-details">
+                      <h4 className="testimonial-name">{item.name}</h4>
+                    </div>
                   </motion.div>
                 </div>
               ))}
