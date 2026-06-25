@@ -95,7 +95,7 @@ const Footer = () => {
                 <FaYoutube />
               </a>
 
-              <a href="#linkedin" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/viet-worldgate-private-limited-7940b8419/" aria-label="LinkedIn">
                 <FaLinkedinIn />
               </a>
 

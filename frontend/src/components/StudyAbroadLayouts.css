@@ -164,7 +164,7 @@ background: #1a202c;
   min-height: 100%;
 }
 
-.testimonial-card {
+.testimonial-cards {
   position: relative;
   background-image: url(../assets/testimonialbackgroundimage.png);
   background-size: cover;

@@ -276,7 +276,7 @@ export default function StudyAbroadLayouts() {
                   style={{ flex: `0 0 ${100 / visibleStoryCount}%`, width: `${100 / visibleStoryCount}%` }}
                 >
                   <motion.div
-                    className="testimonial-card"
+                    className="testimonial-cards"
                     onClick={() => item.isVideo && setActiveVideoUrl(item.img)}
                     style={{ cursor: item.isVideo ? "pointer" : "default" }}
                     whileHover={{ scale: 1.02 }}
