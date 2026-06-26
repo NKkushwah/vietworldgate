@@ -90,7 +90,7 @@ export default function StudyAbroadLayouts() {
       { id: 6, name: "Ishita",       img: logo6, isVideo: true },
         { id: 7, name: "Ishita",       img: logo7, isVideo: true },
           { id: 8, name: "Gopi",       img: logo8, isVideo: true },
-           { id: 9, name: "University of Chester",       img: logo8, isVideo: true },
+           { id: 9, name: "University of Chester",       img: logo9, isVideo: true },
   ];
 
   const universityVisits = [
