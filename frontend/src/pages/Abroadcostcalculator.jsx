@@ -230,7 +230,7 @@ export default function Abroadcostcalculator() {
     // Tuition is calculated ONLY when user selects PhD
     const tuition =
       isStudent && isPhd
-        ? avg(country.tuition.min, country.tuition.max)
+        ? 0
         : 0;
 
     const insurance = isStudent
