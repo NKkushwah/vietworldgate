@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Abroadcalculator.css";
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
 const COUNTRIES = {
   USA: {
     code: "us", flag: "🇺🇸", label: "United States",
@@ -12,7 +12,7 @@ const COUNTRIES = {
     food: { min: 20000, max: 40000 },
     transport: { min: 8000, max: 15000 },
     utilities: { min: 3000, max: 6000 },
-  
+    tuition: { min: 800000, max: 2500000 },
     insurance: { min: 60000, max: 120000 },
   },
   UK: {
@@ -23,7 +23,7 @@ const COUNTRIES = {
     food: { min: 15000, max: 30000 },
     transport: { min: 6000, max: 12000 },
     utilities: { min: 2500, max: 5000 },
-
+    tuition: { min: 700000, max: 2000000 },
     insurance: { min: 50000, max: 100000 },
   },
   Canada: {
@@ -34,7 +34,7 @@ const COUNTRIES = {
     food: { min: 12000, max: 25000 },
     transport: { min: 4000, max: 8000 },
     utilities: { min: 2000, max: 4000 },
-  
+    tuition: { min: 500000, max: 1800000 },
     insurance: { min: 40000, max: 80000 },
   },
   Germany: {
@@ -45,7 +45,7 @@ const COUNTRIES = {
     food: { min: 10000, max: 20000 },
     transport: { min: 3000, max: 7000 },
     utilities: { min: 2000, max: 4000 },
-   
+    tuition: { min: 200000, max: 800000 },
     insurance: { min: 30000, max: 60000 },
   },
   Australia: {
@@ -56,7 +56,7 @@ const COUNTRIES = {
     food: { min: 14000, max: 28000 },
     transport: { min: 5000, max: 10000 },
     utilities: { min: 2500, max: 5000 },
-  
+    tuition: { min: 600000, max: 2200000 },
     insurance: { min: 45000, max: 90000 },
   },
   NewZealand: {
@@ -67,7 +67,7 @@ const COUNTRIES = {
     food: { min: 12000, max: 24000 },
     transport: { min: 4000, max: 8000 },
     utilities: { min: 2000, max: 4000 },
-  
+    tuition: { min: 500000, max: 1600000 },
     insurance: { min: 35000, max: 70000 },
   },
   Singapore: {
@@ -78,7 +78,7 @@ const COUNTRIES = {
     food: { min: 10000, max: 22000 },
     transport: { min: 3000, max: 7000 },
     utilities: { min: 2000, max: 4000 },
-  
+    tuition: { min: 400000, max: 1500000 },
     insurance: { min: 30000, max: 65000 },
   },
   UAE: {
@@ -89,7 +89,7 @@ const COUNTRIES = {
     food: { min: 10000, max: 22000 },
     transport: { min: 4000, max: 9000 },
     utilities: { min: 2000, max: 5000 },
-  
+    tuition: { min: 300000, max: 1200000 },
     insurance: { min: 25000, max: 55000 },
   },
   France: {
@@ -100,7 +100,7 @@ const COUNTRIES = {
     food: { min: 11000, max: 22000 },
     transport: { min: 3000, max: 7000 },
     utilities: { min: 2000, max: 4000 },
-
+    tuition: { min: 150000, max: 900000 },
     insurance: { min: 30000, max: 65000 },
   },
   Netherlands: {
@@ -111,7 +111,7 @@ const COUNTRIES = {
     food: { min: 11000, max: 22000 },
     transport: { min: 3000, max: 7000 },
     utilities: { min: 2000, max: 4000 },
-    
+    tuition: { min: 200000, max: 1000000 },
     insurance: { min: 30000, max: 65000 },
   },
   Italy: {
@@ -122,7 +122,7 @@ const COUNTRIES = {
     food: { min: 10000, max: 20000 },
     transport: { min: 2000, max: 5000 },
     utilities: { min: 1500, max: 3500 },
-   
+    tuition: { min: 150000, max: 800000 },
     insurance: { min: 25000, max: 50000 },
   },
   Japan: {
@@ -133,7 +133,7 @@ const COUNTRIES = {
     food: { min: 15000, max: 30000 },
     transport: { min: 5000, max: 10000 },
     utilities: { min: 3000, max: 6000 },
-
+    tuition: { min: 600000, max: 2000000 },
     insurance: { min: 40000, max: 80000 },
   },
 };
@@ -227,11 +227,11 @@ export default function Abroadcostcalculator() {
     const ielts = 19000;
     const consultancy = 0;
 
-    // PhD = free tuition; Bachelor/Master = paid
+    // Tuition is calculated ONLY when user selects PhD
     const tuition =
-      isStudent && !isPhd
-        ? "depend on university "
-        :0;
+      isStudent && isPhd
+        ? avg(country.tuition.min, country.tuition.max)
+        : 0;
 
     const insurance = isStudent
       ? avg(country.insurance.min, country.insurance.max)
@@ -269,13 +269,9 @@ export default function Abroadcostcalculator() {
       ielts: { label: "IELTS/PTE", amount: ielts },
       consultancy: { label: "Consultancy", amount: consultancy },
       tuition: {
-        label: isPhd ? (
+        label: (
           <span className="label-with-flag">
-            Tuition (<img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> PhD — FREE ✓)
-          </span>
-        ) : (
-          <span className="label-with-flag">
-            Tuition (<img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> per year)
+            Tuition (<img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> PhD per year)
           </span>
         ),
         amount: tuition,
@@ -455,6 +451,7 @@ export default function Abroadcostcalculator() {
                 {/* Study level — shown only when Student is selected */}
                 {isStudent && (
                   <div className="toggle-btns" style={{ marginTop: "6px" }}>
+                    
                     <motion.button
                       className={`toggle-btn${
                         studyType === "phd" ? " active" : ""
@@ -491,7 +488,7 @@ export default function Abroadcostcalculator() {
                         gap: "4px"
                       }}
                     >
-                      🎓 PhD students get <strong>free tuition</strong> + monthly stipend of{" "}
+                      🎓 PhD students get a monthly stipend of{" "}
                       <strong>
                         ₹{PHD_STIPENDS[selectedCountry]?.min.toLocaleString("en-IN")} – ₹{PHD_STIPENDS[selectedCountry]?.max.toLocaleString("en-IN")}/mo
                       </strong>{" "}
@@ -579,8 +576,8 @@ export default function Abroadcostcalculator() {
                   // Hide stipend unless PhD
                   if (key === "stipend" && !isPhd) return null;
 
-                  // Hide tuition checkbox for PhD (it's free = ₹0, shown as info only)
-                  if (key === "tuition" && isPhd) return null;
+                  // Hide tuition checkbox for normal students (Show ONLY when PhD is active)
+                  if (key === "tuition" && !isPhd) return null;
 
                   return (
                     <motion.label
@@ -607,27 +604,6 @@ export default function Abroadcostcalculator() {
                     </motion.label>
                   );
                 })}
-
-                {/* PhD Free Tuition info row (not a checkbox, just display) */}
-                {isPhd && (
-                  <motion.div
-                    className="item-toggle checked"
-                    style={{ cursor: "default" }}
-                    whileHover={{ x: 4 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <span style={{ fontSize: "16px" }}>🎓</span>
-                    <span className="item-toggle-label">
-                      Tuition (<img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> PhD — FREE)
-                    </span>
-                    <span
-                      className="item-toggle-amount"
-                      style={{ color: "red" }}
-                    >
-                      ₹0
-                    </span>
-                  </motion.div>
-                )}
               </div>
             </motion.section>
           </motion.div>
@@ -754,34 +730,73 @@ export default function Abroadcostcalculator() {
             )}
 
             {/* Formula */}
+           {/* Formula & Apply Section */}
             <motion.div 
               className="formula-box"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
             >
-              <div className="formula-title">Cost Formula</div>
-              <code className="formula-code">
-                Total = Visa + Flight
-                <br />
-                + (Rent × {months})
-                <br />
-                + (Living × {months})
-                <br />
-                {isPhd ? (
-                  <>
-                    + Other Costs
-                    <br />
-                    − (Stipend × {months})
-                  </>
-                ) : (
-                  "+ Other Costs"
-                )}
-              </code>
+             <div className="formula-title">Contact Us</div>
+             
+
+              {/* Professional Apply CTA Button */}
+              <div 
+                className="apply-cta-section" 
+                style={{ 
+                  marginTop: "20px", 
+                  borderTop: "1px solid rgba(255, 255, 255, 0.1)", 
+                  paddingTop: "15px" 
+                }}
+              >
+                <p 
+                  style={{ 
+                    fontSize: "12px", 
+                    color: "rgba(255, 255, 255, 0.7)", 
+                    marginBottom: "12px", 
+                    lineHeight: "1.4" 
+                  }}
+                >
+                  Ready to take the next step? Connect with our experts for university applications and visa guidance.
+                </p>
+                <motion.a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" // यहाँ अपना वास्तविक अप्लाई लिंक डालें
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                    padding: "12px 20px",
+                    background: "linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)",
+                    color: "#ffffff",
+                    textDecoration: "none",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    fontSize: "14px",
+                    letterSpacing: "0.5px",
+                    boxShadow: "0 4px 15px rgba(76, 175, 80, 0.3)",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    boxSizing: "border-box"
+                  }}
+                  whileHover={{ 
+                    scale: 1.02, 
+                    background: "linear-gradient(135deg, #5cba60 0%, #388e3c 100%)",
+                    boxShadow: "0 6px 20px rgba(76, 175, 80, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Apply Now <span style={{ marginLeft: "8px", fontSize: "16px" }}>→</span>
+                </motion.a>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
