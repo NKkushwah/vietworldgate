@@ -45,11 +45,14 @@ import CompanyHistory from "../pages/CompanyHistory";
 import SocialResponsibility from "../pages/Socialresponsibility";
 
 import ComparisonPage from "../pages/CompareUniversity";
+import Abroadcostcalculator from "../pages/Abroadcostcalculator";
 function AppRoutes() {
   return (
    
 
       <Routes>
+
+        <Route path="/Abroadcostcalculator" element={<Abroadcostcalculator />} /> 
          <Route path="/CompareUniversity" element={<ComparisonPage />} />
         <Route path="/EducationFair" element={<EducationFair/>} />
           <Route path = "/OurPresence" element={<OurPresence />} />
