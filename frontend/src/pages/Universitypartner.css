@@ -157,7 +157,7 @@
 .uni-info{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:5px;
 }
 
 .uni-logo-box{
@@ -171,7 +171,7 @@
 
   background:#fff;
   border:1px solid #e6e6e6;
-  padding:8px;
+  padding:1px;
 
   transition:.3s;
 }
@@ -183,13 +183,30 @@
 .uni-logo-box img{
   width:100%;
   height:100%;
+  border-radius: 100px;
   object-fit:contain;
+  
+}
+
+.uni-logo-box {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    padding: 8px;
+    border-radius: 100px;
+    transition: .3s;
 }
 
 .uni-link{
   text-decoration:none;
   color:#222;
   font-size:16px;
+  font-style:italic;
   font-weight:600;
   transition:.3s;
 }
@@ -200,8 +217,8 @@
 }
 
 .uni-name{
-  font-size:15px;
-  font-weight:500;
+  font-size:80px;
+  font-weight:600;
 }
 
 /* Serial Number */

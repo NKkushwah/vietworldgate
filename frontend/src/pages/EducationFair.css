@@ -63,7 +63,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
-  background: #25d366;
+  background:#012819;
   color: white;
   border-radius: 30px;
   font-weight: 600;
@@ -258,7 +258,7 @@ body {
 }
 
 .infos strong {
-  color: #1b5e20; /* Deep professional green */
+  color: #012819;/* Deep professional green */
   font-weight: 700;
 }
 
@@ -280,7 +280,7 @@ body {
 .applys-btn {
   width: 100%;
   padding: 14px;
-  background-color: #25d366; /* Official brand colors */
+  background-color:#012819; /* Official brand colors */
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -461,8 +461,8 @@ body {
 }
 
 .darks-mode-card {
-  background: #023824;
-  border: 1px solid #034e32;
+  background: #012819;
+  border: 1px solid #012819;
 }
 .darks-mode-card h3 {
   color: white;
@@ -515,7 +515,7 @@ body {
 }
 
 .whatsapps-box h2 span {
-  color: #00c853;
+  color: #012819;
 }
 
 .whatsapps-box p {
@@ -529,7 +529,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #00c853;
+  background: #012819;
   color: #fff;
   padding: 12px 26px;
   border-radius: 8px;
@@ -539,7 +539,7 @@ body {
 }
 
 .whatsapps-btn:hover {
-  background: #00b34a;
+  background: #012819;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 200, 83, 0.3);
 }
