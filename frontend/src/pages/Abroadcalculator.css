@@ -218,7 +218,7 @@ html { font-size: 16px; }
 
 .country-btn:hover {
   border-color: var(--green-500);
-  background: var(--card-2);
+  background: #012819;
   color: var(--text-primary);
 }
 
@@ -325,7 +325,7 @@ html { font-size: 16px; }
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  background: var(--card);
+  background:  #1c5a41;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -336,7 +336,7 @@ html { font-size: 16px; }
 
 .item-toggle.checked {
   border-color: var(--green-600);
-  background: var(--card-2);
+  background: #012819;
 }
 
 .item-toggle input[type="checkbox"] {
@@ -391,7 +391,7 @@ html { font-size: 16px; }
 .summary-duration {
   font-size: 12px;
   color: whitesmoke;
-  background: var(--card);
+  background: #012819;
   border: 1px solid var(--border);
   padding: 4px 10px;
   border-radius: 20px;
@@ -471,7 +471,7 @@ html { font-size: 16px; }
   align-items: center;
   gap: 8px;
   padding: 9px 12px;
-  background: var(--card);
+  background: #012819;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   transition: border-color var(--transition);
@@ -524,7 +524,7 @@ html { font-size: 16px; }
   padding: 24px;
   color: var(--text-muted);
   font-size: 13px;
-  background: var(--card);
+  background: #012819;
   border: 1px dashed var(--border);
   border-radius: var(--radius-md);
 }
@@ -575,7 +575,7 @@ html { font-size: 16px; }
 
 /* ── FORMULA BOX ────────────────────────── */
 .formula-box {
-  background: var(--card);
+  background: #012819;
   border: 1px solid var(--border);
   border-left: 3px solid var(--green-600);
   border-radius: var(--radius-md);
@@ -588,8 +588,9 @@ html { font-size: 16px; }
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: whitesmoke;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .formula-code {

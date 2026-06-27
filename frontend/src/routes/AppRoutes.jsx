@@ -51,7 +51,7 @@ function AppRoutes() {
    
 
       <Routes>
-
+          
         <Route path="/Abroadcostcalculator" element={<Abroadcostcalculator />} /> 
          <Route path="/CompareUniversity" element={<ComparisonPage />} />
         <Route path="/EducationFair" element={<EducationFair/>} />
