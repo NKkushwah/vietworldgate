@@ -9,7 +9,10 @@ import logo2 from "../assets/story2video.MOV";
 import logo3 from "../assets/story3video.mp4";
 import logo4 from "../assets/story4video.mp4";
 import logo5 from "../assets/story5video.mp4";
-
+import logo6 from "../assets/story6.mp4";
+import logo7 from "../assets/story7.mp4";
+import logo8 from "../assets/story8.mp4";
+import logo9 from "../assets/story9.mp4";
 // 1. Parent container variants to stagger animation on children elements
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -84,6 +87,10 @@ export default function StudyAbroadLayouts() {
     { id: 3, name: "Ishita Verma",   img: logo3, isVideo: true },
     { id: 4, name: "Dharshini",      img: logo4, isVideo: true },
     { id: 5, name: "Shafquat",       img: logo5, isVideo: true },
+      { id: 6, name: "Ishita",       img: logo6, isVideo: true },
+        { id: 7, name: "Ishita",       img: logo7, isVideo: true },
+          { id: 8, name: "Gopi",       img: logo8, isVideo: true },
+           { id: 9, name: "University of Chester",       img: logo9, isVideo: true },
   ];
 
   const universityVisits = [
@@ -276,7 +283,7 @@ export default function StudyAbroadLayouts() {
                   style={{ flex: `0 0 ${100 / visibleStoryCount}%`, width: `${100 / visibleStoryCount}%` }}
                 >
                   <motion.div
-                    className="testimonial-card"
+                    className="testimonial-cards"
                     onClick={() => item.isVideo && setActiveVideoUrl(item.img)}
                     style={{ cursor: item.isVideo ? "pointer" : "default" }}
                     whileHover={{ scale: 1.02 }}
@@ -306,7 +313,9 @@ export default function StudyAbroadLayouts() {
                         {item.isVideo && <div className="play-btn-overlay">▶</div>}
                       </motion.div>
                     </div>
-                    <h4 className="student-name">{item.name}</h4>
+                    <div className="testimonial-details">
+                      <h4 className="testimonial-name">{item.name}</h4>
+                    </div>
                   </motion.div>
                 </div>
               ))}

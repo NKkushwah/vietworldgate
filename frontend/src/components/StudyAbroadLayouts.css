@@ -136,7 +136,8 @@
    SECTION 1: SUCCESS STORIES
    ══════════════════════════════════════════════════════════ */
 .success-stories-section {
-  background-color: #012819;
+background: #1a202c;
+
   padding: 60px 20px 50px;
   width: 100%;
 }
@@ -158,45 +159,83 @@
   padding: 0 12px;
   display: flex;
   justify-content: center;
+  align-items: stretch;
   flex-shrink: 0;
+  min-height: 100%;
 }
 
-.testimonial-card {
+.testimonial-cards {
+  position: relative;
+  background-image: url(../assets/testimonialbackgroundimage.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+
   border: 1px solid rgba(236, 234, 240, 0.9);
-  padding: 28px 18px 24px;
   border-radius: 16px;
   width: 100%;
   max-width: 320px;
+  min-height: 420px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  padding: 24px 18px 0;
 }
 .testimonial-card:hover {
   transform: translateY(-5px);
   border-color: rgba(201, 242, 112, 0.4);
 }
 
+.testimonial-details {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 12px 18px 14px;
+  background-color: #1a202c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(236, 234, 240, 0.35);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.testimonial-name {
+  color: #edf0ee;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
 .video-thumbnail-box {
-  width: 160px;
-  height: 160px;
+  margin-top: 10px;
+
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   position: relative;
-  overflow: visible;
-  background-color: #00180f;
+  overflow: hidden;
+  background-color: #012819;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--green-accent)
 }
 
 .circular-video-frame {
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 3px solid var(--green-accent);
+  border: none;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -233,14 +272,6 @@
   transform: scale(1.1);
   background-color: #ffffff;
   color: #012819;
-}
-
-.student-name {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 16px;
-  letter-spacing: 0.02em;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -521,9 +552,10 @@
   .meta-info-row          { font-size: 0.84rem; gap: 8px; }
 
   /* Story card sizing */
-  .circular-video-frame   { width: 120px; height: 120px; }
-  .testimonial-card       { padding: 24px 14px 20px; max-width: 280px; }
-  .student-name           { font-size: 1rem; }
+  .video-thumbnail-box   { width: 260px; height: 260px; background-color: transparent; border: 2px solid var(--green-accent); }
+  .circular-video-frame   { width: 100%; height: 100%; border: none; }
+  .testimonial-card       { padding: 24px 14px 78px; max-width: 280px; min-height: 380px; height: 100%; }
+  .testimonial-name       { font-size: 1rem; }
 }
 
 /* ── iPad Mini only (768px – 810px) ─── */
@@ -533,8 +565,9 @@
   .visit-img-banner { height: 170px; }
   .visit-info-body h3 { font-size: 1rem; }
 
-  .circular-video-frame { width: 110px; height: 110px; }
-  .testimonial-card { max-width: 260px; }
+  .video-thumbnail-box   { width: 220px; height: 220px; background-color: transparent; border: 2px solid var(--green-accent); }
+  .circular-video-frame { width: 100%; height: 100%; border: none; }
+  .testimonial-card     { max-width: 260px; }
 }
 
 /* ── Tablet Portrait — small (576px – 767px) ─── */
@@ -550,8 +583,10 @@
   .visit-info-body      { padding: 16px 14px 14px; }
   .meta-info-row        { font-size: 0.83rem; }
 
-  .circular-video-frame { width: 115px; height: 115px; }
-  .testimonial-card     { padding: 22px 14px 18px; }
+  .video-thumbnail-box   { width: 200px; height: 200px; background-color: transparent; border: 2px solid var(--green-accent); }
+  .circular-video-frame { width: 100%; height: 100%; border: none; }
+  .testimonial-card     { padding: 22px 14px 78px; }
+  .testimonial-name     { font-size: 0.98rem; margin-top: 10px; }
 }
 
 /* ── Mobile landscape helper ─── */
@@ -576,9 +611,10 @@
   .visit-info-body h3   { font-size: 1rem; margin-bottom: 10px; }
   .meta-info-row        { font-size: 0.82rem; gap: 8px; margin-bottom: 8px; }
 
-  .testimonial-card     { padding: 22px 12px 18px; max-width: 100%; }
-  .circular-video-frame { width: 110px; height: 110px; }
-  .student-name         { font-size: 1rem; margin-top: 14px; }
+  .video-thumbnail-box   { width: 160px; height: 160px; background-color: transparent; border: 2px solid var(--green-accent); }
+  .testimonial-card     { padding: 22px 12px 78px; max-width: 100%; min-height: 340px; height: 100%; }
+  .circular-video-frame { width: 100%; height: 100%; border: none; }
+  .testimonial-name      { font-size: 1rem; margin-top: 10px; }
 
   .icon-circle-wrapper       { width: 88px; height: 88px; }
   .icon-circle-wrapper .step-icon { font-size: 1.7rem; }

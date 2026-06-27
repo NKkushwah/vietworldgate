@@ -4,9 +4,9 @@ import { FaChevronUp } from "react-icons/fa";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import logo from "./assets/vietworldgate.png"; // 👈 Yahan apne logo ka sahi path daal dena
-
+import   SwinburneBanner from "./components/SwinburneBanner"
 function App() {
-  const [loading, setLoading] = useState(true); // 👈 Splash screen ke liye state
+  const [loading, setLoading] = useState(false); // 👈 Splash screen ke liye state
 
   useEffect(() => {
     // 2 seconds baad loading ko false kar dega
@@ -37,7 +37,7 @@ function App() {
   // Jaise hi loading false hogi, aapki puri website load ho jayegi
   return (
     <>
-    
+      <SwinburneBanner />
       {/* ✅ AUTO SCROLL TOP ON PAGE CHANGE */}
       <ScrollToTop />
 

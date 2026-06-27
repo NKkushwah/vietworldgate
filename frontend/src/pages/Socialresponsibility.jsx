@@ -47,7 +47,7 @@ import post1Img from "../assets/vietworldgate.png";
 const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/viet.india",
   youtube: "https://www.youtube.com/@viet.worldgate",
-  linkedin: "https://linkedin.com/company/vietworldgate",
+  linkedin: "https://www.linkedin.com/in/viet-worldgate-private-limited-7940b8419/",
   facebook: "https://www.facebook.com/vietworldgate", 
 };
 
