@@ -422,19 +422,19 @@
 
 /* Circular frame with the precise subtle background shading seen in the image */
 .avatar-circle {
-  width: 155px;
-  height: 155px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: #eef2f5; /* Light grey backdrop shading */
-  margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 155px !important;
+  height: 155px  !important;
+  border-radius: 50%  !important;
+  overflow: hidden  !important;
+  background-color: #eef2f5  !important; /* Light grey backdrop shading */
+  margin-bottom: 22px  !important;
+  display: flex  !important;
+  align-items: center  !important;
+  justify-content: center  !important;
 }
 
 .avatar-circle img {
-  width: 100%;
+  width: 100% !important;
   height: 100%;
   object-fit: cover;
 }

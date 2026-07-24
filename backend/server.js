@@ -1,33 +1,72 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const cors = require("cors");
-const connectDB = require("./config/db");
+require("dotenv").config();
 
-// CONFIG
-dotenv.config();
+const express     = require("express");
+const cors        = require("cors");
+const rateLimit   = require("express-rate-limit");
+const connectDB   = require("./config/db");
+const authRoutes  = require("./routes/Authroutes");
+const documentRoutes = require("./routes/documentRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
+const consultationRoutes = require("./routes/consultationRoutes");
+const deadlineRoutes = require("./routes/deadlineRoutes");
+const visaFeeRoutes = require("./routes/visaFeeRoutes");
 
-// DATABASE
-connectDB();
-
-// EXPRESS APP
 const app = express();
 
-// MIDDLEWARE
-app.use(cors());
-app.use(express.json());
 
-// ROUTES
-app.use("/api/appointments", require("./routes/appointmentRoutes"));
+connectDB();
 
-// HOME ROUTE
-app.get("/", (req, res) => {
-  res.send("Server Running...");
+app.use(cors({
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  credentials: true,
+}));
+
+app.use(express.json({ limit: "10kb" }));
+app.use(express.urlencoded({ extended: true }));
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  message: { message: "Too many requests. Please wait 15 minutes and try again." },
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
-// SERVER
+app.use("/api/auth", authLimiter);
+
+app.use("/api/auth", authRoutes);
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ok",
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV,
+  });
+});
+
+
+app.use("/api/auth", authRoutes);
+app.use("/api/documents", documentRoutes);
+app.use("/api/notifications", notificationRoutes);
+app.use("/api/consultations", consultationRoutes);
+app.use("/api/deadlines", deadlineRoutes);
+app.use("/api/visa-fee", visaFeeRoutes);
+app.use((req, res) => {
+  res.status(404).json({ message: `Route ${req.originalUrl} not found.` });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({
+    message: process.env.NODE_ENV === "production"
+      ? "Something went wrong."
+      : err.message,
+  });
+});
+
 const PORT = process.env.PORT || 5000;
-
-// 🔥 ONLY CHANGE HERE
-app.listen(PORT, "0.0.0.0" , () => {
-  console.log(`Server Running On Port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT} [${process.env.NODE_ENV}]`);
 });
+
+module.exports = app;

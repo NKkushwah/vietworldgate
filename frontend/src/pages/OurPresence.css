@@ -263,7 +263,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* FIXED: Prevents cards squeezing */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr)); /* FIXED: Prevents cards squeezing */
   gap: 24px;
 }
 
@@ -271,7 +271,7 @@
   border: 1.5px solid var(--border);
   border-radius: var(--r-lg);
   padding: 36px 30px;
-  background: var(--card);
+  background: #dbdbc6;
   transition: var(--ease);
   position: relative;
   overflow: hidden;
@@ -390,7 +390,7 @@
 ═══════════════════════════════════════════════════════════ */
 .process-section {
   padding: 100px 0;
-  background: var(--surface);
+  background: #cfcfd9;
 }
 
 .process-head { text-align: center; margin-bottom: 64px; }
@@ -583,7 +583,7 @@
 
 .office-card {
   border: 1px solid var(--border); border-radius: var(--r-md);
-  padding: 28px 22px; position: relative; background: var(--card);
+  padding: 28px 22px; position: relative; background:#e0f1e4;
   transition: var(--ease); display: flex; flex-direction: column; height: 100%;
 }
 

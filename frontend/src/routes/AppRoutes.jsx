@@ -32,26 +32,24 @@ import Infrastructure from "../pages/Infrastructure";
 import OurServices from "../pages/Ourservices";
 import UpcomingEvents from "../pages/UpcomingEvents";
 import OurPresence from "../pages/OurPresence";
-
 import Seminar from "../pages/Seminar";
 import TermsConditions from "../pages/TermsConditions";
 import EducationFair from '../pages/EducationFair';
 import VideoGallery from "../pages/VideoGallery";
-
-
-
 import Accreditations from "../pages/Accreditations";
 import CompanyHistory from "../pages/CompanyHistory";
 import SocialResponsibility from "../pages/Socialresponsibility";
-
 import ComparisonPage from "../pages/CompareUniversity";
 import Abroadcostcalculator from "../pages/Abroadcostcalculator";
+import AuthPage from "../pages/Authpage";
+import AdminDashboard from "../pages/AdminDashboard";
+import StudentDashboard from "../pages/StudentDashboard";
 function AppRoutes() {
   return (
-   
-
-      <Routes>
-          
+     <Routes>
+        <Route path="/admin" element={<AdminDashboard />} /> 
+          <Route path="/StudentDashboard" element={<StudentDashboard />} /> 
+            <Route path="/Authpage" element={<AuthPage />} /> 
         <Route path="/Abroadcostcalculator" element={<Abroadcostcalculator />} /> 
          <Route path="/CompareUniversity" element={<ComparisonPage />} />
         <Route path="/EducationFair" element={<EducationFair/>} />
@@ -92,12 +90,9 @@ function AppRoutes() {
         <Route path="/gallary" element={<VideoGallery/>} />
         <Route path="/termsandconditions" element={<TermsConditions/>} />
           <Route path="/CompanyHistory" element={<CompanyHistory/>} />
-      
          <Route path="/Accrediations" element={<Accreditations/>} />
          <Route path="/SocialResponsibility" element={<SocialResponsibility/>} />
-      </Routes>
-
-   
+      </Routes> 
   );
 }
 

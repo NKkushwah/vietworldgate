@@ -3,10 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Abroadcalculator.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 const COUNTRIES = {
   USA: {
     code: "us", flag: "🇺🇸", label: "United States",
-    visa: { min: 13000, max: 15000 },
+    visa: {
+      tourist: { min: 8000, max: 10000 },
+      work: { min: 15000, max: 25000 },
+      student: { min: 13000, max: 15000 },
+    },
     flight: { min: 60000, max: 120000 },
     rent: { shared: { min: 40000, max: 80000 }, private: { min: 80000, max: 150000 } },
     food: { min: 20000, max: 40000 },
@@ -17,7 +22,11 @@ const COUNTRIES = {
   },
   UK: {
     code: "gb", flag: "🇬🇧", label: "United Kingdom",
-    visa: { min: 10000, max: 12000 },
+    visa: {
+      tourist: { min: 7000, max: 9000 },
+      work: { min: 12000, max: 20000 },
+      student: { min: 10000, max: 12000 },
+    },
     flight: { min: 45000, max: 90000 },
     rent: { shared: { min: 35000, max: 70000 }, private: { min: 70000, max: 130000 } },
     food: { min: 15000, max: 30000 },
@@ -28,7 +37,11 @@ const COUNTRIES = {
   },
   Canada: {
     code: "ca", flag: "🇨🇦", label: "Canada",
-    visa: { min: 6000, max: 10000 },
+    visa: {
+      tourist: { min: 4000, max: 6000 },
+      work: { min: 8000, max: 14000 },
+      student: { min: 6000, max: 10000 },
+    },
     flight: { min: 50000, max: 100000 },
     rent: { shared: { min: 25000, max: 50000 }, private: { min: 50000, max: 100000 } },
     food: { min: 12000, max: 25000 },
@@ -39,7 +52,11 @@ const COUNTRIES = {
   },
   Germany: {
     code: "de", flag: "🇩🇪", label: "Germany",
-    visa: { min: 7000, max: 8000 },
+    visa: {
+      tourist: { min: 5000, max: 7000 },
+      work: { min: 9000, max: 15000 },
+      student: { min: 7000, max: 8000 },
+    },
     flight: { min: 35000, max: 75000 },
     rent: { shared: { min: 15000, max: 35000 }, private: { min: 35000, max: 70000 } },
     food: { min: 10000, max: 20000 },
@@ -50,7 +67,11 @@ const COUNTRIES = {
   },
   Australia: {
     code: "au", flag: "🇦🇺", label: "Australia",
-    visa: { min: 9000, max: 13000 },
+    visa: {
+      tourist: { min: 6000, max: 8000 },
+      work: { min: 12000, max: 20000 },
+      student: { min: 9000, max: 13000 },
+    },
     flight: { min: 55000, max: 110000 },
     rent: { shared: { min: 30000, max: 60000 }, private: { min: 60000, max: 120000 } },
     food: { min: 14000, max: 28000 },
@@ -61,7 +82,11 @@ const COUNTRIES = {
   },
   NewZealand: {
     code: "nz", flag: "🇳🇿", label: "New Zealand",
-    visa: { min: 6000, max: 9000 },
+    visa: {
+      tourist: { min: 4000, max: 6000 },
+      work: { min: 8000, max: 13000 },
+      student: { min: 6000, max: 9000 },
+    },
     flight: { min: 60000, max: 115000 },
     rent: { shared: { min: 25000, max: 50000 }, private: { min: 50000, max: 95000 } },
     food: { min: 12000, max: 24000 },
@@ -72,7 +97,11 @@ const COUNTRIES = {
   },
   Singapore: {
     code: "sg", flag: "🇸🇬", label: "Singapore",
-    visa: { min: 3000, max: 5000 },
+    visa: {
+      tourist: { min: 2000, max: 3500 },
+      work: { min: 6000, max: 10000 },
+      student: { min: 3000, max: 5000 },
+    },
     flight: { min: 20000, max: 50000 },
     rent: { shared: { min: 30000, max: 60000 }, private: { min: 60000, max: 120000 } },
     food: { min: 10000, max: 22000 },
@@ -83,7 +112,11 @@ const COUNTRIES = {
   },
   UAE: {
     code: "ae", flag: "🇦🇪", label: "UAE (Dubai)",
-    visa: { min: 5000, max: 8000 },
+    visa: {
+      tourist: { min: 3000, max: 5000 },
+      work: { min: 8000, max: 14000 },
+      student: { min: 5000, max: 8000 },
+    },
     flight: { min: 15000, max: 40000 },
     rent: { shared: { min: 20000, max: 45000 }, private: { min: 45000, max: 100000 } },
     food: { min: 10000, max: 22000 },
@@ -94,7 +127,11 @@ const COUNTRIES = {
   },
   France: {
     code: "fr", flag: "🇫🇷", label: "France",
-    visa: { min: 7000, max: 9000 },
+    visa: {
+      tourist: { min: 5000, max: 7000 },
+      work: { min: 9000, max: 15000 },
+      student: { min: 7000, max: 9000 },
+    },
     flight: { min: 35000, max: 80000 },
     rent: { shared: { min: 18000, max: 40000 }, private: { min: 40000, max: 85000 } },
     food: { min: 11000, max: 22000 },
@@ -105,7 +142,11 @@ const COUNTRIES = {
   },
   Netherlands: {
     code: "nl", flag: "🇳🇱", label: "Netherlands",
-    visa: { min: 7000, max: 9000 },
+    visa: {
+      tourist: { min: 5000, max: 7000 },
+      work: { min: 9000, max: 15000 },
+      student: { min: 7000, max: 9000 },
+    },
     flight: { min: 35000, max: 75000 },
     rent: { shared: { min: 20000, max: 45000 }, private: { min: 45000, max: 90000 } },
     food: { min: 11000, max: 22000 },
@@ -116,7 +157,11 @@ const COUNTRIES = {
   },
   Italy: {
     code: "it", flag: "🇮🇹", label: "Italy",
-    visa: { min: 7000, max: 9000 },
+    visa: {
+      tourist: { min: 5000, max: 7000 },
+      work: { min: 8000, max: 13000 },
+      student: { min: 7000, max: 9000 },
+    },
     flight: { min: 40000, max: 85000 },
     rent: { shared: { min: 18000, max: 40000 }, private: { min: 40000, max: 80000 } },
     food: { min: 10000, max: 20000 },
@@ -127,7 +172,11 @@ const COUNTRIES = {
   },
   Japan: {
     code: "jp", flag: "🇯🇵", label: "Japan",
-    visa: { min: 8000, max: 10000 },
+    visa: {
+      tourist: { min: 5000, max: 7000 },
+      work: { min: 10000, max: 18000 },
+      student: { min: 8000, max: 10000 },
+    },
     flight: { min: 50000, max: 100000 },
     rent: { shared: { min: 35000, max: 70000 }, private: { min: 70000, max: 140000 } },
     food: { min: 15000, max: 30000 },
@@ -138,7 +187,6 @@ const COUNTRIES = {
   },
 };
 
-// Monthly PhD stipend per country (in INR) — sourced from official funding guides
 const PHD_STIPENDS = {
   USA:         { min: 220000, max: 350000, note: "Fully funded via tuition waiver. Includes health insurance." },
   UK:          { min: 220000, max: 250000, note: "UKRI minimum stipends apply. London universities pay higher." },
@@ -158,7 +206,7 @@ const fmt = (n) => "₹" + Math.abs(n).toLocaleString("en-IN");
 const avg = (min, max) => Math.round((min + max) / 2);
 
 const CostTag = ({ label, amount, onDelete, isIncome }) => (
-  <motion.div 
+  <motion.div
     className="cost-tag"
     initial={{ opacity: 0, y: 15, scale: 0.95 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -167,26 +215,33 @@ const CostTag = ({ label, amount, onDelete, isIncome }) => (
     layout
   >
     <span className="cost-tag-label">{label}</span>
-    <span
-      className="cost-tag-amount"
-      style={isIncome ? { color: "#4CAF50" } : {}}
-    >
+    <span className="cost-tag-amount" style={isIncome ? { color: "#4CAF50" } : {}}>
       {isIncome ? "−" : ""}
       {fmt(amount)}
     </span>
-    <button className="delete-btn" onClick={onDelete} title="Remove this cost">
-      ×
-    </button>
+    <button className="delete-btn" onClick={onDelete} title="Remove this cost">×</button>
   </motion.div>
 );
 
 export default function Abroadcostcalculator() {
   const [selectedCountry, setSelectedCountry] = useState("Canada");
   const [months, setMonths] = useState(6);
-  const [isStudent, setIsStudent] = useState(false);
-  const [studyType, setStudyType] = useState("bachelor"); // "bachelor" | "master" | "phd"
+
+  // travellerType: "tourist" | "work" | "student" | "phd"
+  const [travellerType, setTravellerType] = useState("tourist");
+
   const [roomType, setRoomType] = useState("shared");
   const [tripType, setTripType] = useState("one-way");
+
+  const country = COUNTRIES[selectedCountry];
+  const isPhd = travellerType === "phd";
+  const isStudent = travellerType === "student" || travellerType === "phd";
+
+  // visaKey maps travellerType to the visa sub-key in COUNTRIES
+  const visaKey =
+    travellerType === "tourist" ? "tourist"
+    : travellerType === "work"  ? "work"
+    : "student"; // student & phd both use student visa
 
   const [items, setItems] = useState({
     visa: true,
@@ -205,88 +260,64 @@ export default function Abroadcostcalculator() {
     insurance: false,
   });
 
-  const country = COUNTRIES[selectedCountry];
-  const isPhd = isStudent && studyType === "phd";
-
   const costs = useMemo(() => {
-    const visaFee = avg(country.visa.min, country.visa.max);
+    const visaFee = avg(country.visa[visaKey].min, country.visa[visaKey].max);
     const biometrics = 3000;
     const serviceCharge = 2500;
     const flightCost =
       tripType === "round"
         ? avg(country.flight.min, country.flight.max) * 2
         : avg(country.flight.min, country.flight.max);
-    const rentMonthly = avg(
-      country.rent[roomType].min,
-      country.rent[roomType].max
-    );
+    const rentMonthly = avg(country.rent[roomType].min, country.rent[roomType].max);
     const foodMonthly = avg(country.food.min, country.food.max);
     const transportMonthly = avg(country.transport.min, country.transport.max);
     const utilitiesMonthly = avg(country.utilities.min, country.utilities.max);
     const passport = 2500;
     const ielts = 19000;
-    const consultancy = 0;
+    const insurance = isStudent ? avg(country.insurance.min, country.insurance.max) : 0;
 
-    // Tuition is calculated ONLY when user selects PhD
-    const tuition =
-      isStudent && isPhd
-        ? 0
-        : 0;
-
-    const insurance = isStudent
-      ? avg(country.insurance.min, country.insurance.max)
-      : 0;
-
-    // PhD monthly stipend × months (treated as income, subtracted from total)
     const phdData = PHD_STIPENDS[selectedCountry];
     const stipendMonthly = isPhd && phdData
       ? Math.round((phdData.min + phdData.max) / 2)
       : 0;
 
     return {
-      visa: { 
+      visa: {
         label: (
           <span className="label-with-flag">
-            <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> Visa Fee
-          </span>
-        ), 
-        amount: visaFee 
-      },
-      biometrics: { label: "Biometrics", amount: biometrics },
-      serviceCharge: { label: "Service Charge", amount: serviceCharge },
-      flight: { label: `Flight (${tripType})`, amount: flightCost },
-      rent: { label: `Rent × ${months} months`, amount: rentMonthly * months },
-      food: { label: `Food × ${months} months`, amount: foodMonthly * months },
-      transport: {
-        label: `Transport × ${months} months`,
-        amount: transportMonthly * months,
-      },
-      utilities: {
-        label: `Utilities × ${months} months`,
-        amount: utilitiesMonthly * months,
-      },
-      passport: { label: "Passport", amount: passport },
-      ielts: { label: "IELTS/PTE", amount: ielts },
-      consultancy: { label: "Consultancy", amount: consultancy },
-      tuition: {
-        label: (
-          <span className="label-with-flag">
-            Tuition (<img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> PhD per year)
+            <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" />
+            {travellerType === "tourist" ? "Tourist Visa Fee"
+              : travellerType === "work"    ? "Work Visa Fee"
+              : travellerType === "student" ? "Student Visa Fee"
+              : "Student Visa Fee (PhD)"}
           </span>
         ),
-        amount: tuition,
+        amount: visaFee,
       },
+      biometrics:    { label: "Biometrics",                                    amount: biometrics },
+      serviceCharge: { label: "Service Charge",                                amount: serviceCharge },
+      flight:        { label: `Flight (${tripType})`,                          amount: flightCost },
+      rent:          { label: `Rent × ${months} months`,                       amount: rentMonthly * months },
+      food:          { label: `Food × ${months} months`,                       amount: foodMonthly * months },
+      transport:     { label: `Transport × ${months} months`,                  amount: transportMonthly * months },
+      utilities:     { label: `Utilities × ${months} months`,                  amount: utilitiesMonthly * months },
+      passport:      { label: "Passport",                                      amount: passport },
+      ielts:         { label: "IELTS/PTE",                                     amount: ielts },
+      consultancy:   { label: "Consultancy",                                   amount: 0 },
+      tuition:       { label: "Tuition (PhD per year)",                        amount: 0 },
       stipend: {
         label: (
           <span className="label-with-flag">
-            <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> PhD Stipend × {months} mo (₹{phdData ? phdData.min.toLocaleString("en-IN") : 0}–{phdData ? phdData.max.toLocaleString("en-IN") : 0}/mo)
+            <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" />
+            PhD Stipend × {months} mo (₹{phdData ? phdData.min.toLocaleString("en-IN") : 0}–
+            {phdData ? phdData.max.toLocaleString("en-IN") : 0}/mo)
           </span>
         ),
         amount: stipendMonthly * months,
       },
       insurance: { label: "Health Insurance", amount: insurance },
     };
-  }, [selectedCountry, months, isStudent, isPhd, roomType, tripType]);
+  }, [selectedCountry, months, travellerType, isPhd, isStudent, roomType, tripType, visaKey]);
 
   const total = useMemo(
     () =>
@@ -294,7 +325,6 @@ export default function Abroadcostcalculator() {
         .filter(([_, on]) => on)
         .reduce((sum, [key]) => {
           if (!costs[key]) return sum;
-          // stipend is income — subtract it
           if (key === "stipend") return sum - costs[key].amount;
           return sum + costs[key].amount;
         }, 0),
@@ -302,7 +332,7 @@ export default function Abroadcostcalculator() {
   );
 
   const toggle = (key) => setItems((prev) => ({ ...prev, [key]: !prev[key] }));
-  const remove = (key) => setItems((prev) => ({ ...prev, [key]: false }));
+  const remove  = (key) => setItems((prev) => ({ ...prev, [key]: false }));
 
   const activeItems = Object.entries(items).filter(([_, on]) => on);
 
@@ -310,14 +340,14 @@ export default function Abroadcostcalculator() {
     <>
       <Navbar />
       <div className="app">
-        {/* Header Hero Section */}
-        <motion.header 
+        {/* Header */}
+        <motion.header
           className="header"
           initial="initial"
           animate="animate"
         >
           <div className="header-content">
-            <motion.div 
+            <motion.div
               className="header-eyebrow"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -325,7 +355,7 @@ export default function Abroadcostcalculator() {
             >
               Company Abroad Planner
             </motion.div>
-            <motion.h1 
+            <motion.h1
               className="header-title"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -333,25 +363,24 @@ export default function Abroadcostcalculator() {
             >
               Abroad Cost <span className="accent">Calculator</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="header-sub"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Estimate your international relocation budget — accurate,
-              transparent, adjustable.
+              Estimate your international relocation budget — accurate, transparent, adjustable.
             </motion.p>
           </div>
-          <motion.div 
+          <motion.div
             className="header-image-container"
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" 
-              alt="Students planning their study abroad budget" 
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+              alt="Students planning their study abroad budget"
               className="header-hero-image"
             />
           </motion.div>
@@ -359,14 +388,14 @@ export default function Abroadcostcalculator() {
 
         <div className="layout">
           {/* LEFT: Controls */}
-          <motion.div 
+          <motion.div
             className="panel controls-panel"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Country Selector */}
-            <motion.section 
+            <motion.section
               className="section"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -377,9 +406,7 @@ export default function Abroadcostcalculator() {
                 {Object.entries(COUNTRIES).map(([key, c]) => (
                   <motion.button
                     key={key}
-                    className={`country-btn${
-                      selectedCountry === key ? " active" : ""
-                    }`}
+                    className={`country-btn${selectedCountry === key ? " active" : ""}`}
                     onClick={() => setSelectedCountry(key)}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -393,15 +420,14 @@ export default function Abroadcostcalculator() {
             </motion.section>
 
             {/* Duration */}
-            <motion.section 
+            <motion.section
               className="section"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.15 }}
             >
               <div className="section-label">
-                Duration:{" "}
-                <span className="accent">{months} months</span>
+                Duration: <span className="accent">{months} months</span>
               </div>
               <motion.input
                 type="range"
@@ -420,7 +446,7 @@ export default function Abroadcostcalculator() {
             </motion.section>
 
             {/* Toggles */}
-            <motion.section 
+            <motion.section
               className="section toggles-row"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -429,41 +455,40 @@ export default function Abroadcostcalculator() {
               {/* Traveller Type */}
               <div className="toggle-group">
                 <div className="section-label">Traveller Type</div>
-                <div className="toggle-btns">
+                <div className="toggle-btns" style={{ flexWrap: "wrap" }}>
                   <motion.button
-                    className={`toggle-btn${!isStudent ? " active" : ""}`}
-                    onClick={() => setIsStudent(false)}
+                    className={`toggle-btn${travellerType === "tourist" ? " active" : ""}`}
+                    onClick={() => setTravellerType("tourist")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Tourist / Work
+                    Tourist
                   </motion.button>
                   <motion.button
-                    className={`toggle-btn${isStudent ? " active" : ""}`}
-                    onClick={() => setIsStudent(true)}
+                    className={`toggle-btn${travellerType === "work" ? " active" : ""}`}
+                    onClick={() => setTravellerType("work")}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Work Visa
+                  </motion.button>
+                  <motion.button
+                    className={`toggle-btn${travellerType === "student" ? " active" : ""}`}
+                    onClick={() => setTravellerType("student")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Student
                   </motion.button>
+                  <motion.button
+                    className={`toggle-btn${travellerType === "phd" ? " active" : ""}`}
+                    onClick={() => setTravellerType("phd")}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    PhD Student
+                  </motion.button>
                 </div>
-
-                {/* Study level — shown only when Student is selected */}
-                {isStudent && (
-                  <div className="toggle-btns" style={{ marginTop: "6px" }}>
-                    
-                    <motion.button
-                      className={`toggle-btn${
-                        studyType === "phd" ? " active" : ""
-                      }`}
-                      onClick={() => setStudyType("phd")}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      PhD
-                    </motion.button>
-                  </div>
-                )}
 
                 {/* PhD info badge */}
                 <AnimatePresence>
@@ -485,15 +510,18 @@ export default function Abroadcostcalculator() {
                         display: "flex",
                         alignItems: "center",
                         flexWrap: "wrap",
-                        gap: "4px"
+                        gap: "4px",
                       }}
                     >
                       🎓 PhD students get a monthly stipend of{" "}
                       <strong>
-                        ₹{PHD_STIPENDS[selectedCountry]?.min.toLocaleString("en-IN")} – ₹{PHD_STIPENDS[selectedCountry]?.max.toLocaleString("en-IN")}/mo
+                        ₹{PHD_STIPENDS[selectedCountry]?.min.toLocaleString("en-IN")} –{" "}
+                        ₹{PHD_STIPENDS[selectedCountry]?.max.toLocaleString("en-IN")}/mo
                       </strong>{" "}
-                      in <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" /> <strong>{country.label}</strong>.{" "}
-                      <span style={{opacity:0.8}}>{PHD_STIPENDS[selectedCountry]?.note}</span>
+                      in{" "}
+                      <img src={`https://flagcdn.com/w40/${country.code}.png`} className="inline-flag" alt="" />{" "}
+                      <strong>{country.label}</strong>.{" "}
+                      <span style={{ opacity: 0.8 }}>{PHD_STIPENDS[selectedCountry]?.note}</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -504,9 +532,7 @@ export default function Abroadcostcalculator() {
                 <div className="section-label">Accommodation</div>
                 <div className="toggle-btns">
                   <motion.button
-                    className={`toggle-btn${
-                      roomType === "shared" ? " active" : ""
-                    }`}
+                    className={`toggle-btn${roomType === "shared" ? " active" : ""}`}
                     onClick={() => setRoomType("shared")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -514,9 +540,7 @@ export default function Abroadcostcalculator() {
                     Shared
                   </motion.button>
                   <motion.button
-                    className={`toggle-btn${
-                      roomType === "private" ? " active" : ""
-                    }`}
+                    className={`toggle-btn${roomType === "private" ? " active" : ""}`}
                     onClick={() => setRoomType("private")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -531,9 +555,7 @@ export default function Abroadcostcalculator() {
                 <div className="section-label">Flight Type</div>
                 <div className="toggle-btns">
                   <motion.button
-                    className={`toggle-btn${
-                      tripType === "one-way" ? " active" : ""
-                    }`}
+                    className={`toggle-btn${tripType === "one-way" ? " active" : ""}`}
                     onClick={() => setTripType("one-way")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -541,9 +563,7 @@ export default function Abroadcostcalculator() {
                     One-way
                   </motion.button>
                   <motion.button
-                    className={`toggle-btn${
-                      tripType === "round" ? " active" : ""
-                    }`}
+                    className={`toggle-btn${tripType === "round" ? " active" : ""}`}
                     onClick={() => setTripType("round")}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -555,7 +575,7 @@ export default function Abroadcostcalculator() {
             </motion.section>
 
             {/* Cost Items Toggle */}
-            <motion.section 
+            <motion.section
               className="section"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -564,20 +584,12 @@ export default function Abroadcostcalculator() {
               <div className="section-label">Include / Exclude Costs</div>
               <div className="item-toggles">
                 {Object.entries(costs).map(([key, { label, amount }]) => {
-                  // Hide student-only items for non-students
-                  if (
-                    !isStudent &&
-                    (key === "tuition" ||
-                      key === "insurance" ||
-                      key === "stipend")
-                  )
+                  // Tourist & Work: hide all student/phd-only items
+                  if (!isStudent && (key === "tuition" || key === "insurance" || key === "stipend" || key === "ielts"))
                     return null;
-
-                  // Hide stipend unless PhD
-                  if (key === "stipend" && !isPhd) return null;
-
-                  // Hide tuition checkbox for normal students (Show ONLY when PhD is active)
-                  if (key === "tuition" && !isPhd) return null;
+                  // Student (non-PhD): hide phd-only items
+                  if (isStudent && !isPhd && (key === "tuition" || key === "stipend"))
+                    return null;
 
                   return (
                     <motion.label
@@ -594,9 +606,7 @@ export default function Abroadcostcalculator() {
                       <span className="item-toggle-label">{label}</span>
                       <span
                         className="item-toggle-amount"
-                        style={
-                          key === "stipend" ? { color: "red" } : {}
-                        }
+                        style={key === "stipend" ? { color: "red" } : {}}
                       >
                         {key === "stipend" ? "−" : ""}
                         {fmt(amount)}
@@ -609,7 +619,7 @@ export default function Abroadcostcalculator() {
           </motion.div>
 
           {/* RIGHT: Summary */}
-          <motion.div 
+          <motion.div
             className="panel summary-panel"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -617,7 +627,7 @@ export default function Abroadcostcalculator() {
           >
             <div className="summary-header">
               <AnimatePresence mode="wait">
-                <motion.div 
+                <motion.div
                   key={selectedCountry}
                   className="summary-country"
                   initial={{ opacity: 0, x: -10 }}
@@ -634,8 +644,8 @@ export default function Abroadcostcalculator() {
               </div>
             </div>
 
-            {/* Total Ticker */}
-            <motion.div 
+            {/* Total */}
+            <motion.div
               className="total-card"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -658,9 +668,7 @@ export default function Abroadcostcalculator() {
                 <span className="tag-count">{activeItems.length} items</span>
               </div>
               {activeItems.length === 0 ? (
-                <div className="empty-state">
-                  No costs selected. Toggle items on the left.
-                </div>
+                <div className="empty-state">No costs selected. Toggle items on the left.</div>
               ) : (
                 <div className="tags-list">
                   <AnimatePresence mode="popLayout">
@@ -684,11 +692,10 @@ export default function Abroadcostcalculator() {
                 <div className="section-label">Cost Breakdown</div>
                 <AnimatePresence mode="popLayout">
                   {activeItems.map(([key]) => {
-                    const pct =
-                      total > 0 ? (costs[key].amount / total) * 100 : 0;
+                    const pct = total > 0 ? (costs[key].amount / total) * 100 : 0;
                     return (
-                      <motion.div 
-                        key={key} 
+                      <motion.div
+                        key={key}
                         className="breakdown-row"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -696,9 +703,7 @@ export default function Abroadcostcalculator() {
                         layout
                         transition={{ duration: 0.2 }}
                       >
-                        <span className="breakdown-label">
-                          {costs[key].label}
-                        </span>
+                        <span className="breakdown-label">{costs[key].label}</span>
                         <div className="breakdown-bar-wrap">
                           <motion.div
                             className="breakdown-bar"
@@ -715,9 +720,7 @@ export default function Abroadcostcalculator() {
                         </div>
                         <span
                           className="breakdown-pct"
-                          style={
-                            key === "stipend" ? { color: "#4CAF50" } : {}
-                          }
+                          style={key === "stipend" ? { color: "#4CAF50" } : {}}
                         >
                           {key === "stipend" ? "−" : ""}
                           {Math.abs(pct).toFixed(1)}%
@@ -729,38 +732,23 @@ export default function Abroadcostcalculator() {
               </div>
             )}
 
-            {/* Formula */}
-           {/* Formula & Apply Section */}
-            <motion.div 
+            {/* Contact / Apply */}
+            <motion.div
               className="formula-box"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
             >
-             <div className="formula-title">Contact Us</div>
-             
-
-              {/* Professional Apply CTA Button */}
-              <div 
-                className="apply-cta-section" 
-                style={{ 
-                  marginTop: "20px", 
-                  borderTop: "1px solid rgba(255, 255, 255, 0.1)", 
-                  paddingTop: "15px" 
-                }}
+              <div className="formula-title">Contact Us</div>
+              <div
+                className="apply-cta-section"
+                style={{ marginTop: "20px", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "15px" }}
               >
-                <p 
-                  style={{ 
-                    fontSize: "12px", 
-                    color: "rgba(255, 255, 255, 0.7)", 
-                    marginBottom: "12px", 
-                    lineHeight: "1.4" 
-                  }}
-                >
+                <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", marginBottom: "12px", lineHeight: "1.4" }}>
                   Ready to take the next step? Connect with our experts for university applications and visa guidance.
                 </p>
                 <motion.a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor" // यहाँ अपना वास्तविक अप्लाई लिंक डालें
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSefWVUVnbBT3GSCLjJM9bKP7hymqVhPTHbixEvbltPcJtVbMA/viewform?usp=publish-editor"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -776,15 +764,14 @@ export default function Abroadcostcalculator() {
                     fontWeight: "600",
                     fontSize: "14px",
                     letterSpacing: "0.5px",
-                    boxShadow: "0 4px 15px rgba(76, 175, 80, 0.3)",
+                    boxShadow: "0 4px 15px rgba(76,175,80,0.3)",
                     textAlign: "center",
                     cursor: "pointer",
-                    boxSizing: "border-box"
+                    boxSizing: "border-box",
                   }}
-                  whileHover={{ 
-                    scale: 1.02, 
-                    background: "linear-gradient(135deg, #5cba60 0%, #388e3c 100%)",
-                    boxShadow: "0 6px 20px rgba(76, 175, 80, 0.4)"
+                  whileHover={{
+                    scale: 1.02,
+                    boxShadow: "0 6px 20px rgba(76,175,80,0.4)",
                   }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
